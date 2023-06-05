@@ -1,9 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import { ResFont } from './src/components/styling/typography/ResFont';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
 import ResTypography from './src/components/styling/ResTypography';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import ResText from './src/components/base/ResText/ResText';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -40,19 +42,16 @@ export default function App() {
     }
 
     return (
-        <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
-            <View style={styles.container}>
-                <Text style={ResTypography.body.getStylesheet()}>Hello World!</Text>
+        <PaperProvider theme={theme}>
+            <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
+                <ResText typography={ResTypography.body}>
+                    Hello World! My name is Andre.
+                </ResText>
             </View>
-        </View>
+        </PaperProvider>
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
+const theme = {
+    ...DefaultTheme,
+}
