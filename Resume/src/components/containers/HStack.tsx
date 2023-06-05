@@ -3,25 +3,19 @@ import { View, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 
 const HStack = ({ children, style, spacing }) => {
-    const childrenWithSpacing = React.Children.map(children, (child, index) => {
-        if (index === 0) {
-            return child;
-        }
-
-        return React.cloneElement(child, {
-            style: StyleSheet.flatten([
-                { marginLeft: spacing },
-                child.props.style,
-            ]),
-        });
-    });
-
     return (
-        <View style={[style, { flexDirection: "row" }]}>
-            {childrenWithSpacing}
+        <View style={[styles.container, { columnGap: spacing, rowGap: spacing/2 }, style]}>
+            {children}
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row', 
+        flexWrap: 'wrap',
+    }
+});
 
 HStack.propTypes = {
     children: PropTypes.node.isRequired,
