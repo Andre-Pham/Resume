@@ -12,6 +12,11 @@ class ResColors {
         return new ResColor("#3f4169");
     }
 
+    static get fillBackgroundLight(): ResColor {
+        // TODO: Update for dark mode
+        return new ResColor("#f2f3f9");
+    }
+
 }
 
 export default ResColors;

@@ -3,9 +3,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import { ResFont } from './src/components/styling/typography/ResFont';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
-import ResTypography from './src/components/styling/ResTypography';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import ResText from './src/components/base/ResText/ResText';
+import MainScreen from './src/components/MainScreen';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -44,9 +43,7 @@ export default function App() {
     return (
         <PaperProvider theme={theme}>
             <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
-                <ResText typography={ResTypography.body}>
-                    Hello World! My name is Andre.
-                </ResText>
+                <MainScreen />
             </View>
         </PaperProvider>
     );

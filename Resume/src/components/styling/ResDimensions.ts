@@ -5,6 +5,10 @@
  */
 class ResDimensions {
 
+    static readonly cardPadding = 18;
+
+    static readonly fillRadius = 16;
+
 }
 
 export default ResDimensions;
