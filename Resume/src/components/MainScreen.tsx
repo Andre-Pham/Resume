@@ -18,7 +18,7 @@ const MainScreen: React.FC = () => {
 
     const renderExperienceSections = () => {
         return ExperiencePeriods().map((period) => (
-            <ExperienceSection period={period} />
+            <ExperienceSection period={period} key={period.label} />
         ));
     };
 

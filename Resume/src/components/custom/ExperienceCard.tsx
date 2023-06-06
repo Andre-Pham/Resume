@@ -22,7 +22,7 @@ const ExperienceCard: React.FC<Props> = ({
 }) => {
     const renderLinks = () => {
         return experience.links.map((link) => (
-            <ResText typography={ResTypography.body}>
+            <ResText typography={ResTypography.body} key={link.url}>
                 {link.label + ": "}
 
                 <ResHyperlink
@@ -39,6 +39,7 @@ const ExperienceCard: React.FC<Props> = ({
         return experience.tags.map((tag) => (
             <ResChip
                 color={ResColors.textDark}
+                key={tag}
             >
                 <ResText typography={ResTypography.chip}>
                     {tag}

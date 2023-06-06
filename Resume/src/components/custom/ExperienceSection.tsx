@@ -16,8 +16,8 @@ const ExperienceSection: React.FC<Props> = ({
     period,
 }) => {
     const [dimensions, setDimensions] = useState({ 
-        width: Environment.instance.getScreenWidth(), 
-        height: Environment.instance.getScreenHeight()
+        width: Environment.instance.getScreenWidth() - ResDimensions.screenPadding*2, 
+        height: Environment.instance.getScreenHeight()  - ResDimensions.screenPadding*2
     });
     let columnCount = Environment.instance.getScreenOrientation() == ResScreenOrientation.Landscape ? 2 : 1;
     let spacing = 20;
@@ -46,6 +46,8 @@ const ExperienceSection: React.FC<Props> = ({
     };
 
     return (
+        // NB: Don't set this to a component
+        // Otherwise, parent spacing (VStack) isn't applied between these components
         <>
             <YearHeader>
                 {period.label}
