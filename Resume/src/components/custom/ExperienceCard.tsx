@@ -18,9 +18,6 @@ interface Props {
 const ExperienceCard: React.FC<Props> = ({ 
     experience,
 }) => {
-    let italicBody = ResTypography.body;
-    italicBody.italic = true;
-
     const renderLinks = () => {
         return experience.links.map((link) => (
             <ResText typography={ResTypography.body}>
@@ -58,7 +55,7 @@ const ExperienceCard: React.FC<Props> = ({
             </ResText>
 
             <VStack spacing={10}>
-                <ResText typography={ResTypography.body}>
+                <ResText typography={ResTypography.subscript}>
                     {experience.subscriptText}
                 </ResText>
 

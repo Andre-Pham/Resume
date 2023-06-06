@@ -13,6 +13,14 @@ class ResTypography {
         );
     }
 
+    static get subscript(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            13,
+            ResFontFamily.plexMono,
+            ResColors.textSemiDark,
+        );
+    }
+
     static get chip(): ResTypographyConfig {
         return new ResTypographyConfig(
             12,

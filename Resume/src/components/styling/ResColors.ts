@@ -12,6 +12,11 @@ class ResColors {
         return new ResColor("#3f4169");
     }
 
+    static get textSemiDark(): ResColor {
+        // TODO: Update for dark mode
+        return new ResColor("#a6a8c5");
+    }
+
     static get textLight(): ResColor {
         // TODO: Update for dark mode
         return new ResColor("#f8f9fa");
