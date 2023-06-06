@@ -1,10 +1,28 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ViewStyle } from "react-native";
 import PropTypes from "prop-types";
 
-const HStack = ({ children, style, spacing }) => {
+interface Props {
+    children;
+    spacing?: number;
+    verticalSpacing?: number;
+    style?: ViewStyle;
+}
+
+const HStack: React.FC<Props> = ({ 
+    children, 
+    spacing = 0,
+    verticalSpacing = null,
+    style, 
+}) => {
     return (
-        <View style={[styles.container, { columnGap: spacing, rowGap: spacing/2 }, style]}>
+        <View 
+            style={[
+                styles.container, 
+                { columnGap: spacing, rowGap: verticalSpacing == null ? spacing : verticalSpacing }, 
+                style,
+            ]}
+        >
             {children}
         </View>
     );

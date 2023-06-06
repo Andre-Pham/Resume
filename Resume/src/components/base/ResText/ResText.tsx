@@ -30,7 +30,7 @@ const ResText: React.FC<Props> = ({
     return (
         <Text
             style={[
-                wide ? { width: "100%" } : { alignSelf: 'center' },
+                wide ? { width: "100%" } : { alignSelf: (wide == null) ? null : 'center' },
                 typography.getStylesheet(),
                 verticalWrap ? { 
                     lineHeight: typography.size*lineHeightMultiplier 

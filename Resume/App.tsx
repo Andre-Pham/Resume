@@ -28,6 +28,7 @@ export default function App() {
         [ResFont.plexMonoMediumItalic]: require('./assets/fonts/IBMPlexMono-MediumItalic.ttf'),
         [ResFont.plexMonoSemiBoldItalic]: require('./assets/fonts/IBMPlexMono-SemiBoldItalic.ttf'),
         [ResFont.plexMonoBoldItalic]: require('./assets/fonts/IBMPlexMono-BoldItalic.ttf'),
+        [ResFont.gilroyExtraBold]: require('./assets/fonts/Gilroy-ExtraBold.otf'),
     });
 
     const onLayoutRootView = useCallback(async () => {

@@ -1,5 +1,6 @@
 import ResColors from "./ResColors";
 import { ResFontFamily } from "./typography/ResFontFamily";
+import { ResFontWeight } from "./typography/ResFontWeight";
 import ResTypographyConfig from "./typography/ResTypographyConfig";
 
 class ResTypography {
@@ -9,6 +10,36 @@ class ResTypography {
             15,
             ResFontFamily.plexMono,
             ResColors.textDark,
+        );
+    }
+
+    static get chip(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            12,
+            ResFontFamily.plexMono,
+            ResColors.textLight,
+        );
+    }
+
+    static get title(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            45,
+            ResFontFamily.gilroy,
+            ResColors.textDark,
+            ResFontWeight.black,
+        );
+    }
+
+    static get header(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            30,
+            ResFontFamily.circular,
+            ResColors.textDark,
+            ResFontWeight.black,
+            false,
+            false,
+            false,
+            -0.5,
         );
     }
 

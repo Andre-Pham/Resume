@@ -7,56 +7,58 @@ import ResColors from "./styling/ResColors";
 import ResHyperlink from './base/ResHyperlink/ResHyperlink';
 import HStack from './containers/HStack';
 import ResButton from './base/ResButton/ResButton';
+import YearHeader from './custom/YearHeader';
+import ExperienceCard from './custom/ExperienceCard';
+import { Experiences } from '../data/experience/Experiences';
 
 const MainScreen: React.FC = () => {
+
+    const renderExperienceCards = () => {
+        return Experiences.map((experience) => (
+            <ExperienceCard experience={experience} />
+        ));
+    };
+
     return (
         <View style={{ padding: 35 }}>
-            <HStack spacing={25}>
-                <ResButton 
-                    label="about"
-                    typography={ResTypography.body}
-                    color={ResColors.fillBackgroundLight}
-                    onPress={() => {console.log("Hello?")}}
-                    wide={false}
-                    style={{width: 180}}
-                />
+            <VStack spacing={20}>
+                <HStack spacing={25}>
+                    <ResButton 
+                        label="about"
+                        typography={ResTypography.body}
+                        color={ResColors.fillBackgroundLight}
+                        onPress={() => {console.log("Hello?")}}
+                        wide={false}
+                        style={{width: 180}}
+                    />
 
-                <ResButton 
-                    label="skills"
-                    typography={ResTypography.body}
-                    color={ResColors.fillBackgroundLight}
-                    onPress={() => {console.log("Hello?")}}
-                    wide={false}
-                    style={{width: 180}}
-                />
+                    <ResButton 
+                        label="skills"
+                        typography={ResTypography.body}
+                        color={ResColors.fillBackgroundLight}
+                        onPress={() => {console.log("Hello?")}}
+                        wide={false}
+                        style={{width: 180}}
+                    />
 
-                <ResButton 
-                    label="experience"
-                    typography={ResTypography.body}
-                    color={ResColors.fillBackgroundLight}
-                    onPress={() => {console.log("Hello?")}}
-                    wide={false}
-                    style={{width: 180}}
-                />
-            </HStack>
+                    <ResButton 
+                        label="experience"
+                        typography={ResTypography.body}
+                        color={ResColors.fillBackgroundLight}
+                        onPress={() => {console.log("Hello?")}}
+                        wide={false}
+                        style={{width: 180}}
+                    />
+                </HStack>
 
-            <FlatContainer
-                color={ResColors.fillBackgroundLight}
-            >
-                <VStack>
-                    <ResText typography={ResTypography.body}>Hello World! My name is Andre.</ResText>
-                    <ResText typography={ResTypography.body}>Hello World! My name is Andre.</ResText>
-                    <ResText typography={ResTypography.body}>Hello World! My name is Andre.</ResText>
-                    <ResText typography={ResTypography.body}>Hello World! My name is Andre.</ResText>
-                    <ResText typography={ResTypography.body}>Hello World! My name is Andre.</ResText>
-                    <ResText typography={ResTypography.body}>Hello World! My name is Andre.</ResText>
-                    <ResText typography={ResTypography.body}>Hello World! My name is Andre.</ResText>
-                    <ResHyperlink 
-                        url='https://github.com/Andre-Pham/Resume'
-                        typography={ResTypography.body}>Hello World! My name is Andre.
-                    </ResHyperlink>
-                </VStack>
-            </FlatContainer>
+                <YearHeader>
+                    2023
+                </YearHeader>
+
+                <HStack spacing={20}>
+                    {renderExperienceCards()}
+                </HStack>
+            </VStack>
         </View>
     );
 }

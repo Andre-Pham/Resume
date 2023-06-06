@@ -6,6 +6,7 @@ export enum ResFontFamily {
     poppins,
     circular,
     plexMono,
+    gilroy,
 }
 
 export namespace ResFontFamily {
@@ -42,6 +43,17 @@ export namespace ResFontFamily {
                     ResFont.plexMonoMediumItalic,
                     ResFont.plexMonoSemiBoldItalic,
                     ResFont.plexMonoBoldItalic,
+                    null,
+                );
+            case ResFontFamily.gilroy:
+                return new ResFontFamilyConfig(
+                    null,
+                    null,
+                    null,
+                    ResFont.gilroyExtraBold,
+                    null,
+                    null,
+                    null,
                     null,
                 );
             default: 

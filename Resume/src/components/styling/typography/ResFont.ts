@@ -18,4 +18,5 @@ export enum ResFont {
     plexMonoMediumItalic = 'IBMPlexMono-MediumItalic',
     plexMonoSemiBoldItalic = 'IBMPlexMono-SemiBoldItalic',
     plexMonoBoldItalic = 'IBMPlexMono-BoldItalic',
+    gilroyExtraBold = 'Gilroy-ExtraBold',
 }
