@@ -10,17 +10,20 @@ import ResButton from './base/ResButton/ResButton';
 import YearHeader from './custom/YearHeader';
 import ExperienceCard from './custom/ExperienceCard';
 import { Experiences } from '../data/experience/Experiences';
+import { ExperiencePeriods } from '../data/experience/ExperiencePeriods';
+import ExperienceSection from './custom/ExperienceSection';
+import ResDimensions from './styling/ResDimensions';
 
 const MainScreen: React.FC = () => {
 
-    const renderExperienceCards = () => {
-        return Experiences.map((experience) => (
-            <ExperienceCard experience={experience} />
+    const renderExperienceSections = () => {
+        return ExperiencePeriods().map((period) => (
+            <ExperienceSection period={period} />
         ));
     };
 
     return (
-        <View style={{ padding: 35 }}>
+        <View style={{ padding: ResDimensions.screenPadding }}>
             <VStack spacing={20}>
                 <HStack spacing={25}>
                     <ResButton 
@@ -51,13 +54,7 @@ const MainScreen: React.FC = () => {
                     />
                 </HStack>
 
-                <YearHeader>
-                    2023
-                </YearHeader>
-
-                <HStack spacing={20}>
-                    {renderExperienceCards()}
-                </HStack>
+                {renderExperienceSections()}
             </VStack>
         </View>
     );

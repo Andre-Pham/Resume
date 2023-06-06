@@ -72,8 +72,12 @@ class Environment {
         if (dimensions[0] > dimensions[1]){
             return ResScreenOrientation.Landscape;
         }
-        
         return ResScreenOrientation.Potrait;
+    }
+
+    public getAspectRatio(): number {
+        const dimensions = this.getScreenDimensions();
+        return dimensions[0]/dimensions[1];
     }
 
     public getScreenWidth(): number {

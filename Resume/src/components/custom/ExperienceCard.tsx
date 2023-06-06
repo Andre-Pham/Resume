@@ -1,7 +1,7 @@
 import React from 'react';
 import ResText from '../base/ResText/ResText';
 import HStack from '../containers/HStack';
-import { View } from 'react-native';
+import { View, ViewStyle } from 'react-native';
 import ResTypography from '../styling/ResTypography';
 import FlatContainer from '../containers/FlatContainer';
 import ResColors from '../styling/ResColors';
@@ -13,10 +13,12 @@ import Experience from '../../data/experience/Experience';
 
 interface Props {
     experience: Experience;
+    style?: ViewStyle;
 }
 
 const ExperienceCard: React.FC<Props> = ({ 
     experience,
+    style,
 }) => {
     const renderLinks = () => {
         return experience.links.map((link) => (
@@ -48,7 +50,7 @@ const ExperienceCard: React.FC<Props> = ({
     return (
         <FlatContainer
             color={ResColors.fillBackgroundLight}
-            style={{ flex: 1 }}
+            style={{ flex: 1, ...style }}
         >
             <ResText typography={ResTypography.header}>
                 {experience.name}

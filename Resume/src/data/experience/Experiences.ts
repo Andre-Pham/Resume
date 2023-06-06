@@ -4,6 +4,7 @@ import Experience from "./Experience";
 export const Experiences: Experience[] = [
     new Experience(
         "Yonder",
+        "Active",
         "Personal Project",
         "2021 - Present",
         "An iOS rouge-like rpg. Includes enemies and bosses to fight, npcs to meet, and loot such as armour, accessories, weapons, and potions to collect.",
@@ -17,6 +18,7 @@ export const Experiences: Experience[] = [
 
     new Experience(
         "SwiftSerialization",
+        2023,
         "Personal Project",
         "2023",
         "A Swift package used for serialising and restoring Swift objects. Supports serialising, persisting, reading and restoring Swift objects. Provides legacy support.",

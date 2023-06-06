@@ -5,6 +5,8 @@
  */
 class ResDimensions {
 
+    static readonly screenPadding = 35;
+
     static readonly cardPadding = 18;
 
     static readonly fillRadius = 16;

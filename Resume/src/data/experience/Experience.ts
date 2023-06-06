@@ -8,11 +8,12 @@ class Experience {
 
     constructor(
         public readonly name: string,
+        public readonly section: number | "Active",
         public readonly projectType: string,
         public readonly duration: string,
         public readonly description: string,
         public readonly links: Link[],
-        public readonly tags: string[]
+        public readonly tags: string[],
     ) { }
 
 }
