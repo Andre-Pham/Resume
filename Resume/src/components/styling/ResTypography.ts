@@ -21,6 +21,14 @@ class ResTypography {
         );
     }
 
+    static get subscriptLabel(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            11,
+            ResFontFamily.plexMono,
+            ResColors.textSemiDark,
+        );
+    }
+
     static get chip(): ResTypographyConfig {
         return new ResTypographyConfig(
             12,
@@ -29,9 +37,36 @@ class ResTypography {
         );
     }
 
-    static get title(): ResTypographyConfig {
+    static get display(): ResTypographyConfig {
         return new ResTypographyConfig(
-            45,
+            80,
+            ResFontFamily.gilroy,
+            ResColors.textDark,
+            ResFontWeight.black,
+        );
+    }
+
+    static get displayIntro(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            24,
+            ResFontFamily.gilroy,
+            ResColors.textSemiDark,
+            ResFontWeight.black,
+        );
+    }
+
+    static get displaySubscript(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            24,
+            ResFontFamily.poppins,
+            ResColors.textSemiDark,
+            ResFontWeight.semiBold,
+        );
+    }
+
+    static get sectionTitle(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            24,
             ResFontFamily.gilroy,
             ResColors.textDark,
             ResFontWeight.black,
