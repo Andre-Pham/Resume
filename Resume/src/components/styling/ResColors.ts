@@ -27,6 +27,14 @@ class ResColors {
         return new ResColor("#f2f3f9");
     }
 
+    static get behance(): ResColor {
+        return new ResColor("#1769ff");
+    }
+
+    static get gitHub(): ResColor {
+        return new ResColor("#24292f");
+    }
+
 }
 
 export default ResColors;

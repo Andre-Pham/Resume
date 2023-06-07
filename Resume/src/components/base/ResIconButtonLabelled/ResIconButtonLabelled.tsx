@@ -9,7 +9,8 @@ import ResIconButton from '../ResIconButton/ResIconButton';
 
 interface Props {
     color: ResColor;
-    icon: string; // https://pictogrammers.com/library/mdi/
+    icon?: string; // https://pictogrammers.com/library/mdi/
+    fileName?: string;
     label: string;
     size: number;
     style?: ViewStyle;
@@ -18,7 +19,8 @@ interface Props {
 
 const ResIconButtonLabelled: React.FC<Props> = ({ 
     color,
-    icon, 
+    icon = null, 
+    fileName = null,
     label,
     size,
     style,
@@ -28,6 +30,7 @@ const ResIconButtonLabelled: React.FC<Props> = ({
         <VStack spacing={5} style={{ alignItems: 'center', alignSelf: 'flex-start', ...style }}>
             <ResIconButton 
                 icon={icon}
+                fileName={fileName}
                 color={color}
                 size={size}
                 onPress={onPress}

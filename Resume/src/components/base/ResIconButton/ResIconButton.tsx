@@ -8,10 +8,13 @@ import Environment from '../../../state/environment/Environment';
 import { OS } from '../../../state/environment/types/OS';
 import ResText from '../ResText/ResText';
 import ResIcon from '../ResIcon/ResIcon';
+import ResImage from '../ResImage/ResImage';
+import { ResImageScale } from '../ResImage/ResImageScale';
 
 interface Props {
     color: ResColor;
-    icon: string; // https://pictogrammers.com/library/mdi/
+    icon?: string; // https://pictogrammers.com/library/mdi/
+    fileName?: string;
     size: number;
     style?: ViewStyle;
     onPress: () => void;
@@ -19,7 +22,8 @@ interface Props {
 
 const ResIconButton: React.FC<Props> = ({ 
     color,
-    icon, 
+    icon = null, 
+    fileName = null,
     size,
     style,
     onPress,
@@ -34,16 +38,31 @@ const ResIconButton: React.FC<Props> = ({
                 width: size,
                 height: size,
                 justifyContent: 'center',
+                ...style,
             }}
         >
-            <ResIcon 
-                icon={icon}
-                size={size*2.2/3.0}
-                color={new ResColor('white')}
-                style={{
-                    alignSelf: 'center',
-                }}
-            />
+            {
+                (icon == null) 
+                    ?
+                <ResImage 
+                    fileName={fileName}
+                    width={size*1.8/3.0}
+                    height={size*1.8/3.0}
+                    scale={ResImageScale.scaleToFit}
+                    style={{
+                        alignSelf: 'center',
+                    }}
+                />
+                    :
+                <ResIcon 
+                    icon={icon}
+                    size={size*2.2/3.0}
+                    color={new ResColor('white')}
+                    style={{
+                        alignSelf: 'center',
+                    }}
+                /> 
+            }
         </TouchableOpacity>
     );
 }
