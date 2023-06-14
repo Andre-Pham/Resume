@@ -48,7 +48,7 @@ const AboutHeader: React.FC<Props> = ({
             </HStack>
 
             <ResText 
-                typography={ResTypography.body}
+                typography={ResTypography.standoutBody}
                 style={{
                     maxWidth: 700,
                 }}

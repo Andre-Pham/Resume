@@ -5,9 +5,17 @@ import ResTypographyConfig from "./typography/ResTypographyConfig";
 
 class ResTypography {
 
-    static get body(): ResTypographyConfig {
+    static get standoutBody(): ResTypographyConfig {
         return new ResTypographyConfig(
             15,
+            ResFontFamily.plexMono,
+            ResColors.textDark,
+        );
+    }
+
+    static get body(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            13,
             ResFontFamily.plexMono,
             ResColors.textDark,
         );
@@ -31,7 +39,7 @@ class ResTypography {
 
     static get chip(): ResTypographyConfig {
         return new ResTypographyConfig(
-            12,
+            11,
             ResFontFamily.plexMono,
             ResColors.textLight,
         );

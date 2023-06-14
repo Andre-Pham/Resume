@@ -45,8 +45,8 @@ const MainScreen: React.FC = () => {
         }
     };
 
-    let lightBody = ResTypography.body;
-    lightBody.resColor = ResColors.textLight;
+    let selectedTypography = ResTypography.standoutBody;
+    selectedTypography.resColor = ResColors.textLight;
 
     return (
         <View style={{ padding: ResDimensions.screenPadding }}>
@@ -56,7 +56,7 @@ const MainScreen: React.FC = () => {
                 <HStack spacing={25}>
                     <ResButton 
                         label="experience"
-                        typography={activeSection == ActiveSection.experience ? lightBody : ResTypography.body}
+                        typography={activeSection == ActiveSection.experience ? selectedTypography : ResTypography.body}
                         color={
                             activeSection == ActiveSection.experience ?
                             ResColors.behance :
@@ -79,7 +79,7 @@ const MainScreen: React.FC = () => {
 
                     <ResButton 
                         label="skills"
-                        typography={activeSection == ActiveSection.skills ? lightBody : ResTypography.body}
+                        typography={activeSection == ActiveSection.skills ? selectedTypography : ResTypography.body}
                         color={
                             activeSection == ActiveSection.skills ?
                             ResColors.behance :
@@ -102,7 +102,7 @@ const MainScreen: React.FC = () => {
 
                     <ResButton 
                         label="education"
-                        typography={activeSection == ActiveSection.education ? lightBody : ResTypography.body}
+                        typography={activeSection == ActiveSection.education ? selectedTypography : ResTypography.body}
                         color={
                             activeSection == ActiveSection.education ?
                             ResColors.behance :
