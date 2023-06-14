@@ -1,18 +1,14 @@
-import { Dimensions, View } from 'react-native';
+import { View } from 'react-native';
 import VStack from "./containers/VStack";
-import HStack from './containers/HStack';
 import { ExperiencePeriods } from '../data/experience/ExperiencePeriods';
 import ExperienceSection from './custom/ExperienceSection';
 import ResDimensions from './styling/ResDimensions';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ActiveSection } from '../state/publishers/types/ActiveSection';
 import StateManager from '../state/publishers/StateManager';
 import { UnreachableCaseError } from '../language/errors/UnreachableCaseError';
 import Header from './custom/Header';
 import Splash from './custom/Splash';
-import Environment from '../state/environment/Environment';
-import { ResScreenOrientation } from '../state/environment/types/ResScreenOrientation';
-import SplashButton from './custom/SplashButton';
 
 const MainScreen: React.FC = () => {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
@@ -38,80 +34,19 @@ const MainScreen: React.FC = () => {
         }
     };
 
-    let verticalButtonSpacing = 32
-    let horizontalButtonSpacing = Math.sqrt(Math.pow(verticalButtonSpacing, 2) - Math.pow(verticalButtonSpacing/2, 2))
+    return (
+        <View style={{ padding: ResDimensions.screenPadding }}>
+            <VStack spacing={72} style={{ alignContent: 'center'}}>
+                <Header />
 
-    const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.getScreenOrientation() == ResScreenOrientation.Potrait);
-    useEffect(() => {
-        Dimensions.addEventListener('change', (newDimensions) => {
-            console.log(Environment.instance.getScreenWidth());
-            setScreenIsPortrait(Environment.instance.getScreenWidth() <= 950);
-        });
-    }, []);
+                <Splash />
 
-    if (screenIsPortrait) {
-        return (
-            <View style={{ padding: ResDimensions.screenPadding }}>
-                <VStack spacing={80} style={{ alignContent: 'center'}}>
-                    <Header />
-
-                    <Splash style={{ flex: 1 }} />
-
-                        <HStack spacing={horizontalButtonSpacing} style={{ alignItems: 'center' }}>
-                            <SplashButton 
-                                label="experience"
-                                section={ActiveSection.experience}
-                            />
-
-                            <SplashButton 
-                                label="skills"
-                                section={ActiveSection.skills}
-                            />
-
-                            <SplashButton 
-                                label="education"
-                                section={ActiveSection.education}
-                            />
-                        </HStack> 
-
+                <VStack spacing={24}>
                     {renderPageContent()}
                 </VStack>
-            </View>
-        );
-    } else {
-        return (
-            <View style={{ padding: ResDimensions.screenPadding }}>
-                <VStack spacing={80} style={{ alignContent: 'center'}}>
-                    <Header />
-
-                    <HStack spacing={64} style={{ alignItems: 'flex-start' }}>
-                        <Splash />
-
-                        <HStack spacing={horizontalButtonSpacing} style={{ alignItems: 'center' }}>
-                            <VStack spacing={verticalButtonSpacing}>
-                                <SplashButton 
-                                    label="experience"
-                                    section={ActiveSection.experience}
-                                />
-
-                                <SplashButton 
-                                    label="skills"
-                                    section={ActiveSection.skills}
-                                />
-                            </VStack>
-
-                            <SplashButton 
-                                label="education"
-                                section={ActiveSection.education}
-                            />
-                        </HStack>   
-                    </HStack>
-
-                    {renderPageContent()}
-                </VStack>
-            </View>
-        );
-    }
+            </VStack>
+        </View>
+    );
 }
 
 export default MainScreen;

@@ -1,68 +1,85 @@
-import React from 'react';
-import ResText from '../base/ResText/ResText';
-import HStack from '../containers/HStack';
-import { Clipboard, Linking, ViewStyle } from 'react-native';
-import ResTypography from '../styling/ResTypography';
-import VStack from '../containers/VStack';
-import ResFlexImage from '../base/ResFlexImage/ResFlexImage';
-import ResChip from '../base/ResChip/ResChip';
+import React, { useEffect, useState } from 'react';
+import { Dimensions, StyleSheet, ViewStyle } from 'react-native';
+import ResButton from '../base/ResButton/ResButton';
+import StateManager from '../../state/publishers/StateManager';
 import ResColors from '../styling/ResColors';
-import ResIconButtonLabelled from '../base/ResIconButtonLabelled/ResIconButtonLabelled';
-import ResImage from '../base/ResImage/ResImage';
+import { ActiveSection } from '../../state/publishers/types/ActiveSection';
+import ResTypography from '../styling/ResTypography';
+import Environment from '../../state/environment/Environment';
+import { ResScreenOrientation } from '../../state/environment/types/ResScreenOrientation';
+import VStack from '../containers/VStack';
+import Header from './Header';
+import SplashIntro from './SplashIntro';
+import HStack from '../containers/HStack';
+import SplashButton from './SplashButton';
 
 interface Props {
-    style?: ViewStyle;
+    // No props
 }
 
 const Splash: React.FC<Props> = ({ 
-    style
+    // No props
 }) => {
-    const iconButtonSize = 40;
+    const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.getScreenWidth() <= 950);
 
-    return (
-        <VStack spacing={16} style={style}>
-            <ResText 
-                typography={ResTypography.splash}
-                style={{
-                    maxWidth: 550,
-                }}
-            >
-                I'm a mobile developer that specialises in native iOS development and React Native. My passions are code, art and design.
-            </ResText>
+    useEffect(() => {
+        Dimensions.addEventListener('change', (newDimensions) => {
+            setScreenIsPortrait(Environment.instance.getScreenWidth() <= 950);
+        });
+    }, []);
 
-            <ResText 
-                typography={ResTypography.standoutBody}
-                style={{
-                    maxWidth: 550,
-                }}
-            >
-                {/* No orphans! (Hence the "\n") */}
-                {"Find my social links below, or explore my\nqualifications and experience."}
-            </ResText>
+    let verticalButtonSpacing = 32;
+    let horizontalButtonSpacing = Math.sqrt(Math.pow(verticalButtonSpacing, 2) - Math.pow(verticalButtonSpacing/2, 2));
 
-            <HStack spacing={16} style={{ paddingTop: 8 }}>
-                <ResIconButtonLabelled
-                    icon="github"
-                    color={ResColors.gitHub}
-                    label="GitHub"
-                    size={iconButtonSize}
-                    onPress={() => {
-                        Linking.openURL("https://github.com/Andre-Pham");
-                    }}
-                />
+    if (screenIsPortrait) {
+        return (
+            <>
+                <SplashIntro style={{ flex: 1 }} />
 
-                <ResIconButtonLabelled
-                    fileName={'behance_white.png'}
-                    color={ResColors.behance}
-                    label="Behance"
-                    size={iconButtonSize}
-                    onPress={() => {
-                        Linking.openURL("https://behance.net/andrepham");
-                    }}
-                />
+                <HStack spacing={horizontalButtonSpacing} style={{ alignItems: 'center' }}>
+                    <SplashButton 
+                        label="experience"
+                        section={ActiveSection.experience}
+                    />
+
+                    <SplashButton 
+                        label="skills"
+                        section={ActiveSection.skills}
+                    />
+
+                    <SplashButton 
+                        label="education"
+                        section={ActiveSection.education}
+                    />
+                </HStack> 
+            </>
+        );
+    } else {
+        return (
+            <HStack spacing={64} style={{ alignItems: 'flex-start' }}>
+                <SplashIntro />
+
+                <HStack spacing={horizontalButtonSpacing} style={{ alignItems: 'center' }}>
+                    <VStack spacing={verticalButtonSpacing}>
+                        <SplashButton 
+                            label="experience"
+                            section={ActiveSection.experience}
+                        />
+
+                        <SplashButton 
+                            label="skills"
+                            section={ActiveSection.skills}
+                        />
+                    </VStack>
+
+                    <SplashButton 
+                        label="education"
+                        section={ActiveSection.education}
+                    />
+                </HStack>   
             </HStack>
-        </VStack>
-    );
+        );
+    }
 }
 
 export default Splash;
