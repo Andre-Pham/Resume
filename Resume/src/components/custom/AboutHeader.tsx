@@ -1,7 +1,7 @@
 import React from 'react';
 import ResText from '../base/ResText/ResText';
 import HStack from '../containers/HStack';
-import { Linking } from 'react-native';
+import { Clipboard, Linking } from 'react-native';
 import ResTypography from '../styling/ResTypography';
 import VStack from '../containers/VStack';
 import ResFlexImage from '../base/ResFlexImage/ResFlexImage';

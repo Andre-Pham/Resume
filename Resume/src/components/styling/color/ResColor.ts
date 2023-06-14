@@ -35,6 +35,28 @@ class ResColor {
         }
     }
 
+    public getContrastColor(): string {
+        const rgb = this.getColor().match(/\d+/g);
+        const [r, g, b] = rgb.map(Number);
+        const l = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+        const contrastRatioWithWhite = (l + 0.05) / (1 + 0.05);
+        const contrastRatioWithBlack = (l + 0.05) / (0 + 0.05);
+        if (contrastRatioWithWhite > contrastRatioWithBlack) {
+            return "#000000";
+        } else {
+            return "#ffffff"
+        }
+    }
+
+    public getRippleColor(): string {
+        let hexColor = this.getContrastColor();
+        const hexDigits = hexColor.slice(1);
+        const rgb = hexDigits.match(/.{1,2}/g).map((hex) => parseInt(hex, 16));
+        const [r, g, b] = rgb.map((value) => value / 255);
+        const opacity = 0.2; 
+        return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+    }
+
 }
 
 export default ResColor;

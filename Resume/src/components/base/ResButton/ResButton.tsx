@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ResTypographyConfig from '../../styling/typography/ResTypographyConfig';
 import ResColor from '../../styling/color/ResColor';
-import { ViewStyle } from 'react-native/types';
+import { Animated, StyleProp, ViewStyle } from 'react-native';
 import Environment from '../../../state/environment/Environment';
 import { OS } from '../../../state/environment/types/OS';
 import ResText from '../ResText/ResText';
@@ -15,7 +15,7 @@ interface Props {
     icon?: string; // https://pictogrammers.com/library/mdi/
     disabled?: boolean;
     wide?: boolean;
-    style?: ViewStyle;
+    style?: StyleProp<ViewStyle>;
     onPress: () => void;
 }
 
@@ -58,6 +58,7 @@ const ResButton: React.FC<Props> = ({
                 style,
             ]}
             buttonColor={color.getColor()}
+            rippleColor={color.getRippleColor()}
         >
             <ResText typography={typography}>
                 {label}

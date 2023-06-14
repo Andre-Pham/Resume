@@ -1,3 +1,5 @@
+import ResValuePublisher from "./impl/ResValuePublisher";
+import { ActiveSection } from "./types/ActiveSection";
 
 /**
  * Stores application-level state to avoid having to pass state to different components, and reduces component coupling. Uses the publisher-subscriber pattern.
@@ -28,6 +30,8 @@
  * ```
  */
 class StateManager {
+
+    public static readonly activeSection = new ResValuePublisher(ActiveSection.none);
 
 }
 
