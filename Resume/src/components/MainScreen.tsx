@@ -1,4 +1,4 @@
-import { Animated, StyleSheet, View } from 'react-native';
+import { Animated, Dimensions, StyleSheet, View } from 'react-native';
 import FlatContainer from "./containers/FlatContainer";
 import VStack from "./containers/VStack";
 import ResText from "./base/ResText/ResText";
@@ -20,6 +20,10 @@ import { useEffect, useRef, useState } from 'react';
 import { ActiveSection } from '../state/publishers/types/ActiveSection';
 import StateManager from '../state/publishers/StateManager';
 import { UnreachableCaseError } from '../language/errors/UnreachableCaseError';
+import Header from './custom/Header';
+import Splash from './custom/Splash';
+import Environment from '../state/environment/Environment';
+import { ResScreenOrientation } from '../state/environment/types/ResScreenOrientation';
 
 const MainScreen: React.FC = () => {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
@@ -48,80 +52,280 @@ const MainScreen: React.FC = () => {
     let selectedTypography = ResTypography.standoutBody;
     selectedTypography.resColor = ResColors.textLight;
 
+    let buttonSize = 116
+    let verticalButtonSpacing = 32
+    let horizontalButtonSpacing = Math.sqrt(Math.pow(verticalButtonSpacing, 2) - Math.pow(verticalButtonSpacing/2, 2))
+
+    const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.getScreenOrientation() == ResScreenOrientation.Potrait);
+    useEffect(() => {
+        Dimensions.addEventListener('change', (newDimensions) => {
+            console.log(Environment.instance.getScreenWidth());
+            setScreenIsPortrait(Environment.instance.getScreenWidth() <= 950);
+        });
+    }, []);
+
+    if (screenIsPortrait) {
+        return (
+            <View style={{ padding: ResDimensions.screenPadding }}>
+                <VStack spacing={80} style={{ alignContent: 'center'}}>
+                    <Header />
+
+                    <Splash style={{ flex: 1 }} />
+
+                        <HStack spacing={horizontalButtonSpacing} style={{ alignItems: 'center' }}>
+                            <ResButton 
+                                label="experience"
+                                typography={activeSection == ActiveSection.experience ? selectedTypography : ResTypography.standoutBody}
+                                color={
+                                    activeSection == ActiveSection.experience ?
+                                    ResColors.behance :
+                                    ResColors.fillBackgroundLight
+                                }
+                                onPress={() => {
+                                    let toPublish = (
+                                        activeSection == ActiveSection.experience ?
+                                        ActiveSection.none : 
+                                        ActiveSection.experience
+                                    );
+                                    StateManager.activeSection.publish(toPublish);
+                                }}
+                                wide={false}
+                                style={[
+                                    { width: buttonSize, height: buttonSize, borderRadius: 100 },
+                                    activeSection == ActiveSection.experience ? styles.shadow : {}
+                                ]}
+                            />
+
+                            <ResButton 
+                                label="skills"
+                                typography={activeSection == ActiveSection.skills ? selectedTypography : ResTypography.standoutBody}
+                                color={
+                                    activeSection == ActiveSection.skills ?
+                                    ResColors.behance :
+                                    ResColors.fillBackgroundLight
+                                }
+                                onPress={() => {
+                                    let toPublish = (
+                                        activeSection == ActiveSection.skills ?
+                                        ActiveSection.none : 
+                                        ActiveSection.skills
+                                    );
+                                    StateManager.activeSection.publish(toPublish);
+                                }}
+                                wide={false}
+                                style={[
+                                    { width: buttonSize, height: buttonSize, borderRadius: 100 },
+                                    activeSection == ActiveSection.skills ? styles.shadow : {}
+                                ]}
+                            />
+
+                            <ResButton 
+                                    label="education"
+                                typography={activeSection == ActiveSection.education ? selectedTypography : ResTypography.standoutBody}
+                                color={
+                                    activeSection == ActiveSection.education ?
+                                    ResColors.behance :
+                                    ResColors.fillBackgroundLight
+                                }
+                                onPress={() => {
+                                    let toPublish = (
+                                        activeSection == ActiveSection.education ?
+                                        ActiveSection.none : 
+                                        ActiveSection.education
+                                    );
+                                    StateManager.activeSection.publish(toPublish);
+                                }}
+                                wide={false}
+                                style={[
+                                    { width: buttonSize, height: buttonSize, borderRadius: 100 },
+                                    activeSection == ActiveSection.education ? styles.shadow : {}
+                                ]}
+                            />
+                        </HStack> 
+
+                    {renderPageContent()}
+                </VStack>
+            </View>
+        );
+    } else {
+        return (
+            <View style={{ padding: ResDimensions.screenPadding }}>
+                <VStack spacing={80} style={{ alignContent: 'center'}}>
+                    <Header />
+
+                    <HStack spacing={64} style={{ alignItems: 'flex-start' }}>
+                        <Splash />
+
+                        <HStack spacing={horizontalButtonSpacing} style={{ alignItems: 'center' }}>
+                            <VStack spacing={verticalButtonSpacing}>
+                                <ResButton 
+                                    label="experience"
+                                    typography={activeSection == ActiveSection.experience ? selectedTypography : ResTypography.standoutBody}
+                                    color={
+                                        activeSection == ActiveSection.experience ?
+                                        ResColors.behance :
+                                        ResColors.fillBackgroundLight
+                                    }
+                                    onPress={() => {
+                                        let toPublish = (
+                                            activeSection == ActiveSection.experience ?
+                                            ActiveSection.none : 
+                                            ActiveSection.experience
+                                        );
+                                        StateManager.activeSection.publish(toPublish);
+                                    }}
+                                    wide={false}
+                                    style={[
+                                        { width: buttonSize, height: buttonSize, borderRadius: 100 },
+                                        activeSection == ActiveSection.experience ? styles.shadow : {}
+                                    ]}
+                                />
+
+                                <ResButton 
+                                    label="skills"
+                                    typography={activeSection == ActiveSection.skills ? selectedTypography : ResTypography.standoutBody}
+                                    color={
+                                        activeSection == ActiveSection.skills ?
+                                        ResColors.behance :
+                                        ResColors.fillBackgroundLight
+                                    }
+                                    onPress={() => {
+                                        let toPublish = (
+                                            activeSection == ActiveSection.skills ?
+                                            ActiveSection.none : 
+                                            ActiveSection.skills
+                                        );
+                                        StateManager.activeSection.publish(toPublish);
+                                    }}
+                                    wide={false}
+                                    style={[
+                                        { width: buttonSize, height: buttonSize, borderRadius: 100 },
+                                        activeSection == ActiveSection.skills ? styles.shadow : {}
+                                    ]}
+                                />
+                            </VStack>
+
+                            <ResButton 
+                                    label="education"
+                                typography={activeSection == ActiveSection.education ? selectedTypography : ResTypography.standoutBody}
+                                color={
+                                    activeSection == ActiveSection.education ?
+                                    ResColors.behance :
+                                    ResColors.fillBackgroundLight
+                                }
+                                onPress={() => {
+                                    let toPublish = (
+                                        activeSection == ActiveSection.education ?
+                                        ActiveSection.none : 
+                                        ActiveSection.education
+                                    );
+                                    StateManager.activeSection.publish(toPublish);
+                                }}
+                                wide={false}
+                                style={[
+                                    { width: buttonSize, height: buttonSize, borderRadius: 100 },
+                                    activeSection == ActiveSection.education ? styles.shadow : {}
+                                ]}
+                            />
+                        </HStack>   
+                    </HStack>
+
+                    {renderPageContent()}
+                </VStack>
+            </View>
+        );
+    }
+
     return (
         <View style={{ padding: ResDimensions.screenPadding }}>
-            <VStack spacing={20}>
-                <AboutHeader />
+            <VStack spacing={80}>
+                <Header />
 
-                <HStack spacing={25}>
-                    <ResButton 
-                        label="experience"
-                        typography={activeSection == ActiveSection.experience ? selectedTypography : ResTypography.standoutBody}
-                        color={
-                            activeSection == ActiveSection.experience ?
-                            ResColors.behance :
-                            ResColors.fillBackgroundLight
-                        }
-                        onPress={() => {
-                            let toPublish = (
-                                activeSection == ActiveSection.experience ?
-                                ActiveSection.none : 
-                                ActiveSection.experience
-                            );
-                            StateManager.activeSection.publish(toPublish);
+                <HStack spacing={64} style={{ alignItems: 'flex-start' }}>
+                    {/* <Splash /> */}
+                    <VStack>
+                    <ResText 
+                        typography={ResTypography.splash}
+                        style={{
+                            maxWidth: 550,
                         }}
-                        wide={false}
-                        style={[
-                            { width: 180 },
-                            activeSection == ActiveSection.experience ? styles.shadow : {}
-                        ]}
-                    />
+                    >
+                        I'm a mobile developer that specialises in native iOS development and React Native. My passions are code, art and design.
+                    </ResText>
+                    </VStack>
 
-                    <ResButton 
-                        label="skills"
-                        typography={activeSection == ActiveSection.skills ? selectedTypography : ResTypography.standoutBody}
-                        color={
-                            activeSection == ActiveSection.skills ?
-                            ResColors.behance :
-                            ResColors.fillBackgroundLight
-                        }
-                        onPress={() => {
-                            let toPublish = (
-                                activeSection == ActiveSection.skills ?
-                                ActiveSection.none : 
-                                ActiveSection.skills
-                            );
-                            StateManager.activeSection.publish(toPublish);
-                        }}
-                        wide={false}
-                        style={[
-                            { width: 180 },
-                            activeSection == ActiveSection.skills ? styles.shadow : {}
-                        ]}
-                    />
+                    <HStack spacing={horizontalButtonSpacing} style={{ alignItems: 'center' }}>
+                        <VStack spacing={verticalButtonSpacing}>
+                            <ResButton 
+                                label="experience"
+                                typography={activeSection == ActiveSection.experience ? selectedTypography : ResTypography.standoutBody}
+                                color={
+                                    activeSection == ActiveSection.experience ?
+                                    ResColors.behance :
+                                    ResColors.fillBackgroundLight
+                                }
+                                onPress={() => {
+                                    let toPublish = (
+                                        activeSection == ActiveSection.experience ?
+                                        ActiveSection.none : 
+                                        ActiveSection.experience
+                                    );
+                                    StateManager.activeSection.publish(toPublish);
+                                }}
+                                wide={false}
+                                style={[
+                                    { width: buttonSize, height: buttonSize, borderRadius: 100 },
+                                    activeSection == ActiveSection.experience ? styles.shadow : {}
+                                ]}
+                            />
 
-                    <ResButton 
-                        label="education"
-                        typography={activeSection == ActiveSection.education ? selectedTypography : ResTypography.standoutBody}
-                        color={
-                            activeSection == ActiveSection.education ?
-                            ResColors.behance :
-                            ResColors.fillBackgroundLight
-                        }
-                        onPress={() => {
-                            let toPublish = (
+                            <ResButton 
+                                label="skills"
+                                typography={activeSection == ActiveSection.skills ? selectedTypography : ResTypography.standoutBody}
+                                color={
+                                    activeSection == ActiveSection.skills ?
+                                    ResColors.behance :
+                                    ResColors.fillBackgroundLight
+                                }
+                                onPress={() => {
+                                    let toPublish = (
+                                        activeSection == ActiveSection.skills ?
+                                        ActiveSection.none : 
+                                        ActiveSection.skills
+                                    );
+                                    StateManager.activeSection.publish(toPublish);
+                                }}
+                                wide={false}
+                                style={[
+                                    { width: buttonSize, height: buttonSize, borderRadius: 100 },
+                                    activeSection == ActiveSection.skills ? styles.shadow : {}
+                                ]}
+                            />
+                        </VStack>
+
+                        <ResButton 
+                                label="education"
+                            typography={activeSection == ActiveSection.education ? selectedTypography : ResTypography.standoutBody}
+                            color={
                                 activeSection == ActiveSection.education ?
-                                ActiveSection.none : 
-                                ActiveSection.education
-                            );
-                            StateManager.activeSection.publish(toPublish);
-                        }}
-                        wide={false}
-                        style={[
-                            { width: 180 },
-                            activeSection == ActiveSection.education ? styles.shadow : {}
-                        ]}
-                    />
+                                ResColors.behance :
+                                ResColors.fillBackgroundLight
+                            }
+                            onPress={() => {
+                                let toPublish = (
+                                    activeSection == ActiveSection.education ?
+                                    ActiveSection.none : 
+                                    ActiveSection.education
+                                );
+                                StateManager.activeSection.publish(toPublish);
+                            }}
+                            wide={false}
+                            style={[
+                                { width: buttonSize, height: buttonSize, borderRadius: 100 },
+                                activeSection == ActiveSection.education ? styles.shadow : {}
+                            ]}
+                        />
+                    </HStack>   
                 </HStack>
 
                 {renderPageContent()}

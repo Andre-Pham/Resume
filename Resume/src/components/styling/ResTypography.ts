@@ -5,6 +5,24 @@ import ResTypographyConfig from "./typography/ResTypographyConfig";
 
 class ResTypography {
 
+    static get pageTitle(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            32,
+            ResFontFamily.gilroy,
+            ResColors.textDark,
+            ResFontWeight.black,
+        );
+    }
+
+    static get splash(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            32,
+            ResFontFamily.circular,
+            ResColors.textDark,
+            ResFontWeight.black,
+        );
+    }
+
     static get standoutBody(): ResTypographyConfig {
         return new ResTypographyConfig(
             15,
