@@ -57,7 +57,7 @@ const ResIconButton: React.FC<Props> = ({
                 <ResIcon 
                     icon={icon}
                     size={size*2.2/3.0}
-                    color={new ResColor('white')}
+                    color={new ResColor('#ffffff')}
                     style={{
                         alignSelf: 'center',
                     }}

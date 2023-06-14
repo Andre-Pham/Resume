@@ -5,15 +5,17 @@ import { ColorScheme } from "../../../state/environment/types/ColorScheme";
 
 class ResColor {
 
+    // Hex string
     private readonly lightMode: string;
+    // Hex string
     private readonly darkMode: string;
 
     constructor(lightMode: string, darkMode?: string) {
-        const cssColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$|^rgba?\([^\)]+\)$|^hsla?\([^\)]+\)$|^[\w]+$/;
+        const hexRegex = /^#[0-9a-fA-F]+$/;
         // If no dark mode is provided, dark mode / light mode is equivalent
         let setDarkMode = darkMode || lightMode;
-        assert(cssColorRegex.test(lightMode), `Invalid lightMode color string provided: '${lightMode}'`);
-        assert(cssColorRegex.test(setDarkMode), `Invalid darkMode color string provided: '${setDarkMode}'`);
+        assert(hexRegex.test(lightMode), `Invalid lightMode hex color string provided: '${lightMode}'`);
+        assert(hexRegex.test(setDarkMode), `Invalid darkMode hex color string provided: '${setDarkMode}'`);
         this.lightMode = lightMode;
         this.darkMode = setDarkMode;
     }
@@ -36,25 +38,17 @@ class ResColor {
     }
 
     public getContrastColor(): string {
-        const rgb = this.getColor().match(/\d+/g);
-        const [r, g, b] = rgb.map(Number);
-        const l = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-        const contrastRatioWithWhite = (l + 0.05) / (1 + 0.05);
-        const contrastRatioWithBlack = (l + 0.05) / (0 + 0.05);
-        if (contrastRatioWithWhite > contrastRatioWithBlack) {
-            return "#000000";
-        } else {
-            return "#ffffff"
+        let hex = this.getColor()
+        hex = hex.slice(1); // Remove "#"
+        // convert 3-digit hex to 6-digits.
+        if (hex.length === 3) {
+            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
         }
-    }
-
-    public getRippleColor(): string {
-        let hexColor = this.getContrastColor();
-        const hexDigits = hexColor.slice(1);
-        const rgb = hexDigits.match(/.{1,2}/g).map((hex) => parseInt(hex, 16));
-        const [r, g, b] = rgb.map((value) => value / 255);
-        const opacity = 0.2; 
-        return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+        assert(hex.length === 6, "Invalid hex color found")
+        let r = parseInt(hex.slice(0, 2), 16),
+            g = parseInt(hex.slice(2, 4), 16),
+            b = parseInt(hex.slice(4, 6), 16);
+        return (r * 0.299 + g * 0.587 + b * 0.114) > 186 ? "#000000" : "#FFFFFF";
     }
 
 }

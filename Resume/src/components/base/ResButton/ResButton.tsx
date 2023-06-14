@@ -1,11 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import { Button } from 'react-native-paper';
+import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ResTypographyConfig from '../../styling/typography/ResTypographyConfig';
 import ResColor from '../../styling/color/ResColor';
-import { Animated, StyleProp, ViewStyle } from 'react-native';
-import Environment from '../../../state/environment/Environment';
-import { OS } from '../../../state/environment/types/OS';
+import { StyleProp, TouchableOpacity, ViewStyle } from 'react-native';
 import ResText from '../ResText/ResText';
 
 interface Props {
@@ -21,49 +18,39 @@ interface Props {
 
 const ResButton: React.FC<Props> = ({ 
     label, 
-    typography,
-    color,
-    icon = null, 
+    typography, 
+    color, 
+    icon = null,
     disabled = false, 
     wide = true,
-    style,
+    style, 
     onPress,
 }) => {
-    // TODO: Figure out a better way to centre the text
-    let labelStyle = {}
-    if (Environment.instance.getOS() == OS.ios) {
-        labelStyle = { lineHeight: 0 } // Centres the text
-    }
-
-    if (disabled) {
-        // Override colour when disabled
-        typography.resColor = undefined;
-    }
-    
     return (
-        <Button 
-            icon={({ size, color }) => (
-                <Icon name={icon} size={size + 8} color={color} />
-            )}
-            mode={'contained'} 
-            onPress={onPress}
-            disabled={disabled}
-            labelStyle={[
-                { padding: 2 },
-                labelStyle,
-            ]}
+        <TouchableOpacity 
+            onPress={disabled ? undefined : onPress} 
             style={[
-                { borderRadius: 50 },
+                { 
+                    flexDirection: 'row', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    paddingVertical: 12, 
+                    paddingHorizontal: 24, 
+                    borderRadius: 50, 
+                    backgroundColor: color.getColor(), 
+                    opacity: disabled ? 0.5 : 1,
+                }, 
                 wide ? { width: "100%" } : { alignSelf: 'center' },
                 style,
             ]}
-            buttonColor={color.getColor()}
-            rippleColor={color.getRippleColor()}
+            disabled={disabled}
         >
-            <ResText typography={typography}>
+            {icon && <Icon name={icon} size={16} color={color} />}
+
+            <ResText typography={typography} wide={false}>
                 {label}
             </ResText>
-        </Button>
+        </TouchableOpacity>
     );
 }
 
