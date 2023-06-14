@@ -1,0 +1,69 @@
+import React, { useState } from 'react';
+import { StyleSheet, ViewStyle } from 'react-native';
+import ResButton from '../base/ResButton/ResButton';
+import StateManager from '../../state/publishers/StateManager';
+import ResColors from '../styling/ResColors';
+import { ActiveSection } from '../../state/publishers/types/ActiveSection';
+import ResTypography from '../styling/ResTypography';
+
+interface Props {
+    label: string;
+    section: ActiveSection;
+    style?: ViewStyle;
+}
+
+const SplashButton: React.FC<Props> = ({ 
+    label,
+    section,
+    style,
+}) => {
+    const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
+
+    StateManager.activeSection.subscribe(() => {
+        setActiveSection(StateManager.activeSection.read());
+    });
+
+    let buttonSize = 116
+    let selectedTypography = ResTypography.standoutBody;
+    selectedTypography.resColor = ResColors.textLight;
+
+    return (
+        <ResButton 
+            label={label}
+            typography={activeSection == section ? selectedTypography : ResTypography.standoutBody}
+            color={
+                activeSection == section ?
+                ResColors.behance :
+                ResColors.fillBackgroundLight
+            }
+            onPress={() => {
+                let toPublish = (
+                    activeSection == section ?
+                    ActiveSection.none : 
+                    section
+                );
+                StateManager.activeSection.publish(toPublish);
+            }}
+            wide={false}
+            style={[
+                { width: buttonSize, height: buttonSize, borderRadius: 100 },
+                activeSection == section ? styles.shadow : {},
+                style
+            ]}
+        />
+    );
+}
+
+const styles = StyleSheet.create({
+    shadow: {
+        shadowColor: '#000000',
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.4,
+        shadowRadius: 11,
+    }
+});
+
+export default SplashButton;
