@@ -16,6 +16,12 @@ class ResDimensions {
 
     static readonly cardColumnSpacing = 20;
 
+    static readonly bodyParagraphSpacing = 10;
+
+    static readonly tagSpacing = 10;
+
+    static readonly iconButtonSpacing = 16;
+
 }
 
 export default ResDimensions;

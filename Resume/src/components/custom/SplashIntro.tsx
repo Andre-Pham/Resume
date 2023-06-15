@@ -9,6 +9,7 @@ import ResChip from '../base/ResChip/ResChip';
 import ResColors from '../styling/ResColors';
 import ResIconButtonLabelled from '../base/ResIconButtonLabelled/ResIconButtonLabelled';
 import ResImage from '../base/ResImage/ResImage';
+import ResDimensions from '../styling/ResDimensions';
 
 interface Props {
     style?: ViewStyle;
@@ -40,7 +41,7 @@ const SplashIntro: React.FC<Props> = ({
                 {"Find my social links below, or explore my\nqualifications and experience."}
             </ResText>
 
-            <HStack spacing={16} style={{ paddingTop: 8 }}>
+            <HStack spacing={ResDimensions.iconButtonSpacing} style={{ paddingTop: 8 }}>
                 <ResIconButtonLabelled
                     icon="github"
                     color={ResColors.gitHub}

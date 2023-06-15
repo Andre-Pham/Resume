@@ -10,6 +10,7 @@ import VStack from '../containers/VStack';
 import ResChip from '../base/ResChip/ResChip';
 import ResColor from '../styling/color/ResColor';
 import Experience from '../../data/experience/Experience';
+import ResDimensions from '../styling/ResDimensions';
 
 interface Props {
     experience: Experience;
@@ -57,7 +58,7 @@ const ExperienceCard: React.FC<Props> = ({
                 {experience.name}
             </ResText>
 
-            <VStack spacing={10}>
+            <VStack spacing={ResDimensions.bodyParagraphSpacing}>
                 <ResText typography={ResTypography.subscript}>
                     {experience.subscriptText}
                 </ResText>
@@ -68,7 +69,7 @@ const ExperienceCard: React.FC<Props> = ({
 
                 {renderLinks()}
 
-                <HStack spacing={10} style={{ paddingTop: 6 }}>
+                <HStack spacing={ResDimensions.tagSpacing} style={{ paddingTop: 6 }}>
                     {renderTags()}
                 </HStack>
             </VStack>
