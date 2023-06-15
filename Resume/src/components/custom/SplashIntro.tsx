@@ -26,17 +26,16 @@ const SplashIntro: React.FC<Props> = ({
                     maxWidth: 550,
                 }}
             >
-                I'm a mobile developer that specialises in native iOS development and React Native. My passions are code, art and design.
+                {"I'm a mobile developer that specialises in native iOS development and React Native. My passions are code, art and design."}
             </ResText>
 
             <ResText 
                 typography={ResTypography.standoutBody}
                 style={{
-                    maxWidth: 550,
+                    maxWidth: 500,
                 }}
             >
-                {/* No orphans! (Hence the "\n") */}
-                {"Find my social links below, or explore my\nqualifications and experience."}
+                {"Find my social links below, or explore my qualifications and experience."}
             </ResText>
 
             <HStack spacing={ResDimensions.iconButtonSpacing} style={{ paddingTop: 8 }}>
