@@ -94,6 +94,15 @@ const Education: React.FC<Props> = ({
                     {"What's an academic transcript?"}
                 </ResHyperlink>
             </BasicCard>
+
+            <BasicCard 
+                title="CPD"
+                style={{ width: (componentWidth - gap) / columnCount }}
+            >
+                <ResText typography={ResTypography.body}>
+                    {"TODO"}
+                </ResText>
+            </BasicCard>
         </HStack>
     );
 }

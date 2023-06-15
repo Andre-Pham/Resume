@@ -11,6 +11,7 @@ import ResChip from '../base/ResChip/ResChip';
 import ResColor from '../styling/color/ResColor';
 import Experience from '../../data/experience/Experience';
 import ResDimensions from '../styling/ResDimensions';
+import ResSmallButton from '../base/ResButton/ResSmallButton';
 
 interface Props {
     experience: Experience;
@@ -33,6 +34,30 @@ const ExperienceCard: React.FC<Props> = ({
                     {link.shownURL}
                 </ResHyperlink>
             </ResText>
+        ));
+    };
+
+    const renderDownloads = () => {
+        return experience.files.map((file) => (
+            <ResSmallButton 
+                label={file.label}
+                typography={ResTypography.buttonSmall}
+                color={ResColors.behance}
+                wide={false}
+                onPress={() => {
+                    const fileUrl = require('/assets/files/' + file.fileName);
+                    try {
+                        // Assume we're on web
+                        const link = document.createElement('a');
+                        link.href = fileUrl;
+                        link.download = file.fileName; // Replace with the desired file name and extension
+                        link.click();
+                    } catch (error) {
+                        console.error('File download failed:', error);
+                    }
+                }}
+                style={{ alignSelf: 'flex-start' }}
+            />
         ));
     };
 
@@ -68,6 +93,10 @@ const ExperienceCard: React.FC<Props> = ({
                 </ResText>
 
                 {renderLinks()}
+
+                <HStack spacing={ResDimensions.tagSpacing} style={{ paddingTop: 6 }}>
+                    {renderDownloads()}
+                </HStack>
 
                 <HStack spacing={ResDimensions.tagSpacing} style={{ paddingTop: 6 }}>
                     {renderTags()}

@@ -1,3 +1,4 @@
+import Download from "../Download";
 import Link from "../Link";
 
 class Experience {
@@ -13,6 +14,7 @@ class Experience {
         public readonly duration: string,
         public readonly description: string,
         public readonly links: Link[],
+        public readonly files: Download[],
         public readonly tags: string[],
     ) { }
 
