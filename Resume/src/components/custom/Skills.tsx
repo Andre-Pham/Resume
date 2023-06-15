@@ -9,7 +9,7 @@ import ResTypography from '../styling/ResTypography';
 import ResColors from '../styling/ResColors';
 import ResHyperlink from '../base/ResHyperlink/ResHyperlink';
 import ResSmallButton from '../base/ResButton/ResSmallButton';
-import BasicCard from './EducationCard';
+import BasicCard from './BasicCard';
 
 interface Props {
     // No props

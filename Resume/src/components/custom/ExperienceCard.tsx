@@ -83,7 +83,7 @@ const ExperienceCard: React.FC<Props> = ({
                 {experience.name}
             </ResText>
 
-            <VStack spacing={ResDimensions.bodyParagraphSpacing}>
+            <VStack spacing={ResDimensions.bodyParagraphSpacing} style={{ paddingTop: 4 }}>
                 <ResText typography={ResTypography.subscript}>
                     {experience.subscriptText}
                 </ResText>
@@ -94,9 +94,15 @@ const ExperienceCard: React.FC<Props> = ({
 
                 {renderLinks()}
 
-                <HStack spacing={ResDimensions.tagSpacing} style={{ paddingTop: 6 }}>
-                    {renderDownloads()}
-                </HStack>
+                {
+                    experience.files.length == 0
+                        ?
+                    <></>
+                        :
+                     <HStack spacing={ResDimensions.tagSpacing} style={{ paddingTop: 6 }}>
+                        {renderDownloads()}
+                    </HStack>
+                }
 
                 <HStack spacing={ResDimensions.tagSpacing} style={{ paddingTop: 6 }}>
                     {renderTags()}

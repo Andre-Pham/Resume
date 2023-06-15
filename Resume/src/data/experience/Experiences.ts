@@ -49,5 +49,52 @@ export const Experiences: Experience[] = [
         [
             "Swift", "SQLite3", "Unit Tests"
         ]
-    )
+    ),
+
+    new Experience(
+        "Fingerspell",
+        2023,
+        "Uni Individual Project",
+        "2023",
+        "An iOS app that can convert a text prompt into an animated, interactive 3D model performing the prompt in Auslan fingerspelling, as well as the recognition and translation of fingerspelling performed by the user through their camera back into text.",
+        [
+            new Link("GitHub", "GitHub.com/Andre-Pham/SpellApp", "https://github.com/Andre-Pham/SpellApp")
+        ],
+        [],
+        [
+            "Swift", "SwiftUI", "UIKit", "MVC", "SceneKit", "Create ML", "Vision", "AVFoundation"
+        ]
+    ),
+
+    new Experience(
+        "Teach Me Talkback",
+        2022,
+        "Uni Team Project",
+        "2022",
+        "An Android app with the purpose of teaching visually impaired uses how to use the Google screen reader Talkback. It uses lessons to teach the user gestures and navigation, and incorporates a 'sandbox mode' and 'game mode'.",
+        [
+            new Link("GitHub", "GitHub.com/TalkbackTutorial/Application", "https://github.com/TalkbackTutorial/Application")
+        ],
+        [
+            new Download("Teach Me Talkback User Guide", "user_guide_teach_me_talkback.pdf")
+        ],
+        [
+            "Kotlin", "XML Layouts", "Room", "Shared Preferences", "TextToSpeech"
+        ]
+    ),
+
+    new Experience(
+        "Portfolio",
+        2021,
+        "Uni Inidividual Project",
+        "2021",
+        "An iOS app that tracks an investment portfolio, such as stocks, cryptocurrencies, ETFs, etc. Allows you to see the performance of financial assets, create watchlists, and create a portfolio with insights on performance and return.",
+        [
+            new Link("GitHub", "GitHub.com/Andre-Pham/Portfolio", "https://github.com/Andre-Pham/Portfolio")
+        ],
+        [],
+        [
+            "Swift", "UIKit", "MVC", "Core Data", "UNUserNotificationCenter"
+        ]
+    ),
 ];
