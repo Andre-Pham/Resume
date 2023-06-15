@@ -24,13 +24,15 @@ const SplashButton: React.FC<Props> = ({
     });
 
     let buttonSize = 116
-    let selectedTypography = ResTypography.standoutBody;
+    let selectedTypography = ResTypography.button;
     selectedTypography.resColor = ResColors.textLight;
+    let unselectedTypography = ResTypography.button;
+    unselectedTypography.resColor = ResColors.textDark
 
     return (
         <ResButton 
             label={label}
-            typography={activeSection == section ? selectedTypography : ResTypography.standoutBody}
+            typography={activeSection == section ? selectedTypography : unselectedTypography}
             color={
                 activeSection == section ?
                 ResColors.behance :

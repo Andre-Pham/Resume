@@ -9,6 +9,7 @@ import StateManager from '../state/publishers/StateManager';
 import { UnreachableCaseError } from '../language/errors/UnreachableCaseError';
 import Header from './custom/Header';
 import Splash from './custom/Splash';
+import Education from './custom/Education';
 
 const MainScreen: React.FC = () => {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
@@ -26,9 +27,9 @@ const MainScreen: React.FC = () => {
                     <ExperienceSection period={period} key={period.label} />
                 ));
             case ActiveSection.skills:
-                return <></>
+                return <Education />
             case ActiveSection.education:
-                return <></>
+                return <Education />
             default:
                 throw new UnreachableCaseError(activeSection);
         }

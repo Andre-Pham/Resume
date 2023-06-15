@@ -63,6 +63,22 @@ class ResTypography {
         );
     }
 
+    static get button(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            15,
+            ResFontFamily.plexMono,
+            ResColors.textLight,
+        );
+    }
+
+    static get buttonSmall(): ResTypographyConfig {
+        return new ResTypographyConfig(
+            13,
+            ResFontFamily.plexMono,
+            ResColors.textLight,
+        );
+    }
+
     static get display(): ResTypographyConfig {
         return new ResTypographyConfig(
             80,
