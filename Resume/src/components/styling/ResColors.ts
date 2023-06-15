@@ -35,6 +35,10 @@ class ResColors {
         return new ResColor("#24292f");
     }
 
+    static get linkedIn(): ResColor {
+        return new ResColor("#2d64bc");
+    }
+
 }
 
 export default ResColors;

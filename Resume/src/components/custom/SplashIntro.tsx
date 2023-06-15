@@ -61,6 +61,16 @@ const SplashIntro: React.FC<Props> = ({
                         Linking.openURL("https://behance.net/andrepham");
                     }}
                 />
+
+                <ResIconButtonLabelled
+                    icon="linkedin"
+                    color={ResColors.linkedIn}
+                    label="LinkedIn"
+                    size={iconButtonSize}
+                    onPress={() => {
+                        Linking.openURL("https://www.linkedin.com/in/andrekypham");
+                    }}
+                />
             </HStack>
         </VStack>
     );

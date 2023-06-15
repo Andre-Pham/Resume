@@ -1,6 +1,6 @@
 import React from 'react';
 import ResColor from '../../styling/color/ResColor';
-import { ViewStyle } from 'react-native';
+import { StyleSheet, View, ViewStyle } from 'react-native';
 import ResText from '../ResText/ResText';
 import ResIcon from '../ResIcon/ResIcon';
 import VStack from '../../containers/VStack';
@@ -36,12 +36,14 @@ const ResIconButtonLabelled: React.FC<Props> = ({
                 onPress={onPress}
             />
 
-            <ResText 
-                typography={ResTypography.subscriptLabel}
-                style={{alignSelf: 'center', textAlign: 'center'}}
-            >
-                {label}
-            </ResText>
+            <View style={{ position: 'absolute', top: size + 4 }}>
+                <ResText 
+                    typography={ResTypography.subscriptLabel}
+                    style={{ alignSelf: 'center', textAlign: 'center', width: 1000 }}
+                >
+                    {label}
+                </ResText>
+            </View>
         </VStack>
     );
 }
