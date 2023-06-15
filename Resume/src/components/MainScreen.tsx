@@ -1,9 +1,9 @@
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import VStack from "./containers/VStack";
 import { ExperiencePeriods } from '../data/experience/ExperiencePeriods';
 import ExperienceSection from './custom/ExperienceSection';
 import ResDimensions from './styling/ResDimensions';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ActiveSection } from '../state/publishers/types/ActiveSection';
 import StateManager from '../state/publishers/StateManager';
 import { UnreachableCaseError } from '../language/errors/UnreachableCaseError';
@@ -17,7 +17,17 @@ const MainScreen: React.FC = () => {
 
     StateManager.activeSection.subscribe(() => {
         setActiveSection(StateManager.activeSection.read());
+        if (StateManager.activeSection.read() != ActiveSection.none) {
+            scrollIntoContent();
+        }
     });
+
+    useEffect(() => {
+        // Disable automatic scrolling on page refresh
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
+        }
+    }, []);    
 
     const renderPageContent = () => {
         switch (activeSection) {
@@ -36,6 +46,13 @@ const MainScreen: React.FC = () => {
         }
     };
 
+    const scrollRef = useRef(null);
+    const scrollIntoContent = () => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <View style={{ padding: ResDimensions.screenPadding }}>
             <VStack spacing={ResDimensions.mainScreenSpacing} style={{ alignContent: 'center' }}>
@@ -44,7 +61,10 @@ const MainScreen: React.FC = () => {
                 <Splash />
             </VStack>
 
-            <VStack spacing={ResDimensions.pageContentSpacing} style={{ alignContent: 'center', paddingTop: ResDimensions.mainScreenSpacing }}>
+            {/* We don't want to see the edge of the view above, so position this a little lower */}
+            <View ref={scrollRef} style={{ marginTop: 24, marginBottom: -24 }} />
+
+            <VStack spacing={ResDimensions.pageContentSpacing} style={{ alignContent: 'center', paddingTop: ResDimensions.mainScreenSpacing, marginBottom: activeSection == ActiveSection.none ? 800 : 0 }}>
                 {renderPageContent()}
             </VStack>
         </View>

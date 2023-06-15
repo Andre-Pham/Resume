@@ -40,6 +40,7 @@ const ExperienceCard: React.FC<Props> = ({
     const renderDownloads = () => {
         return experience.files.map((file) => (
             <ResSmallButton 
+                key={file.fileName}
                 label={file.label}
                 typography={ResTypography.buttonSmall}
                 color={ResColors.behance}

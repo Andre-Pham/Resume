@@ -13,6 +13,7 @@ import SplashIntro from './SplashIntro';
 import HStack from '../containers/HStack';
 import SplashButton from './SplashButton';
 import ResDimensions from '../styling/ResDimensions';
+import SplashButtonMobile from './SplashButtonMobile';
 
 interface Props {
     // No props
@@ -41,23 +42,23 @@ const Splash: React.FC<Props> = ({
         return (
             <VStack spacing={ResDimensions.mainScreenSpacing} onLayout={onLayout}>
                 <SplashIntro style={{ flex: 1 }} />
-
-                <HStack spacing={horizontalButtonSpacing} style={{ alignItems: 'center' }}>
-                    <SplashButton 
+                
+                <VStack spacing={12}>
+                    <SplashButtonMobile
                         label="experience"
                         section={ActiveSection.experience}
                     />
 
-                    <SplashButton 
+                    <SplashButtonMobile
                         label="skills"
                         section={ActiveSection.skills}
                     />
 
-                    <SplashButton 
+                    <SplashButtonMobile
                         label="education"
                         section={ActiveSection.education}
                     />
-                </HStack> 
+                </VStack> 
             </VStack>
         );
     } else {
