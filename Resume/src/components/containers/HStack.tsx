@@ -6,6 +6,7 @@ interface Props {
     children;
     spacing?: number;
     verticalSpacing?: number;
+    onLayout?: (event: any) => void;
     style?: ViewStyle;
 }
 
@@ -13,10 +14,12 @@ const HStack: React.FC<Props> = ({
     children, 
     spacing = 0,
     verticalSpacing = null,
+    onLayout,
     style, 
 }) => {
     return (
         <View 
+            onLayout={onLayout}
             style={[
                 styles.container, 
                 { columnGap: spacing, rowGap: verticalSpacing == null ? spacing : verticalSpacing }, 

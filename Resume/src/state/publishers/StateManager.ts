@@ -33,6 +33,8 @@ class StateManager {
 
     public static readonly activeSection = new ResValuePublisher(ActiveSection.none);
 
+    public static readonly contentWidth = new ResValuePublisher(0.0);
+
 }
 
 export default StateManager;

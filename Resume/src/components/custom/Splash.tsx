@@ -31,9 +31,14 @@ const Splash: React.FC<Props> = ({
     let verticalButtonSpacing = 32;
     let horizontalButtonSpacing = Math.sqrt(Math.pow(verticalButtonSpacing, 2) - Math.pow(verticalButtonSpacing/2, 2));
 
+    const onLayout = (event: any) => {
+        const layout = event.nativeEvent.layout;
+        StateManager.contentWidth.publish(layout.width);
+    }
+
     if (screenIsPortrait) {
         return (
-            <>
+            <VStack spacing={72} onLayout={onLayout}>
                 <SplashIntro style={{ flex: 1 }} />
 
                 <HStack spacing={horizontalButtonSpacing} style={{ alignItems: 'center' }}>
@@ -52,11 +57,11 @@ const Splash: React.FC<Props> = ({
                         section={ActiveSection.education}
                     />
                 </HStack> 
-            </>
+            </VStack>
         );
     } else {
         return (
-            <HStack spacing={64} style={{ alignItems: 'flex-start' }}>
+            <HStack spacing={64} style={{ alignItems: 'flex-start' }} onLayout={onLayout}>
                 <SplashIntro />
 
                 <HStack spacing={horizontalButtonSpacing} style={{ alignItems: 'center' }}>
