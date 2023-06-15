@@ -46,10 +46,10 @@ const ResIconButtonLabelled: React.FC<Props> = ({
                 onPress={onPress}
             />
 
-            <View style={{ position: 'absolute', top: size + 4 }}>
+            <View style={{ position: 'absolute', top: size + 4, flex: 1 }}>
                 <ResText 
                     typography={ResTypography.subscriptLabel}
-                    style={{ alignSelf: 'center', textAlign: 'center', width: 1000 }}
+                    style={{ alignSelf: 'center', textAlign: 'center' }}
                 >
                     {label}
                 </ResText>
