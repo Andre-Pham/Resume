@@ -20,6 +20,8 @@ class ResDimensions {
 
     static readonly tagSpacing = 10;
 
+    static readonly iconButtonSize = 40;
+
     static readonly iconButtonSpacing = 28;
 
 }

@@ -18,8 +18,6 @@ interface Props {
 const SplashIntro: React.FC<Props> = ({ 
     style
 }) => {
-    const iconButtonSize = 40;
-
     return (
         <VStack spacing={16} style={style}>
             <ResText 
@@ -46,7 +44,7 @@ const SplashIntro: React.FC<Props> = ({
                     icon="github"
                     color={ResColors.gitHub}
                     label="GitHub"
-                    size={iconButtonSize}
+                    size={ResDimensions.iconButtonSize}
                     onPress={() => {
                         Linking.openURL("https://github.com/Andre-Pham");
                     }}
@@ -56,7 +54,7 @@ const SplashIntro: React.FC<Props> = ({
                     fileName={'behance_white.png'}
                     color={ResColors.behance}
                     label="Behance"
-                    size={iconButtonSize}
+                    size={ResDimensions.iconButtonSize}
                     onPress={() => {
                         Linking.openURL("https://behance.net/andrepham");
                     }}
@@ -66,7 +64,7 @@ const SplashIntro: React.FC<Props> = ({
                     icon="linkedin"
                     color={ResColors.linkedIn}
                     label="LinkedIn"
-                    size={iconButtonSize}
+                    size={ResDimensions.iconButtonSize}
                     onPress={() => {
                         Linking.openURL("https://www.linkedin.com/in/andrekypham");
                     }}

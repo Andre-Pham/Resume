@@ -27,7 +27,17 @@ const ResIconButtonLabelled: React.FC<Props> = ({
     onPress,
 }) => {
     return (
-        <VStack spacing={5} style={{ alignItems: 'center', alignSelf: 'flex-start', ...style }}>
+        <VStack 
+            spacing={5} 
+            style={{ 
+                alignItems: 'center', 
+                alignSelf: 'flex-start', 
+                // Adjsuts frame to match label (positioned aboslute)
+                // Tested - it does scale (both the padding and the absolute positioning)
+                paddingBottom: 16, 
+                ...style 
+            }}
+        >
             <ResIconButton 
                 icon={icon}
                 fileName={fileName}
