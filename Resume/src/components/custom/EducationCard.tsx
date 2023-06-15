@@ -14,7 +14,7 @@ interface Props {
     style?: ViewStyle;
 }
 
-const EducationCard: React.FC<Props> = ({ 
+const BasicCard: React.FC<Props> = ({ 
     title,
     children,
     style,
@@ -35,4 +35,4 @@ const EducationCard: React.FC<Props> = ({
     );
 }
 
-export default EducationCard;
+export default BasicCard;

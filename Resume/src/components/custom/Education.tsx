@@ -9,7 +9,7 @@ import ResTypography from '../styling/ResTypography';
 import ResColors from '../styling/ResColors';
 import ResHyperlink from '../base/ResHyperlink/ResHyperlink';
 import ResSmallButton from '../base/ResButton/ResSmallButton';
-import EducationCard from './EducationCard';
+import BasicCard from './EducationCard';
 
 interface Props {
     // No props
@@ -49,16 +49,16 @@ const Education: React.FC<Props> = ({
 
     return (
         <HStack spacing={ResDimensions.cardColumnSpacing} style={{ width: componentWidth, alignItems: 'flex-start' }}>
-            <EducationCard 
+            <BasicCard 
                 title="Bachelor of Software Engineering (Honours)"
                 style={{ width: (componentWidth - gap) / columnCount }}
             >
                 <ResText typography={ResTypography.body}>
                     {"Monash University, Mar 2020 - Nov 2023"}
                 </ResText>
-            </EducationCard>
+            </BasicCard>
 
-            <EducationCard 
+            <BasicCard 
                 title="First Class Honours"
                 style={{ width: (componentWidth - gap) / columnCount }}
             >
@@ -72,9 +72,9 @@ const Education: React.FC<Props> = ({
                 >
                     {"What do these mean?"}
                 </ResHyperlink>
-            </EducationCard>
+            </BasicCard>
 
-            <EducationCard 
+            <BasicCard 
                 title="Academic Transcript"
                 style={{ width: (componentWidth - gap) / columnCount }}
             >
@@ -93,7 +93,7 @@ const Education: React.FC<Props> = ({
                 >
                     {"What's an academic transcript?"}
                 </ResHyperlink>
-            </EducationCard>
+            </BasicCard>
         </HStack>
     );
 }

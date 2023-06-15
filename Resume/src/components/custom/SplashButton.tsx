@@ -27,7 +27,7 @@ const SplashButton: React.FC<Props> = ({
     let selectedTypography = ResTypography.button;
     selectedTypography.resColor = ResColors.textLight;
     let unselectedTypography = ResTypography.button;
-    unselectedTypography.resColor = ResColors.textDark
+    unselectedTypography.resColor = ResColors.textDark;
 
     return (
         <ResButton 
