@@ -36,13 +36,13 @@ const MainScreen: React.FC = () => {
 
     return (
         <View style={{ padding: ResDimensions.screenPadding }}>
-            <VStack spacing={72} style={{ alignContent: 'center' }}>
+            <VStack spacing={ResDimensions.mainScreenSpacing} style={{ alignContent: 'center' }}>
                 <Header />
 
                 <Splash />
             </VStack>
 
-            <VStack spacing={24} style={{ alignContent: 'center', paddingTop: 72 }}>
+            <VStack spacing={ResDimensions.pageContentSpacing} style={{ alignContent: 'center', paddingTop: ResDimensions.mainScreenSpacing }}>
                 {renderPageContent()}
             </VStack>
         </View>

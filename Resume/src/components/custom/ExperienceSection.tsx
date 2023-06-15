@@ -31,8 +31,7 @@ const ExperienceSection: React.FC<Props> = ({
     });
 
     let columnCount = screenIsPortrait ? 1 : 2;
-    let spacing = 20;
-    let gap = (columnCount - 1)*spacing;
+    let gap = (columnCount - 1)*ResDimensions.cardColumnSpacing;
 
     const renderExperienceCards = () => {
         return period.experiences.map((experience) => (
@@ -45,12 +44,12 @@ const ExperienceSection: React.FC<Props> = ({
     };
 
     return (
-        <VStack spacing={24} style={{ width: componentWidth }}>
+        <VStack spacing={ResDimensions.pageContentSpacing} style={{ width: componentWidth }}>
             <YearHeader>
                 {period.label}
             </YearHeader>
 
-            <HStack spacing={spacing}>
+            <HStack spacing={ResDimensions.cardColumnSpacing}>
                 {renderExperienceCards()}
             </HStack>
         </VStack>

@@ -12,6 +12,7 @@ import Header from './Header';
 import SplashIntro from './SplashIntro';
 import HStack from '../containers/HStack';
 import SplashButton from './SplashButton';
+import ResDimensions from '../styling/ResDimensions';
 
 interface Props {
     // No props
@@ -38,7 +39,7 @@ const Splash: React.FC<Props> = ({
 
     if (screenIsPortrait) {
         return (
-            <VStack spacing={72} onLayout={onLayout}>
+            <VStack spacing={ResDimensions.mainScreenSpacing} onLayout={onLayout}>
                 <SplashIntro style={{ flex: 1 }} />
 
                 <HStack spacing={horizontalButtonSpacing} style={{ alignItems: 'center' }}>

@@ -1,7 +1,6 @@
 
 /**
  * Dimensions to be used application-wide.
- * Adhere to css dimensions. This means they will look wrong if placed in native-base components.
  */
 class ResDimensions {
 
@@ -10,6 +9,12 @@ class ResDimensions {
     static readonly cardPadding = 18;
 
     static readonly fillRadius = 16;
+
+    static readonly mainScreenSpacing = 68;
+
+    static readonly pageContentSpacing = 24;
+
+    static readonly cardColumnSpacing = 20;
 
 }
 
