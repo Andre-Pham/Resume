@@ -17,13 +17,14 @@ const MainScreen: React.FC = () => {
 
     StateManager.activeSection.subscribe(() => {
         setActiveSection(StateManager.activeSection.read());
-        if (StateManager.activeSection.read() != ActiveSection.none) {
-            scrollIntoContent();
-        }
     });
 
     useEffect(() => {
-        // Disable automatic scrolling on page refresh
+        scrollIntoContent();
+    }, [activeSection]);
+
+    // Disable automatic scrolling on page refresh
+    useEffect(() => {
         if ('scrollRestoration' in window.history) {
             window.history.scrollRestoration = 'manual';
         }
@@ -64,7 +65,7 @@ const MainScreen: React.FC = () => {
             {/* We don't want to see the edge of the view above, so position this a little lower */}
             <View ref={scrollRef} style={{ marginTop: 24, marginBottom: -24 }} />
 
-            <VStack spacing={ResDimensions.pageContentSpacing} style={{ alignContent: 'center', paddingTop: ResDimensions.mainScreenSpacing, marginBottom: activeSection == ActiveSection.none ? 800 : 0 }}>
+            <VStack spacing={ResDimensions.pageContentSpacing} style={{ alignContent: 'center', paddingTop: ResDimensions.mainScreenSpacing }}>
                 {renderPageContent()}
             </VStack>
         </View>
