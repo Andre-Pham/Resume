@@ -1,6 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native-paper';
-import { TextStyle } from 'react-native';
+import { Text, TextStyle } from 'react-native';
 import ResTypographyConfig from '../../styling/typography/ResTypographyConfig';
 import { ResFontFamily } from '../../styling/typography/ResFontFamily';
 

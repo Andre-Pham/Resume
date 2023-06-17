@@ -1,3 +1,4 @@
+import ResColors from "../../components/styling/ResColors";
 import ResValuePublisher from "./impl/ResValuePublisher";
 import { ActiveSection } from "./types/ActiveSection";
 
@@ -34,6 +35,8 @@ class StateManager {
     public static readonly activeSection = new ResValuePublisher(ActiveSection.none);
 
     public static readonly contentWidth = new ResValuePublisher(0.0);
+
+    public static readonly backgroundColor = new ResValuePublisher(ResColors.background.getColor());
 
 }
 

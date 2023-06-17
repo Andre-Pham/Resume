@@ -7,6 +7,10 @@ import ResColor from "./color/ResColor";
  */
 class ResColors {
 
+    static get background(): ResColor {
+        return new ResColor("#ffffff");
+    }
+
     static get textDark(): ResColor {
         // TODO: Update for dark mode
         return new ResColor("#3f4169");

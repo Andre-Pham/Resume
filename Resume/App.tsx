@@ -3,8 +3,10 @@ import * as SplashScreen from 'expo-splash-screen';
 import { ResFont } from './src/components/styling/typography/ResFont';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import MainScreen from './src/components/MainScreen';
+import { NavigationContainer } from "@react-navigation/native";
+import { LinearNavigator } from './src/components/navigation/LinearNavigator';
+import { ResNavigation } from './src/components/navigation/ResNavigation';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -42,14 +44,12 @@ export default function App() {
     }
 
     return (
-        <PaperProvider theme={theme}>
-            <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
-                <MainScreen />
-            </View>
-        </PaperProvider>
+        <SafeAreaProvider>
+            <NavigationContainer>
+                <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
+                    <LinearNavigator stack={ResNavigation} />
+                </View>
+            </NavigationContainer>
+        </SafeAreaProvider>
     );
-}
-
-const theme = {
-    ...DefaultTheme,
 }
