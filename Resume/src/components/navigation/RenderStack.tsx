@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-// import { LeafScreen, LeafSideBarItem, LeafStack } from "./Types";
 import CustomLeafHeader from "./CustomHeader";
-import { View, StyleSheet } from "react-native";
-import { useFocusEffect } from "@react-navigation/native";
 import LeafStack from "./LeafStack";
-import StateManager from "../../state/publishers/StateManager";
-import ResText from "../base/ResText/ResText";
-import ResTypography from "../styling/ResTypography";
 
 /**
  * Render a react native native stack with the screens you include in the leafstack
@@ -30,7 +24,6 @@ function renderNativeStack(leafStack: LeafStack, hasSidebar: boolean) {
                     if (!hasSidebar || index >= 1){
                         return (
                             <Stack.Screen 
-                                // Yes, key/name are both id
                                 key={screen.id}
                                 name={screen.id}
                                 component={screen.component}
@@ -40,12 +33,8 @@ function renderNativeStack(leafStack: LeafStack, hasSidebar: boolean) {
                                     header: () => (
                                         <CustomLeafHeader
                                             title={screen.title}
-                                            buttonProps={
-                                                {
-                                                    canGoBack: index > 0, // we only want to allow the user to go back if it's the first screen in the stack
-                                                    navigation: navigation,
-                                                }
-                                            }
+                                            canGoBack={index > 0}
+                                            navigation={navigation}
                                         />
                                 )})}
                             />
@@ -72,30 +61,3 @@ export const StackWrapper = (leafStack: LeafStack): React.FC => {
     
     return NativeStack;
 }
-
-const EmptyScreen: React.FC = () => {
-    return (
-        <View style={styles.emptyScreen}>
-            <ResText wide={false} typography={ResTypography.body}> No item selected </ResText>
-        </View>
-    )
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'row'
-    },
-    emptyScreen: {
-        flex: 10,
-        justifyContent: 'center',
-        alignContent: 'center',
-        alignItems: 'center',
-    },
-    sidebarWrapper: {
-        flex: 5,
-    },
-    stackWrapper: {
-        flex: 10
-    }
-})

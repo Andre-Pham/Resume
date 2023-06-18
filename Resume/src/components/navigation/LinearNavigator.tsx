@@ -1,6 +1,4 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { SafeAreaView, View } from "react-native";
-import { useSafeAreaFrame, useSafeAreaInsets } from "react-native-safe-area-context";
 import LeafStack from "./LeafStack";
 import CustomLeafHeader from "./CustomHeader";
 import StateManager from "../../state/publishers/StateManager";
@@ -30,10 +28,8 @@ export const LinearNavigator: React.FC<Props> = ({ stack }) => {
                                         :
                                     <CustomLeafHeader
                                         title={screen.title}
-                                        buttonProps={{
-                                            canGoBack: index > 0,
-                                            navigation: navigation,
-                                        }}
+                                        canGoBack={index > 0}
+                                        navigation={navigation}
                                     />
                                 )
                             })}

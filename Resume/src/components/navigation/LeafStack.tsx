@@ -20,11 +20,6 @@ class LeafStack {
         public readonly options?: object,
     ) {}
 
-    /**
-     * Adds a screen to the stack
-     * @param screen the screen you want to add
-     * @returns a {@link LeafStack} with the added screen
-     */
     public addScreen(screen: LeafScreen): LeafStack {
         this.screens.push(screen);
         return this;
