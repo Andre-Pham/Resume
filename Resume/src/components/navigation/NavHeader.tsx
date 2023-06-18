@@ -12,7 +12,7 @@ interface Props {
     navigation: any;
 }
 
-const CustomLeafHeader: React.FC<Props> = ({ 
+const NavHeader: React.FC<Props> = ({ 
     title, 
     canGoBack, 
     navigation 
@@ -63,7 +63,7 @@ const CustomLeafHeader: React.FC<Props> = ({
                 </ResText>
             </View>
         </SafeAreaView>
-    )
+    );
 };
 
-export default CustomLeafHeader;
+export default NavHeader;

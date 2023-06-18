@@ -1,6 +1,6 @@
-import LeafScreen from "./LeafScreen";
+import NavScreen from "./NavScreen";
 
-class LeafStack {
+class NavStack {
 
     /**
      * @param screens the screens in the stack, the first element in the array will be taken as the first screen
@@ -10,19 +10,19 @@ class LeafStack {
         public readonly options?: object,
     ) { }
 
-    public readonly screens: LeafScreen[] = []
+    public readonly screens: NavScreen[] = []
 
-    public addScreen(screen: LeafScreen): LeafStack {
+    public addScreen(screen: NavScreen): NavStack {
         this.screens.push(screen);
         return this;
     }
 
-    public addNewScreen(name: string, id: string, component: React.FC, options?: object): LeafStack {
-        let screen = new LeafScreen(name, id, component, options);
+    public addNewScreen(name: string, id: string, component: React.FC, options?: object): NavStack {
+        let screen = new NavScreen(name, id, component, options);
         this.addScreen(screen);
         return this;
     }
 
 }
 
-export default LeafStack;
+export default NavStack;

@@ -1,5 +1,5 @@
 
-class LeafScreen {
+class NavScreen {
 
     /**
      * @param title the name of the screen, this will displayed in the header
@@ -16,4 +16,4 @@ class LeafScreen {
 
 }
 
-export default LeafScreen;
+export default NavScreen;

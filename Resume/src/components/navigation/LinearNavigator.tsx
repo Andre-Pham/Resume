@@ -1,10 +1,10 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import LeafStack from "./LeafStack";
-import CustomLeafHeader from "./CustomHeader";
+import NavStack from "./NavStack";
+import NavHeader from "./NavHeader";
 import StateManager from "../../state/publishers/StateManager";
 
 interface Props {
-    stack: LeafStack
+    stack: NavStack
 }
 
 export const LinearNavigator: React.FC<Props> = ({ stack }) => {
@@ -28,7 +28,7 @@ export const LinearNavigator: React.FC<Props> = ({ stack }) => {
                                         ?
                                     <></>
                                         :
-                                    <CustomLeafHeader
+                                    <NavHeader
                                         title={screen.title}
                                         canGoBack={index > 0}
                                         navigation={navigation}

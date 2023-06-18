@@ -3,12 +3,12 @@ import ContentContainer from "./ContentContainer";
 import Skills from "./Skills";
 import StateManager from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
-import { PatientsNavigationProp } from "../navigation/ResNavigationProps";
+import { NavProp } from "../navigation/NavProp";
 import Environment from "../../state/environment/Environment";
 import { Dimensions } from "react-native";
 
 interface Props {
-    navigation?: PatientsNavigationProp;
+    navigation?: NavProp;
 }
 
 const SkillsScreen: React.FC<Props> = ({ 

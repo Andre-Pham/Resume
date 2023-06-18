@@ -5,7 +5,7 @@ import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { LinearNavigator } from './src/components/navigation/LinearNavigator';
-import { ResNavigation } from './src/components/navigation/ResNavigation';
+import { MainNavStack } from './src/components/navigation/MainNavStack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 SplashScreen.preventAutoHideAsync();
@@ -47,7 +47,7 @@ export default function App() {
         <SafeAreaProvider>
             <NavigationContainer>
                 <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
-                    <LinearNavigator stack={ResNavigation} />
+                    <LinearNavigator stack={MainNavStack} />
                 </View>
             </NavigationContainer>
         </SafeAreaProvider>

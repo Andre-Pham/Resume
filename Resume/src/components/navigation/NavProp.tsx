@@ -1,6 +1,6 @@
 import { StackNavigationProp } from "@react-navigation/stack";
 
-type PatientsStackParamList = {
+type NavPropParams = {
     // These show up as the tab label
     "Andre Pham": undefined; 
     "Andre Pham | Education": undefined;
@@ -8,4 +8,4 @@ type PatientsStackParamList = {
     "Andre Pham | Skills": undefined;
 }
 
-export type PatientsNavigationProp = StackNavigationProp<PatientsStackParamList, "Andre Pham">
+export type NavProp = StackNavigationProp<NavPropParams, "Andre Pham">

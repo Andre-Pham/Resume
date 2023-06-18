@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import ContentContainer from "./ContentContainer";
 import Education from "./Education";
-import { PatientsNavigationProp } from "../navigation/ResNavigationProps";
+import { NavProp } from "../navigation/NavProp";
 import StateManager from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import { Dimensions } from "react-native";
 import Environment from "../../state/environment/Environment";
 
 interface Props {
-    navigation?: PatientsNavigationProp;
+    navigation?: NavProp;
 }
 
 const EducationScreen: React.FC<Props> = ({ 

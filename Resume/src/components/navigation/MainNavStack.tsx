@@ -5,9 +5,9 @@ import Experience from "../custom/Experience";
 import ExperienceScreen from "../custom/ExperienceScreen";
 import Skills from "../custom/Skills";
 import SkillsScreen from "../custom/SkillsScreen";
-import LeafStack from "./LeafStack";
+import NavStack from "./NavStack";
 
-export const ResNavigation = new LeafStack()
+export const MainNavStack = new NavStack()
     .addNewScreen(
         null,
         "Andre Pham",

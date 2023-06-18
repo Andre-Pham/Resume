@@ -11,12 +11,12 @@ import Header from './custom/Header';
 import Splash from './custom/Splash';
 import Education from './custom/Education';
 import Skills from './custom/Skills';
-import { PatientsNavigationProp } from './navigation/ResNavigationProps';
+import { NavProp } from './navigation/NavProp';
 import Experience from './custom/Experience';
 import Environment from '../state/environment/Environment';
 
 interface Props {
-    navigation?: PatientsNavigationProp;
+    navigation?: NavProp;
 }
 
 const MainScreen: React.FC<Props> = ({ navigation }) => {
