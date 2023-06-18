@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ResText from '../base/ResText/ResText';
 import HStack from '../containers/HStack';
-import { Clipboard, Linking, ViewStyle } from 'react-native';
+import { Clipboard, Dimensions, Linking, ViewStyle } from 'react-native';
 import ResTypography from '../styling/ResTypography';
 import VStack from '../containers/VStack';
 import ResFlexImage from '../base/ResFlexImage/ResFlexImage';
@@ -25,7 +25,7 @@ const SplashIntro: React.FC<Props> = ({
             <ResText 
                 typography={ResTypography.splash}
                 style={{
-                    maxWidth: max(550, Environment.instance.getScreenWidth()*0.4),
+                    maxWidth: 550,
                 }}
             >
                 {"I'm a mobile developer that specialises in native iOS development and React Native. My passions are code, art and design."}
@@ -34,7 +34,7 @@ const SplashIntro: React.FC<Props> = ({
             <ResText 
                 typography={ResTypography.standoutBody}
                 style={{
-                    maxWidth: max(500, Environment.instance.getScreenWidth()*0.35),
+                    maxWidth: 500,
                 }}
             >
                 {"Find my social links below, or explore my qualifications and experience."}
