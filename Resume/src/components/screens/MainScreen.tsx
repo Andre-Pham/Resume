@@ -1,19 +1,19 @@
 import { Dimensions, ScrollView, View } from 'react-native';
-import VStack from "./containers/VStack";
-import { ExperiencePeriods } from '../data/experience/ExperiencePeriods';
-import ExperienceSection from './custom/ExperienceSection';
-import ResDimensions from './styling/ResDimensions';
+import VStack from "../containers/VStack";
+import { ExperiencePeriods } from '../../data/experience/ExperiencePeriods';
+import ExperienceSection from '../custom/ExperienceSection';
+import ResDimensions from '../styling/ResDimensions';
 import { useEffect, useRef, useState } from 'react';
-import { ActiveSection } from '../state/publishers/types/ActiveSection';
-import StateManager from '../state/publishers/StateManager';
-import { UnreachableCaseError } from '../language/errors/UnreachableCaseError';
-import Header from './custom/Header';
-import Splash from './custom/Splash';
-import Education from './custom/Education';
-import Skills from './custom/Skills';
-import { NavProp } from './navigation/NavProp';
-import Experience from './custom/Experience';
-import Environment from '../state/environment/Environment';
+import { ActiveSection } from '../../state/publishers/types/ActiveSection';
+import StateManager from '../../state/publishers/StateManager';
+import { UnreachableCaseError } from '../../language/errors/UnreachableCaseError';
+import Header from '../custom/Header';
+import Splash from '../custom/Splash';
+import Education from '../custom/Education';
+import Skills from '../custom/Skills';
+import { NavProp } from '../navigation/NavProp';
+import Experience from '../custom/Experience';
+import Environment from '../../state/environment/Environment';
 
 interface Props {
     navigation?: NavProp;

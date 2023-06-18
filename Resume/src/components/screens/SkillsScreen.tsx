@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import ContentContainer from "./ContentContainer";
-import Skills from "./Skills";
+import ContentContainer from "../custom/ContentContainer";
+import Skills from "../custom/Skills";
 import StateManager from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import { NavProp } from "../navigation/NavProp";

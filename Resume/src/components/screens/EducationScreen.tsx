@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import ContentContainer from "./ContentContainer";
-import Education from "./Education";
+import ContentContainer from "../custom/ContentContainer";
+import Education from "../custom/Education";
 import { NavProp } from "../navigation/NavProp";
 import StateManager from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";

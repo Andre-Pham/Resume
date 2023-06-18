@@ -1,10 +1,10 @@
-import MainScreen from "../MainScreen";
+import MainScreen from "../screens/MainScreen";
 import Education from "../custom/Education";
-import EducationScreen from "../custom/EducationScreen";
+import EducationScreen from "../screens/EducationScreen";
 import Experience from "../custom/Experience";
-import ExperienceScreen from "../custom/ExperienceScreen";
+import ExperienceScreen from "../screens/ExperienceScreen";
 import Skills from "../custom/Skills";
-import SkillsScreen from "../custom/SkillsScreen";
+import SkillsScreen from "../screens/SkillsScreen";
 import NavStack from "./NavStack";
 
 export const MainNavStack = new NavStack()
