@@ -10,6 +10,8 @@ import ResColors from '../styling/ResColors';
 import ResIconButtonLabelled from '../base/ResIconButtonLabelled/ResIconButtonLabelled';
 import ResImage from '../base/ResImage/ResImage';
 import ResDimensions from '../styling/ResDimensions';
+import { max } from '../../language/functions/Max';
+import Environment from '../../state/environment/Environment';
 
 interface Props {
     style?: ViewStyle;
@@ -23,7 +25,7 @@ const SplashIntro: React.FC<Props> = ({
             <ResText 
                 typography={ResTypography.splash}
                 style={{
-                    maxWidth: 550,
+                    maxWidth: max(550, Environment.instance.getScreenWidth()*0.4),
                 }}
             >
                 {"I'm a mobile developer that specialises in native iOS development and React Native. My passions are code, art and design."}
@@ -32,7 +34,7 @@ const SplashIntro: React.FC<Props> = ({
             <ResText 
                 typography={ResTypography.standoutBody}
                 style={{
-                    maxWidth: 500,
+                    maxWidth: max(500, Environment.instance.getScreenWidth()*0.35),
                 }}
             >
                 {"Find my social links below, or explore my qualifications and experience."}
