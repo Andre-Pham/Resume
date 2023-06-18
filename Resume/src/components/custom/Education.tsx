@@ -1,4 +1,4 @@
-import { Dimensions, View } from 'react-native';
+import { Dimensions, View, ViewStyle } from 'react-native';
 import HStack from '../containers/HStack';
 import { useEffect, useState } from 'react';
 import Environment from '../../state/environment/Environment';
@@ -12,11 +12,11 @@ import ResSmallButton from '../base/ResButton/ResSmallButton';
 import BasicCard from './BasicCard';
 
 interface Props {
-    // No props
+    style?: ViewStyle;
 }
 
 const Education: React.FC<Props> = ({
-    // No props
+    style,
 }) => {
     const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.getScreenWidth() <= 950);
     const [componentWidth, setComponentWidth] = useState(StateManager.contentWidth.read());
@@ -52,7 +52,7 @@ const Education: React.FC<Props> = ({
             spacing={ResDimensions.cardColumnSpacing} 
             style={{ 
                 width: componentWidth, 
-                paddingBottom: 450,
+                ...style,
             }}
         >
             <BasicCard 

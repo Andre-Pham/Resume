@@ -1,4 +1,4 @@
-import { Dimensions, View } from 'react-native';
+import { Dimensions, View, ViewStyle } from 'react-native';
 import HStack from '../containers/HStack';
 import { useEffect, useState } from 'react';
 import Environment from '../../state/environment/Environment';
@@ -12,11 +12,11 @@ import ResSmallButton from '../base/ResButton/ResSmallButton';
 import BasicCard from './BasicCard';
 
 interface Props {
-    // No props
+    style?: ViewStyle;
 }
 
 const Skills: React.FC<Props> = ({
-    
+    style,
 }) => {
     const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.getScreenWidth() <= 950);
     const [componentWidth, setComponentWidth] = useState(StateManager.contentWidth.read());
@@ -35,7 +35,14 @@ const Skills: React.FC<Props> = ({
     let gap = (columnCount - 1)*ResDimensions.cardColumnSpacing;
 
     return (
-        <HStack spacing={ResDimensions.cardColumnSpacing} style={{ width: componentWidth, alignItems: 'flex-start' }}>
+        <HStack 
+            spacing={ResDimensions.cardColumnSpacing} 
+            style={{ 
+                width: componentWidth, 
+                alignItems: 'flex-start', 
+                ...style ,
+            }}
+        >
             <BasicCard 
                 title="Being a Developer"
                 style={{ width: (componentWidth - gap) / columnCount }}

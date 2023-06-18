@@ -71,6 +71,9 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
         // When the user resizes the screen, continuously make a callback based on the dimensions
         // and, if the screen becomes "mobile", go backwards in navigation to return to the main menu
         // and if the user resizes from mobile to large, go forwards by navigating to the next page
+        // - education padding bottom
+        // - make navigation ids
+        // - add 950 env
         scrollIntoContent();
     }, [activeSection]);
 
@@ -90,7 +93,7 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
             case ActiveSection.skills:
                 return <Skills />
             case ActiveSection.education:
-                return <Education />
+                return <Education style={{ paddingBottom: 450 }} />
             default:
                 throw new UnreachableCaseError(activeSection);
         }

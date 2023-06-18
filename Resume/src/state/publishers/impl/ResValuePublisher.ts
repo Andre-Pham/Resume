@@ -14,10 +14,12 @@ class ResValuePublisher<Type> {
         this.slice = createSlice({
             name: 'ResValuePublisher',
             initialState: {
-                value: initialState
+                previousValue: null,
+                value: initialState,
             },
             reducers: {
                 publishAction: (state, newValue: PayloadAction<Draft<Type>>) => {
+                    state.previousValue = state.value;
                     state.value = newValue.payload;
                 }
             }
@@ -38,6 +40,10 @@ class ResValuePublisher<Type> {
 
     public read(): Type {
         return this.publisher.getState().value;
+    }
+
+    public readPrevious(): Type {
+        return this.publisher.getState().previousValue;
     }
 
 }

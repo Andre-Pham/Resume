@@ -32,6 +32,7 @@ const SplashButtonMobile: React.FC<Props> = ({
     return (
         <ResButton 
             label={label}
+            icon='chevron-right'
             typography={activeSection == section ? selectedTypography : unselectedTypography}
             color={
                 activeSection == section ?
@@ -48,9 +49,9 @@ const SplashButtonMobile: React.FC<Props> = ({
             }}
             wide={false}
             style={[
-                { width: buttonSize, borderRadius: 100 },
-                activeSection == section ? styles.shadow : {},
-                style
+                { width: buttonSize, borderRadius: 100, justifyContent: 'flex-start', paddingLeft: 32 },
+                activeSection == section ? styles.shadow : { },
+                style,
             ]}
         />
     );

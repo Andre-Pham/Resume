@@ -11,14 +11,14 @@ import { ExperiencePeriods } from '../../data/experience/ExperiencePeriods';
 import ExperienceSection from './ExperienceSection';
 
 interface Props {
-    // No props
+    style?: ViewStyle;
 }
 
 const Experience: React.FC<Props> = ({ 
-    // No props
+    style,
 }) => {
     return (
-        <VStack spacing={ResDimensions.pageContentSpacing}>
+        <VStack spacing={ResDimensions.pageContentSpacing} style={{ ...style, }}>
             {
                 ExperiencePeriods().map((period) => (
                     <ExperienceSection period={period} key={period.label} />

@@ -45,7 +45,7 @@ const ResButton: React.FC<Props> = ({
             ]}
             disabled={disabled}
         >
-            {icon && <Icon name={icon} size={16} color={color} />}
+            {icon && <Icon name={icon} size={20} color={typography.color} style={{ paddingRight: 6 }} />}
 
             <ResText typography={typography} wide={false}>
                 {label}
