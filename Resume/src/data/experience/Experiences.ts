@@ -157,4 +157,19 @@ export const Experiences: Experience[] = [
             "Swift", "UIKit", "MVC", "Create ML", "Vision", "AVFoundation", "Speech"
         ]
     ),
+
+    new Experience(
+        "Resume",
+        2023,
+        "Personal Project",
+        "2023",
+        "You're looking at it 😉. I wouldn't typically use (nor recommend) React Native for a website, but I wanted to get more practice using it.",
+        [
+            new Link("GitHub", "GitHub.com/Andre-Pham/Resume", "https://github.com/Andre-Pham/Resume")
+        ],
+        [],
+        [
+            "React Native Expo", "Typescript", "Redux"
+        ]
+    ),
 ];

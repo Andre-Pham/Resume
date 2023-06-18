@@ -59,7 +59,9 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
     }
 
     useEffect(() => {
-        scrollIntoContent();
+        if (!Environment.instance.screenIsPortrait()) {
+            scrollIntoContent();
+        }
     }, [activeSection]);
 
     // Disable automatic scrolling on page refresh
@@ -107,6 +109,7 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
                 style={{ 
                     alignContent: 'center', 
                     paddingTop: activeSection == ActiveSection.none ? 0 : ResDimensions.mainScreenSpacing,
+                    paddingBottom: activeSection == ActiveSection.none ? 200 : 0,
                 }}
             >
                 {renderPageContent()}
