@@ -35,7 +35,10 @@ const Splash: React.FC<Props> = ({
 
     const onLayout = (event: any) => {
         const layout = event.nativeEvent.layout;
-        StateManager.contentWidth.publish(layout.width);
+        if (layout.width > 0) {
+            // Only if this component is visible
+            StateManager.contentWidth.publish(layout.width);
+        }
     }
 
     if (screenIsPortrait) {

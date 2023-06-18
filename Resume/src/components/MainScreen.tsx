@@ -1,4 +1,4 @@
-import { ScrollView, View } from 'react-native';
+import { Dimensions, ScrollView, View } from 'react-native';
 import VStack from "./containers/VStack";
 import { ExperiencePeriods } from '../data/experience/ExperiencePeriods';
 import ExperienceSection from './custom/ExperienceSection';
@@ -11,15 +11,66 @@ import Header from './custom/Header';
 import Splash from './custom/Splash';
 import Education from './custom/Education';
 import Skills from './custom/Skills';
+import { PatientsNavigationProp } from './navigation/ResNavigationProps';
+import Experience from './custom/Experience';
+import Environment from '../state/environment/Environment';
 
-const MainScreen: React.FC = () => {
+interface Props {
+    navigation?: PatientsNavigationProp;
+}
+
+const MainScreen: React.FC<Props> = ({ navigation }) => {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
 
-    StateManager.activeSection.subscribe(() => {
-        setActiveSection(StateManager.activeSection.read());
-    });
+    useEffect(() => {
+        Dimensions.addEventListener('change', (newDimensions) => {
+            if (Environment.instance.getScreenWidth() <= 950) {
+                navigateToSection();
+            }
+        });
+    }, []);
 
     useEffect(() => {
+        // useEffect here ensures this is only triggered once for this component
+        // Otherwise, this component subscribes with every refresh / interaction
+        StateManager.activeSection.subscribe(() => {
+            setActiveSection(StateManager.activeSection.read());
+            if (Environment.instance.getScreenWidth() <= 950) {
+                navigateToSection();
+            }
+        });
+    }, []);
+
+    const navigateToSection = () => {
+        let activeSection = StateManager.activeSection.read()
+        switch (activeSection) {
+            case ActiveSection.none:
+                break;
+            case ActiveSection.education:
+                navigation.navigate("Andre Pham | Education");
+                break;
+            case ActiveSection.experience:
+                navigation.navigate("Andre Pham | Experience");
+                break;
+            case ActiveSection.skills:
+                navigation.navigate("Andre Pham | Skills");
+                break;
+            default:
+                throw new UnreachableCaseError(activeSection);
+        }
+    }
+
+    useEffect(() => {
+        // TODO: If they are going from .none -> (anything else), scroll
+        // HOWEVER
+        // If they are going from (anything) -> (anything), DON'T scroll
+        // As for mobile...
+        // Implement a navigation stack
+        // So the navigation stack is applied to mobile, but not large screen
+        // ALSO
+        // When the user resizes the screen, continuously make a callback based on the dimensions
+        // and, if the screen becomes "mobile", go backwards in navigation to return to the main menu
+        // and if the user resizes from mobile to large, go forwards by navigating to the next page
         scrollIntoContent();
     }, [activeSection]);
 
@@ -35,9 +86,7 @@ const MainScreen: React.FC = () => {
             case ActiveSection.none:
                 return <></>
             case ActiveSection.experience:
-                return ExperiencePeriods().map((period) => (
-                    <ExperienceSection period={period} key={period.label} />
-                ));
+                return <Experience />
             case ActiveSection.skills:
                 return <Skills />
             case ActiveSection.education:
@@ -65,7 +114,13 @@ const MainScreen: React.FC = () => {
             {/* We don't want to see the edge of the view above, so position this a little lower */}
             <View ref={scrollRef} style={{ marginTop: 24, marginBottom: -24 }} />
 
-            <VStack spacing={ResDimensions.pageContentSpacing} style={{ alignContent: 'center', paddingTop: ResDimensions.mainScreenSpacing }}>
+            <VStack 
+                spacing={ResDimensions.pageContentSpacing} 
+                style={{ 
+                    alignContent: 'center', 
+                    paddingTop: activeSection == ActiveSection.none ? 0 : ResDimensions.mainScreenSpacing,
+                }}
+            >
                 {renderPageContent()}
             </VStack>
         </View>

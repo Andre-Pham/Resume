@@ -16,7 +16,7 @@ interface Props {
 }
 
 const Education: React.FC<Props> = ({
-    
+    // No props
 }) => {
     const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.getScreenWidth() <= 950);
     const [componentWidth, setComponentWidth] = useState(StateManager.contentWidth.read());
@@ -48,7 +48,13 @@ const Education: React.FC<Props> = ({
     };
 
     return (
-        <HStack spacing={ResDimensions.cardColumnSpacing} style={{ width: componentWidth, paddingBottom: 450 }}>
+        <HStack 
+            spacing={ResDimensions.cardColumnSpacing} 
+            style={{ 
+                width: componentWidth, 
+                paddingBottom: 450,
+            }}
+        >
             <BasicCard 
                 title="Bachelor of Software Engineering (Honours)"
                 style={{ width: (componentWidth - gap) / columnCount }}

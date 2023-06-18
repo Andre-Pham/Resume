@@ -1,7 +1,10 @@
 import MainScreen from "../MainScreen";
 import Education from "../custom/Education";
+import EducationScreen from "../custom/EducationScreen";
 import Experience from "../custom/Experience";
+import ExperienceScreen from "../custom/ExperienceScreen";
 import Skills from "../custom/Skills";
+import SkillsScreen from "../custom/SkillsScreen";
 import LeafStack from "./LeafStack";
 
 export const ResNavigation = new LeafStack()
@@ -13,15 +16,15 @@ export const ResNavigation = new LeafStack()
     .addNewScreen(
         "Education",
         "Andre Pham | Education",
-        Education,
+        EducationScreen,
     )
     .addNewScreen(
         "Experience",
         "Andre Pham | Experience",
-        Experience,
+        ExperienceScreen,
     )
     .addNewScreen(
         "Skills",
         "Andre Pham | Skills",
-        Skills,
+        SkillsScreen,
     );
