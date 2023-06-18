@@ -26,7 +26,7 @@ const ResImage: React.FC<Props> = ({
     });
 
     useEffect(() => {
-        const imagePath = require('/assets/images/' + fileName); // Replace with the actual path to your image
+        const imagePath = require('/assets/images/' + fileName);
         Image.getSize(imagePath, (width, height) => {
             setImageSize({ width: width, height: height });
         }, (error) => {

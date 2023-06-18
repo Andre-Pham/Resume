@@ -40,7 +40,7 @@ const Education: React.FC<Props> = ({
             // Assume we're on web
             const link = document.createElement('a');
             link.href = fileUrl;
-            link.download = 'academic_transcript_andrepham.pdf'; // Replace with the desired file name and extension
+            link.download = 'academic_transcript_andrepham.pdf';
             link.click();
         } catch (error) {
             console.error('File download failed:', error);

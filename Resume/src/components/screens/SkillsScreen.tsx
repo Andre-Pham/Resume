@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
-import { Dimensions } from "react-native";
+import React, { useEffect, useRef } from "react";
+import { Dimensions, View } from "react-native";
 import Environment from "../../state/environment/Environment";
 import StateManager from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import ContentContainer from "../custom/ContentContainer";
 import Skills from "../custom/Skills";
 import { NavProp } from "../navigation/NavProp";
+import { useFocusEffect } from "@react-navigation/native";
 
 interface Props {
     navigation?: NavProp;
@@ -45,10 +46,29 @@ const SkillsScreen: React.FC<Props> = ({
         };
     }, []);
 
+    const scrollRef = useRef(null);
+    const scrollIntoContent = () => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    useFocusEffect(
+        React.useCallback(() => {
+            // Enter focus
+            scrollIntoContent();
+            return () => {
+                // Exist focus
+            };
+        }, [])
+    );
+
     return (
-        <ContentContainer>
-            <Skills />
-        </ContentContainer>
+        <View ref={scrollRef}>
+            <ContentContainer>
+                <Skills />
+            </ContentContainer>
+        </View>
     );
 };
 
