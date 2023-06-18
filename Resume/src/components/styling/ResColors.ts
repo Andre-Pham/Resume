@@ -7,7 +7,12 @@ import ResColor from "./color/ResColor";
  */
 class ResColors {
 
+    static get accent(): ResColor {
+        return new ResColor("#1769ff");
+    }
+
     static get background(): ResColor {
+        // TODO: Update for dark mode
         return new ResColor("#ffffff");
     }
 

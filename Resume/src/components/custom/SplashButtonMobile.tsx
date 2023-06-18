@@ -36,7 +36,7 @@ const SplashButtonMobile: React.FC<Props> = ({
             typography={activeSection == section ? selectedTypography : unselectedTypography}
             color={
                 activeSection == section ?
-                ResColors.behance :
+                ResColors.accent :
                 ResColors.fillBackgroundLight
             }
             onPress={() => {

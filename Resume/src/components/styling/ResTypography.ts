@@ -16,7 +16,7 @@ class ResTypography {
 
     static get splash(): ResTypographyConfig {
         return new ResTypographyConfig(
-            32,
+            34,
             ResFontFamily.circular,
             ResColors.textDark,
             ResFontWeight.black,
@@ -25,7 +25,7 @@ class ResTypography {
 
     static get standoutBody(): ResTypographyConfig {
         return new ResTypographyConfig(
-            15,
+            16,
             ResFontFamily.plexMono,
             ResColors.textDark,
         );
@@ -33,7 +33,7 @@ class ResTypography {
 
     static get body(): ResTypographyConfig {
         return new ResTypographyConfig(
-            13,
+            14,
             ResFontFamily.plexMono,
             ResColors.textDark,
         );
@@ -41,7 +41,7 @@ class ResTypography {
 
     static get subscript(): ResTypographyConfig {
         return new ResTypographyConfig(
-            13,
+            14,
             ResFontFamily.plexMono,
             ResColors.textSemiDark,
         );
@@ -49,7 +49,7 @@ class ResTypography {
 
     static get subscriptLabel(): ResTypographyConfig {
         return new ResTypographyConfig(
-            11,
+            11.5,
             ResFontFamily.plexMono,
             ResColors.textSemiDark,
         );
@@ -57,7 +57,7 @@ class ResTypography {
 
     static get chip(): ResTypographyConfig {
         return new ResTypographyConfig(
-            11,
+            11.5,
             ResFontFamily.plexMono,
             ResColors.textLight,
         );
@@ -73,42 +73,15 @@ class ResTypography {
 
     static get buttonSmall(): ResTypographyConfig {
         return new ResTypographyConfig(
-            13,
+            14,
             ResFontFamily.plexMono,
             ResColors.textLight,
         );
     }
 
-    static get display(): ResTypographyConfig {
-        return new ResTypographyConfig(
-            80,
-            ResFontFamily.gilroy,
-            ResColors.textDark,
-            ResFontWeight.black,
-        );
-    }
-
-    static get displayIntro(): ResTypographyConfig {
-        return new ResTypographyConfig(
-            24,
-            ResFontFamily.gilroy,
-            ResColors.textSemiDark,
-            ResFontWeight.black,
-        );
-    }
-
-    static get displaySubscript(): ResTypographyConfig {
-        return new ResTypographyConfig(
-            24,
-            ResFontFamily.poppins,
-            ResColors.textSemiDark,
-            ResFontWeight.semiBold,
-        );
-    }
-
     static get sectionTitle(): ResTypographyConfig {
         return new ResTypographyConfig(
-            24,
+            26,
             ResFontFamily.gilroy,
             ResColors.textDark,
             ResFontWeight.black,
@@ -117,7 +90,7 @@ class ResTypography {
 
     static get header(): ResTypographyConfig {
         return new ResTypographyConfig(
-            30,
+            31,
             ResFontFamily.circular,
             ResColors.textDark,
             ResFontWeight.black,

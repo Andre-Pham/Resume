@@ -43,7 +43,7 @@ const ExperienceCard: React.FC<Props> = ({
                 key={file.fileName}
                 label={file.label}
                 typography={ResTypography.buttonSmall}
-                color={ResColors.behance}
+                color={ResColors.accent}
                 wide={false}
                 onPress={() => {
                     const fileUrl = require('/assets/files/' + file.fileName);
