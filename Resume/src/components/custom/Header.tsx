@@ -1,13 +1,9 @@
 import React from 'react';
+import ResImage from '../base/ResImage/ResImage';
 import ResText from '../base/ResText/ResText';
 import HStack from '../containers/HStack';
-import { Linking } from 'react-native';
-import ResTypography from '../styling/ResTypography';
 import VStack from '../containers/VStack';
-import ResChip from '../base/ResChip/ResChip';
-import ResColors from '../styling/ResColors';
-import ResIconButtonLabelled from '../base/ResIconButtonLabelled/ResIconButtonLabelled';
-import ResImage from '../base/ResImage/ResImage';
+import ResTypography from '../styling/ResTypography';
 
 interface Props {
     // None

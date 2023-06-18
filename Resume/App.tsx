@@ -1,12 +1,12 @@
-import { View } from 'react-native';
-import * as SplashScreen from 'expo-splash-screen';
-import { ResFont } from './src/components/styling/typography/ResFont';
-import { useFonts } from 'expo-font';
-import { useCallback } from 'react';
 import { NavigationContainer } from "@react-navigation/native";
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+import { useCallback } from 'react';
+import { View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { LinearNavigator } from './src/components/navigation/LinearNavigator';
 import { MainNavStack } from './src/components/navigation/MainNavStack';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ResFont } from './src/components/styling/typography/ResFont';
 
 SplashScreen.preventAutoHideAsync();
 

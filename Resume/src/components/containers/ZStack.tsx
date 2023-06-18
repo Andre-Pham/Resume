@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { View } from "react-native";
-import PropTypes from "prop-types";
 
 const ZStack = ({ children, style }) => {
     const childrenWithPosition = React.Children.map(children, (child) => {

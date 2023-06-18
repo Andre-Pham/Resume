@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Image, ImageResizeMode, ImageStyle, View, ViewStyle } from 'react-native';
-import { ResImageScale } from './ResImageScale';
+import { Image, ImageResizeMode, ImageStyle } from 'react-native';
 import { UnreachableCaseError } from '../../../language/errors/UnreachableCaseError';
+import { ResImageScale } from './ResImageScale';
 
 interface Props {
     fileName: string;

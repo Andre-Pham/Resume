@@ -1,12 +1,11 @@
 import React from 'react';
+import { ViewStyle } from 'react-native';
 import ResText from '../base/ResText/ResText';
-import HStack from '../containers/HStack';
-import { View, ViewStyle } from 'react-native';
-import ResTypography from '../styling/ResTypography';
 import FlatContainer from '../containers/FlatContainer';
-import ResColors from '../styling/ResColors';
 import VStack from '../containers/VStack';
+import ResColors from '../styling/ResColors';
 import ResDimensions from '../styling/ResDimensions';
+import ResTypography from '../styling/ResTypography';
 
 interface Props {
     title: string;

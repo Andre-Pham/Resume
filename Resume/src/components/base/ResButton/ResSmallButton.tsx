@@ -1,8 +1,8 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import ResTypographyConfig from '../../styling/typography/ResTypographyConfig';
-import ResColor from '../../styling/color/ResColor';
 import { StyleProp, TouchableOpacity, ViewStyle } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import ResColor from '../../styling/color/ResColor';
+import ResTypographyConfig from '../../styling/typography/ResTypographyConfig';
 import ResText from '../ResText/ResText';
 
 interface Props {

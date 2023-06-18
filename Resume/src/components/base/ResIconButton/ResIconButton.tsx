@@ -1,12 +1,6 @@
 import React from 'react';
-import { Button } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import ResTypographyConfig from '../../styling/typography/ResTypographyConfig';
+import { TouchableOpacity, ViewStyle } from 'react-native';
 import ResColor from '../../styling/color/ResColor';
-import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
-import Environment from '../../../state/environment/Environment';
-import { OS } from '../../../state/environment/types/OS';
-import ResText from '../ResText/ResText';
 import ResIcon from '../ResIcon/ResIcon';
 import ResImage from '../ResImage/ResImage';
 import { ResImageScale } from '../ResImage/ResImageScale';

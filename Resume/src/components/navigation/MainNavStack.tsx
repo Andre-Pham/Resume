@@ -1,9 +1,6 @@
-import MainScreen from "../screens/MainScreen";
-import Education from "../custom/Education";
 import EducationScreen from "../screens/EducationScreen";
-import Experience from "../custom/Experience";
 import ExperienceScreen from "../screens/ExperienceScreen";
-import Skills from "../custom/Skills";
+import MainScreen from "../screens/MainScreen";
 import SkillsScreen from "../screens/SkillsScreen";
 import NavStack from "./NavStack";
 

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import ContentContainer from "../custom/ContentContainer";
-import Experience from "../custom/Experience";
+import { Dimensions } from "react-native";
+import Environment from "../../state/environment/Environment";
 import StateManager from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
+import ContentContainer from "../custom/ContentContainer";
+import Experience from "../custom/Experience";
 import { NavProp } from "../navigation/NavProp";
-import Environment from "../../state/environment/Environment";
-import { Dimensions } from "react-native";
 
 interface Props {
     navigation?: NavProp;

@@ -1,14 +1,13 @@
-import { Dimensions, View } from 'react-native';
-import ExperiencePeriod from '../../data/experience/ExperiencePeriod';
-import YearHeader from './YearHeader';
-import HStack from '../containers/HStack';
-import ExperienceCard from './ExperienceCard';
 import { useEffect, useState } from 'react';
+import { Dimensions } from 'react-native';
+import ExperiencePeriod from '../../data/experience/ExperiencePeriod';
 import Environment from '../../state/environment/Environment';
-import { ResScreenOrientation } from '../../state/environment/types/ResScreenOrientation';
-import ResDimensions from '../styling/ResDimensions';
 import StateManager from '../../state/publishers/StateManager';
+import HStack from '../containers/HStack';
 import VStack from '../containers/VStack';
+import ResDimensions from '../styling/ResDimensions';
+import ExperienceCard from './ExperienceCard';
+import YearHeader from './YearHeader';
 
 interface Props {
     period: ExperiencePeriod;

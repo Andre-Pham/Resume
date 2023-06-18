@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import NavStack from "./NavStack";
-import NavHeader from "./NavHeader";
 import StateManager from "../../state/publishers/StateManager";
+import NavHeader from "./NavHeader";
+import NavStack from "./NavStack";
 
 interface Props {
     stack: NavStack

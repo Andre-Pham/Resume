@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import StateManager from '../../state/publishers/StateManager';
 import ResText from '../base/ResText/ResText';
 import ResTypography from '../styling/ResTypography';
-import StateManager from '../../state/publishers/StateManager';
 
 interface Props {
     title: string;

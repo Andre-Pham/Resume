@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Image, ImageResizeMode, ImageStyle, StyleSheet, View, ViewStyle } from 'react-native';
-import { UnreachableCaseError } from '../../../language/errors/UnreachableCaseError';
+import React from 'react';
+import { Image, ImageStyle } from 'react-native';
 
 interface Props {
     fileName: string;

@@ -1,7 +1,7 @@
 import React from 'react';
+import { View } from 'react-native';
 import ResText from '../base/ResText/ResText';
 import HStack from '../containers/HStack';
-import { View } from 'react-native';
 import ResTypography from '../styling/ResTypography';
 
 interface Props {

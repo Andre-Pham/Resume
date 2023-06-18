@@ -1,17 +1,16 @@
 import React from 'react';
-import ResText from '../base/ResText/ResText';
-import HStack from '../containers/HStack';
-import { View, ViewStyle } from 'react-native';
-import ResTypography from '../styling/ResTypography';
-import FlatContainer from '../containers/FlatContainer';
-import ResColors from '../styling/ResColors';
-import ResHyperlink from '../base/ResHyperlink/ResHyperlink';
-import VStack from '../containers/VStack';
-import ResChip from '../base/ResChip/ResChip';
-import ResColor from '../styling/color/ResColor';
+import { ViewStyle } from 'react-native';
 import Experience from '../../data/experience/Experience';
-import ResDimensions from '../styling/ResDimensions';
 import ResSmallButton from '../base/ResButton/ResSmallButton';
+import ResChip from '../base/ResChip/ResChip';
+import ResHyperlink from '../base/ResHyperlink/ResHyperlink';
+import ResText from '../base/ResText/ResText';
+import FlatContainer from '../containers/FlatContainer';
+import HStack from '../containers/HStack';
+import VStack from '../containers/VStack';
+import ResColors from '../styling/ResColors';
+import ResDimensions from '../styling/ResDimensions';
+import ResTypography from '../styling/ResTypography';
 
 interface Props {
     experience: Experience;

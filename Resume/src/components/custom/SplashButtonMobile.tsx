@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, ViewStyle } from 'react-native';
-import ResButton from '../base/ResButton/ResButton';
 import StateManager from '../../state/publishers/StateManager';
-import ResColors from '../styling/ResColors';
 import { ActiveSection } from '../../state/publishers/types/ActiveSection';
+import ResButton from '../base/ResButton/ResButton';
+import ResColors from '../styling/ResColors';
 import ResTypography from '../styling/ResTypography';
 
 interface Props {

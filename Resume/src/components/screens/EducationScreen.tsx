@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
+import { Dimensions } from "react-native";
+import Environment from "../../state/environment/Environment";
+import StateManager from "../../state/publishers/StateManager";
+import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import ContentContainer from "../custom/ContentContainer";
 import Education from "../custom/Education";
 import { NavProp } from "../navigation/NavProp";
-import StateManager from "../../state/publishers/StateManager";
-import { ActiveSection } from "../../state/publishers/types/ActiveSection";
-import { Dimensions } from "react-native";
-import Environment from "../../state/environment/Environment";
 
 interface Props {
     navigation?: NavProp;

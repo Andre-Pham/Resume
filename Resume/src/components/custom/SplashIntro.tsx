@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Linking, ViewStyle } from 'react-native';
+import ResIconButtonLabelled from '../base/ResIconButtonLabelled/ResIconButtonLabelled';
 import ResText from '../base/ResText/ResText';
 import HStack from '../containers/HStack';
-import { Clipboard, Dimensions, Linking, ViewStyle } from 'react-native';
-import ResTypography from '../styling/ResTypography';
 import VStack from '../containers/VStack';
-import ResFlexImage from '../base/ResFlexImage/ResFlexImage';
-import ResChip from '../base/ResChip/ResChip';
 import ResColors from '../styling/ResColors';
-import ResIconButtonLabelled from '../base/ResIconButtonLabelled/ResIconButtonLabelled';
-import ResImage from '../base/ResImage/ResImage';
 import ResDimensions from '../styling/ResDimensions';
-import { max } from '../../language/functions/Max';
-import Environment from '../../state/environment/Environment';
+import ResTypography from '../styling/ResTypography';
 
 interface Props {
     style?: ViewStyle;

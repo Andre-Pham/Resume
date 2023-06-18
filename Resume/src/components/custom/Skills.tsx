@@ -1,14 +1,11 @@
-import { Dimensions, View, ViewStyle } from 'react-native';
-import HStack from '../containers/HStack';
 import { useEffect, useState } from 'react';
+import { Dimensions, ViewStyle } from 'react-native';
 import Environment from '../../state/environment/Environment';
-import ResDimensions from '../styling/ResDimensions';
 import StateManager from '../../state/publishers/StateManager';
 import ResText from '../base/ResText/ResText';
+import HStack from '../containers/HStack';
+import ResDimensions from '../styling/ResDimensions';
 import ResTypography from '../styling/ResTypography';
-import ResColors from '../styling/ResColors';
-import ResHyperlink from '../base/ResHyperlink/ResHyperlink';
-import ResSmallButton from '../base/ResButton/ResSmallButton';
 import BasicCard from './BasicCard';
 
 interface Props {

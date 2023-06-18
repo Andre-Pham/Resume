@@ -1,9 +1,9 @@
-import React, { useEffect, version } from "react";
+import React from "react";
 import { ViewStyle } from "react-native";
+import Environment from "../../state/environment/Environment";
+import StateManager from "../../state/publishers/StateManager";
 import VStack from "../containers/VStack";
 import ResDimensions from "../styling/ResDimensions";
-import StateManager from "../../state/publishers/StateManager";
-import Environment from "../../state/environment/Environment";
 
 interface Props {
     children;

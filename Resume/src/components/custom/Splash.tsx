@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Dimensions, StyleSheet, ViewStyle } from 'react-native';
-import ResButton from '../base/ResButton/ResButton';
-import StateManager from '../../state/publishers/StateManager';
-import ResColors from '../styling/ResColors';
-import { ActiveSection } from '../../state/publishers/types/ActiveSection';
-import ResTypography from '../styling/ResTypography';
+import { Dimensions } from 'react-native';
 import Environment from '../../state/environment/Environment';
-import { ResScreenOrientation } from '../../state/environment/types/ResScreenOrientation';
-import VStack from '../containers/VStack';
-import Header from './Header';
-import SplashIntro from './SplashIntro';
+import StateManager from '../../state/publishers/StateManager';
+import { ActiveSection } from '../../state/publishers/types/ActiveSection';
 import HStack from '../containers/HStack';
-import SplashButton from './SplashButton';
+import VStack from '../containers/VStack';
 import ResDimensions from '../styling/ResDimensions';
+import SplashButton from './SplashButton';
 import SplashButtonMobile from './SplashButtonMobile';
+import SplashIntro from './SplashIntro';
 
 interface Props {
     // No props

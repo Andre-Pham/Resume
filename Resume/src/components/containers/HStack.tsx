@@ -1,6 +1,6 @@
-import React from "react";
-import { View, StyleSheet, ViewStyle } from "react-native";
 import PropTypes from "prop-types";
+import React from "react";
+import { StyleSheet, View, ViewStyle } from "react-native";
 
 interface Props {
     children;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
 import ResColor from '../../styling/color/ResColor';
-import ResDimensions from '../../styling/ResDimensions';
 
 interface Props {
     color: ResColor;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TextStyle } from 'react-native';
-import ResTypographyConfig from '../../styling/typography/ResTypographyConfig';
 import { ResFontFamily } from '../../styling/typography/ResFontFamily';
+import ResTypographyConfig from '../../styling/typography/ResTypographyConfig';
 
 interface Props {
     // Text or other components to be embedded
