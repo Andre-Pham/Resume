@@ -61,19 +61,6 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
     }
 
     useEffect(() => {
-        // TODO: If they are going from .none -> (anything else), scroll
-        // HOWEVER
-        // If they are going from (anything) -> (anything), DON'T scroll
-        // As for mobile...
-        // Implement a navigation stack
-        // So the navigation stack is applied to mobile, but not large screen
-        // ALSO
-        // When the user resizes the screen, continuously make a callback based on the dimensions
-        // and, if the screen becomes "mobile", go backwards in navigation to return to the main menu
-        // and if the user resizes from mobile to large, go forwards by navigating to the next page
-        // - education padding bottom
-        // - make navigation ids
-        // - add 950 env
         scrollIntoContent();
     }, [activeSection]);
 
