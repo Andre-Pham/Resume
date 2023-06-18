@@ -9,6 +9,7 @@ interface Props {
 
 export const LinearNavigator: React.FC<Props> = ({ stack }) => {
     const Stack = createStackNavigator();
+    const globalOptions = { } // Options that apply to all screens
     return (
         <Stack.Navigator>
             {
@@ -20,6 +21,7 @@ export const LinearNavigator: React.FC<Props> = ({ stack }) => {
                             component={screen.component}
                             options={({ navigation }) => ({
                                 ...screen.options,
+                                ...globalOptions,
                                 cardStyle: { backgroundColor: StateManager.backgroundColor.read() },
                                 header: () => (
                                     screen.title == null
