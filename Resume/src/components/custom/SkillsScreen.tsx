@@ -30,7 +30,7 @@ const SkillsScreen: React.FC<Props> = ({
 
     useEffect(() => {
         const onResize = (newDimensions) => {
-            if (Environment.instance.getScreenWidth() > 950) {
+            if (!Environment.instance.screenIsPortrait()) {
                 forceExit = true;
                 navigation?.goBack();
                 navigation = null;

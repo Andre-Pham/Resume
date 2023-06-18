@@ -80,6 +80,10 @@ class Environment {
         return dimensions[0]/dimensions[1];
     }
 
+    public screenIsPortrait(): boolean {
+        return this.getScreenWidth() <= 950;
+    }
+
     public getScreenWidth(): number {
         return Dimensions.get('window').width;
     }

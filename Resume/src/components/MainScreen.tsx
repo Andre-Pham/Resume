@@ -24,7 +24,7 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
 
     useEffect(() => {
         Dimensions.addEventListener('change', (newDimensions) => {
-            if (Environment.instance.getScreenWidth() <= 950) {
+            if (Environment.instance.screenIsPortrait()) {
                 navigateToSection();
             }
         });
@@ -35,7 +35,7 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
         // Otherwise, this component subscribes with every refresh / interaction
         StateManager.activeSection.subscribe(() => {
             setActiveSection(StateManager.activeSection.read());
-            if (Environment.instance.getScreenWidth() <= 950) {
+            if (Environment.instance.screenIsPortrait()) {
                 navigateToSection();
             }
         });

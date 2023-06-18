@@ -23,7 +23,7 @@ const SplashButtonMobile: React.FC<Props> = ({
         setActiveSection(StateManager.activeSection.read());
     });
 
-    let buttonSize = 200
+    let buttonSize = 300
     let selectedTypography = ResTypography.button;
     selectedTypography.resColor = ResColors.textLight;
     let unselectedTypography = ResTypography.button;
@@ -49,7 +49,11 @@ const SplashButtonMobile: React.FC<Props> = ({
             }}
             wide={false}
             style={[
-                { width: buttonSize, borderRadius: 100, justifyContent: 'flex-start', paddingLeft: 32 },
+                { 
+                    width: buttonSize, 
+                    justifyContent: 'flex-start', 
+                    paddingLeft: 32 
+                },
                 activeSection == section ? styles.shadow : { },
                 style,
             ]}

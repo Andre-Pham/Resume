@@ -18,12 +18,12 @@ interface Props {
 const Education: React.FC<Props> = ({
     style,
 }) => {
-    const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.getScreenWidth() <= 950);
+    const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.screenIsPortrait());
     const [componentWidth, setComponentWidth] = useState(StateManager.contentWidth.read());
 
     useEffect(() => {
         Dimensions.addEventListener('change', (newDimensions) => {
-            setScreenIsPortrait(Environment.instance.getScreenWidth() <= 950);
+            setScreenIsPortrait(Environment.instance.screenIsPortrait());
         });
     }, []);
 

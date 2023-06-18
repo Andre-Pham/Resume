@@ -22,11 +22,11 @@ interface Props {
 const Splash: React.FC<Props> = ({ 
     // No props
 }) => {
-    const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.getScreenWidth() <= 950);
+    const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.screenIsPortrait());
 
     useEffect(() => {
         Dimensions.addEventListener('change', (newDimensions) => {
-            setScreenIsPortrait(Environment.instance.getScreenWidth() <= 950);
+            setScreenIsPortrait(Environment.instance.screenIsPortrait());
         });
     }, []);
 
