@@ -1,10 +1,9 @@
-import { Appearance, Dimensions, PlatformIOSStatic } from "react-native"
-import { Platform } from 'react-native';
+import { Appearance, Dimensions, Platform, PlatformIOSStatic } from "react-native";
 import { UnreachableCaseError } from "../../language/errors/UnreachableCaseError";
-import { OS } from "./types/OS";
-import { ScreenType } from "./types/ScreenType";
-import { ColorScheme } from "./types/ColorScheme";
-import { ResScreenOrientation } from "./types/ResScreenOrientation";
+import { ColorScheme } from "../types/ColorScheme";
+import { OS } from "../types/OS";
+import { ResScreenOrientation } from "../types/ResScreenOrientation";
+import { ScreenType } from "../types/ScreenType";
 
 class Environment {
 
@@ -12,7 +11,7 @@ class Environment {
 
     private constructor() { }
 
-    public getColorScheme(): ColorScheme {
+    public getDeviceColorScheme(): ColorScheme {
         // TODO: I can't get this to change correctly
         const colorScheme = Appearance.getColorScheme();
         switch (colorScheme) {

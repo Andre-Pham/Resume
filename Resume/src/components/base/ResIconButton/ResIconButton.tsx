@@ -8,8 +8,10 @@ import { ResImageScale } from '../ResImage/ResImageScale';
 interface Props {
     color: ResColor;
     icon?: string; // https://pictogrammers.com/library/mdi/
+    iconColor?: ResColor;
     fileName?: string;
     size: number;
+    onlyIcon?: boolean;
     style?: ViewStyle;
     onPress: () => void;
 }
@@ -17,8 +19,10 @@ interface Props {
 const ResIconButton: React.FC<Props> = ({ 
     color,
     icon = null, 
+    iconColor = null,
     fileName = null,
     size,
+    onlyIcon = false,
     style,
     onPress,
 }) => {
@@ -29,8 +33,8 @@ const ResIconButton: React.FC<Props> = ({
             style={{ 
                 backgroundColor: color.getColor(),
                 borderRadius: 50,
-                width: size,
-                height: size,
+                width: onlyIcon ? 0 : size,
+                height: onlyIcon ? 0 : size,
                 justifyContent: 'center',
                 ...style,
             }}
@@ -45,13 +49,14 @@ const ResIconButton: React.FC<Props> = ({
                     scale={ResImageScale.scaleToFit}
                     style={{
                         alignSelf: 'center',
+                        tintColor: iconColor?.getColor(),
                     }}
                 />
                     :
                 <ResIcon 
                     icon={icon}
                     size={size*2.2/3.0}
-                    color={new ResColor('#ffffff')}
+                    color={iconColor ?? new ResColor('#ffffff')}
                     style={{
                         alignSelf: 'center',
                     }}

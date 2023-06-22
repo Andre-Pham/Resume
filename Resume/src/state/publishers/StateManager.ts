@@ -1,4 +1,6 @@
 import ResColors from "../../components/styling/ResColors";
+import Environment from "../environment/Environment";
+import { ColorScheme } from "../types/ColorScheme";
 import ResValuePublisher from "./impl/ResValuePublisher";
 import { ActiveSection } from "./types/ActiveSection";
 
@@ -36,8 +38,24 @@ class StateManager {
 
     public static readonly contentWidth = new ResValuePublisher(0.0);
 
-    public static readonly backgroundColor = new ResValuePublisher(ResColors.background.getColor());
+    public static readonly backgroundColor = new ResValuePublisher<string>(undefined);
+
+    public static readonly colorScheme = new ResValuePublisher(ColorScheme.light);
+
+    public static setup() {
+        // Init default values whilst avoiding circular dependencies
+        StateManager.colorScheme.publish(Environment.instance.getDeviceColorScheme());
+        StateManager.backgroundColor.publish(ResColors.background.getColor());
+
+        // Setup state that depends on other state
+        StateManager.colorScheme.subscribe(() => {
+            StateManager.backgroundColor.publish(ResColors.background.getColor());
+        });
+    }
 
 }
 
 export default StateManager;
+
+// Setup after export, otherwise circular depenencies occur
+StateManager.setup();

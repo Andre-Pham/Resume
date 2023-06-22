@@ -1,7 +1,7 @@
 import { assert } from "../../../language/assertions/Assert";
 import { UnreachableCaseError } from "../../../language/errors/UnreachableCaseError";
-import Environment from "../../../state/environment/Environment";
-import { ColorScheme } from "../../../state/environment/types/ColorScheme";
+import StateManager from "../../../state/publishers/StateManager";
+import { ColorScheme } from "../../../state/types/ColorScheme";
 
 class ResColor {
 
@@ -26,7 +26,7 @@ class ResColor {
      * @returns Validated color string
      */
     public getColor(): string {
-        let colorScheme: ColorScheme = Environment.instance.getColorScheme();
+        let colorScheme = StateManager.colorScheme.read();
         switch (colorScheme) {
             case ColorScheme.dark:
                 return this.darkMode;

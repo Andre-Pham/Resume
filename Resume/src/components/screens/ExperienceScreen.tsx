@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Dimensions, View } from "react-native";
 import Environment from "../../state/environment/Environment";
 import StateManager from "../../state/publishers/StateManager";
@@ -62,6 +62,11 @@ const ExperienceScreen: React.FC<Props> = ({
             };
         }, [])
     );
+
+    const [refresh, setRefresh] = useState(false);
+    StateManager.colorScheme.subscribe(() => {
+        setRefresh(!refresh);
+    });
     
     return (
         <View ref={scrollRef}>

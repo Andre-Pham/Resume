@@ -1,4 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
+import { useState } from "react";
 import StateManager from "../../state/publishers/StateManager";
 import NavHeader from "./NavHeader";
 import NavStack from "./NavStack";
@@ -10,6 +11,12 @@ interface Props {
 export const LinearNavigator: React.FC<Props> = ({ stack }) => {
     const Stack = createStackNavigator();
     const globalOptions = { } // Options that apply to all screens
+
+    const [refresh, setRefresh] = useState(false);
+    StateManager.colorScheme.subscribe(() => {
+        setRefresh(!refresh);
+    });
+    
     return (
         <Stack.Navigator>
             {

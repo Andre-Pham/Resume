@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Dimensions, View } from 'react-native';
+import { Dimensions, View, useColorScheme } from 'react-native';
 import { UnreachableCaseError } from '../../language/errors/UnreachableCaseError';
 import Environment from '../../state/environment/Environment';
 import StateManager from '../../state/publishers/StateManager';
@@ -12,6 +12,7 @@ import Skills from '../custom/Skills';
 import Splash from '../custom/Splash';
 import { NavProp } from '../navigation/NavProp';
 import ResDimensions from '../styling/ResDimensions';
+import { ColorScheme } from '../../state/types/ColorScheme';
 
 interface Props {
     navigation?: NavProp;
@@ -92,6 +93,21 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
             scrollRef.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
+
+    const [refresh, setRefresh] = useState(false);
+    StateManager.colorScheme.subscribe(() => {
+        setRefresh(!refresh);
+    });
+
+    // React to the device changing its color scheme
+    const colorScheme = useColorScheme();
+    useEffect(() => {
+        if (colorScheme == "light") {
+            StateManager.colorScheme.publish(ColorScheme.light);
+        } else {
+            StateManager.colorScheme.publish(ColorScheme.dark);
+        }
+    }, [colorScheme]);
 
     return (
         <View style={{ padding: ResDimensions.screenPadding }}>

@@ -6,6 +6,7 @@ import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { LinearNavigator } from './src/components/navigation/LinearNavigator';
 import { MainNavStack } from './src/components/navigation/MainNavStack';
+import { ColorSchemeProvider } from "./src/components/providers/ColorProvider";
 import { ResFont } from './src/components/styling/typography/ResFont';
 
 SplashScreen.preventAutoHideAsync();
@@ -46,9 +47,11 @@ export default function App() {
     return (
         <SafeAreaProvider>
             <NavigationContainer>
-                <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
-                    <LinearNavigator stack={MainNavStack} />
-                </View>
+                <ColorSchemeProvider>
+                    <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
+                        <LinearNavigator stack={MainNavStack} />
+                    </View>
+                </ColorSchemeProvider>
             </NavigationContainer>
         </SafeAreaProvider>
     );

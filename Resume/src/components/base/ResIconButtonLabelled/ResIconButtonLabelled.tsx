@@ -1,15 +1,15 @@
 import React from 'react';
-import ResColor from '../../styling/color/ResColor';
-import { StyleSheet, View, ViewStyle } from 'react-native';
-import ResText from '../ResText/ResText';
-import ResIcon from '../ResIcon/ResIcon';
+import { View, ViewStyle } from 'react-native';
 import VStack from '../../containers/VStack';
 import ResTypography from '../../styling/ResTypography';
+import ResColor from '../../styling/color/ResColor';
 import ResIconButton from '../ResIconButton/ResIconButton';
+import ResText from '../ResText/ResText';
 
 interface Props {
     color: ResColor;
     icon?: string; // https://pictogrammers.com/library/mdi/
+    iconColor?: ResColor;
     fileName?: string;
     label: string;
     size: number;
@@ -20,6 +20,7 @@ interface Props {
 const ResIconButtonLabelled: React.FC<Props> = ({ 
     color,
     icon = null, 
+    iconColor = null,
     fileName = null,
     label,
     size,
@@ -40,6 +41,7 @@ const ResIconButtonLabelled: React.FC<Props> = ({
         >
             <ResIconButton 
                 icon={icon}
+                iconColor={iconColor}
                 fileName={fileName}
                 color={color}
                 size={size}
