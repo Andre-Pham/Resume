@@ -4,21 +4,6 @@ import Experience from "./Experience";
 
 export const Experiences: Experience[] = [
     new Experience(
-        "Yonder",
-        "Active",
-        "Personal Project",
-        "2021 - Present",
-        "An iOS rouge-like rpg. Includes enemies and bosses to fight, npcs to meet, and loot such as armour, accessories, weapons, and potions to collect.",
-        [
-            new Link("GitHub", "GitHub.com/Andre-Pham/Yonder", "https://github.com/Andre-Pham/yonder")
-        ],
-        [],
-        [
-            "Swift", "SwiftUI", "MVVM", "Combine", "Serialisation", "Localisation", "Unit Tests"
-        ]
-    ),
-
-    new Experience(
         "Cerulean Labs",
         "Active",
         "Paid Positon",
@@ -33,6 +18,21 @@ export const Experiences: Experience[] = [
         ],
         [
             "Swift", "SwiftUI", "UIKit", "Core Graphics", "SceneKit", "Realm", "Unit Tests", "Localisation"
+        ]
+    ),
+
+    new Experience(
+        "Yonder",
+        "Active",
+        "Personal Project",
+        "2021 - Present",
+        "An iOS rouge-like RPG. Includes enemies and bosses to fight, NPCs to meet, and loot such as armour, accessories, weapons, and potions to collect.",
+        [
+            new Link("GitHub", "GitHub.com/Andre-Pham/Yonder", "https://github.com/Andre-Pham/yonder")
+        ],
+        [],
+        [
+            "Swift", "SwiftUI", "MVVM", "Combine", "Serialisation", "Localisation", "Unit Tests"
         ]
     ),
 

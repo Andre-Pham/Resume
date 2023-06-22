@@ -45,12 +45,12 @@ const Skills: React.FC<Props> = ({
                 style={{ width: (componentWidth - gap) / columnCount }}
             >
                 <ResText typography={ResTypography.body}>
-                    {"I know all the basic skills you would expect a developer to have such as git and source control, IDE tools, development practices, etc. I'm experienced in many different areas of development including UI, 3D computer graphics, 2D computer graphics, thread management, interacting with webservices, applied mathematics, data persistence, databases, package management, localisation, and more."}
+                    {"I know all the basic skills you would expect a developer to have such as git and source control, IDE tools, development practices, etc. I'm experienced in many different areas of development including UI, 3D computer graphics, 2D computer graphics, thread management, interacting with web services, applied mathematics, data persistence, databases, package management, localisation, and more."}
                 </ResText>
             </BasicCard>
 
             <BasicCard 
-                title="Native iOS Developemnt"
+                title="Native iOS Development"
                 style={{ width: (componentWidth - gap) / columnCount }}
             >
                 <ResText typography={ResTypography.body}>
