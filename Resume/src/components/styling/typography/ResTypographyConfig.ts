@@ -57,6 +57,36 @@ class ResTypographyConfig {
         this.kerning = kerning;
     }
 
+    public withSize(size: number): ResTypographyConfig {
+        this.size = size;
+        return this;
+    }
+
+    public withColor(color: ResColor): ResTypographyConfig {
+        this.resColor = color;
+        return this;
+    }
+
+    public withWeight(weight: ResFontWeight): ResTypographyConfig {
+        this.weight = weight;
+        return this;
+    }
+
+    public withItalic(italic: boolean): ResTypographyConfig {
+        this.italic = italic;
+        return this;
+    }
+
+    public withUnderline(underline: boolean): ResTypographyConfig {
+        this.underlined = underline;
+        return this;
+    }
+
+    public withLineOut(lineOut: boolean): ResTypographyConfig {
+        this.linedOut = lineOut;
+        return this;
+    }
+
     public getStylesheet(): {} {
         return StyleSheet.create({
             typography: {

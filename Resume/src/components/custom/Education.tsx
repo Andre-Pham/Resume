@@ -86,7 +86,7 @@ const Education: React.FC<Props> = ({
             >
                 <ResSmallButton 
                     label='download'
-                    typography={ResTypography.buttonSmall}
+                    typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
                     wide={false}
                     onPress={downloadAcademicTranscript}

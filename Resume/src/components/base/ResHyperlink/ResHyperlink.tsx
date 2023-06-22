@@ -27,8 +27,9 @@ const ResHyperlink: React.FC<Props> = ({
     wide = true,
     style,
 }) => {
-    typography.weight = ResFontWeight.bold;
-    typography.underlined = true;
+    let linkTypography = typography
+        .withWeight(ResFontWeight.bold)
+        .withUnderline(true);
 
     const handlePress = React.useCallback(() => {
         Linking.openURL(url);
@@ -36,14 +37,14 @@ const ResHyperlink: React.FC<Props> = ({
 
     // For some reason the poppins font is slightly offset
     // This is a workaround
-    let lineHeightMultiplier = typography.fontFamily == ResFontFamily.poppins ? 1.15 : 1.0;
+    let lineHeightMultiplier = linkTypography.fontFamily == ResFontFamily.poppins ? 1.15 : 1.0;
     return (
         <Text
             style={[
                 wide ? { width: "100%" } : { alignSelf: 'center' },
-                typography.getStylesheet(),
+                linkTypography.getStylesheet(),
                 verticalWrap ? { 
-                    lineHeight: typography.size*lineHeightMultiplier 
+                    lineHeight: linkTypography.size*lineHeightMultiplier 
                 } : null,
                 style,
             ]}

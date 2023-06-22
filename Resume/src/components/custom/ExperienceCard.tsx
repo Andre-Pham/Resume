@@ -41,7 +41,7 @@ const ExperienceCard: React.FC<Props> = ({
             <ResSmallButton 
                 key={file.fileName}
                 label={file.label}
-                typography={ResTypography.buttonSmall}
+                typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
                 color={ResColors.accent}
                 wide={false}
                 onPress={() => {
@@ -64,7 +64,7 @@ const ExperienceCard: React.FC<Props> = ({
     const renderTags = () => {
         return experience.tags.map((tag) => (
             <ResChip
-                color={ResColors.textDark}
+                color={ResColors.chipBackground}
                 key={tag}
             >
                 <ResText typography={ResTypography.chip}>

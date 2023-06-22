@@ -59,7 +59,7 @@ class ResTypography {
         return new ResTypographyConfig(
             11.5,
             ResFontFamily.plexMono,
-            ResColors.textLight,
+            ResColors.textLightPersistent,
         );
     }
 
