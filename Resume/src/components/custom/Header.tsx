@@ -26,14 +26,14 @@ const Header: React.FC<Props> = ({
                     typography={ResTypography.pageTitle}
                     verticalWrap={true}
                 >
-                    Andre Pham
+                    {"Andre Pham"}
                 </ResText>
 
                 <ResText 
                     typography={ResTypography.subscript}
                     verticalWrap={true}
                 >
-                    andrekypham@gmail.com
+                    {"andrekypham@gmail.com"}
                 </ResText>
             </VStack>
         </HStack>

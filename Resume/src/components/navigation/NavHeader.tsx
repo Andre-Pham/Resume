@@ -50,7 +50,7 @@ const NavHeader: React.FC<Props> = ({
                         <Icon 
                             name={"chevron-left"} 
                             size={45} 
-                            colour={ResTypography.header.color} 
+                            color={ResTypography.header.color} 
                             style={{ marginLeft: -10 }} 
                         />
                     </TouchableOpacity>
