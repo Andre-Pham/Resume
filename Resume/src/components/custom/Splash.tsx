@@ -25,9 +25,6 @@ const Splash: React.FC<Props> = ({
         });
     }, []);
 
-    let verticalButtonSpacing = 32;
-    let horizontalButtonSpacing = Math.sqrt(Math.pow(verticalButtonSpacing, 2) - Math.pow(verticalButtonSpacing/2, 2));
-
     const onLayout = (event: any) => {
         const layout = event.nativeEvent.layout;
         if (layout.width > 0) {
@@ -60,6 +57,9 @@ const Splash: React.FC<Props> = ({
             </VStack>
         );
     } else {
+        let buttonRadius = 58
+        let verticalButtonSpacing = 32;
+        let horizontalButtonSpacing = Math.cos(Math.PI/3/2)*(buttonRadius*2 + verticalButtonSpacing) - buttonRadius*2;
         return (
             <HStack spacing={64} style={{ alignItems: 'flex-start' }} onLayout={onLayout}>
                 <SplashIntro />
@@ -69,17 +69,20 @@ const Splash: React.FC<Props> = ({
                         <SplashButton 
                             label="experience"
                             section={ActiveSection.experience}
+                            radius={buttonRadius}
                         />
 
                         <SplashButton 
                             label="skills"
                             section={ActiveSection.skills}
+                            radius={buttonRadius}
                         />
                     </VStack>
 
                     <SplashButton 
                         label="education"
                         section={ActiveSection.education}
+                        radius={buttonRadius}
                     />
                 </HStack>   
             </HStack>

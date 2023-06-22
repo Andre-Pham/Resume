@@ -9,12 +9,14 @@ import ResTypography from '../styling/ResTypography';
 interface Props {
     label: string;
     section: ActiveSection;
+    radius: number;
     style?: ViewStyle;
 }
 
 const SplashButton: React.FC<Props> = ({ 
     label,
     section,
+    radius,
     style,
 }) => {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
@@ -23,7 +25,6 @@ const SplashButton: React.FC<Props> = ({
         setActiveSection(StateManager.activeSection.read());
     });
 
-    let buttonSize = 116
     let selectedTypography = ResTypography.button;
     selectedTypography.resColor = ResColors.textLight;
     let unselectedTypography = ResTypography.button;
@@ -48,7 +49,7 @@ const SplashButton: React.FC<Props> = ({
             }}
             wide={false}
             style={[
-                { width: buttonSize, height: buttonSize, borderRadius: 100 },
+                { width: radius*2, height: radius*2, borderRadius: 100 },
                 activeSection == section ? styles.shadow : {},
                 style
             ]}
