@@ -52,7 +52,7 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
-        "Fingerspell",
+        "Fingerspell Auslan",
         "Active",
         "Uni Individual Project",
         "2023 - Present",
