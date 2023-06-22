@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Resume/static/js/main.8fd98507.js",
-    "static/js/999.e375bc49.js": "/Resume/static/js/999.e375bc49.js",
+    "main.js": "/Resume/static/js/main.b43adea5.js",
+    "static/js/813.da2576ed.js": "/Resume/static/js/813.da2576ed.js",
     "static/media/MaterialCommunityIcons.ttf": "/Resume/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
     "static/media/profile_picture.png": "/Resume/static/media/profile_picture.7c2bdf8d1edc35061d98.png",
     "static/media/user_guide_teach_me_talkback.pdf": "/Resume/static/media/user_guide_teach_me_talkback.d2773c76cc07d9f15264.pdf",
@@ -30,16 +30,18 @@
     "static/media/behance_white.png": "/Resume/static/media/behance_white.a415e1b624de479bede3.png",
     "static/media/behance_black.png": "/Resume/static/media/behance_black.4744343074333a91b25d.png",
     "favicon.ico": "/Resume/favicon.ico",
+    "static/media/sun.max.circle.fill.png": "/Resume/static/media/sun.max.circle.fill.e5f24bb8763ee82bbd4c.png",
+    "static/media/moon.circle.fill.png": "/Resume/static/media/moon.circle.fill.eb16cd83702b82f4894a.png",
     "index.html": "/Resume/index.html",
     "favicon-32.png": "/Resume/favicon-32.png",
     "favicon-16.png": "/Resume/favicon-16.png",
     "serve.json": "/Resume/serve.json",
     "manifest.json": "/Resume/manifest.json",
-    "main.8fd98507.js.map": "/Resume/static/js/main.8fd98507.js.map",
-    "999.e375bc49.js.map": "/Resume/static/js/999.e375bc49.js.map"
+    "main.b43adea5.js.map": "/Resume/static/js/main.b43adea5.js.map",
+    "813.da2576ed.js.map": "/Resume/static/js/813.da2576ed.js.map"
   },
   "entrypoints": [
-    "static/js/999.e375bc49.js",
-    "static/js/main.8fd98507.js"
+    "static/js/813.da2576ed.js",
+    "static/js/main.b43adea5.js"
   ]
 }
