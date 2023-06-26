@@ -8,7 +8,7 @@ export const Experiences: Experience[] = [
         "Active",
         "Paid Positon",
         "2021 - Present",
-        "As an iOS developer at Cerulean Labs, I've worked on all areas of the iPad Spaces app including the UI, rendering, feature development, and more. My CPD supporting document (linked below) provides are more thorough look at my contributions.",
+        "As an iOS developer at Cerulean Labs, I've worked on all areas of the iPad Spaces app including the UI, rendering, feature development, and more. My CPD supporting document (linked below) provides a more thorough look at my contributions.",
         [
             new Link("Spaces", "SpacesApp.io", "https://www.spacesapp.io/"),
             new Link("What is CPD?", "(Monash.edu Link)", "https://www.monash.edu/engineering/current-students/professional-development/continuous-professional-development"),
