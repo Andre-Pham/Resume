@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.js": "/Resume/static/js/main.c327c481.js",
-    "static/js/813.da2576ed.js": "/Resume/static/js/813.da2576ed.js",
+    "main.css": "/Resume/static/css/main.23f540fc.css",
+    "main.js": "/Resume/static/js/main.b12e1495.js",
+    "static/js/813.0e971ddc.js": "/Resume/static/js/813.0e971ddc.js",
     "static/media/MaterialCommunityIcons.ttf": "/Resume/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
     "static/media/profile_picture.png": "/Resume/static/media/profile_picture.7c2bdf8d1edc35061d98.png",
     "static/media/user_guide_teach_me_talkback.pdf": "/Resume/static/media/user_guide_teach_me_talkback.d2773c76cc07d9f15264.pdf",
@@ -37,11 +38,13 @@
     "favicon-16.png": "/Resume/favicon-16.png",
     "serve.json": "/Resume/serve.json",
     "manifest.json": "/Resume/manifest.json",
-    "main.c327c481.js.map": "/Resume/static/js/main.c327c481.js.map",
-    "813.da2576ed.js.map": "/Resume/static/js/813.da2576ed.js.map"
+    "main.23f540fc.css.map": "/Resume/static/css/main.23f540fc.css.map",
+    "main.b12e1495.js.map": "/Resume/static/js/main.b12e1495.js.map",
+    "813.0e971ddc.js.map": "/Resume/static/js/813.0e971ddc.js.map"
   },
   "entrypoints": [
-    "static/js/813.da2576ed.js",
-    "static/js/main.c327c481.js"
+    "static/js/813.0e971ddc.js",
+    "static/css/main.23f540fc.css",
+    "static/js/main.b12e1495.js"
   ]
 }
