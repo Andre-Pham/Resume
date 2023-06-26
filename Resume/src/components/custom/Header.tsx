@@ -57,8 +57,7 @@ const Header: React.FC<Props> = ({
 
                 <ResIconButton
                     color={ResColors.background}
-                    iconColor={ResColors.textDark}
-                    fileName={StateManager.colorScheme.read() == ColorScheme.dark ? "moon.circle.fill.png" : "sun.max.circle.fill.png"}
+                    fileName={StateManager.colorScheme.read() == ColorScheme.dark ? "moon.png" : "sun.png"}
                     size={ResDimensions.iconButtonSize}
                     onPress={inverseColorScheme}
                     onlyIcon={true}
