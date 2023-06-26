@@ -50,7 +50,7 @@ const Skills: React.FC<Props> = ({
             </BasicCard>
 
             <BasicCard 
-                title="Native iOS Development"
+                title="Native iOS"
                 style={{ width: (componentWidth - gap) / columnCount }}
             >
                 <ResText typography={ResTypography.body}>
