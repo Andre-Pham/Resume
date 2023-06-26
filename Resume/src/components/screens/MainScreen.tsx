@@ -13,6 +13,7 @@ import Splash from '../custom/Splash';
 import { NavProp } from '../navigation/NavProp';
 import ResDimensions from '../styling/ResDimensions';
 import { ColorScheme } from '../../state/types/ColorScheme';
+import './mainscreen.css';
 
 interface Props {
     navigation?: NavProp;
