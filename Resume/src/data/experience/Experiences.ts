@@ -71,7 +71,7 @@ export const Experiences: Experience[] = [
         2022,
         "Uni Team Project",
         "2022",
-        "An Android app with the purpose of teaching visually impaired uses how to use the Google screen reader Talkback. It uses lessons to teach the user gestures and navigation, and incorporates a 'sandbox mode' and 'game mode'.",
+        "An Android app with the purpose of teaching visually impaired users how to use the Google screen reader Talkback. It uses lessons to teach the user gestures and navigation, and incorporates a 'sandbox mode' and 'game mode'.",
         [
             new Link("GitHub", "GitHub.com/TalkbackTutorial/Application", "https://github.com/TalkbackTutorial/Application")
         ],
