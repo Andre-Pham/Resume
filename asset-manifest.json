@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Resume/static/js/main.88ac5dd3.js",
+    "main.js": "/Resume/static/js/main.c327c481.js",
     "static/js/813.da2576ed.js": "/Resume/static/js/813.da2576ed.js",
     "static/media/MaterialCommunityIcons.ttf": "/Resume/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
     "static/media/profile_picture.png": "/Resume/static/media/profile_picture.7c2bdf8d1edc35061d98.png",
@@ -27,23 +27,21 @@
     "static/media/CircularStd-MediumItalic.otf": "/Resume/static/media/CircularStd-MediumItalic.55bf23ce572de9d28b4e.otf",
     "static/media/cpd_supporting_document_cerulean_labs.pdf": "/Resume/static/media/cpd_supporting_document_cerulean_labs.08748995cc970752e987.pdf",
     "static/media/Gilroy-ExtraBold.otf": "/Resume/static/media/Gilroy-ExtraBold.0094146a0505298ed06a.otf",
-    "static/media/sun.png": "/Resume/static/media/sun.d58b8788b90ef50b8f9d.png",
-    "static/media/moon.png": "/Resume/static/media/moon.e8011f762ac8f8dbb995.png",
+    "static/media/sun.png": "/Resume/static/media/sun.32816fd2492977029221.png",
     "static/media/behance_white.png": "/Resume/static/media/behance_white.a415e1b624de479bede3.png",
     "static/media/behance_black.png": "/Resume/static/media/behance_black.4744343074333a91b25d.png",
     "favicon.ico": "/Resume/favicon.ico",
-    "static/media/sun.max.circle.fill.png": "/Resume/static/media/sun.max.circle.fill.e5f24bb8763ee82bbd4c.png",
-    "static/media/moon.circle.fill.png": "/Resume/static/media/moon.circle.fill.eb16cd83702b82f4894a.png",
+    "static/media/moon.png": "/Resume/static/media/moon.84e64259c58e7e4d45b6.png",
     "index.html": "/Resume/index.html",
     "favicon-32.png": "/Resume/favicon-32.png",
     "favicon-16.png": "/Resume/favicon-16.png",
     "serve.json": "/Resume/serve.json",
     "manifest.json": "/Resume/manifest.json",
-    "main.88ac5dd3.js.map": "/Resume/static/js/main.88ac5dd3.js.map",
+    "main.c327c481.js.map": "/Resume/static/js/main.c327c481.js.map",
     "813.da2576ed.js.map": "/Resume/static/js/813.da2576ed.js.map"
   },
   "entrypoints": [
     "static/js/813.da2576ed.js",
-    "static/js/main.88ac5dd3.js"
+    "static/js/main.c327c481.js"
   ]
 }
