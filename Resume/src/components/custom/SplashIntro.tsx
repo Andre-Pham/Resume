@@ -1,32 +1,32 @@
-import React from 'react';
-import { Linking, ViewStyle } from 'react-native';
-import ResIconButtonLabelled from '../base/ResIconButtonLabelled/ResIconButtonLabelled';
-import ResText from '../base/ResText/ResText';
-import HStack from '../containers/HStack';
-import VStack from '../containers/VStack';
-import ResColors from '../styling/ResColors';
-import ResDimensions from '../styling/ResDimensions';
-import ResTypography from '../styling/ResTypography';
+import React from "react";
+import { Linking, ViewStyle } from "react-native";
+import ResIconButtonLabelled from "../base/ResIconButtonLabelled/ResIconButtonLabelled";
+import ResText from "../base/ResText/ResText";
+import HStack from "../containers/HStack";
+import VStack from "../containers/VStack";
+import ResColors from "../styling/ResColors";
+import ResDimensions from "../styling/ResDimensions";
+import ResTypography from "../styling/ResTypography";
 
 interface Props {
     style?: ViewStyle;
 }
 
-const SplashIntro: React.FC<Props> = ({ 
-    style
-}) => {
+const SplashIntro: React.FC<Props> = ({ style }) => {
     return (
         <VStack spacing={16} style={style}>
-            <ResText 
+            <ResText
                 typography={ResTypography.splash}
                 style={{
                     maxWidth: 550,
                 }}
             >
-                {"I'm a mobile developer that specialises in native iOS development and React Native. My passions are code, art and design."}
+                {
+                    "I'm a mobile developer that specialises in native iOS development and React Native. My passions are code, art and design."
+                }
             </ResText>
 
-            <ResText 
+            <ResText
                 typography={ResTypography.standoutBody}
                 style={{
                     maxWidth: 500,
@@ -47,7 +47,7 @@ const SplashIntro: React.FC<Props> = ({
                 />
 
                 <ResIconButtonLabelled
-                    fileName={'behance_white.png'}
+                    fileName={"behance_white.png"}
                     color={ResColors.behance}
                     label="Behance"
                     size={ResDimensions.iconButtonSize}
@@ -68,6 +68,6 @@ const SplashIntro: React.FC<Props> = ({
             </HStack>
         </VStack>
     );
-}
+};
 
 export default SplashIntro;

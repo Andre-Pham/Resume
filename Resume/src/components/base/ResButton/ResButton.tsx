@@ -1,9 +1,9 @@
-import React from 'react';
-import { StyleProp, TouchableOpacity, ViewStyle } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import ResColor from '../../styling/color/ResColor';
-import ResTypographyConfig from '../../styling/typography/ResTypographyConfig';
-import ResText from '../ResText/ResText';
+import React from "react";
+import { StyleProp, TouchableOpacity, ViewStyle } from "react-native";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import ResColor from "../../styling/color/ResColor";
+import ResTypographyConfig from "../../styling/typography/ResTypographyConfig";
+import ResText from "../ResText/ResText";
 
 interface Props {
     label: string;
@@ -16,31 +16,31 @@ interface Props {
     onPress: () => void;
 }
 
-const ResButton: React.FC<Props> = ({ 
-    label, 
-    typography, 
-    color, 
+const ResButton: React.FC<Props> = ({
+    label,
+    typography,
+    color,
     icon = null,
-    disabled = false, 
+    disabled = false,
     wide = true,
-    style, 
+    style,
     onPress,
 }) => {
     return (
-        <TouchableOpacity 
-            onPress={disabled ? undefined : onPress} 
+        <TouchableOpacity
+            onPress={disabled ? undefined : onPress}
             style={[
-                { 
-                    flexDirection: 'row', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
-                    paddingVertical: 12, 
-                    paddingHorizontal: 24, 
-                    borderRadius: 50, 
-                    backgroundColor: color.getColor(), 
+                {
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingVertical: 12,
+                    paddingHorizontal: 24,
+                    borderRadius: 50,
+                    backgroundColor: color.getColor(),
                     opacity: disabled ? 0.5 : 1,
-                }, 
-                wide ? { width: "100%" } : { alignSelf: 'center' },
+                },
+                wide ? { width: "100%" } : { alignSelf: "center" },
                 style,
             ]}
             disabled={disabled}
@@ -52,6 +52,6 @@ const ResButton: React.FC<Props> = ({
             </ResText>
         </TouchableOpacity>
     );
-}
+};
 
 export default ResButton;

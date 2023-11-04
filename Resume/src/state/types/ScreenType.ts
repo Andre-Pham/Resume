@@ -2,7 +2,7 @@ import { UnreachableCaseError } from "../../language/errors/UnreachableCaseError
 
 export enum ScreenType {
     mobile,
-    large
+    large,
 }
 
 export namespace ScreenType {

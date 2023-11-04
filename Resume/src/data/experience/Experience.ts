@@ -2,7 +2,6 @@ import Download from "../Download";
 import Link from "../Link";
 
 class Experience {
-
     public get subscriptText(): string {
         return this.projectType + " • " + this.duration;
     }
@@ -16,8 +15,7 @@ class Experience {
         public readonly links: Link[],
         public readonly files: Download[],
         public readonly tags: string[],
-    ) { }
-
+    ) {}
 }
 
 export default Experience;

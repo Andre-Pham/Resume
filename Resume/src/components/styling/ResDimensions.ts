@@ -1,9 +1,7 @@
-
 /**
  * Dimensions to be used application-wide.
  */
 class ResDimensions {
-
     static readonly screenPadding = 35;
 
     static readonly cardPadding = 18;
@@ -23,7 +21,6 @@ class ResDimensions {
     static readonly iconButtonSize = 40;
 
     static readonly iconButtonSpacing = 28;
-
 }
 
 export default ResDimensions;

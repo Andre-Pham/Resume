@@ -1,4 +1,3 @@
-
 export enum ActiveSection {
     none,
     experience,

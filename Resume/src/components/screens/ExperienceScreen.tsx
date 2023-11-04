@@ -12,13 +12,11 @@ interface Props {
     navigation?: NavProp;
 }
 
-const ExperienceScreen: React.FC<Props> = ({ 
-    navigation
-}) => {
+const ExperienceScreen: React.FC<Props> = ({ navigation }) => {
     let forceExit = false;
 
     useEffect(() => {
-        const unsubscribe = navigation.addListener('blur', () => {
+        const unsubscribe = navigation.addListener("blur", () => {
             // When the screen is about to lose focus
             navigation = null;
             if (!forceExit) {
@@ -36,9 +34,9 @@ const ExperienceScreen: React.FC<Props> = ({
                 navigation?.goBack();
                 navigation = null;
             }
-        }
+        };
 
-        const subscription = Dimensions.addEventListener('change', onResize);
+        const subscription = Dimensions.addEventListener("change", onResize);
 
         // When this component is hidden, don't listen for resizes anymore
         return () => {
@@ -49,7 +47,7 @@ const ExperienceScreen: React.FC<Props> = ({
     const scrollRef = useRef(null);
     const scrollIntoContent = () => {
         if (scrollRef.current) {
-            scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+            scrollRef.current.scrollIntoView({ behavior: "smooth" });
         }
     };
 
@@ -60,14 +58,14 @@ const ExperienceScreen: React.FC<Props> = ({
             return () => {
                 // Exist focus
             };
-        }, [])
+        }, []),
     );
 
     const [refresh, setRefresh] = useState(false);
     StateManager.colorScheme.subscribe(() => {
         setRefresh(!refresh);
     });
-    
+
     return (
         <View ref={scrollRef}>
             <ContentContainer>

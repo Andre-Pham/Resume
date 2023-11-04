@@ -1,19 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
-import { Dimensions, View, useColorScheme } from 'react-native';
-import { UnreachableCaseError } from '../../language/errors/UnreachableCaseError';
-import Environment from '../../state/environment/Environment';
-import StateManager from '../../state/publishers/StateManager';
-import { ActiveSection } from '../../state/publishers/types/ActiveSection';
+import { useEffect, useRef, useState } from "react";
+import { Dimensions, View, useColorScheme } from "react-native";
+import { UnreachableCaseError } from "../../language/errors/UnreachableCaseError";
+import Environment from "../../state/environment/Environment";
+import StateManager from "../../state/publishers/StateManager";
+import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import VStack from "../containers/VStack";
-import Education from '../custom/Education';
-import Experience from '../custom/Experience';
-import Header from '../custom/Header';
-import Skills from '../custom/Skills';
-import Splash from '../custom/Splash';
-import { NavProp } from '../navigation/NavProp';
-import ResDimensions from '../styling/ResDimensions';
-import { ColorScheme } from '../../state/types/ColorScheme';
-import './mainscreen.css';
+import Education from "../custom/Education";
+import Experience from "../custom/Experience";
+import Header from "../custom/Header";
+import Skills from "../custom/Skills";
+import Splash from "../custom/Splash";
+import { NavProp } from "../navigation/NavProp";
+import ResDimensions from "../styling/ResDimensions";
+import { ColorScheme } from "../../state/types/ColorScheme";
+import "./mainscreen.css";
 
 interface Props {
     navigation?: NavProp;
@@ -23,7 +23,7 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
 
     useEffect(() => {
-        Dimensions.addEventListener('change', (newDimensions) => {
+        Dimensions.addEventListener("change", (newDimensions) => {
             if (Environment.instance.screenIsPortrait()) {
                 navigateToSection();
             }
@@ -42,7 +42,7 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
     }, []);
 
     const navigateToSection = () => {
-        let activeSection = StateManager.activeSection.read()
+        let activeSection = StateManager.activeSection.read();
         switch (activeSection) {
             case ActiveSection.none:
                 break;
@@ -58,7 +58,7 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
             default:
                 throw new UnreachableCaseError(activeSection);
         }
-    }
+    };
 
     useEffect(() => {
         if (!Environment.instance.screenIsPortrait()) {
@@ -68,21 +68,21 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
 
     // Disable automatic scrolling on page refresh
     useEffect(() => {
-        if ('scrollRestoration' in window.history) {
-            window.history.scrollRestoration = 'manual';
+        if ("scrollRestoration" in window.history) {
+            window.history.scrollRestoration = "manual";
         }
-    }, []);    
+    }, []);
 
     const renderPageContent = () => {
         switch (activeSection) {
             case ActiveSection.none:
-                return <></>
+                return <></>;
             case ActiveSection.experience:
-                return <Experience />
+                return <Experience />;
             case ActiveSection.skills:
-                return <Skills />
+                return <Skills />;
             case ActiveSection.education:
-                return <Education style={{ paddingBottom: 450 }} />
+                return <Education style={{ paddingBottom: 450 }} />;
             default:
                 throw new UnreachableCaseError(activeSection);
         }
@@ -91,7 +91,7 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
     const scrollRef = useRef(null);
     const scrollIntoContent = () => {
         if (scrollRef.current) {
-            scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+            scrollRef.current.scrollIntoView({ behavior: "smooth" });
         }
     };
 
@@ -112,7 +112,7 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
 
     return (
         <View style={{ padding: ResDimensions.screenPadding }}>
-            <VStack spacing={ResDimensions.mainScreenSpacing} style={{ alignContent: 'center' }}>
+            <VStack spacing={ResDimensions.mainScreenSpacing} style={{ alignContent: "center" }}>
                 <Header />
 
                 <Splash />
@@ -121,10 +121,10 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
             {/* We don't want to see the edge of the view above, so position this a little lower */}
             <View ref={scrollRef} style={{ marginTop: 24, marginBottom: -24 }} />
 
-            <VStack 
-                spacing={ResDimensions.pageContentSpacing} 
-                style={{ 
-                    alignContent: 'center', 
+            <VStack
+                spacing={ResDimensions.pageContentSpacing}
+                style={{
+                    alignContent: "center",
                     paddingTop: activeSection == ActiveSection.none ? 0 : ResDimensions.mainScreenSpacing,
                     paddingBottom: activeSection == ActiveSection.none ? 200 : 0,
                 }}
@@ -133,6 +133,6 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
             </VStack>
         </View>
     );
-}
+};
 
 export default MainScreen;

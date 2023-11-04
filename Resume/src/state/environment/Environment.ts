@@ -6,18 +6,17 @@ import { ResScreenOrientation } from "../types/ResScreenOrientation";
 import { ScreenType } from "../types/ScreenType";
 
 class Environment {
+    public static readonly instance = new Environment();
 
-    public static readonly instance = new Environment()
-
-    private constructor() { }
+    private constructor() {}
 
     public getDeviceColorScheme(): ColorScheme {
         // TODO: I can't get this to change correctly
         const colorScheme = Appearance.getColorScheme();
         switch (colorScheme) {
-            case 'dark':
+            case "dark":
                 return ColorScheme.dark;
-            case 'light':
+            case "light":
                 return ColorScheme.light;
             default:
                 return ColorScheme.light;
@@ -26,15 +25,15 @@ class Environment {
 
     public getOS(): OS {
         switch (Platform.OS) {
-            case 'android':
+            case "android":
                 return OS.android;
-            case 'ios':
+            case "ios":
                 return OS.ios;
-            case 'windows':
+            case "windows":
                 return OS.windows;
-            case 'macos':
+            case "macos":
                 return OS.macos;
-            case 'web':
+            case "web":
                 return OS.web;
             default:
                 return OS.other;
@@ -68,7 +67,7 @@ class Environment {
 
     public getScreenOrientation(): ResScreenOrientation {
         const dimensions = this.getScreenDimensions();
-        if (dimensions[0] > dimensions[1]){
+        if (dimensions[0] > dimensions[1]) {
             return ResScreenOrientation.Landscape;
         }
         return ResScreenOrientation.Potrait;
@@ -76,7 +75,7 @@ class Environment {
 
     public getAspectRatio(): number {
         const dimensions = this.getScreenDimensions();
-        return dimensions[0]/dimensions[1];
+        return dimensions[0] / dimensions[1];
     }
 
     public screenIsPortrait(): boolean {
@@ -84,20 +83,16 @@ class Environment {
     }
 
     public getScreenWidth(): number {
-        return Dimensions.get('window').width;
+        return Dimensions.get("window").width;
     }
 
     public getScreenHeight(): number {
-        return Dimensions.get('window').height;
+        return Dimensions.get("window").height;
     }
 
     private getScreenDimensions(): [number, number] {
-        return [
-            Dimensions.get("window").width,
-            Dimensions.get("window").height
-        ]
+        return [Dimensions.get("window").width, Dimensions.get("window").height];
     }
-
 }
 
 export default Environment;

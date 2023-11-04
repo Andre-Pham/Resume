@@ -10,23 +10,20 @@ interface Props {
     style?: ViewStyle;
 }
 
-const ContentContainer: React.FC<Props> = ({ 
-    children,
-    style,
-}) => {
+const ContentContainer: React.FC<Props> = ({ children, style }) => {
     const onLayout = (event: any) => {
         const layout = event.nativeEvent.layout;
         if (layout.width > 0) {
             // Only if this component is visible
-            StateManager.contentWidth.publish(Environment.instance.getScreenWidth() - ResDimensions.screenPadding*2);
+            StateManager.contentWidth.publish(Environment.instance.getScreenWidth() - ResDimensions.screenPadding * 2);
         }
-    }
+    };
 
     return (
-        <VStack 
+        <VStack
             style={{
                 padding: ResDimensions.screenPadding,
-                ...style
+                ...style,
             }}
             onLayout={onLayout}
         >

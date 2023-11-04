@@ -1,8 +1,8 @@
-import React from 'react';
-import { Linking, Text, TextStyle } from 'react-native';
-import { ResFontFamily } from '../../styling/typography/ResFontFamily';
-import { ResFontWeight } from '../../styling/typography/ResFontWeight';
-import ResTypographyConfig from '../../styling/typography/ResTypographyConfig';
+import React from "react";
+import { Linking, Text, TextStyle } from "react-native";
+import { ResFontFamily } from "../../styling/typography/ResFontFamily";
+import { ResFontWeight } from "../../styling/typography/ResFontWeight";
+import ResTypographyConfig from "../../styling/typography/ResTypographyConfig";
 
 interface Props {
     // Text or other components to be embedded
@@ -19,17 +19,8 @@ interface Props {
     style?: TextStyle;
 }
 
-const ResHyperlink: React.FC<Props> = ({ 
-    children, 
-    url,
-    typography,
-    verticalWrap = false,
-    wide = true,
-    style,
-}) => {
-    let linkTypography = typography
-        .withWeight(ResFontWeight.bold)
-        .withUnderline(true);
+const ResHyperlink: React.FC<Props> = ({ children, url, typography, verticalWrap = false, wide = true, style }) => {
+    let linkTypography = typography.withWeight(ResFontWeight.bold).withUnderline(true);
 
     const handlePress = React.useCallback(() => {
         Linking.openURL(url);
@@ -41,11 +32,13 @@ const ResHyperlink: React.FC<Props> = ({
     return (
         <Text
             style={[
-                wide ? { width: "100%" } : { alignSelf: 'center' },
+                wide ? { width: "100%" } : { alignSelf: "center" },
                 linkTypography.getStylesheet(),
-                verticalWrap ? { 
-                    lineHeight: linkTypography.size*lineHeightMultiplier 
-                } : null,
+                verticalWrap
+                    ? {
+                          lineHeight: linkTypography.size * lineHeightMultiplier,
+                      }
+                    : null,
                 style,
             ]}
             onPress={handlePress}
@@ -53,6 +46,6 @@ const ResHyperlink: React.FC<Props> = ({
             {children}
         </Text>
     );
-}
+};
 
 export default ResHyperlink;

@@ -4,7 +4,6 @@ import { ResFont } from "./ResFont";
 import { ResFontWeight } from "./ResFontWeight";
 
 class ResFontFamilyConfig {
-
     private readonly regular: ResFont | null;
     private readonly semiBold: ResFont | null;
     private readonly bold: ResFont | null;
@@ -15,7 +14,7 @@ class ResFontFamilyConfig {
     private readonly blackItalic: ResFont | null;
 
     constructor(
-        regular: ResFont | null, 
+        regular: ResFont | null,
         semiBold: ResFont | null,
         bold: ResFont | null,
         black: ResFont | null,
@@ -56,7 +55,6 @@ class ResFontFamilyConfig {
                 throw new UnreachableCaseError(weight);
         }
     }
-
 }
 
 export default ResFontFamilyConfig;

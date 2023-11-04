@@ -1,5 +1,5 @@
-import ExperiencePeriod from "./ExperiencePeriod"
-import { Experiences } from "./Experiences"
+import ExperiencePeriod from "./ExperiencePeriod";
+import { Experiences } from "./Experiences";
 
 export const ExperiencePeriods: () => ExperiencePeriod[] = () => {
     let result: ExperiencePeriod[] = [];
@@ -20,22 +20,22 @@ export const ExperiencePeriods: () => ExperiencePeriod[] = () => {
         // Compare the types
         const aIsString = typeof a.label === "string";
         const bIsString = typeof b.label === "string";
-        
+
         // Strings go at the top
         if (aIsString && !bIsString) {
-          return -1;
+            return -1;
         }
         if (!aIsString && bIsString) {
-          return 1;
+            return 1;
         }
-        
+
         // Numbers are sorted in decreasing order
         if (typeof a.label === "number" && typeof b.label === "number") {
-          return (b.label as number) - (a.label as number);
+            return (b.label as number) - (a.label as number);
         }
-        
+
         // Preserve the original order if both values are not strings or numbers
         return 0;
     });
     return result;
-}
+};

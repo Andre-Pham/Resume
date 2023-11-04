@@ -1,4 +1,3 @@
-
 export enum ResImageScale {
     none,
     scaleToFit,

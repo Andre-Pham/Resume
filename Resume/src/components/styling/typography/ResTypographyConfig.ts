@@ -1,11 +1,10 @@
 import { ResFontFamily } from "./ResFontFamily";
 import ResFontFamilyConfig from "./ResFontFamilyConfig";
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 import { ResFontWeight } from "./ResFontWeight";
 import ResColor from "../color/ResColor";
 
 class ResTypographyConfig {
-
     public size: number;
     public fontFamily: ResFontFamily;
     // An undefined color allows the component handle the color
@@ -34,15 +33,15 @@ class ResTypographyConfig {
                 result = (result + " line-through").trimStart();
             }
         }
-        return (result as "none" | "underline" | "line-through" | "underline line-through");
+        return result as "none" | "underline" | "line-through" | "underline line-through";
     }
 
     constructor(
-        size: number, 
-        fontFamily: ResFontFamily, 
+        size: number,
+        fontFamily: ResFontFamily,
         color: ResColor | undefined,
-        weight: ResFontWeight = ResFontWeight.regular, 
-        italic: boolean = false, 
+        weight: ResFontWeight = ResFontWeight.regular,
+        italic: boolean = false,
         underlined: boolean = false,
         linedOut: boolean = false,
         kerning: number = 0,
@@ -95,10 +94,9 @@ class ResTypographyConfig {
                 fontSize: this.size,
                 textDecorationLine: this.lineStyle,
                 letterSpacing: this.kerning,
-            }
+            },
         }).typography;
     }
-
 }
 
 export default ResTypographyConfig;

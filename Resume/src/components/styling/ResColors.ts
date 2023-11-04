@@ -6,7 +6,6 @@ import ResColor from "./color/ResColor";
  * Colors should be named using light-mode convention, that is, colors should be named according to how they should be read in light mode. "Dark text" is text that is dark in light mode, and light in dark mode.
  */
 class ResColors {
-
     static get accent(): ResColor {
         return new ResColor("#1769ff");
     }
@@ -54,7 +53,6 @@ class ResColors {
     static get linkedIn(): ResColor {
         return new ResColor("#2d64bc");
     }
-
 }
 
 export default ResColors;

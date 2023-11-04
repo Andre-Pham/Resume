@@ -1,6 +1,4 @@
-
 class NavScreen {
-
     /**
      * @param title the name of the screen, this will displayed in the header
      * @param id the id of the screen for navigation
@@ -11,9 +9,8 @@ class NavScreen {
         public readonly title: string | null,
         public readonly id: string,
         public readonly component: React.FC,
-        public readonly options?: object
-    ) { }
-
+        public readonly options?: object,
+    ) {}
 }
 
 export default NavScreen;

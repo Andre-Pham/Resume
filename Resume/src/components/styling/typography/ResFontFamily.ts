@@ -14,11 +14,11 @@ export namespace ResFontFamily {
         switch (family) {
             case ResFontFamily.poppins:
                 return new ResFontFamilyConfig(
-                    ResFont.poppinsMedium, 
+                    ResFont.poppinsMedium,
                     ResFont.poppinsSemiBold,
-                    ResFont.poppinsBold, 
+                    ResFont.poppinsBold,
                     null,
-                    ResFont.poppinsMediumItalic, 
+                    ResFont.poppinsMediumItalic,
                     ResFont.poppinsSemiBoldItalic,
                     ResFont.poppinsBoldItalic,
                     null,
@@ -46,17 +46,8 @@ export namespace ResFontFamily {
                     null,
                 );
             case ResFontFamily.gilroy:
-                return new ResFontFamilyConfig(
-                    null,
-                    null,
-                    null,
-                    ResFont.gilroyExtraBold,
-                    null,
-                    null,
-                    null,
-                    null,
-                );
-            default: 
+                return new ResFontFamilyConfig(null, null, null, ResFont.gilroyExtraBold, null, null, null, null);
+            default:
                 throw new UnreachableCaseError(family);
         }
     }

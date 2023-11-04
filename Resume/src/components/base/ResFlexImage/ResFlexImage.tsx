@@ -1,5 +1,5 @@
-import React from 'react';
-import { Image, ImageStyle } from 'react-native';
+import React from "react";
+import { Image, ImageStyle } from "react-native";
 
 interface Props {
     fileName: string;
@@ -7,14 +7,10 @@ interface Props {
     style?: ImageStyle;
 }
 
-const ResFlexImage: React.FC<Props> = ({ 
-    fileName,
-    flexVertical,
-    style,
-}) => {
+const ResFlexImage: React.FC<Props> = ({ fileName, flexVertical, style }) => {
     return (
         <Image
-            source={require('/assets/images/' + fileName)}
+            source={require("/assets/images/" + fileName)}
             resizeMode="contain"
             style={{
                 height: flexVertical ? "100%" : null,
@@ -23,7 +19,7 @@ const ResFlexImage: React.FC<Props> = ({
                 ...style,
             }}
         />
-      );
-}
+    );
+};
 
 export default ResFlexImage;

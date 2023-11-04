@@ -1,27 +1,22 @@
-import React from 'react';
-import { View } from 'react-native';
-import ResText from '../base/ResText/ResText';
-import HStack from '../containers/HStack';
-import ResTypography from '../styling/ResTypography';
+import React from "react";
+import { View } from "react-native";
+import ResText from "../base/ResText/ResText";
+import HStack from "../containers/HStack";
+import ResTypography from "../styling/ResTypography";
 
 interface Props {
     children;
 }
 
-const YearHeader: React.FC<Props> = ({ 
-    children,
-}) => {
+const YearHeader: React.FC<Props> = ({ children }) => {
     let typography = ResTypography.sectionTitle;
     return (
-        <HStack spacing={16} style={{ alignItems: 'baseline' }}>
-            <ResText 
-                typography={typography} 
-                wide={null}
-            >
+        <HStack spacing={16} style={{ alignItems: "baseline" }}>
+            <ResText typography={typography} wide={null}>
                 {children}
             </ResText>
 
-            <View 
+            <View
                 style={{
                     flex: 1,
                     flexGrow: 1,
@@ -31,6 +26,6 @@ const YearHeader: React.FC<Props> = ({
             />
         </HStack>
     );
-}
+};
 
 export default YearHeader;

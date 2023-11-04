@@ -6,13 +6,12 @@ import { Draft, PayloadAction, configureStore, createSlice } from "@reduxjs/tool
  * To only be initialised within StateManager.
  */
 class ResValuePublisher<Type> {
-
     private readonly slice;
     private readonly publisher;
 
     constructor(initialState: Type) {
         this.slice = createSlice({
-            name: 'ResValuePublisher',
+            name: "ResValuePublisher",
             initialState: {
                 previousValue: null,
                 value: initialState,
@@ -21,12 +20,12 @@ class ResValuePublisher<Type> {
                 publishAction: (state, newValue: PayloadAction<Draft<Type>>) => {
                     state.previousValue = state.value;
                     state.value = newValue.payload;
-                }
-            }
+                },
+            },
         });
-        
+
         this.publisher = configureStore({
-            reducer: this.slice.reducer
+            reducer: this.slice.reducer,
         });
     }
 
@@ -45,7 +44,6 @@ class ResValuePublisher<Type> {
     public readPrevious(): Type {
         return this.publisher.getState().previousValue;
     }
-
 }
 
 export default ResValuePublisher;

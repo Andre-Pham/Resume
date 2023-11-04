@@ -1,16 +1,13 @@
 import NavScreen from "./NavScreen";
 
 class NavStack {
-
     /**
      * @param screens the screens in the stack, the first element in the array will be taken as the first screen
      * @param options the stack options, provided to the stack (https://reactnavigation.org/docs/stack-navigator)
      */
-    constructor(
-        public readonly options?: object,
-    ) { }
+    constructor(public readonly options?: object) {}
 
-    public readonly screens: NavScreen[] = []
+    public readonly screens: NavScreen[] = [];
 
     public addScreen(screen: NavScreen): NavStack {
         this.screens.push(screen);
@@ -22,7 +19,6 @@ class NavStack {
         this.addScreen(screen);
         return this;
     }
-
 }
 
 export default NavStack;

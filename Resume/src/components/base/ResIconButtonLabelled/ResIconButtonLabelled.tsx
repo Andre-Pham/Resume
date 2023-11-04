@@ -1,10 +1,10 @@
-import React from 'react';
-import { View, ViewStyle } from 'react-native';
-import VStack from '../../containers/VStack';
-import ResTypography from '../../styling/ResTypography';
-import ResColor from '../../styling/color/ResColor';
-import ResIconButton from '../ResIconButton/ResIconButton';
-import ResText from '../ResText/ResText';
+import React from "react";
+import { View, ViewStyle } from "react-native";
+import VStack from "../../containers/VStack";
+import ResTypography from "../../styling/ResTypography";
+import ResColor from "../../styling/color/ResColor";
+import ResIconButton from "../ResIconButton/ResIconButton";
+import ResText from "../ResText/ResText";
 
 interface Props {
     color: ResColor;
@@ -17,9 +17,9 @@ interface Props {
     onPress: () => void;
 }
 
-const ResIconButtonLabelled: React.FC<Props> = ({ 
+const ResIconButtonLabelled: React.FC<Props> = ({
     color,
-    icon = null, 
+    icon = null,
     iconColor = null,
     fileName = null,
     label,
@@ -28,18 +28,18 @@ const ResIconButtonLabelled: React.FC<Props> = ({
     onPress,
 }) => {
     return (
-        <VStack 
-            spacing={5} 
-            style={{ 
-                alignItems: 'center', 
-                alignSelf: 'flex-start', 
+        <VStack
+            spacing={5}
+            style={{
+                alignItems: "center",
+                alignSelf: "flex-start",
                 // Adjsuts frame to match label (positioned aboslute)
                 // Tested - it does scale (both the padding and the absolute positioning)
-                paddingBottom: 16, 
-                ...style 
+                paddingBottom: 16,
+                ...style,
             }}
         >
-            <ResIconButton 
+            <ResIconButton
                 icon={icon}
                 iconColor={iconColor}
                 fileName={fileName}
@@ -48,16 +48,13 @@ const ResIconButtonLabelled: React.FC<Props> = ({
                 onPress={onPress}
             />
 
-            <View style={{ position: 'absolute', top: size + 4, flex: 1 }}>
-                <ResText 
-                    typography={ResTypography.subscriptLabel}
-                    style={{ alignSelf: 'center', textAlign: 'center' }}
-                >
+            <View style={{ position: "absolute", top: size + 4, flex: 1 }}>
+                <ResText typography={ResTypography.subscriptLabel} style={{ alignSelf: "center", textAlign: "center" }}>
                     {label}
                 </ResText>
             </View>
         </VStack>
     );
-}
+};
 
 export default ResIconButtonLabelled;

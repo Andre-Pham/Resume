@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Image, ImageResizeMode, ImageStyle } from 'react-native';
-import { UnreachableCaseError } from '../../../language/errors/UnreachableCaseError';
-import { ResImageScale } from './ResImageScale';
+import React, { useEffect, useState } from "react";
+import { Image, ImageResizeMode, ImageStyle } from "react-native";
+import { UnreachableCaseError } from "../../../language/errors/UnreachableCaseError";
+import { ResImageScale } from "./ResImageScale";
 
 interface Props {
     fileName: string;
@@ -11,33 +11,32 @@ interface Props {
     style?: ImageStyle;
 }
 
-const ResImage: React.FC<Props> = ({ 
-    fileName,
-    width = 0,
-    height = 0,
-    scale = ResImageScale.none,
-    style,
-}) => {
+const ResImage: React.FC<Props> = ({ fileName, width = 0, height = 0, scale = ResImageScale.none, style }) => {
     const [size, setSize] = useState({ width: width, height: height });
     const [resizeMode, setResizeMode] = useState<ImageResizeMode>(null);
-    const [imageSize, setImageSize] = useState({ 
+    const [imageSize, setImageSize] = useState({
         // Don't set these to 0, causes NaN issues
-        width: 1, height: 1,
+        width: 1,
+        height: 1,
     });
 
     useEffect(() => {
-        const imagePath = require('/assets/images/' + fileName);
-        Image.getSize(imagePath, (width, height) => {
-            setImageSize({ width: width, height: height });
-        }, (error) => {
-            console.log('Error getting image dimensions:', error);
-        });
+        const imagePath = require("/assets/images/" + fileName);
+        Image.getSize(
+            imagePath,
+            (width, height) => {
+                setImageSize({ width: width, height: height });
+            },
+            (error) => {
+                console.log("Error getting image dimensions:", error);
+            },
+        );
 
         if (scale == ResImageScale.scaleToFill) {
             if (width > height) {
-                setSize({ width: width, height: undefined })
+                setSize({ width: width, height: undefined });
             } else {
-                setSize({ width: imageSize.width*height/imageSize.height, height: undefined });
+                setSize({ width: (imageSize.width * height) / imageSize.height, height: undefined });
             }
         }
     }, []);
@@ -63,16 +62,16 @@ const ResImage: React.FC<Props> = ({
 
     return (
         <Image
-            source={require('/assets/images/' + fileName)}
+            source={require("/assets/images/" + fileName)}
             resizeMode={resizeMode}
             style={{
                 width: size.width,
                 height: size.height,
                 aspectRatio: scale == ResImageScale.none ? null : 1,
-                ...style
+                ...style,
             }}
         />
     );
-}
+};
 
 export default ResImage;
