@@ -13,8 +13,8 @@ const ResFlexImage: React.FC<Props> = ({ fileName, flexVertical, style }) => {
             source={require("/assets/images/" + fileName)}
             resizeMode="contain"
             style={{
-                height: flexVertical ? "100%" : null,
-                width: flexVertical ? null : "100%",
+                height: flexVertical ? "100%" : undefined,
+                width: flexVertical ? undefined : "100%",
                 aspectRatio: 1,
                 ...style,
             }}

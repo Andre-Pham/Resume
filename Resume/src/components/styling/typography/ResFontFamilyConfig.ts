@@ -38,19 +38,19 @@ class ResFontFamilyConfig {
             case ResFontWeight.regular:
                 let regular = isItalic ? this.italic : this.regular;
                 assert(regular != null, "Font requested not provided/available");
-                return regular;
+                return regular!;
             case ResFontWeight.semiBold:
                 let semiBold = isItalic ? this.semiBoldItalic : this.semiBold;
                 assert(semiBold != null, "Font requested not provided/available");
-                return semiBold;
+                return semiBold!;
             case ResFontWeight.bold:
                 let bold = isItalic ? this.boldItalic : this.bold;
                 assert(bold != null, "Font requested not provided/available");
-                return bold;
+                return bold!;
             case ResFontWeight.black:
                 let black = isItalic ? this.blackItalic : this.black;
                 assert(black != null, "Font requested not provided/available");
-                return black;
+                return black!;
             default:
                 throw new UnreachableCaseError(weight);
         }

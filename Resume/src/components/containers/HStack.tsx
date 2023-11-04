@@ -3,20 +3,20 @@ import React from "react";
 import { StyleSheet, View, ViewStyle } from "react-native";
 
 interface Props {
-    children;
+    children: any;
     spacing?: number;
     verticalSpacing?: number;
     onLayout?: (event: any) => void;
     style?: ViewStyle;
 }
 
-const HStack: React.FC<Props> = ({ children, spacing = 0, verticalSpacing = null, onLayout, style }) => {
+const HStack: React.FC<Props> = ({ children, spacing = 0, verticalSpacing = undefined, onLayout, style }) => {
     return (
         <View
             onLayout={onLayout}
             style={[
                 styles.container,
-                { columnGap: spacing, rowGap: verticalSpacing == null ? spacing : verticalSpacing },
+                { columnGap: spacing, rowGap: verticalSpacing == undefined ? spacing : verticalSpacing },
                 style,
             ]}
         >

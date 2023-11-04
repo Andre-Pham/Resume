@@ -35,7 +35,7 @@ const ExperienceSection: React.FC<Props> = ({ period }) => {
             <ExperienceCard
                 key={experience.name}
                 experience={experience}
-                style={{ flex: null, width: (componentWidth - gap) / columnCount }}
+                style={{ flex: undefined, width: (componentWidth - gap) / columnCount }}
             />
         ));
     };

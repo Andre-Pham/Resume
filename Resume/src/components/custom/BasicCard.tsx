@@ -9,7 +9,7 @@ import ResTypography from "../styling/ResTypography";
 
 interface Props {
     title: string;
-    children;
+    children: any;
     style?: ViewStyle;
 }
 

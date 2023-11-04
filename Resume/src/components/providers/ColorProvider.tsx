@@ -4,7 +4,12 @@ import StateManager from "../../state/publishers/StateManager";
 
 export const ColorSchemeContext = createContext(Environment.instance.getDeviceColorScheme());
 
-export const ColorSchemeProvider = ({ children }) => {
+interface Props {
+    // Components to be embedded
+    children: any;
+}
+
+export const ColorSchemeProvider: React.FC<Props> = ({ children }) => {
     const [colorScheme, setColorScheme] = useState(Environment.instance.getDeviceColorScheme());
     const value = useMemo(() => ({ colorScheme, setColorScheme }), [colorScheme]);
 

@@ -5,11 +5,11 @@ import ResTypographyConfig from "../../styling/typography/ResTypographyConfig";
 
 interface Props {
     // Text or other components to be embedded
-    children;
+    children: any;
     // Typography applied
     typography: ResTypographyConfig;
     // If the component should expand to take up available horizontal space
-    wide?: boolean;
+    wide?: boolean | null;
     // If the frame should exactly match the text
     verticalWrap?: boolean;
     // Custom styling
@@ -23,7 +23,7 @@ const ResText: React.FC<Props> = ({ children, typography, verticalWrap = false, 
     return (
         <Text
             style={[
-                wide ? { width: "100%" } : { alignSelf: wide == null ? null : "center" },
+                wide ? { width: "100%" } : { alignSelf: wide == undefined || wide == null ? undefined : "center" },
                 typography.getStylesheet(),
                 verticalWrap
                     ? {

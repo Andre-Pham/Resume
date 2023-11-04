@@ -19,9 +19,9 @@ interface Props {
 
 const ResIconButtonLabelled: React.FC<Props> = ({
     color,
-    icon = null,
-    iconColor = null,
-    fileName = null,
+    icon = undefined,
+    iconColor = undefined,
+    fileName = undefined,
     label,
     size,
     style,

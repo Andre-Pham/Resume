@@ -16,9 +16,9 @@ const ExperienceScreen: React.FC<Props> = ({ navigation }) => {
     let forceExit = false;
 
     useEffect(() => {
-        const unsubscribe = navigation.addListener("blur", () => {
+        const unsubscribe = navigation?.addListener("blur", () => {
             // When the screen is about to lose focus
-            navigation = null;
+            navigation = undefined;
             if (!forceExit) {
                 StateManager.activeSection.publish(ActiveSection.none);
             }
@@ -28,11 +28,11 @@ const ExperienceScreen: React.FC<Props> = ({ navigation }) => {
     }, [navigation]);
 
     useEffect(() => {
-        const onResize = (newDimensions) => {
+        const onResize = (newDimensions: any) => {
             if (!Environment.instance.screenIsPortrait()) {
                 forceExit = true;
                 navigation?.goBack();
-                navigation = null;
+                navigation = undefined;
             }
         };
 
@@ -44,7 +44,7 @@ const ExperienceScreen: React.FC<Props> = ({ navigation }) => {
         };
     }, []);
 
-    const scrollRef = useRef(null);
+    const scrollRef = useRef<any>(null);
     const scrollIntoContent = () => {
         if (scrollRef.current) {
             scrollRef.current.scrollIntoView({ behavior: "smooth" });

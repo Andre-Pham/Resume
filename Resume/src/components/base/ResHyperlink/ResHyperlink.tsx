@@ -6,7 +6,7 @@ import ResTypographyConfig from "../../styling/typography/ResTypographyConfig";
 
 interface Props {
     // Text or other components to be embedded
-    children;
+    children: any;
     // The URL to open
     url: string;
     // Typography applied

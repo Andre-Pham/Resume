@@ -37,7 +37,7 @@ class StateManager {
 
     public static readonly contentWidth = new ResValuePublisher(0.0);
 
-    public static readonly backgroundColor = new ResValuePublisher<string>(undefined);
+    public static readonly backgroundColor = new ResValuePublisher<string | undefined>(undefined);
 
     public static readonly colorScheme = new ResValuePublisher(ColorScheme.light);
 

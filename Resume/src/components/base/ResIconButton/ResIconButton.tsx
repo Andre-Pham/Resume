@@ -13,14 +13,14 @@ interface Props {
     size: number;
     onlyIcon?: boolean;
     style?: ViewStyle;
-    onPress: () => void;
+    onPress?: () => void;
 }
 
 const ResIconButton: React.FC<Props> = ({
     color,
-    icon = null,
-    iconColor = null,
-    fileName = null,
+    icon = undefined,
+    iconColor = undefined,
+    fileName = undefined,
     size,
     onlyIcon = false,
     style,
@@ -29,7 +29,7 @@ const ResIconButton: React.FC<Props> = ({
     return (
         <TouchableOpacity
             onPress={onPress}
-            disabled={onPress == null}
+            disabled={onPress == undefined}
             style={{
                 backgroundColor: color.getColor(),
                 borderRadius: 50,
@@ -39,7 +39,7 @@ const ResIconButton: React.FC<Props> = ({
                 ...style,
             }}
         >
-            {icon == null ? (
+            {fileName != undefined ? (
                 <ResImage
                     fileName={fileName}
                     width={(size * 1.8) / 3.0}
@@ -50,7 +50,9 @@ const ResIconButton: React.FC<Props> = ({
                         tintColor: iconColor?.getColor(),
                     }}
                 />
-            ) : (
+            ) : undefined}
+
+            {icon != undefined ? (
                 <ResIcon
                     icon={icon}
                     size={(size * 2.2) / 3.0}
@@ -59,7 +61,7 @@ const ResIconButton: React.FC<Props> = ({
                         alignSelf: "center",
                     }}
                 />
-            )}
+            ) : undefined}
         </TouchableOpacity>
     );
 };

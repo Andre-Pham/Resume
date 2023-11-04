@@ -5,7 +5,7 @@ import HStack from "../containers/HStack";
 import ResTypography from "../styling/ResTypography";
 
 interface Props {
-    children;
+    children: any;
 }
 
 const YearHeader: React.FC<Props> = ({ children }) => {

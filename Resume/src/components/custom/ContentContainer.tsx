@@ -6,7 +6,7 @@ import VStack from "../containers/VStack";
 import ResDimensions from "../styling/ResDimensions";
 
 interface Props {
-    children;
+    children: any;
     style?: ViewStyle;
 }
 

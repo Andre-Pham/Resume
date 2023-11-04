@@ -7,17 +7,17 @@ import ResColor from "../styling/color/ResColor";
 
 interface Props {
     color: ResColor;
-    onPress?: () => void | null;
-    children; // No type - can be any component
+    onPress?: () => void;
+    children: any; // No type - can be any component
     style?: ViewStyle;
 }
 
-const FloatingContainer: React.FC<Props> = ({ color, onPress = null, children, style }) => {
+const FloatingContainer: React.FC<Props> = ({ color, onPress = undefined, children, style }) => {
     // Touchable opacity stops the highlighting of text - remove it if it's not a button
-    return onPress == null ? (
+    return onPress == undefined ? (
         <View style={[styles.container, { backgroundColor: color.getColor() }, style]}>{children}</View>
     ) : (
-        <TouchableOpacity onPress={onPress} disabled={onPress == null}>
+        <TouchableOpacity onPress={onPress} disabled={onPress == undefined}>
             <View style={[styles.container, { backgroundColor: color.getColor() }, style]}>{children}</View>
         </TouchableOpacity>
     );

@@ -4,12 +4,13 @@
     "main": "node_modules/expo/AppEntry.js",
     "homepage": "https://Andre-Pham.github.io/Resume",
     "scripts": {
-        "start": "expo start",
-        "android": "expo start --android",
-        "ios": "expo start --ios",
-        "web": "expo start --web",
+        "start": "npm run type-check && expo start",
+        "android": "npm run type-check && expo start --android",
+        "ios": "npm run type-check && expo start --ios",
+        "web": "npm run type-check && expo start --web",
         "predeploy": "expo export:web",
-        "deploy": "gh-pages -d web-build"
+        "deploy": "gh-pages -d web-build",
+        "type-check": "tsc --noEmit"
     },
     "dependencies": {
         "@expo/webpack-config": "^18.0.1",
@@ -30,6 +31,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.20.0",
+        "@types/react-native-vector-icons": "^6.4.16",
         "gh-pages": "^5.0.0",
         "prettier": "3.0.3"
     },

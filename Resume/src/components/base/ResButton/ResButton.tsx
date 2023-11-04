@@ -20,7 +20,7 @@ const ResButton: React.FC<Props> = ({
     label,
     typography,
     color,
-    icon = null,
+    icon = undefined,
     disabled = false,
     wide = true,
     style,

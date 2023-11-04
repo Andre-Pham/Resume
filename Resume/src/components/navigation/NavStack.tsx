@@ -14,7 +14,7 @@ class NavStack {
         return this;
     }
 
-    public addNewScreen(name: string, id: string, component: React.FC, options?: object): NavStack {
+    public addNewScreen(name: string | null, id: string, component: React.FC, options?: object): NavStack {
         let screen = new NavScreen(name, id, component, options);
         this.addScreen(screen);
         return this;

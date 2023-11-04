@@ -13,7 +13,9 @@ interface Props {
 }
 
 const NavHeader: React.FC<Props> = ({ title, canGoBack, navigation }) => {
-    const [backgroundColor, setBackgroundColor] = React.useState<string>(StateManager.backgroundColor.read());
+    const [backgroundColor, setBackgroundColor] = React.useState<string | undefined>(
+        StateManager.backgroundColor.read(),
+    );
 
     StateManager.backgroundColor.subscribe(() => {
         setBackgroundColor(StateManager.backgroundColor.read());

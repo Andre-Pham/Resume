@@ -20,7 +20,7 @@ const ResSmallButton: React.FC<Props> = ({
     label,
     typography,
     color,
-    icon = null,
+    icon = undefined,
     disabled = false,
     wide = true,
     style,
@@ -45,7 +45,7 @@ const ResSmallButton: React.FC<Props> = ({
             ]}
             disabled={disabled}
         >
-            {icon && <Icon name={icon} size={16} color={color} />}
+            {icon && <Icon name={icon} size={16} color={color.getColor()} />}
 
             <ResText typography={typography} wide={false}>
                 {label}

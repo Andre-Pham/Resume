@@ -12,8 +12,8 @@ interface Props {
 }
 
 const ResImage: React.FC<Props> = ({ fileName, width = 0, height = 0, scale = ResImageScale.none, style }) => {
-    const [size, setSize] = useState({ width: width, height: height });
-    const [resizeMode, setResizeMode] = useState<ImageResizeMode>(null);
+    const [size, setSize] = useState<{ width?: number; height?: number }>({ width: width, height: height });
+    const [resizeMode, setResizeMode] = useState<ImageResizeMode | undefined>(undefined);
     const [imageSize, setImageSize] = useState({
         // Don't set these to 0, causes NaN issues
         width: 1,
@@ -67,7 +67,7 @@ const ResImage: React.FC<Props> = ({ fileName, width = 0, height = 0, scale = Re
             style={{
                 width: size.width,
                 height: size.height,
-                aspectRatio: scale == ResImageScale.none ? null : 1,
+                aspectRatio: scale == ResImageScale.none ? undefined : 1,
                 ...style,
             }}
         />

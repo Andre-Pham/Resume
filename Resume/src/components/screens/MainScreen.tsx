@@ -47,13 +47,13 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
             case ActiveSection.none:
                 break;
             case ActiveSection.education:
-                navigation.navigate("Andre Pham | Education");
+                navigation?.navigate("Andre Pham | Education");
                 break;
             case ActiveSection.experience:
-                navigation.navigate("Andre Pham | Experience");
+                navigation?.navigate("Andre Pham | Experience");
                 break;
             case ActiveSection.skills:
-                navigation.navigate("Andre Pham | Skills");
+                navigation?.navigate("Andre Pham | Skills");
                 break;
             default:
                 throw new UnreachableCaseError(activeSection);
@@ -88,7 +88,7 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
         }
     };
 
-    const scrollRef = useRef(null);
+    const scrollRef = useRef<any>(null);
     const scrollIntoContent = () => {
         if (scrollRef.current) {
             scrollRef.current.scrollIntoView({ behavior: "smooth" });

@@ -5,7 +5,7 @@ import ResColor from "../styling/color/ResColor";
 
 interface Props {
     color: ResColor;
-    children; // No type - can be any component
+    children: any; // No type - can be any component
     style?: ViewStyle;
 }
 
