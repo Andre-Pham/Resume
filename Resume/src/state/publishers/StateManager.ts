@@ -13,10 +13,13 @@ import { ActiveSection } from "./types/ActiveSection";
  * ``` StateManager.myState.publish(); ```
  * Any component can subscribe. Every time the state is published, a callback is called.
  * ```
- * StateManager.myState.subscribe(() => {
+ * const unsubscribe = StateManager.myState.subscribe(() => {
  *     // React to the state change, e.g. update hooks or call forceUpdate()
  * });
+ *
+ * // Note: call unsubscribe() when component is unmounted
  * ```
+ * All subscriptions should occur in useEffect hooks, since we only want the the component to subscribe on mount.
  *
  * To define a state with value, statically instantiate a ResValuePublisher.
  * ``` public static readonly loginStatus = new ResValuePublisher(LoginStatus.loggedOut); ```
@@ -30,6 +33,8 @@ import { ActiveSection } from "./types/ActiveSection";
  *
  *     // React to the state change, e.g. update hooks or call forceUpdate()
  * });
+ *
+ * // Note: call unsubscribe() when component is unmounted
  * ```
  */
 class StateManager {

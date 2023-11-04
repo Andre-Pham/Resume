@@ -28,17 +28,17 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
                 navigateToSection();
             }
         });
-    }, []);
 
-    useEffect(() => {
-        // useEffect here ensures this is only triggered once for this component
-        // Otherwise, this component subscribes with every refresh / interaction
-        StateManager.activeSection.subscribe(() => {
+        const unsubscribe = StateManager.activeSection.subscribe(() => {
             setActiveSection(StateManager.activeSection.read());
             if (Environment.instance.screenIsPortrait()) {
                 navigateToSection();
             }
         });
+
+        return () => {
+            unsubscribe();
+        };
     }, []);
 
     const navigateToSection = () => {

@@ -21,11 +21,15 @@ const ExperienceSection: React.FC<Props> = ({ period }) => {
         Dimensions.addEventListener("change", (newDimensions) => {
             setScreenIsPortrait(Environment.instance.screenIsPortrait());
         });
-    }, []);
 
-    StateManager.contentWidth.subscribe(() => {
-        setComponentWidth(StateManager.contentWidth.read());
-    });
+        const unsubscribe = StateManager.contentWidth.subscribe(() => {
+            setComponentWidth(StateManager.contentWidth.read());
+        });
+
+        return () => {
+            unsubscribe();
+        };
+    }, []);
 
     let columnCount = screenIsPortrait ? 1 : 2;
     let gap = (columnCount - 1) * ResDimensions.cardColumnSpacing;

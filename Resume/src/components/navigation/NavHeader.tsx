@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -17,9 +17,15 @@ const NavHeader: React.FC<Props> = ({ title, canGoBack, navigation }) => {
         StateManager.backgroundColor.read(),
     );
 
-    StateManager.backgroundColor.subscribe(() => {
-        setBackgroundColor(StateManager.backgroundColor.read());
-    });
+    useEffect(() => {
+        const unsubscribe = StateManager.backgroundColor.subscribe(() => {
+            setBackgroundColor(StateManager.backgroundColor.read());
+        });
+
+        return () => {
+            unsubscribe();
+        };
+    }, []);
 
     return (
         <SafeAreaView edges={["top"]} style={{ backgroundColor: backgroundColor }}>

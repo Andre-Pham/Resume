@@ -1,5 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import StateManager from "../../state/publishers/StateManager";
 import NavHeader from "./NavHeader";
 import NavStack from "./NavStack";

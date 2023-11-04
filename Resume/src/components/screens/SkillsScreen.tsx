@@ -24,7 +24,11 @@ const SkillsScreen: React.FC<Props> = ({ navigation }) => {
             }
         });
 
-        return unsubscribe;
+        return () => {
+            if (unsubscribe != undefined) {
+                unsubscribe();
+            }
+        };
     }, [navigation]);
 
     useEffect(() => {

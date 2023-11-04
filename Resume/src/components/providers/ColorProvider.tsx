@@ -14,9 +14,13 @@ export const ColorSchemeProvider: React.FC<Props> = ({ children }) => {
     const value = useMemo(() => ({ colorScheme, setColorScheme }), [colorScheme]);
 
     useEffect(() => {
-        StateManager.colorScheme.subscribe(() => {
+        const unsubscribe = StateManager.colorScheme.subscribe(() => {
             setColorScheme(StateManager.colorScheme.read());
         });
+
+        return () => {
+            unsubscribe();
+        };
     }, []);
 
     return <ColorSchemeContext.Provider value={value.colorScheme}>{children}</ColorSchemeContext.Provider>;

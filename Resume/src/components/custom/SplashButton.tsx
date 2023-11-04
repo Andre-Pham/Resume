@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, ViewStyle } from "react-native";
 import StateManager from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
@@ -16,9 +16,15 @@ interface Props {
 const SplashButton: React.FC<Props> = ({ label, section, radius, style }) => {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
 
-    StateManager.activeSection.subscribe(() => {
-        setActiveSection(StateManager.activeSection.read());
-    });
+    useEffect(() => {
+        const unsubscribe = StateManager.activeSection.subscribe(() => {
+            setActiveSection(StateManager.activeSection.read());
+        });
+
+        return () => {
+            unsubscribe();
+        };
+    }, []);
 
     let selectedTypography = ResTypography.button.withColor(ResColors.textLightPersistent);
     let unselectedTypography = ResTypography.button.withColor(ResColors.textDark);
