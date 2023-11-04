@@ -24,11 +24,7 @@ const ExperienceScreen: React.FC<Props> = ({ navigation }) => {
             }
         });
 
-        return () => {
-            if (unsubscribe != undefined) {
-                unsubscribe();
-            }
-        };
+        return unsubscribe;
     }, [navigation]);
 
     useEffect(() => {
