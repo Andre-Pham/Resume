@@ -33,6 +33,17 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
+        "AuslanSpell",
+        2023,
+        "Uni Individual Project",
+        "2023",
+        "An iOS app that converts any text prompt into an animated, interactive 3D model performing the prompt in Auslan fingerspelling. Also includes an experimental recognition feature to recognise when a letter is performed by the user using the device's camera.",
+        [new Link("GitHub", "GitHub.com/Andre-Pham/SpellApp", "https://github.com/Andre-Pham/SpellApp")],
+        [],
+        ["Swift", "UIKit", "MVC", "SceneKit", "Vision", "AVFoundation", "Core Graphics"],
+    ),
+
+    new Experience(
         "SwiftSerialization",
         2023,
         "Personal Project",
@@ -47,17 +58,6 @@ export const Experiences: Experience[] = [
         ],
         [],
         ["Swift", "SQLite3", "Unit Tests"],
-    ),
-
-    new Experience(
-        "Fingerspell Auslan",
-        "Active",
-        "Uni Individual Project",
-        "2023 - Present",
-        "An iOS app that can convert a text prompt into an animated, interactive 3D model performing the prompt in Auslan fingerspelling, as well as the recognition and translation of fingerspelling performed by the user through their camera back into text.",
-        [new Link("GitHub", "GitHub.com/Andre-Pham/SpellApp", "https://github.com/Andre-Pham/SpellApp")],
-        [],
-        ["Swift", "SwiftUI", "UIKit", "MVC", "SceneKit", "Create ML", "Vision", "AVFoundation"],
     ),
 
     new Experience(
@@ -90,13 +90,13 @@ export const Experiences: Experience[] = [
 
     new Experience(
         "Intake",
-        "Active",
+        2023,
         "Uni Team Project",
-        "2023 - Present",
-        "A multi-platform mental heatth triage app. Allows for nurses to triage patients, view and append to patient history, and view other triage cases. Allows admins to manage accounts and export patient data, and allows nurse leaders to manage shift turnover and manage patient allocation. Has account login, live data, and supports mobile, tablet, and web.",
-        [new Link("GitHub", "[Unavailable until publication made]", "https://github.com/FIT4002-TEAM9/Leaf")],
+        "2023",
+        "A multi-platform mental health triage app. Allows for nurses to triage and manage patients, create and track patient events, and view other triage cases. Allows admins to manage accounts and export patient data, and allows nurse leaders to manage shift turnover and manage patient allocation. Has account login, live data, and supports mobile, tablet, and web.",
+        [new Link("GitHub", "GitHub.com/FIT4002-TEAM9/Leaf", "https://github.com/FIT4002-TEAM9/Leaf")],
         [],
-        ["React Native Expo", "Typescript", "Redux", "MongoDB"],
+        ["React Native Expo", "TypeScript", "Redux", "Firestore"],
     ),
 
     new Experience(
@@ -134,11 +134,11 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
-        "Vision",
+        "Beesly",
         "Active",
         "Paid Positon",
         "2023 - Present",
-        "In progress. More to come...",
+        "An iOS application for audibly recognising commands and providing text-to-speech feedback based on object recognition and hand detection using the device's camera. Interacts with a 3D printed modular insect model, \"Beesly\".",
         [new Link("GitHub", "GitHub.com/Andre-Pham/LemonApp", "https://github.com/Andre-Pham/LemonApp")],
         [],
         ["Swift", "UIKit", "MVC", "Create ML", "Vision", "AVFoundation", "Speech"],
@@ -152,6 +152,6 @@ export const Experiences: Experience[] = [
         "You're looking at it 😉. I wouldn't typically use (nor recommend) React Native for a website, but I wanted to get more practice using it.",
         [new Link("GitHub", "GitHub.com/Andre-Pham/Resume", "https://github.com/Andre-Pham/Resume")],
         [],
-        ["React Native Expo", "Typescript", "Redux"],
+        ["React Native Expo", "TypeScript", "Redux"],
     ),
 ];
