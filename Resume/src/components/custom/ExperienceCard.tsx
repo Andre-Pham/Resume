@@ -67,21 +67,23 @@ const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
 
     return (
         <FlatContainer color={ResColors.fillBackgroundLight} style={{ flex: 1, ...style }}>
-            <HStack spacing={10} style={{ paddingBottom: 4 }}>
+            <HStack spacing={12} style={{ paddingBottom: 4 }}>
                 {experience.image != null ? (
                     <ResImage
                         height={38}
                         width={38}
                         fileName={experience.image}
                         scale={ResImageScale.none}
-                        style={{ borderRadius: 8, alignSelf: "center",
-                        borderWidth: 2,
-                        borderColor: ResColors.textSemiDark.getColor()
-                    }}
+                        style={{
+                            borderRadius: 8,
+                            alignSelf: "center",
+                            borderWidth: 2,
+                            borderColor: ResColors.textSemiDark.getColor(),
+                        }}
                     />
                 ) : undefined}
 
-                <ResText typography={ResTypography.header} wide={false} >
+                <ResText typography={ResTypography.header} wide={false}>
                     {experience.name}
                 </ResText>
             </HStack>

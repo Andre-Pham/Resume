@@ -74,6 +74,14 @@ const Skills: React.FC<Props> = ({ style }) => {
                 </ResText>
             </BasicCard>
 
+            <BasicCard title="Databases" style={{ width: (componentWidth - gap) / columnCount }}>
+                <ResText typography={ResTypography.body}>
+                    {
+                        "I have a range of experience working with various types of databases, including designing, querying, and integrating them into applications. Databases I have experience with include SQL (including SQLite and PostgreSQL), Firebase's Firestore, MongoDB, Realm, and Neo4j."
+                    }
+                </ResText>
+            </BasicCard>
+
             <BasicCard title="Creative Applications" style={{ width: (componentWidth - gap) / columnCount }}>
                 <ResText typography={ResTypography.body}>
                     {
