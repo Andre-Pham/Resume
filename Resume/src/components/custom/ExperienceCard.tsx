@@ -11,6 +11,8 @@ import VStack from "../containers/VStack";
 import ResColors from "../styling/ResColors";
 import ResDimensions from "../styling/ResDimensions";
 import ResTypography from "../styling/ResTypography";
+import ResImage from "../base/ResImage/ResImage";
+import { ResImageScale } from "../base/ResImage/ResImageScale";
 
 interface Props {
     experience: Experience;
@@ -65,7 +67,24 @@ const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
 
     return (
         <FlatContainer color={ResColors.fillBackgroundLight} style={{ flex: 1, ...style }}>
-            <ResText typography={ResTypography.header}>{experience.name}</ResText>
+            <HStack spacing={10} style={{ paddingBottom: 4 }}>
+                {experience.image != null ? (
+                    <ResImage
+                        height={38}
+                        width={38}
+                        fileName={experience.image}
+                        scale={ResImageScale.none}
+                        style={{ borderRadius: 8, alignSelf: "center",
+                        borderWidth: 2,
+                        borderColor: ResColors.textSemiDark.getColor()
+                    }}
+                    />
+                ) : undefined}
+
+                <ResText typography={ResTypography.header} wide={false} >
+                    {experience.name}
+                </ResText>
+            </HStack>
 
             <VStack spacing={ResDimensions.bodyParagraphSpacing} style={{ paddingTop: 4 }}>
                 <ResText typography={ResTypography.subscript}>{experience.subscriptText}</ResText>

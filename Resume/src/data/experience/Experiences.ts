@@ -4,13 +4,14 @@ import Experience from "./Experience";
 
 export const Experiences: Experience[] = [
     new Experience(
+        "codesign_icon.png",
         "Cerulean Labs",
         "Active",
         "Paid Positon",
         "2021 - Present",
-        "As an iOS developer at Cerulean Labs, I've worked on all areas of the iPad Spaces app including the UI, rendering, feature development, and more. My CPD supporting document (linked below) provides a more thorough look at my contributions.",
+        "As an iOS developer at Cerulean Labs, I've worked on all areas of the iPad Codesign (formerly Spaces) app including the UI, rendering, feature development, and more. My CPD supporting document (linked below) provides a more thorough look at my contributions.",
         [
-            new Link("Spaces", "SpacesApp.io", "https://www.spacesapp.io/"),
+            new Link("Codesign", "GetCodesign.co", "https://www.getcodesign.co/"),
             new Link(
                 "What is CPD?",
                 "(Monash.edu Link)",
@@ -22,6 +23,7 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
+        "yonder_icon.png",
         "Yonder",
         "Active",
         "Personal Project",
@@ -33,6 +35,7 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
+        "auslanspell_icon.png",
         "AuslanSpell",
         2023,
         "Uni Individual Project",
@@ -44,6 +47,7 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
+        null,
         "SwiftSerialization",
         2023,
         "Personal Project",
@@ -61,6 +65,7 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
+        null,
         "Teach Me Talkback",
         2022,
         "Uni Team Project",
@@ -78,6 +83,7 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
+        "portfolio_icon.png",
         "Portfolio",
         2021,
         "Uni Inidividual Project",
@@ -89,6 +95,7 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
+        null,
         "Intake",
         2023,
         "Uni Team Project",
@@ -100,6 +107,7 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
+        "information_visualiser_icon.png",
         "Information Visualiser",
         2021,
         "Personal Project",
@@ -117,6 +125,7 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
+        null,
         "Dynamic Tic-Tac-Toe",
         2021,
         "Personal Project",
@@ -134,17 +143,19 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
+        "beesly_icon.png",
         "Beesly",
         "Active",
         "Paid Positon",
         "2023 - Present",
-        "An iOS application for audibly recognising commands and providing text-to-speech feedback based on object recognition and hand detection using the device's camera. Interacts with a 3D printed modular insect model, \"Beesly\".",
+        'An iOS application for audibly recognising commands and providing text-to-speech feedback based on object recognition and hand detection using the device\'s camera. Interacts with a 3D printed modular insect model, "Beesly".',
         [new Link("GitHub", "GitHub.com/Andre-Pham/LemonApp", "https://github.com/Andre-Pham/LemonApp")],
         [],
         ["Swift", "UIKit", "MVC", "Create ML", "Vision", "AVFoundation", "Speech"],
     ),
 
     new Experience(
+        null,
         "Resume",
         2023,
         "Personal Project",

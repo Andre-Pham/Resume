@@ -5,14 +5,17 @@ import { ResImageScale } from "./ResImageScale";
 
 interface Props {
     fileName: string;
-    width?: number;
-    height?: number;
+    width?: number | string;
+    height?: number | string;
     scale?: ResImageScale;
     style?: ImageStyle;
 }
 
 const ResImage: React.FC<Props> = ({ fileName, width = 0, height = 0, scale = ResImageScale.none, style }) => {
-    const [size, setSize] = useState<{ width?: number; height?: number }>({ width: width, height: height });
+    const [size, setSize] = useState<{ width?: number | string; height?: number | string }>({
+        width: width,
+        height: height,
+    });
     const [resizeMode, setResizeMode] = useState<ImageResizeMode | undefined>(undefined);
     const [imageSize, setImageSize] = useState({
         // Don't set these to 0, causes NaN issues
@@ -32,7 +35,7 @@ const ResImage: React.FC<Props> = ({ fileName, width = 0, height = 0, scale = Re
             },
         );
 
-        if (scale == ResImageScale.scaleToFill) {
+        if (scale == ResImageScale.scaleToFill && typeof width == "number" && typeof height == "number") {
             if (width > height) {
                 setSize({ width: width, height: undefined });
             } else {

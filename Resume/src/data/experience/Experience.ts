@@ -7,6 +7,7 @@ class Experience {
     }
 
     constructor(
+        public readonly image: string | null,
         public readonly name: string,
         public readonly section: number | "Active",
         public readonly projectType: string,
