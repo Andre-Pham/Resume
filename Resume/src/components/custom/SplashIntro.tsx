@@ -22,7 +22,7 @@ const SplashIntro: React.FC<Props> = ({ style }) => {
                 }}
             >
                 {
-                    "I'm a mobile developer that specialises in native iOS development and React Native. My passions are code, art and design."
+                    "I'm a mobile developer who specialises in native iOS development and React Native. My passions are code, art and design."
                 }
             </ResText>
 
