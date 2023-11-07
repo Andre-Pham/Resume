@@ -41,12 +41,13 @@ const SplashButtonMobile: React.FC<Props> = ({ label, section, style }) => {
                 let toPublish = activeSection == section ? ActiveSection.none : section;
                 StateManager.activeSection.publish(toPublish);
             }}
-            wide={false}
+            wide={true}
             style={[
                 {
-                    width: buttonSize,
+                    maxWidth: buttonSize,
                     justifyContent: "flex-start",
                     paddingLeft: 32,
+                    alignSelf: "center",
                 },
                 activeSection == section ? styles.shadow : {},
                 style,

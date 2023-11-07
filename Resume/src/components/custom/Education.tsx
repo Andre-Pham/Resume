@@ -120,7 +120,11 @@ const Education: React.FC<Props> = ({ style }) => {
             </BasicCard>
 
             <BasicCard title="High Achiever" style={{ width: (componentWidth - gap) / columnCount }}>
-                <ResText typography={ResTypography.body}>{"I was included in the Faculty of Engineering Dean's Honour List every year of my degree, and have received multiple letters of commendation for my high academic performance."}</ResText>
+                <ResText typography={ResTypography.body}>
+                    {
+                        "I was included in the Faculty of Engineering Dean's Honour List every year of my degree, and have received multiple letters of commendation for my high academic performance."
+                    }
+                </ResText>
 
                 <ResSmallButton
                     label="Honour List Inclusions"
