@@ -49,6 +49,32 @@ const Education: React.FC<Props> = ({ style }) => {
         }
     };
 
+    const downloadHonoursListInclusions = async () => {
+        const fileUrl = require("/assets/files/honour_list_inclusions.zip");
+        try {
+            // Assume we're on web
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = "honour_list_inclusions_andrepham.zip";
+            link.click();
+        } catch (error) {
+            console.error("File download failed:", error);
+        }
+    };
+
+    const downloadLettersOfCommendation = async () => {
+        const fileUrl = require("/assets/files/letters_of_commendation.zip");
+        try {
+            // Assume we're on web
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = "letters_of_commendation_andrepham.zip";
+            link.click();
+        } catch (error) {
+            console.error("File download failed:", error);
+        }
+    };
+
     return (
         <HStack
             spacing={ResDimensions.cardColumnSpacing}
@@ -91,6 +117,28 @@ const Education: React.FC<Props> = ({ style }) => {
                 >
                     {"What's an academic transcript?"}
                 </ResHyperlink>
+            </BasicCard>
+
+            <BasicCard title="High Achiever" style={{ width: (componentWidth - gap) / columnCount }}>
+                <ResText typography={ResTypography.body}>{"I was included in the Faculty of Engineering Dean's Honour List every year of my degree, and have received multiple letters of commendation for my high academic performance."}</ResText>
+
+                <ResSmallButton
+                    label="Honour List Inclusions"
+                    typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
+                    color={ResColors.accent}
+                    wide={false}
+                    onPress={downloadHonoursListInclusions}
+                    style={{ alignSelf: "flex-start" }}
+                />
+
+                <ResSmallButton
+                    label="Letters of Commendation"
+                    typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
+                    color={ResColors.accent}
+                    wide={false}
+                    onPress={downloadLettersOfCommendation}
+                    style={{ alignSelf: "flex-start" }}
+                />
             </BasicCard>
         </HStack>
     );

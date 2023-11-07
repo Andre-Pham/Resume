@@ -47,6 +47,18 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
+        "beesly_icon.png",
+        "Beesly",
+        2023,
+        "Paid Positon",
+        "2023",
+        'An iOS application for audibly recognising commands and providing text-to-speech feedback based on object recognition and hand detection using the device\'s camera. Interacts with a 3D printed modular insect model, "Beesly".',
+        [new Link("GitHub", "GitHub.com/Andre-Pham/LemonApp", "https://github.com/Andre-Pham/LemonApp")],
+        [],
+        ["Swift", "UIKit", "MVC", "Create ML", "Vision", "AVFoundation", "Speech"],
+    ),
+
+    new Experience(
         null,
         "SwiftSerialization",
         2023,
@@ -107,7 +119,7 @@ export const Experiences: Experience[] = [
     ),
 
     new Experience(
-        "information_visualiser_icon.png",
+        null,
         "Information Visualiser",
         2021,
         "Personal Project",
@@ -140,18 +152,6 @@ export const Experiences: Experience[] = [
         ],
         [],
         ["Python", "Tkinter"],
-    ),
-
-    new Experience(
-        "beesly_icon.png",
-        "Beesly",
-        "Active",
-        "Paid Positon",
-        "2023 - Present",
-        'An iOS application for audibly recognising commands and providing text-to-speech feedback based on object recognition and hand detection using the device\'s camera. Interacts with a 3D printed modular insect model, "Beesly".',
-        [new Link("GitHub", "GitHub.com/Andre-Pham/LemonApp", "https://github.com/Andre-Pham/LemonApp")],
-        [],
-        ["Swift", "UIKit", "MVC", "Create ML", "Vision", "AVFoundation", "Speech"],
     ),
 
     new Experience(
