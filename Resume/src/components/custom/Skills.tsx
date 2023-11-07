@@ -53,7 +53,7 @@ const Skills: React.FC<Props> = ({ style }) => {
             <BasicCard title="Native iOS" style={{ width: (componentWidth - gap) / columnCount }}>
                 <ResText typography={ResTypography.body}>
                     {
-                        "My primary area of expertise is native iOS development, having worked on an extensive number of both individual and team-based projects. Using Swift, I've built apps and packages using all kinds of frameworks including SwiftUI, UIKit, Core Graphics, SceneKit, Vision, AVFoundation, Speech, Core Video, Core Data, and more. I'm well versed in package management using Swift Packages and Cocoa Pods, developing unit tests, localisation, and working with the rest of the iOS ecosystem. I extensive experience in common app architectures such as MVVM and MVC, as well as design patterns such as the delegate pattern, publisher subscriber pattern, and so on."
+                        "My primary area of expertise is native iOS development, having worked on an extensive number of both individual and team-based projects. Using Swift, I've built apps and packages using all kinds of frameworks including SwiftUI, UIKit, Core Graphics, SceneKit, Vision, AVFoundation, Speech, Core Video, Core Data, and more. I'm well versed in package management using Swift Packages and Cocoa Pods, developing unit tests, localisation, and working with the rest of the iOS ecosystem. I have extensive experience in common app architectures such as MVVM and MVC, as well as design patterns such as the delegate pattern, publisher subscriber pattern, and so on."
                     }
                 </ResText>
             </BasicCard>
@@ -69,7 +69,7 @@ const Skills: React.FC<Props> = ({ style }) => {
             <BasicCard title="Native Android" style={{ width: (componentWidth - gap) / columnCount }}>
                 <ResText typography={ResTypography.body}>
                     {
-                        "I have experience building native Android apps in Kotlin and Java using XML Layouts. I'm formally educated in Android development (haven taken FIT2081) and have built two apps in team settings. I'm experienced in basic Android architecture, activity and fragment lifecycles, UI development, persisting data using Shared Preferences and Room, interacting with web services, and interfacing with accessibility services."
+                        "I have experience building native Android apps in Kotlin and Java using XML Layouts. I'm formally educated in Android development and have built two apps in team settings. I'm experienced in basic Android architecture, activity and fragment lifecycles, UI development, persisting data using Shared Preferences and Room, interacting with web services, and interfacing with accessibility services."
                     }
                 </ResText>
             </BasicCard>
@@ -85,7 +85,7 @@ const Skills: React.FC<Props> = ({ style }) => {
             <BasicCard title="Creative Applications" style={{ width: (componentWidth - gap) / columnCount }}>
                 <ResText typography={ResTypography.body}>
                     {
-                        "I greatly enjoy the practice of art and design and pursue it in my own time. I have experience in applications such as Adobe Photoshop, Adoble Illustrator, Adobe Premiere Pro, Audacity, Procreate (iPadOS graphics software), Figma, and more. Apart from considering design and usability in my applications, I also have a Behance portfolio linked above."
+                        "I greatly enjoy the practice of art and design and pursue it in my own time. I have experience in applications such as Adobe Photoshop, Adobe Illustrator, Adobe Premiere Pro, Audacity, Procreate (iPadOS graphics software), Figma, and more. Apart from considering design and usability in my applications, I also have a Behance portfolio linked above."
                     }
                 </ResText>
             </BasicCard>
@@ -93,7 +93,7 @@ const Skills: React.FC<Props> = ({ style }) => {
             <BasicCard title="Python" style={{ width: (componentWidth - gap) / columnCount }}>
                 <ResText typography={ResTypography.body}>
                     {
-                        "Sort of an outlier, but oddly enough I have a lot of experience with Python. I've used it in my own personal projects, in university projects, and for building scripts for processing and manipulating data. I have experience with Pandas, numpy, OpenCV, PIL, and a bunch more."
+                        "Sort of an outlier, but oddly enough I have a lot of experience with Python. I've used it in my own personal projects, in university projects, and for building scripts for processing and manipulating data. I have experience with Pandas, NumPy, OpenCV, PIL, and a bunch more."
                     }
                 </ResText>
             </BasicCard>
