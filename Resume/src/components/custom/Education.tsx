@@ -10,6 +10,7 @@ import ResColors from "../styling/ResColors";
 import ResDimensions from "../styling/ResDimensions";
 import ResTypography from "../styling/ResTypography";
 import BasicCard from "./BasicCard";
+import VGap from "../containers/layout/VGap";
 
 interface Props {
     style?: ViewStyle;
@@ -120,7 +121,7 @@ const Education: React.FC<Props> = ({ style }) => {
             </BasicCard>
 
             <BasicCard title="High Achiever" style={{ width: (componentWidth - gap) / columnCount }}>
-                <ResText typography={ResTypography.body}>
+                <ResText typography={ResTypography.body} style={{ paddingBottom: 6 }}>
                     {
                         "I was included in the Faculty of Engineering Dean's Honour List every year of my degree, and have received multiple letters of commendation for my high academic performance."
                     }
