@@ -4,6 +4,7 @@ import { ColorScheme } from "../types/ColorScheme";
 import { OS } from "../types/OS";
 import { ResScreenOrientation } from "../types/ResScreenOrientation";
 import { ScreenType } from "../types/ScreenType";
+import { WebDeviceType } from "../types/WebDeviceType";
 
 class Environment {
     public static readonly instance = new Environment();
@@ -63,6 +64,31 @@ class Environment {
             default:
                 throw new UnreachableCaseError(os);
         }
+    }
+
+    public getWebDeviceType(): WebDeviceType {
+        if (Platform.OS !== "web") {
+            return WebDeviceType.none;
+        }
+        const userAgent = navigator.userAgent;
+        const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+        const { width, height } = Dimensions.get("window");
+        const smallestSide = Math.min(width, height);
+        // Portable devices (general touch devices check)
+        if (isTouchDevice && smallestSide < 600) {
+            return WebDeviceType.portable;
+        }
+        // Portable devices (specific devices check)
+        // prettier-ignore
+        if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Silk|iPad|Tablet|Kindle|webOS|Windows Phone/i.test(userAgent)) {
+            return WebDeviceType.portable;
+        }
+        // Portable Macintosh devices (iPad with iPadOS)
+        if (/Macintosh/.test(userAgent) && isTouchDevice) {
+            return WebDeviceType.portable;
+        }
+        // Default to desktop for non-touch devices with larger screen
+        return WebDeviceType.desktop;
     }
 
     public getScreenOrientation(): ResScreenOrientation {

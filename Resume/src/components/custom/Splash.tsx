@@ -14,11 +14,7 @@ interface Props {
     // No props
 }
 
-const Splash: React.FC<Props> = (
-    {
-        // No props
-    },
-) => {
+const Splash: React.FC<Props> = ({}) => {
     const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.screenIsPortrait());
 
     useEffect(() => {
