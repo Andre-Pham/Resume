@@ -92,7 +92,7 @@ const Education: React.FC<Props> = ({ style }) => {
             </BasicCard>
 
             <BasicCard title="First Class Honours" style={{ width: (componentWidth - gap) / columnCount }}>
-                <ResText typography={ResTypography.body}>{"WAM: 87.625\nGPA: 3.917"}</ResText>
+                <ResText typography={ResTypography.body}>{"WAM: 88.255\nGPA: 3.938"}</ResText>
 
                 <ResHyperlink
                     typography={ResTypography.body}
