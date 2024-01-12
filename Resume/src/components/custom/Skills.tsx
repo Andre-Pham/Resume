@@ -53,7 +53,7 @@ const Skills: React.FC<Props> = ({ style }) => {
             <BasicCard title="Native iOS" style={{ width: (componentWidth - gap) / columnCount }}>
                 <ResText typography={ResTypography.body}>
                     {
-                        "My primary area of expertise is native iOS development, having worked on an extensive number of both individual and team-based projects. Using Swift, I've built apps and packages using all kinds of frameworks including SwiftUI, UIKit, Core Graphics, SceneKit, Vision, AVFoundation, Speech, Core Video, Core Data, and more. I'm well versed in package management using Swift Packages and Cocoa Pods, developing unit tests, localisation, and working with the rest of the iOS ecosystem. I have extensive experience in common app architectures such as MVVM and MVC, as well as design patterns such as the delegate pattern, publisher subscriber pattern, and so on."
+                        "My primary area of expertise is native iOS development, having worked on an extensive number of both individual and team-based projects. Using Swift, I've built apps and packages using all kinds of frameworks including SwiftUI, UIKit, Core Graphics, SceneKit, Vision, AVFoundation, Speech, Core Video, Core Data, Combine, and more. I'm well versed in package management using Swift Packages and Cocoa Pods, developing unit tests, localisation, and working with the rest of the iOS ecosystem. I have extensive experience in common app architectures such as MVVM and MVC, as well as design patterns such as the delegate pattern, publisher subscriber pattern, dependency injection, and so on."
                     }
                 </ResText>
             </BasicCard>
