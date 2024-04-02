@@ -11,6 +11,7 @@ import ResDimensions from "../styling/ResDimensions";
 import ResTypography from "../styling/ResTypography";
 import BasicCard from "./BasicCard";
 import VGap from "../containers/layout/VGap";
+import VStack from "../containers/VStack";
 
 interface Props {
     style?: ViewStyle;
@@ -38,7 +39,7 @@ const Education: React.FC<Props> = ({ style }) => {
     let gap = (columnCount - 1) * ResDimensions.cardColumnSpacing;
 
     const downloadAcademicTranscript = async () => {
-        const fileUrl = require("/assets/files/academic_transcript_unofficial.pdf");
+        const fileUrl = require("/assets/files/academic_transcript_official.pdf");
         try {
             // Assume we're on web
             const link = document.createElement("a");
@@ -96,28 +97,43 @@ const Education: React.FC<Props> = ({ style }) => {
 
                 <ResHyperlink
                     typography={ResTypography.body}
-                    url="https://www.monash.edu/students/admin/exams/results/results-legend"
+                    url="https://www.monash.edu/students/admin/assessments/results/wam"
                 >
-                    {"What do these mean?"}
+                    {"Reading WAM"}
+                </ResHyperlink>
+
+                <ResHyperlink
+                    typography={ResTypography.body}
+                    url="https://www.monash.edu/students/admin/assessments/results/gpa"
+                >
+                    {"Reading GPA"}
                 </ResHyperlink>
             </BasicCard>
 
             <BasicCard title="Academic Transcript" style={{ width: (componentWidth - gap) / columnCount }}>
+                <ResHyperlink
+                    typography={ResTypography.body}
+                    url="https://www.myequals.net/sharelink/0780a40a-9e70-420d-a905-31117d1a9388/0d22dbc1-5b1b-4d2a-99d8-8fda0d5e1b03"
+                >
+                    {"Online academic transcript"}
+                </ResHyperlink>
+
+                <ResHyperlink
+                    typography={ResTypography.body}
+                    url="https://www.monash.edu/students/support/connect/official-documents/academic-transcripts"
+                    style={{ paddingBottom: 6 }}
+                >
+                    {"What's an academic transcript?"}
+                </ResHyperlink>
+
                 <ResSmallButton
-                    label="download"
+                    label="Download Transcript"
                     typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
                     wide={false}
                     onPress={downloadAcademicTranscript}
                     style={{ alignSelf: "flex-start" }}
                 />
-
-                <ResHyperlink
-                    typography={ResTypography.body}
-                    url="https://www.monash.edu/students/support/connect/official-documents/academic-transcripts"
-                >
-                    {"What's an academic transcript?"}
-                </ResHyperlink>
             </BasicCard>
 
             <BasicCard title="High Achiever" style={{ width: (componentWidth - gap) / columnCount }}>
