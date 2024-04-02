@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Resume/static/css/main.23f540fc.css",
-    "main.js": "/Resume/static/js/main.156006f0.js",
+    "main.js": "/Resume/static/js/main.093611cd.js",
     "static/js/813.2398a249.js": "/Resume/static/js/813.2398a249.js",
     "static/media/MaterialCommunityIcons.ttf": "/Resume/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
     "static/media/honour_list_inclusions.zip": "/Resume/static/media/honour_list_inclusions.fa256fb9927fa1c37d67.zip",
     "static/media/profile_picture.png": "/Resume/static/media/profile_picture.7c2bdf8d1edc35061d98.png",
     "static/media/beesly_icon.png": "/Resume/static/media/beesly_icon.dfddab651a93d80a58b8.png",
+    "static/media/academic_transcript_official.pdf": "/Resume/static/media/academic_transcript_official.1dac595d49b07ca9e5fd.pdf",
     "static/media/user_guide_teach_me_talkback.pdf": "/Resume/static/media/user_guide_teach_me_talkback.d2773c76cc07d9f15264.pdf",
     "static/media/profile_picture_no_background.png": "/Resume/static/media/profile_picture_no_background.7c4a8d56cc7f511c3cc4.png",
-    "static/media/academic_transcript_unofficial.pdf": "/Resume/static/media/academic_transcript_unofficial.87958a727d0d748c8bff.pdf",
     "static/media/Poppins-MediumItalic.ttf": "/Resume/static/media/Poppins-MediumItalic.89e040c6a64d18f620dc.ttf",
     "static/media/Poppins-SemiBoldItalic.ttf": "/Resume/static/media/Poppins-SemiBoldItalic.3524ffc3226f4578e5c5.ttf",
     "static/media/Poppins-BoldItalic.ttf": "/Resume/static/media/Poppins-BoldItalic.cfb635a5111b545f5598.ttf",
@@ -29,7 +29,6 @@
     "static/media/CircularStd-Medium.otf": "/Resume/static/media/CircularStd-Medium.9ffafeddf192e8c8a111.otf",
     "static/media/CircularStd-BoldItalic.otf": "/Resume/static/media/CircularStd-BoldItalic.c1293725acde0dffc47e.otf",
     "static/media/CircularStd-MediumItalic.otf": "/Resume/static/media/CircularStd-MediumItalic.55bf23ce572de9d28b4e.otf",
-    "static/media/cpd_supporting_document_cerulean_labs.pdf": "/Resume/static/media/cpd_supporting_document_cerulean_labs.08748995cc970752e987.pdf",
     "static/media/Gilroy-ExtraBold.otf": "/Resume/static/media/Gilroy-ExtraBold.0094146a0505298ed06a.otf",
     "static/media/auslanspell_icon.png": "/Resume/static/media/auslanspell_icon.5b5d5a809b28eb01326f.png",
     "static/media/sun.png": "/Resume/static/media/sun.32816fd2492977029221.png",
@@ -46,12 +45,12 @@
     "serve.json": "/Resume/serve.json",
     "manifest.json": "/Resume/manifest.json",
     "main.23f540fc.css.map": "/Resume/static/css/main.23f540fc.css.map",
-    "main.156006f0.js.map": "/Resume/static/js/main.156006f0.js.map",
+    "main.093611cd.js.map": "/Resume/static/js/main.093611cd.js.map",
     "813.2398a249.js.map": "/Resume/static/js/813.2398a249.js.map"
   },
   "entrypoints": [
     "static/js/813.2398a249.js",
     "static/css/main.23f540fc.css",
-    "static/js/main.156006f0.js"
+    "static/js/main.093611cd.js"
   ]
 }
