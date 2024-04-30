@@ -3,6 +3,7 @@ import ResText from "./components/base/ResText";
 import ResTypography from "./components/styling/ResTypography";
 import ResButton from "./components/base/ResButton";
 import ResColors from "./components/styling/ResColors";
+import { mdiAccount } from "@mdi/js";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -11,14 +12,15 @@ function App() {
         <>
             <ResText typography={ResTypography.pageTitle}>Hello World {count}</ResText>
 
-            <ResButton 
+            <ResButton
                 label="Hello World"
                 typography={ResTypography.button}
                 color={ResColors.accent}
                 onPress={() => {
-                    setCount(count + 1)
+                    setCount(count + 1);
                 }}
                 wide={false}
+                iconPath={mdiAccount}
             />
         </>
     );
