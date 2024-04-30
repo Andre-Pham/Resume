@@ -1,6 +1,6 @@
 export enum ResFontWeight {
-    regular,
-    semiBold,
-    bold,
-    black,
+    regular = 500,
+    semiBold = 600,
+    bold = "bold",
+    black = 900,
 }

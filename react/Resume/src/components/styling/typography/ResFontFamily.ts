@@ -3,10 +3,10 @@ import { ResFont } from "./ResFont";
 import ResFontFamilyConfig from "./ResFontFamilyConfig";
 
 export enum ResFontFamily {
-    poppins,
-    circular,
-    plexMono,
-    gilroy,
+    poppins = "Poppins",
+    circular = "CircularStd",
+    plexMono = "IBMPlexMono",
+    gilroy = "Gilroy",
 }
 
 export namespace ResFontFamily {

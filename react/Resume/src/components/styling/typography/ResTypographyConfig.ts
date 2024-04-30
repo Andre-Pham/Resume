@@ -87,7 +87,8 @@ class ResTypographyConfig {
 
     public getStylesheet(): React.CSSProperties {
         return {
-            fontFamily: this.font,
+            fontFamily: this.fontFamily,
+            fontWeight: this.weight,
             color: this.color || "inherit",
             fontSize: this.size,
             textDecorationLine: this.lineStyle,

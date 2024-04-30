@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ResTypographyConfig from "../styling/typography/ResTypographyConfig";
-import ResText from "./ResText";
-import ResColor from "../styling/color/ResColor";
+import ResTypographyConfig from "../../styling/typography/ResTypographyConfig";
+import ResText from "../ResText";
+import ResColor from "../../styling/color/ResColor";
 import Icon from "@mdi/react";
 
 interface Props {

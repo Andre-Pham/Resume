@@ -1,14 +1,16 @@
 import { useState } from "react";
+import "../global/fonts.css";
 import ResText from "./components/base/ResText";
 import ResTypography from "./components/styling/ResTypography";
-import ResButton from "./components/base/ResButton";
+import ResButton from "./components/base/ResButton/ResButton";
 import ResColors from "./components/styling/ResColors";
 import { mdiAccount } from "@mdi/js";
 import ResCompactButton from "./components/base/ResCompactButton";
-import ResChip from "./components/base/ResChip";
+import ResChip from "./components/base/ResChip/ResChip";
 import HStack from "./components/containers/HStack";
 import VStack from "./components/containers/VStack";
-import ResFlexImage from "./components/base/ResFlexImage";
+import ResFlexImage from "./components/base/ResFlexImage/ResFlexImage";
+import ResHyperlink from "./components/base/ResHyperlink/ResHyperlink";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -60,6 +62,13 @@ function App() {
                 </HStack>
 
                 <ResFlexImage fileName="profile_picture.png" flexVertical={false} />
+
+                <ResHyperlink
+                    typography={ResTypography.body}
+                    url="https://www.monash.edu/students/admin/assessments/results/wam"
+                >
+                    {"Reading WAM"}
+                </ResHyperlink>
             </VStack>
         </>
     );
