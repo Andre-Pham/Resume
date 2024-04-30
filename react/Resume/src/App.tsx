@@ -12,6 +12,8 @@ import VStack from "./components/containers/VStack";
 import ResFlexImage from "./components/base/ResFlexImage/ResFlexImage";
 import ResHyperlink from "./components/base/ResHyperlink/ResHyperlink";
 import ResIcon from "./components/base/ResIcon/ResIcon";
+import ResImage from "./components/base/ResImage";
+import { ResImageScale } from "./components/base/ResImageScale";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -72,6 +74,22 @@ function App() {
                 </ResHyperlink>
 
                 <ResIcon iconPath={mdiAccount} color={ResColors.accent} size={3} />
+
+                <ResImage
+                    fileName="profile_picture.png"
+                    width={100}
+                    height={50}
+                    scale={ResImageScale.scaleToFit}
+                    style={{ border: "1px solid red" }}
+                />
+
+                <ResImage
+                    fileName="profile_picture.png"
+                    width={50}
+                    height={100}
+                    scale={ResImageScale.scaleToFit}
+                    style={{ border: "1px solid red" }}
+                />
             </VStack>
         </>
     );
