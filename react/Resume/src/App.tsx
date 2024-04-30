@@ -49,17 +49,17 @@ function App() {
                         <ResText typography={ResTypography.chip}>Hello Chip 2</ResText>
                     </ResChip>
 
-                    <ResChip color={ResColors.chipBackground} onPress={() => {
-                        setCount(count + 1);
-                    }}>
+                    <ResChip
+                        color={ResColors.chipBackground}
+                        onPress={() => {
+                            setCount(count + 1);
+                        }}
+                    >
                         <ResText typography={ResTypography.chip}>Press Me</ResText>
                     </ResChip>
                 </HStack>
 
-                <ResFlexImage
-                    fileName="profile_picture.png"
-                    flexVertical={false}
-                />
+                <ResFlexImage fileName="profile_picture.png" flexVertical={false} />
             </VStack>
         </>
     );

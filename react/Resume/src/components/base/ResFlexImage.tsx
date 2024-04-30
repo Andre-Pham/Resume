@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface Props {
     fileName: string;
@@ -12,9 +12,9 @@ const ResFlexImage: React.FC<Props> = ({ fileName, flexVertical, style }) => {
             src={`/assets/images/${fileName}`}
             alt={fileName}
             style={{
-                height: flexVertical ? '100%' : 'auto',
-                width: flexVertical ? 'auto' : '100%',
-                aspectRatio: '1',
+                height: flexVertical ? "100%" : "auto",
+                width: flexVertical ? "auto" : "100%",
+                aspectRatio: "1",
                 objectFit: "contain",
                 ...style,
             }}
