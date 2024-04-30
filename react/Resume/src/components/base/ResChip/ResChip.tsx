@@ -30,18 +30,27 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
             onMouseLeave={handleMouseLeave}
             onClick={onPress}
             style={{
-                borderRadius: "50px",
-                padding: "6px 12px",
-                alignSelf: "flex-start",
+                border: "none",
+                background: "none",
+                padding: 0,
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed ? "scale(0.95)" : "scale(1)",
-                border: "solid transparent",
-                backgroundColor: color.getColor(),
                 ...style,
             }}
         >
-            {children}
+            <div
+                style={{
+                    border: "1.5px solid transparent",
+                    borderRadius: "50px",
+                    padding: "6px 12px",
+                    alignSelf: "flex-start",
+                    backgroundColor: color.getColor(),
+                    ...style,
+                }}
+            >
+                {children}
+            </div>
         </button>
     ) : (
         <div

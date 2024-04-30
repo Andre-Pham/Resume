@@ -56,7 +56,7 @@ const ResButton: React.FC<Props> = ({
                 opacity: disabled ? 0.5 : 1,
                 width: wide ? "100%" : undefined,
                 alignSelf: wide ? undefined : "center",
-                border: "solid transparent",
+                border: "none",
                 cursor: disabled ? "default" : "pointer",
                 transition: "transform 0.1s",
                 transform: pressed ? "scale(0.95)" : "scale(1)",
