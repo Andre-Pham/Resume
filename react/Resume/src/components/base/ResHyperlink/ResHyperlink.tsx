@@ -20,16 +20,13 @@ interface Props {
 
 const ResHyperlink: React.FC<Props> = ({ children, url, typography, verticalWrap = false, wide = true, style }) => {
     let linkTypography = typography.withWeight(ResFontWeight.bold).withUnderline(true);
-    // For some reason the poppins font is slightly offset
-    // This is a workaround
-    let lineHeightMultiplier = linkTypography.fontFamily == ResFontFamily.poppins ? 1.15 : 1.0;
     return (
         <a
             href={url}
             style={{
                 width: wide ? "100%" : undefined,
                 alignSelf: wide == undefined ? undefined : "center",
-                lineHeight: verticalWrap ? `${linkTypography.size * lineHeightMultiplier}em` : undefined,
+                lineHeight: verticalWrap ? 1 : undefined,
                 ...linkTypography.getStylesheet(),
                 ...style,
             }}

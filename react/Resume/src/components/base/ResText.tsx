@@ -25,11 +25,10 @@ const ResText: React.FC<Props> = ({
     numberOfLines,
     style,
 }) => {
-    let lineHeightMultiplier = typography.fontFamily === ResFontFamily.poppins ? 1.15 : 1.0;
     let computedStyle: React.CSSProperties = {
         width: wide ? "100%" : undefined,
         alignSelf: wide == undefined ? undefined : "center",
-        lineHeight: verticalWrap ? `${typography.size * lineHeightMultiplier}px` : undefined,
+        lineHeight: verticalWrap ? 1 : undefined,
         ...typography.getStylesheet(),
         ...style,
     };
