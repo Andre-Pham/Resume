@@ -1,6 +1,5 @@
 import { ResFontFamily } from "./ResFontFamily";
 import ResFontFamilyConfig from "./ResFontFamilyConfig";
-import { StyleSheet } from "react-native";
 import { ResFontWeight } from "./ResFontWeight";
 import ResColor from "../color/ResColor";
 
@@ -86,16 +85,15 @@ class ResTypographyConfig {
         return this;
     }
 
-    public getStylesheet(): {} {
-        return StyleSheet.create({
-            typography: {
-                fontFamily: this.font,
-                color: this.color,
-                fontSize: this.size,
-                textDecorationLine: this.lineStyle,
-                letterSpacing: this.kerning,
-            },
-        }).typography;
+    public getStylesheet(): React.CSSProperties {
+        return {
+            fontFamily: this.font,
+            color: this.color || "inherit",
+            fontSize: this.size,
+            textDecorationLine: this.lineStyle,
+            letterSpacing: this.kerning,
+            fontStyle: this.italic ? "italic" : "normal",
+        };
     }
 }
 
