@@ -11,6 +11,7 @@ import HStack from "./components/containers/HStack";
 import VStack from "./components/containers/VStack";
 import ResFlexImage from "./components/base/ResFlexImage/ResFlexImage";
 import ResHyperlink from "./components/base/ResHyperlink/ResHyperlink";
+import ResIcon from "./components/base/ResIcon/ResIcon";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -69,6 +70,8 @@ function App() {
                 >
                     {"Reading WAM"}
                 </ResHyperlink>
+
+                <ResIcon iconPath={mdiAccount} color={ResColors.accent} size={3} />
             </VStack>
         </>
     );
