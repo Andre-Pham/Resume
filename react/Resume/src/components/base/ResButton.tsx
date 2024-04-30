@@ -40,7 +40,7 @@ const ResButton: React.FC<Props> = ({
                 width: wide ? "100%" : undefined,
                 alignSelf: wide ? undefined : "center",
                 border: "none",
-                cursor: disabled ? "not-allowed" : "pointer",
+                cursor: disabled ? "default" : "pointer",
                 ...style,
             }}
             disabled={disabled}
