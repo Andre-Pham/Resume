@@ -15,7 +15,7 @@ interface Props {
     onPress: () => void;
 }
 
-const ResButton: React.FC<Props> = ({
+const ResCompactButton: React.FC<Props> = ({
     label,
     typography,
     color,
@@ -50,13 +50,13 @@ const ResButton: React.FC<Props> = ({
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "center",
-                padding: "12px 24px",
+                padding: "6px 14px",
                 borderRadius: "50px",
                 backgroundColor: color.getColor(),
                 opacity: disabled ? 0.5 : 1,
                 width: wide ? "100%" : undefined,
                 alignSelf: wide ? undefined : "center",
-                border: "solid transparent",
+                border: "none",
                 cursor: disabled ? "default" : "pointer",
                 transition: "transform 0.1s",
                 transform: pressed ? "scale(0.95)" : "scale(1)",
@@ -73,4 +73,4 @@ const ResButton: React.FC<Props> = ({
     );
 };
 
-export default ResButton;
+export default ResCompactButton;
