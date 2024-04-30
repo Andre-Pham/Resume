@@ -14,7 +14,7 @@ interface Props {
 }
 
 const ResIcon: React.FC<Props> = ({ iconPath, color, size, style }) => {
-    return <Icon path={iconPath} color={color.getColor()} size={size} style={style} />;
+    return <Icon path={iconPath} color={color.getColor()} style={{ width: size, height: size, ...style }} />;
 };
 
 export default ResIcon;
