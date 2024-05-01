@@ -1,19 +1,22 @@
 import { useState } from "react";
 import "../global/fonts.css";
-import ResText from "./components/base/ResText";
+import ResText from "./components/base/ResText/ResText";
 import ResTypography from "./components/styling/ResTypography";
 import ResButton from "./components/base/ResButton/ResButton";
 import ResColors from "./components/styling/ResColors";
-import { mdiAccount } from "@mdi/js";
-import ResCompactButton from "./components/base/ResCompactButton";
+import { mdiAccount, mdiCircleHalfFull } from "@mdi/js";
+import ResCompactButton from "./components/base/ResButton/ResCompactButton";
 import ResChip from "./components/base/ResChip/ResChip";
 import HStack from "./components/containers/HStack";
 import VStack from "./components/containers/VStack";
 import ResFlexImage from "./components/base/ResFlexImage/ResFlexImage";
 import ResHyperlink from "./components/base/ResHyperlink/ResHyperlink";
 import ResIcon from "./components/base/ResIcon/ResIcon";
-import ResImage from "./components/base/ResImage";
-import { ResImageScale } from "./components/base/ResImageScale";
+import ResImage from "./components/base/ResImage/ResImage";
+import { ResImageScale } from "./components/base/ResImage/ResImageScale";
+import ResIconButton from "./components/base/ResIconButton/ResIconButton";
+import ResIconButtonLabelled from "./components/base/ResIconButtonLabelled/ResIconButtonLabelled";
+import ZStack from "./components/containers/ZStack";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -45,14 +48,15 @@ function App() {
                     iconPath={mdiAccount}
                 />
 
-                <HStack spacing={12}>
+                <HStack spacing={0} style={{ border: "1px solid red" }}>
                     <ResChip color={ResColors.chipBackground}>
+                        {/* <></> */}
                         <ResText typography={ResTypography.chip}>Hello Chip</ResText>
                     </ResChip>
 
-                    <ResChip color={ResColors.chipBackground}>
+                    {/* <ResChip color={ResColors.chipBackground}>
                         <ResText typography={ResTypography.chip}>Hello Chip 2</ResText>
-                    </ResChip>
+                    </ResChip> */}
 
                     <ResChip
                         color={ResColors.chipBackground}
@@ -60,7 +64,8 @@ function App() {
                             setCount(count + 1);
                         }}
                     >
-                        <ResText typography={ResTypography.chip}>Press Me</ResText>
+                        {/* <></> */}
+                        <ResText typography={ResTypography.chip}>Hello Chip</ResText>
                     </ResChip>
                 </HStack>
 
@@ -73,7 +78,7 @@ function App() {
                     {"Reading WAM"}
                 </ResHyperlink>
 
-                <ResIcon iconPath={mdiAccount} color={ResColors.accent} size={3} />
+                <ResIcon iconPath={mdiAccount} color={ResColors.accent} size={50} />
 
                 <ResImage
                     fileName="profile_picture.png"
@@ -90,6 +95,84 @@ function App() {
                     scale={ResImageScale.scaleToFit}
                     style={{ border: "1px solid red" }}
                 />
+
+                <ResIconButton
+                    color={ResColors.accent}
+                    size={40}
+                    fileName="moon.png"
+                    onPress={() => {
+                        setCount(count + 1);
+                    }}
+                />
+
+                <ResIconButton
+                    color={ResColors.accent}
+                    size={60}
+                    fileName="profile_picture.png"
+                    iconColor={ResColors.chipBackground}
+                    onPress={() => {
+                        setCount(count + 1);
+                    }}
+                />
+
+                <ResIconButton
+                    color={ResColors.accent}
+                    size={60}
+                    iconPath={mdiCircleHalfFull}
+                    iconColor={ResColors.chipBackground}
+                    onPress={() => {
+                        setCount(count + 1);
+                    }}
+                />
+
+                <ResIconButtonLabelled
+                    color={ResColors.accent}
+                    size={60}
+                    iconPath={mdiCircleHalfFull}
+                    iconColor={ResColors.chipBackground}
+                    onPress={() => {
+                        setCount(count + 1);
+                    }}
+                    label="Hello World"
+                />
+
+                <ZStack style={{ border: "1px solid red" }}>
+                    <ResText typography={ResTypography.pageTitle}>Hello World {count}</ResText>
+
+                    <VStack>
+                        <ResText typography={ResTypography.pageTitle}>Hello World Wow</ResText>
+
+                        <ResText typography={ResTypography.pageTitle}>Hello World Wow</ResText>
+
+                        <ResText typography={ResTypography.pageTitle}>Hello World Wow</ResText>
+                    </VStack>
+                </ZStack>
+
+                <HStack spacing={0} style={{ border: "1px solid red" }}>
+                    <ZStack style={{ border: "1px solid red" }}>
+                        <ResText typography={ResTypography.pageTitle}>Hello World {count}</ResText>
+
+                        <VStack>
+                            <ResText typography={ResTypography.pageTitle}>Hello World Wow</ResText>
+
+                            <ResText typography={ResTypography.pageTitle}>Hello World Wow</ResText>
+
+                            <ResText typography={ResTypography.pageTitle}>Hello World Wow</ResText>
+                        </VStack>
+                    </ZStack>
+
+                    <ZStack style={{ border: "1px solid red" }}>
+                        <ResText typography={ResTypography.pageTitle}>Hello World {count}</ResText>
+
+                        <VStack>
+                            <ResText typography={ResTypography.pageTitle}>Hello World Wow</ResText>
+
+                            <ResText typography={ResTypography.pageTitle}>Hello World Wow</ResText>
+
+                            <ResText typography={ResTypography.pageTitle}>Hello World Wow</ResText>
+                        </VStack>
+                    </ZStack>
+                </HStack>
             </VStack>
         </>
     );

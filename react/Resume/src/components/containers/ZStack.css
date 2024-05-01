@@ -1,0 +1,11 @@
+.zstack-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.zstack-container > * {
+    position: absolute;
+}
