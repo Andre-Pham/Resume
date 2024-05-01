@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ResColor from "../../styling/color/ResColor";
-import ResCSS from "../../styling/ResCSS";
+import ResColor from "../styling/color/ResColor";
+import ResCSS from "../styling/ResCSS";
 
 interface Props {
     color: ResColor;

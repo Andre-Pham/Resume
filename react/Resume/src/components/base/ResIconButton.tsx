@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ResColor from "../../styling/color/ResColor";
-import ResImage, { ResImageScale } from "../ResImage/ResImage";
-import ResIcon from "../ResIcon/ResIcon";
+import ResColor from "../styling/color/ResColor";
+import ResImage, { ResImageScale } from "./ResImage";
+import ResIcon from "./ResIcon";
 
 interface Props {
     color: ResColor;

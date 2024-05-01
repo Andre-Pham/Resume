@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { UnreachableCaseError } from "../../../language/errors/UnreachableCaseError";
+import { UnreachableCaseError } from "../../language/errors/UnreachableCaseError";
 
 export enum ResImageScale {
     none,

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ResTypographyConfig from "../../styling/typography/ResTypographyConfig";
-import ResText from "../ResText/ResText";
-import ResColor from "../../styling/color/ResColor";
+import ResTypographyConfig from "../styling/typography/ResTypographyConfig";
+import ResText from "./ResText";
+import ResColor from "../styling/color/ResColor";
 import Icon from "@mdi/react";
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
     onPress: () => void;
 }
 
-const ResCompactButton: React.FC<Props> = ({
+const ResButton: React.FC<Props> = ({
     label,
     typography,
     color,
@@ -50,7 +50,7 @@ const ResCompactButton: React.FC<Props> = ({
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "center",
-                padding: "6px 14px",
+                padding: "12px 24px",
                 borderRadius: "50px",
                 backgroundColor: color.getColor(),
                 opacity: disabled ? 0.5 : 1,
@@ -73,4 +73,4 @@ const ResCompactButton: React.FC<Props> = ({
     );
 };
 
-export default ResCompactButton;
+export default ResButton;

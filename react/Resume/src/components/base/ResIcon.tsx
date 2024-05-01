@@ -1,5 +1,5 @@
 import React from "react";
-import ResColor from "../../styling/color/ResColor";
+import ResColor from "../styling/color/ResColor";
 import Icon from "@mdi/react";
 
 interface Props {

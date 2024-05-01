@@ -1,6 +1,6 @@
 import React from "react";
-import ResTypographyConfig from "../../styling/typography/ResTypographyConfig";
-import { ResFontWeight } from "../../styling/typography/ResFontWeight";
+import ResTypographyConfig from "../styling/typography/ResTypographyConfig";
+import { ResFontWeight } from "../styling/typography/ResFontWeight";
 
 interface Props {
     // Text or other components to be embedded
