@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { ResImageScale } from "./ResImageScale";
 import { UnreachableCaseError } from "../../../language/errors/UnreachableCaseError";
+
+export enum ResImageScale {
+    none,
+    scaleToFit,
+    scaleToFill,
+    scaleToFillCrop,
+}
 
 interface Props {
     fileName: string;
