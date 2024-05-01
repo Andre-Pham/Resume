@@ -20,6 +20,7 @@ import ZStack from "./components/containers/Stacks/ZStack/ZStack";
 import VGap from "./components/containers/Spacing/VGap/VGap";
 import Spacer from "./components/containers/Spacing/Spacer/Spacer";
 import FlatContainer from "./components/containers/Styled/FlatContainer/FlatContainer";
+import PressableContainer from "./components/containers/Interactive/Pressable/Pressable";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -27,7 +28,14 @@ function App() {
     return (
         <>
             <VStack spacing={12}>
-                <ResText typography={ResTypography.pageTitle}>Hello World {count}</ResText>
+                <PressableContainer
+                    disableSelection={true}
+                    onPress={() => {
+                        setCount(count + 1);
+                    }}
+                >
+                    <ResText typography={ResTypography.pageTitle}>Hello World {count}</ResText>
+                </PressableContainer>
 
                 <ResButton
                     label="Hello World"

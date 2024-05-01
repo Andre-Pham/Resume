@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import ResColor from "../../../styling/color/ResColor";
 import "./DisableSelection.css";
 
 interface Props {
-    color: ResColor;
+    onPress: () => void;
     disableSelection?: boolean;
-    onPress?: () => void;
     children: React.ReactNode;
     style?: React.CSSProperties;
 }
 
-const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSelection = false, children, style }) => {
+const PressableContainer: React.FC<Props> = ({ onPress, disableSelection = false, children, style }) => {
     const [pressed, setPressed] = useState(false);
 
     const handleMouseDown = () => {
@@ -18,7 +16,7 @@ const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSel
     };
 
     const handleMouseUp = () => {
-        onPress && onPress();
+        onPress();
         setPressed(false);
     };
 
@@ -26,28 +24,13 @@ const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSel
         setPressed(false);
     };
 
-    return !onPress ? (
+    return (
         <div
-            className={disableSelection ? "disable-selection" : undefined}
-            style={{
-                borderRadius: 16,
-                padding: 18,
-                backgroundColor: color.getColor(),
-                ...style,
-            }}
-        >
-            {children}
-        </div>
-    ) : (
-        <div
-            className={disableSelection ? "disable-selection" : undefined}
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseLeave}
+            className={disableSelection ? "disable-selection" : undefined}
             style={{
-                borderRadius: 16,
-                padding: 18,
-                backgroundColor: color.getColor(),
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed ? "scale(0.95)" : "scale(1)",
@@ -59,4 +42,4 @@ const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSel
     );
 };
 
-export default FlatContainer;
+export default PressableContainer;
