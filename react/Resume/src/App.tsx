@@ -7,8 +7,8 @@ import ResColors from "./components/styling/ResColors";
 import { mdiAccount, mdiCircleHalfFull } from "@mdi/js";
 import ResCompactButton from "./components/base/ResButton/ResCompactButton";
 import ResChip from "./components/base/ResChip/ResChip";
-import HStack from "./components/containers/HStack";
-import VStack from "./components/containers/VStack";
+import HStack from "./components/containers/Stacks/HStack/HStack";
+import VStack from "./components/containers/Stacks/VStack/VStack";
 import ResFlexImage from "./components/base/ResFlexImage/ResFlexImage";
 import ResHyperlink from "./components/base/ResHyperlink/ResHyperlink";
 import ResIcon from "./components/base/ResIcon/ResIcon";
@@ -16,7 +16,7 @@ import ResImage from "./components/base/ResImage/ResImage";
 import { ResImageScale } from "./components/base/ResImage/ResImageScale";
 import ResIconButton from "./components/base/ResIconButton/ResIconButton";
 import ResIconButtonLabelled from "./components/base/ResIconButtonLabelled/ResIconButtonLabelled";
-import ZStack from "./components/containers/ZStack";
+import ZStack from "./components/containers/Stacks/ZStack/ZStack";
 
 function App() {
     const [count, setCount] = useState(0);
