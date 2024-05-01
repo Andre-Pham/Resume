@@ -1,6 +1,5 @@
-import { useState } from "react";
-import ResColor from "../../styling/color/ResColor";
-import "./DisableSelection.css";
+import React, { useState } from "react";
+import ResColor from "../../../styling/color/ResColor";
 
 interface Props {
     color: ResColor;
@@ -9,7 +8,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
+const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, children, style }) => {
     const [pressed, setPressed] = useState(false);
 
     const handleMouseDown = () => {
@@ -25,16 +24,25 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
         setPressed(false);
     };
 
-    return onPress ? (
+    return !onPress ? (
+        <div
+            style={{
+                borderRadius: 16,
+                padding: 18,
+                backgroundColor: color.getColor(),
+                ...style,
+            }}
+        >
+            {children}
+        </div>
+    ) : (
         <div
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseLeave}
-            className="disable-selection"
             style={{
-                borderRadius: "50px",
-                padding: "6px 12px",
-                alignSelf: "flex-start",
+                borderRadius: 16,
+                padding: 18,
                 backgroundColor: color.getColor(),
                 cursor: "pointer",
                 transition: "transform 0.1s",
@@ -44,19 +52,7 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
         >
             {children}
         </div>
-    ) : (
-        <div
-            style={{
-                borderRadius: "50px",
-                padding: "6px 12px",
-                alignSelf: "flex-start",
-                backgroundColor: color.getColor(),
-                ...style,
-            }}
-        >
-            {children}
-        </div>
     );
 };
 
-export default ResChip;
+export default FlatContainer;

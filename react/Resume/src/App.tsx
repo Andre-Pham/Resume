@@ -19,6 +19,7 @@ import ResIconButtonLabelled from "./components/base/ResIconButtonLabelled/ResIc
 import ZStack from "./components/containers/Stacks/ZStack/ZStack";
 import VGap from "./components/containers/Spacing/VGap/VGap";
 import Spacer from "./components/containers/Spacing/Spacer/Spacer";
+import FlatContainer from "./components/containers/Styled/FlatContainer/FlatContainer";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -177,6 +178,27 @@ function App() {
                         </VStack>
                     </ZStack>
                 </HStack>
+
+                <FlatContainer color={ResColors.fillBackgroundLight}>
+                    <VStack>
+                        <ResText typography={ResTypography.pageTitle}>Hello World {count}</ResText>
+
+                        <ResText typography={ResTypography.pageTitle}>Hello World {count}</ResText>
+                    </VStack>
+                </FlatContainer>
+
+                <FlatContainer
+                    color={ResColors.fillBackgroundLight}
+                    onPress={() => {
+                        setCount(count + 1);
+                    }}
+                >
+                    <VStack>
+                        <ResText typography={ResTypography.pageTitle}>Hello World {count}</ResText>
+
+                        <ResText typography={ResTypography.pageTitle}>Hello World {count}</ResText>
+                    </VStack>
+                </FlatContainer>
             </VStack>
         </>
     );
