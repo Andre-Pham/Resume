@@ -26,7 +26,7 @@ const ResText: React.FC<Props> = ({
 }) => {
     let computedStyle: React.CSSProperties = {
         width: wide ? "100%" : undefined,
-        alignSelf: wide == undefined ? undefined : "center",
+        justifyItems: wide == undefined ? undefined : "center",
         lineHeight: verticalWrap ? 1 : undefined,
         ...typography.getStylesheet(),
         ...style,

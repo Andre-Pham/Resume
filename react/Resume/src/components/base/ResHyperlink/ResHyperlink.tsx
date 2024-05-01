@@ -24,7 +24,7 @@ const ResHyperlink: React.FC<Props> = ({ children, url, typography, verticalWrap
             href={url}
             style={{
                 width: wide ? "100%" : undefined,
-                alignSelf: wide == undefined ? undefined : "center",
+                justifyItems: wide == undefined ? undefined : "center",
                 lineHeight: verticalWrap ? 1 : undefined,
                 ...linkTypography.getStylesheet(),
                 ...style,
