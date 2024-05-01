@@ -17,6 +17,8 @@ import { ResImageScale } from "./components/base/ResImage/ResImageScale";
 import ResIconButton from "./components/base/ResIconButton/ResIconButton";
 import ResIconButtonLabelled from "./components/base/ResIconButtonLabelled/ResIconButtonLabelled";
 import ZStack from "./components/containers/Stacks/ZStack/ZStack";
+import VGap from "./components/containers/Spacing/VGap/VGap";
+import Spacer from "./components/containers/Spacing/Spacer/Spacer";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -50,13 +52,14 @@ function App() {
 
                 <HStack spacing={0} style={{ border: "1px solid red" }}>
                     <ResChip color={ResColors.chipBackground}>
-                        {/* <></> */}
                         <ResText typography={ResTypography.chip}>Hello Chip</ResText>
                     </ResChip>
 
-                    {/* <ResChip color={ResColors.chipBackground}>
+                    <ResChip color={ResColors.chipBackground}>
                         <ResText typography={ResTypography.chip}>Hello Chip 2</ResText>
-                    </ResChip> */}
+                    </ResChip>
+
+                    <Spacer />
 
                     <ResChip
                         color={ResColors.chipBackground}
@@ -64,7 +67,6 @@ function App() {
                             setCount(count + 1);
                         }}
                     >
-                        {/* <></> */}
                         <ResText typography={ResTypography.chip}>Hello Chip</ResText>
                     </ResChip>
                 </HStack>
@@ -87,6 +89,8 @@ function App() {
                     scale={ResImageScale.scaleToFit}
                     style={{ border: "1px solid red" }}
                 />
+
+                <VGap size={20} />
 
                 <ResImage
                     fileName="profile_picture.png"
