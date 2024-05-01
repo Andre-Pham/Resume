@@ -1,5 +1,5 @@
 /**
- * Dimensions to be used application-wide.
+ * Predefined dimensions to be used application-wide.
  */
 class ResDimensions {
     static readonly screenPadding = 35;

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./ZStack.css";
+import styled from "styled-components";
 
 interface Props {
     children: React.ReactNode;
@@ -34,10 +34,27 @@ const ZStack: React.FC<Props> = ({ children, style }) => {
     }, [children]);
 
     return (
-        <div ref={containerRef} className="zstack-container" style={{ ...style, minHeight: `${minHeight}px` }}>
+        <ZStackDiv
+            ref={containerRef}
+            style={{
+                position: "relative",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flex: 1,
+                ...style,
+                minHeight: `${minHeight}px`,
+            }}
+        >
             {children}
-        </div>
+        </ZStackDiv>
     );
 };
+
+const ZStackDiv = styled.div`
+    > * {
+        position: absolute;
+    }
+`;
 
 export default ZStack;

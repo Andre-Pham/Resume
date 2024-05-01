@@ -200,6 +200,7 @@ function App() {
                     onPress={() => {
                         setCount(count + 1);
                     }}
+                    disableSelection={true}
                 >
                     <VStack>
                         <ResText typography={ResTypography.pageTitle}>Hello World {count}</ResText>

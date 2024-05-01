@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./DisableSelection.css";
+import ResCSS from "../../../styling/ResCSS";
 
 interface Props {
     onPress: () => void;
@@ -29,11 +29,11 @@ const PressableContainer: React.FC<Props> = ({ onPress, disableSelection = false
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseLeave}
-            className={disableSelection ? "disable-selection" : undefined}
             style={{
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed ? "scale(0.95)" : "scale(1)",
+                ...(disableSelection ? ResCSS.diableSelection : undefined),
                 ...style,
             }}
         >

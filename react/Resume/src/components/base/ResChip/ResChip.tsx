@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ResColor from "../../styling/color/ResColor";
-import "./DisableSelection.css";
+import ResCSS from "../../styling/ResCSS";
 
 interface Props {
     color: ResColor;
@@ -30,7 +30,6 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseLeave}
-            className="disable-selection"
             style={{
                 borderRadius: "50px",
                 padding: "6px 12px",
@@ -39,6 +38,7 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed ? "scale(0.95)" : "scale(1)",
+                ...ResCSS.diableSelection,
                 ...style,
             }}
         >

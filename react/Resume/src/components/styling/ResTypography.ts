@@ -3,6 +3,9 @@ import { ResFontFamily } from "./typography/ResFontFamily";
 import { ResFontWeight } from "./typography/ResFontWeight";
 import ResTypographyConfig from "./typography/ResTypographyConfig";
 
+/**
+ * Predefined typography to be used application-wide.
+ */
 class ResTypography {
     static get pageTitle(): ResTypographyConfig {
         return new ResTypographyConfig(32, ResFontFamily.gilroy, ResColors.textDark, ResFontWeight.black);
