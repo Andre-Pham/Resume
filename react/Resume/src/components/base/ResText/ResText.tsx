@@ -1,5 +1,5 @@
 import React from "react";
-import ResTypographyConfig from "../styling/typography/ResTypographyConfig";
+import ResTypographyConfig from "../../styling/typography/ResTypographyConfig";
 
 interface Props {
     // Text or other components to be embedded

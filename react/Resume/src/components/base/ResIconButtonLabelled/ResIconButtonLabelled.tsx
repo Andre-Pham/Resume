@@ -2,7 +2,7 @@ import React from "react";
 import ResColor from "../../styling/color/ResColor";
 import VStack from "../../containers/VStack";
 import ResIconButton from "../ResIconButton/ResIconButton";
-import ResText from "../ResText";
+import ResText from "../ResText/ResText";
 import ResTypography from "../../styling/ResTypography";
 
 interface Props {

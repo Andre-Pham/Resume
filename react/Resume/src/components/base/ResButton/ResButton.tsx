@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ResTypographyConfig from "../../styling/typography/ResTypographyConfig";
-import ResText from "../ResText";
+import ResText from "../ResText/ResText";
 import ResColor from "../../styling/color/ResColor";
 import Icon from "@mdi/react";
 
