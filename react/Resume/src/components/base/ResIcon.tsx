@@ -6,7 +6,7 @@ interface Props {
     // Icon path (https://pictogrammers.com/library/mdi/)
     iconPath: string;
     // Icon fill color
-    color: ResColor;
+    color?: ResColor;
     // Icon size
     size: number;
     // Custom style
@@ -14,7 +14,7 @@ interface Props {
 }
 
 const ResIcon: React.FC<Props> = ({ iconPath, color, size, style }) => {
-    return <Icon path={iconPath} color={color.getColor()} style={{ width: size, height: size, ...style }} />;
+    return <Icon path={iconPath} color={color?.getColor()} style={{ width: size, height: size, ...style }} />;
 };
 
 export default ResIcon;

@@ -33,11 +33,11 @@ const EducationContent: React.FC<Props> = ({ style }) => {
         DownloadManager.inst.download(DownloadManager.inst.transcript);
     };
 
-    const downloadHonoursListInclusions = () => {
+    const downloadHonoursListInclusions = async () => {
         DownloadManager.inst.download(DownloadManager.inst.honourListInclusions);
     };
 
-    const downloadLettersOfCommendation = () => {
+    const downloadLettersOfCommendation = async () => {
         DownloadManager.inst.download(DownloadManager.inst.lettersOfCommendation);
     };
 

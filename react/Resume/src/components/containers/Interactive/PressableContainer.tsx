@@ -30,6 +30,7 @@ const PressableContainer: React.FC<Props> = ({ onPress, disableSelection = false
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseLeave}
             style={{
+                display: "flex",
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed ? "scale(0.95)" : "scale(1)",
