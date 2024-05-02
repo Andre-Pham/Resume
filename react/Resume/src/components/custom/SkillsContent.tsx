@@ -9,7 +9,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const Skills: React.FC<Props> = ({ style }) => {
+const SkillsContent: React.FC<Props> = ({ style }) => {
     const [shouldRenderPortrait, setShouldRenderPortrait] = useState(
         window.innerWidth <= ResDimensions.screenWidthToRenderPortrait,
     );
@@ -93,4 +93,4 @@ const Skills: React.FC<Props> = ({ style }) => {
     );
 };
 
-export default Skills;
+export default SkillsContent;

@@ -1,6 +1,6 @@
 import "./fonts.css";
 import VStack from "./components/containers/Stacks/VStack";
-import Education from "./components/custom/Education";
+import EducationContent from "./components/custom/EducationContent";
 import ResDimensions from "./components/styling/ResDimensions";
 import Header from "./components/custom/Header";
 import Splash from "./components/custom/Splash";
@@ -8,7 +8,8 @@ import { ActiveSection } from "./state/publishers/types/ActiveSection";
 import { UnreachableCaseError } from "./language/errors/UnreachableCaseError";
 import { useEffect, useState } from "react";
 import StateManager from "./state/publishers/StateManager";
-import Skills from "./components/custom/Skills";
+import SkillsContent from "./components/custom/SkillsContent";
+import ExperienceContent from "./components/custom/ExperienceContent";
 
 function App() {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
@@ -33,11 +34,11 @@ function App() {
             case ActiveSection.none:
                 return <></>;
             case ActiveSection.experience:
-                return <></>;
+                return <ExperienceContent />;
             case ActiveSection.skills:
-                return <Skills />;
+                return <SkillsContent />;
             case ActiveSection.education:
-                return <Education style={{ paddingBottom: 450 }} />;
+                return <EducationContent style={{ paddingBottom: 450 }} />;
             default:
                 throw new UnreachableCaseError(activeSection);
         }

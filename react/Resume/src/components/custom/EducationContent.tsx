@@ -8,12 +8,13 @@ import ResCompactButton from "../base/ResCompactButton";
 import ResColors from "../styling/ResColors";
 import GridContainer from "../containers/GridContainer";
 import DownloadManager from "../../services/DownloadManager";
+import { mdiTrayArrowDown } from "@mdi/js";
 
 interface Props {
     style?: React.CSSProperties;
 }
 
-const Education: React.FC<Props> = ({ style }) => {
+const EducationContent: React.FC<Props> = ({ style }) => {
     const [shouldRenderPortrait, setShouldRenderPortrait] = useState(
         window.innerWidth <= ResDimensions.screenWidthToRenderPortrait,
     );
@@ -93,7 +94,8 @@ const Education: React.FC<Props> = ({ style }) => {
                 </ResHyperlink>
 
                 <ResCompactButton
-                    label="Download Transcript"
+                    label={DownloadManager.inst.transcript.label}
+                    iconPath={mdiTrayArrowDown}
                     typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
                     wide={false}
@@ -110,7 +112,8 @@ const Education: React.FC<Props> = ({ style }) => {
                 </ResText>
 
                 <ResCompactButton
-                    label="Honour List Inclusions"
+                    label={DownloadManager.inst.honourListInclusions.label}
+                    iconPath={mdiTrayArrowDown}
                     typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
                     wide={false}
@@ -119,7 +122,8 @@ const Education: React.FC<Props> = ({ style }) => {
                 />
 
                 <ResCompactButton
-                    label="Letters of Commendation"
+                    label={DownloadManager.inst.lettersOfCommendation.label}
+                    iconPath={mdiTrayArrowDown}
                     typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
                     wide={false}
@@ -131,4 +135,4 @@ const Education: React.FC<Props> = ({ style }) => {
     );
 };
 
-export default Education;
+export default EducationContent;

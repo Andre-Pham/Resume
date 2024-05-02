@@ -64,7 +64,14 @@ const ResCompactButton: React.FC<Props> = ({
             }}
             disabled={disabled}
         >
-            {iconPath && <Icon path={iconPath} color={typography.color} size={1} style={{ paddingRight: "6px" }} />}
+            {iconPath && (
+                <Icon
+                    path={iconPath}
+                    color={typography.color}
+                    size={0.8}
+                    style={{ paddingRight: "6px", marginTop: -2, marginBottom: -2 }}
+                />
+            )}
 
             <ResText typography={typography} wide={false}>
                 {label}
