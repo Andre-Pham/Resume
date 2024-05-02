@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ResDimensions from "../styling/ResDimensions";
 import BasicCard from "./BasicCard";
 import ResText from "../base/ResText";
 import ResTypography from "../styling/ResTypography";
-import GridContainer from "../containers/GridContainer";
 import VStack from "../containers/Stacks/VStack";
 
 interface Props {
