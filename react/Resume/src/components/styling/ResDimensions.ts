@@ -4,6 +4,8 @@
 class ResDimensions {
     static readonly screenPadding = 35;
 
+    static readonly screenWidthToRenderPortrait = 980;
+
     static readonly mainScreenSpacing = 68;
 
     static readonly pageContentSpacing = 24;

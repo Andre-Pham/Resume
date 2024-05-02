@@ -28,6 +28,7 @@ const ResText: React.FC<Props> = ({
         width: wide ? "100%" : undefined,
         justifyItems: wide == undefined ? undefined : "center",
         lineHeight: verticalWrap ? 1 : undefined,
+        overflowWrap: "break-word",
         ...typography.getStylesheet(),
         ...style,
     };

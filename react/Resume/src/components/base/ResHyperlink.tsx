@@ -29,7 +29,9 @@ const ResHyperlink: React.FC<Props> = ({ children, url, typography, verticalWrap
                 ...linkTypography.getStylesheet(),
                 ...style,
             }}
+            // Open the link in a new tab or window
             target="_blank"
+            // Common practice to ensure that the link is opened securely
             rel="noopener noreferrer"
         >
             {children}

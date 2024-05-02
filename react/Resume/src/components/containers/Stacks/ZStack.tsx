@@ -28,9 +28,8 @@ const ZStack: React.FC<Props> = ({ children, style }) => {
         window.addEventListener("resize", updateDimensions);
         // Initial update on component mount
         updateDimensions();
-        return () => {
-            window.removeEventListener("resize", updateDimensions);
-        };
+        // Cleanup the event listener on component unmount
+        return () => window.removeEventListener("resize", updateDimensions);
     }, [children]);
 
     return (
