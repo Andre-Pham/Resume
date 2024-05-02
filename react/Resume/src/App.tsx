@@ -10,9 +10,11 @@ import { useEffect, useState } from "react";
 import StateManager from "./state/publishers/StateManager";
 import SkillsContent from "./components/custom/SkillsContent";
 import ExperienceContent from "./components/custom/ExperienceContent";
+import useResizeObserver from "./components/hooks/useResizeObserver";
 
 function App() {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
+    const [ref, contentSize] = useResizeObserver();
 
     useEffect(() => {
         const unsubscribe = StateManager.activeSection.subscribe(() => {
@@ -34,11 +36,15 @@ function App() {
             case ActiveSection.none:
                 return <></>;
             case ActiveSection.experience:
-                return <ExperienceContent />;
+                return <ExperienceContent style={{ maxWidth: contentSize.width, alignSelf: "center" }} />;
             case ActiveSection.skills:
-                return <SkillsContent />;
+                return <SkillsContent style={{ maxWidth: contentSize.width, alignSelf: "center" }} />;
             case ActiveSection.education:
-                return <EducationContent style={{ paddingBottom: 450 }} />;
+                return (
+                    <EducationContent
+                        style={{ maxWidth: contentSize.width, alignSelf: "center", paddingBottom: 450 }}
+                    />
+                );
             default:
                 throw new UnreachableCaseError(activeSection);
         }
@@ -49,7 +55,9 @@ function App() {
             <VStack spacing={ResDimensions.mainScreenSpacing} style={{ alignContent: "center" }}>
                 <Header />
 
-                <Splash />
+                <div ref={ref}>
+                    <Splash />
+                </div>
             </VStack>
 
             <VStack

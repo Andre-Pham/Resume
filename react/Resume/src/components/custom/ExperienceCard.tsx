@@ -69,7 +69,7 @@ const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
                         style={{
                             borderRadius: 8,
                             alignSelf: "center",
-                            border: `2px solid ${ResColors.textSemiDark.getColor()}`
+                            border: `2px solid ${ResColors.textSemiDark.getColor()}`,
                         }}
                     />
                 ) : undefined}

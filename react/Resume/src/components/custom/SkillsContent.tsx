@@ -4,36 +4,15 @@ import BasicCard from "./BasicCard";
 import ResText from "../base/ResText";
 import ResTypography from "../styling/ResTypography";
 import GridContainer from "../containers/GridContainer";
+import VStack from "../containers/Stacks/VStack";
 
 interface Props {
     style?: React.CSSProperties;
 }
 
 const SkillsContent: React.FC<Props> = ({ style }) => {
-    const [shouldRenderPortrait, setShouldRenderPortrait] = useState(
-        window.innerWidth <= ResDimensions.screenWidthToRenderPortrait,
-    );
-
-    useEffect(() => {
-        const handleResize = () => {
-            setShouldRenderPortrait(window.innerWidth <= ResDimensions.screenWidthToRenderPortrait);
-        };
-        // When the window is resized, re-update
-        window.addEventListener("resize", handleResize);
-        // Cleanup the event listener on component unmount
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    let columnCount = shouldRenderPortrait ? 1 : 2;
-    let columnSizeRule = `${100 / columnCount}%`;
-
     return (
-        <GridContainer
-            columns={columnCount}
-            spacing={ResDimensions.cardColumnSpacing}
-            columnSizeRule={columnSizeRule}
-            style={style}
-        >
+        <VStack spacing={ResDimensions.cardColumnSpacing} style={style}>
             <BasicCard title="Being a Developer">
                 <ResText typography={ResTypography.body}>
                     {
@@ -89,7 +68,7 @@ const SkillsContent: React.FC<Props> = ({ style }) => {
                     }
                 </ResText>
             </BasicCard>
-        </GridContainer>
+        </VStack>
     );
 };
 
