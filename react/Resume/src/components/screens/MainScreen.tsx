@@ -11,6 +11,7 @@ import SkillsContent from "../custom/SkillsContent";
 import ExperienceContent from "../custom/ExperienceContent";
 import useResizeObserver from "../hooks/useResizeObserver";
 import { useNavigate } from "react-router-dom";
+import usePortraitRendering from "../hooks/usePortraitRendering";
 
 function MainScreen() {
     const navigate = useNavigate();
@@ -18,26 +19,23 @@ function MainScreen() {
     const [ref, contentSize] = useResizeObserver();
 
     useEffect(() => {
-        // Navigate if window resize causes portrait rendering
-        const navigateIfNecessary = () => {
-            const shouldRenderPortrait = window.innerWidth <= ResDimensions.screenWidthToRenderPortrait;
-            if (shouldRenderPortrait) {
-                navigateToSection();
-            }
-        };
-        // Active section
+        // Listen to active section
         const unsubscribe = StateManager.activeSection.subscribe(() => {
             setActiveSection(StateManager.activeSection.read());
-            navigateIfNecessary();
+            navigateIfNecessary(window.innerWidth <= ResDimensions.screenWidthToRenderPortrait);
         });
-        // When the window is resized, re-update
-        window.addEventListener("resize", navigateIfNecessary);
-        // Cleanup the event listener on component unmount
-        return () => {
-            window.removeEventListener("resize", navigateIfNecessary);
-            unsubscribe();
-        };
+        return () => unsubscribe();
     }, []);
+
+    usePortraitRendering((shouldRenderPortrait: boolean) => {
+        navigateIfNecessary(shouldRenderPortrait);
+    });
+
+    const navigateIfNecessary = (shouldRenderPortrait: boolean) => {
+        if (shouldRenderPortrait) {
+            navigateToSection();
+        }
+    };
 
     const navigateToSection = () => {
         let activeSection = StateManager.activeSection.read();
@@ -45,13 +43,13 @@ function MainScreen() {
             case ActiveSection.none:
                 break;
             case ActiveSection.education:
-                navigate("/education");
+                navigate("/education", { replace: true });
                 break;
             case ActiveSection.experience:
-                navigate("/experience");
+                navigate("/experience", { replace: true });
                 break;
             case ActiveSection.skills:
-                navigate("/skills");
+                navigate("/skills", { replace: true });
                 break;
             default:
                 throw new UnreachableCaseError(activeSection);

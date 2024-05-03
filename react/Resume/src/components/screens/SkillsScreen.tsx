@@ -1,9 +1,9 @@
 import ContentScreenWrapper from "../custom/ContentScreenWrapper";
-import ExperienceContent from "../custom/ExperienceContent";
 import { useNavigate } from "react-router-dom";
 import usePortraitRendering from "../hooks/usePortraitRendering";
+import SkillsContent from "../custom/SkillsContent";
 
-function ExperienceScreen() {
+function SkillsScreen() {
     const navigate = useNavigate();
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
@@ -13,10 +13,10 @@ function ExperienceScreen() {
     });
 
     return (
-        <ContentScreenWrapper title="Experience">
-            <ExperienceContent />
+        <ContentScreenWrapper title="Skills">
+            <SkillsContent />
         </ContentScreenWrapper>
     );
 }
 
-export default ExperienceScreen;
+export default SkillsScreen;

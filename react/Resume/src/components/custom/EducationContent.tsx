@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ResDimensions from "../styling/ResDimensions";
 import BasicCard from "./BasicCard";
 import ResText from "../base/ResText";
@@ -9,6 +9,7 @@ import ResColors from "../styling/ResColors";
 import GridContainer from "../containers/GridContainer";
 import DownloadManager from "../../services/DownloadManager";
 import { mdiTrayArrowDown } from "@mdi/js";
+import usePortraitRendering from "../hooks/usePortraitRendering";
 
 interface Props {
     style?: React.CSSProperties;
@@ -19,15 +20,9 @@ const EducationContent: React.FC<Props> = ({ style }) => {
         window.innerWidth <= ResDimensions.screenWidthToRenderPortrait,
     );
 
-    useEffect(() => {
-        const handleResize = () => {
-            setShouldRenderPortrait(window.innerWidth <= ResDimensions.screenWidthToRenderPortrait);
-        };
-        // When the window is resized, re-update
-        window.addEventListener("resize", handleResize);
-        // Cleanup the event listener on component unmount
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    usePortraitRendering((shouldRenderPortrait: boolean) => {
+        setShouldRenderPortrait(shouldRenderPortrait);
+    });
 
     const downloadAcademicTranscript = async () => {
         DownloadManager.inst.download(DownloadManager.inst.transcript);

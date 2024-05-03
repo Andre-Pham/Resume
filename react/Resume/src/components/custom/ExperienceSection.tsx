@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ExperiencePeriod from "../../model/experience/ExperiencePeriod";
 import ResDimensions from "../styling/ResDimensions";
 import ExperienceCard from "./ExperienceCard";
 import GridContainer from "../containers/GridContainer";
 import VStack from "../containers/Stacks/VStack";
 import YearHeader from "./YearHeader";
+import usePortraitRendering from "../hooks/usePortraitRendering";
 
 interface Props {
     period: ExperiencePeriod;
@@ -15,15 +16,9 @@ const ExperienceSection: React.FC<Props> = ({ period }) => {
         window.innerWidth <= ResDimensions.screenWidthToRenderPortrait,
     );
 
-    useEffect(() => {
-        const handleResize = () => {
-            setShouldRenderPortrait(window.innerWidth <= ResDimensions.screenWidthToRenderPortrait);
-        };
-        // When the window is resized, re-update
-        window.addEventListener("resize", handleResize);
-        // Cleanup the event listener on component unmount
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    usePortraitRendering((shouldRenderPortrait: boolean) => {
+        setShouldRenderPortrait(shouldRenderPortrait);
+    });
 
     const renderExperienceCards = () => {
         return period.experiences.map((experience) => <ExperienceCard key={experience.name} experience={experience} />);

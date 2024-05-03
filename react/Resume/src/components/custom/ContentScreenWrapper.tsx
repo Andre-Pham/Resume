@@ -22,7 +22,7 @@ const ContentScreenWrapper: React.FC<Props> = ({ title, children, style }) => {
 
     const goBack = () => {
         StateManager.activeSection.publish(ActiveSection.none);
-        navigate("/");
+        navigate("/", { replace: true });
     };
 
     return (

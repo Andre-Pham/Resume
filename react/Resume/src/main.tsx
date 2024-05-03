@@ -4,6 +4,8 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainScreen from "./components/screens/MainScreen.tsx";
 import ExperienceScreen from "./components/screens/ExperienceScreen.tsx";
+import SkillsScreen from "./components/screens/SkillsScreen.tsx";
+import EducationScreen from "./components/screens/EducationScreen.tsx";
 
 // For more about routing:
 // https://reactrouter.com/en/main/start/tutorial
@@ -19,9 +21,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/skills",
+        element: <SkillsScreen />,
     },
     {
         path: "/education",
+        element: <EducationScreen />,
     },
 ]);
 

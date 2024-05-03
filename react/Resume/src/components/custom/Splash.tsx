@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ResDimensions from "../styling/ResDimensions";
 import VStack from "../containers/Stacks/VStack";
 import HStack from "../containers/Stacks/HStack";
@@ -6,6 +6,7 @@ import SplashIntro from "./SplashIntro";
 import SplashButtonMobile from "./SplashButtonMobile";
 import SplashButton from "./SplashButton";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
+import usePortraitRendering from "../hooks/usePortraitRendering";
 
 interface Props {
     // No props
@@ -16,15 +17,9 @@ const Splash: React.FC<Props> = ({}) => {
         window.innerWidth <= ResDimensions.screenWidthToRenderPortrait,
     );
 
-    useEffect(() => {
-        const handleResize = () => {
-            setShouldRenderPortrait(window.innerWidth <= ResDimensions.screenWidthToRenderPortrait);
-        };
-        // When the window is resized, re-update
-        window.addEventListener("resize", handleResize);
-        // Cleanup the event listener on component unmount
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    usePortraitRendering((shouldRenderPortrait: boolean) => {
+        setShouldRenderPortrait(shouldRenderPortrait);
+    });
 
     if (shouldRenderPortrait) {
         return (
