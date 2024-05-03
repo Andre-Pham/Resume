@@ -5,18 +5,22 @@ import Header from "../custom/Header";
 import Splash from "../custom/Splash";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import { UnreachableCaseError } from "../../language/errors/UnreachableCaseError";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import StateManager from "../../state/publishers/StateManager";
 import SkillsContent from "../custom/SkillsContent";
 import ExperienceContent from "../custom/ExperienceContent";
 import useResizeObserver from "../hooks/useResizeObserver";
 import { useNavigate } from "react-router-dom";
 import usePortraitRendering from "../hooks/usePortraitRendering";
+import useResetScroll from "../hooks/useResetScroll";
 
 function MainScreen() {
     const navigate = useNavigate();
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
-    const [ref, contentSize] = useResizeObserver();
+    const [resizeRef, contentSize] = useResizeObserver();
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    useResetScroll();
 
     useEffect(() => {
         // Listen to active section
@@ -56,6 +60,13 @@ function MainScreen() {
         }
     };
 
+    useEffect(() => {
+        const shouldRenderPortrait = window.innerWidth <= ResDimensions.screenWidthToRenderPortrait;
+        if (!shouldRenderPortrait) {
+            scrollIntoContent();
+        }
+    }, [activeSection]);
+
     const renderPageContent = () => {
         switch (activeSection) {
             case ActiveSection.none:
@@ -75,15 +86,24 @@ function MainScreen() {
         }
     };
 
+    const scrollIntoContent = () => {
+        if (scrollRef.current && activeSection != ActiveSection.none) {
+            scrollRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+
     return (
         <div style={{ padding: ResDimensions.screenPadding }}>
             <VStack spacing={ResDimensions.mainScreenSpacing} style={{ alignContent: "center" }}>
                 <Header />
 
-                <div ref={ref}>
+                <div ref={resizeRef}>
                     <Splash />
                 </div>
             </VStack>
+
+            {/* We don't want to see the edge of the view above, so position this a little lower */}
+            <div ref={scrollRef} style={{ marginTop: 24, marginBottom: -24 }} />
 
             <VStack
                 spacing={ResDimensions.pageContentSpacing}

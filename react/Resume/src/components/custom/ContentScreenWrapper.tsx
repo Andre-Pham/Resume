@@ -10,6 +10,7 @@ import { mdiChevronLeft } from "@mdi/js";
 import { useNavigate } from "react-router-dom";
 import StateManager from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
+import useResetScroll from "../hooks/useResetScroll";
 
 interface Props {
     title: string;
@@ -19,6 +20,8 @@ interface Props {
 
 const ContentScreenWrapper: React.FC<Props> = ({ title, children, style }) => {
     const navigate = useNavigate();
+
+    useResetScroll();
 
     const goBack = () => {
         StateManager.activeSection.publish(ActiveSection.none);
