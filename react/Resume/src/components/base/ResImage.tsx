@@ -66,7 +66,7 @@ const ResImage: React.FC<Props> = ({
 
     return (
         <img
-            src={`/assets/images/${fileName}`}
+            src={`/images/${fileName}`}
             alt={fileName}
             onLoad={handleImageLoaded}
             style={{
