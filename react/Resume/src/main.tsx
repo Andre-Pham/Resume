@@ -6,6 +6,7 @@ import MainScreen from "./components/screens/MainScreen.tsx";
 import ExperienceScreen from "./components/screens/ExperienceScreen.tsx";
 import SkillsScreen from "./components/screens/SkillsScreen.tsx";
 import EducationScreen from "./components/screens/EducationScreen.tsx";
+import { ColorThemeProvider } from "./components/providers/ThemeProvider.tsx";
 
 // For more about routing:
 // https://reactrouter.com/en/main/start/tutorial
@@ -31,6 +32,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <ColorThemeProvider>
+            <RouterProvider router={router} />
+        </ColorThemeProvider>
     </React.StrictMode>,
 );

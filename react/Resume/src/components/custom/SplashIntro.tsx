@@ -42,7 +42,7 @@ const SplashIntro: React.FC<Props> = ({ style }) => {
                     label="GitHub"
                     size={ResDimensions.iconButtonSize}
                     onPress={() => {
-                        // Linking.openURL("https://github.com/Andre-Pham");
+                        window.open("https://github.com/Andre-Pham", "_blank");
                     }}
                 />
 
@@ -52,7 +52,7 @@ const SplashIntro: React.FC<Props> = ({ style }) => {
                     label="Behance"
                     size={ResDimensions.iconButtonSize}
                     onPress={() => {
-                        // Linking.openURL("https://behance.net/andrepham");
+                        window.open("https://behance.net/andrepham", "_blank");
                     }}
                 />
 
@@ -62,7 +62,7 @@ const SplashIntro: React.FC<Props> = ({ style }) => {
                     label="LinkedIn"
                     size={ResDimensions.iconButtonSize}
                     onPress={() => {
-                        // Linking.openURL("https://www.linkedin.com/in/andrekypham");
+                        window.open("https://www.linkedin.com/in/andrekypham", "_blank");
                     }}
                 />
             </HStack>

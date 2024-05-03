@@ -21,6 +21,11 @@ function MainScreen() {
     const scrollRef = useRef<HTMLDivElement>(null);
     const firstScrollRender = useRef(true);
 
+    const [refresh, setRefresh] = useState(false);
+    StateManager.colorScheme.subscribe(() => {
+        setRefresh(!refresh);
+    });
+
     useResetScroll();
 
     useEffect(() => {

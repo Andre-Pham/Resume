@@ -1,5 +1,7 @@
+import LocalStorageManager from "../../services/LocalStorageManager";
 import ResValuePublisher from "./impl/ResValuePublisher";
 import { ActiveSection } from "./types/ActiveSection";
+import { ColorScheme } from "./types/ColorScheme";
 
 /**
  * Stores application-level state to avoid having to pass state to different components, and reduces component coupling. Uses the publisher-subscriber pattern.
@@ -37,9 +39,11 @@ import { ActiveSection } from "./types/ActiveSection";
 class StateManager {
     public static readonly activeSection = new ResValuePublisher(ActiveSection.none);
 
-    public static readonly contentWidth = new ResValuePublisher(0.0);
+    public static readonly colorScheme = new ResValuePublisher(ColorScheme.light);
 
-    public static setup() {}
+    public static setup() {
+        StateManager.colorScheme.publish(LocalStorageManager.inst.readColorTheme());
+    }
 }
 
 export default StateManager;

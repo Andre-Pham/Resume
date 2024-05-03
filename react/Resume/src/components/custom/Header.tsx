@@ -8,12 +8,23 @@ import ResIconButton from "../base/ResIconButton";
 import ResColors from "../styling/ResColors";
 import ResDimensions from "../styling/ResDimensions";
 import Spacer from "../containers/Spacing/Spacer";
+import StateManager from "../../state/publishers/StateManager";
+import { ColorScheme } from "../../state/publishers/types/ColorScheme";
 
 interface Props {
     // None
 }
 
 const Header: React.FC<Props> = ({}) => {
+    const inverseColorScheme = () => {
+        let current = StateManager.colorScheme.read();
+        if (current == ColorScheme.light) {
+            StateManager.colorScheme.publish(ColorScheme.dark);
+        } else {
+            StateManager.colorScheme.publish(ColorScheme.light);
+        }
+    };
+
     return (
         <HStack spacing={16} style={{ alignItems: "center" }}>
             <ResImage
@@ -38,9 +49,9 @@ const Header: React.FC<Props> = ({}) => {
 
                 <ResIconButton
                     color={ResColors.background}
-                    fileName={"moon.png"}
+                    fileName={StateManager.colorScheme.read() == ColorScheme.dark ? "moon.png" : "sun.png"}
                     size={ResDimensions.iconButtonSize}
-                    onPress={() => {}}
+                    onPress={inverseColorScheme}
                     onlyIcon={true}
                 />
             </HStack>

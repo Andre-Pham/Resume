@@ -1,4 +1,7 @@
 import { assert } from "../../../language/assertions/Assert";
+import { UnreachableCaseError } from "../../../language/errors/UnreachableCaseError";
+import StateManager from "../../../state/publishers/StateManager";
+import { ColorScheme } from "../../../state/publishers/types/ColorScheme";
 
 class ResColor {
     // Hex string
@@ -22,8 +25,15 @@ class ResColor {
      * @returns Validated color string
      */
     public getColor(): string {
-        // TODO: Update this for dark mode
-        return this.lightMode;
+        let colorScheme = StateManager.colorScheme.read();
+        switch (colorScheme) {
+            case ColorScheme.dark:
+                return this.darkMode;
+            case ColorScheme.light:
+                return this.lightMode;
+            default:
+                throw new UnreachableCaseError(colorScheme);
+        }
     }
 
     public getContrastColor(): string {
