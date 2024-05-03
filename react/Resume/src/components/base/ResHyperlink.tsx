@@ -20,22 +20,25 @@ interface Props {
 const ResHyperlink: React.FC<Props> = ({ children, url, typography, verticalWrap = false, wide = true, style }) => {
     let linkTypography = typography.withWeight(ResFontWeight.bold).withUnderline(true);
     return (
-        <a
-            href={url}
-            style={{
-                width: wide ? "100%" : undefined,
-                justifyItems: wide == undefined ? undefined : "center",
-                lineHeight: verticalWrap ? 1 : undefined,
-                ...linkTypography.getStylesheet(),
-                ...style,
-            }}
-            // Open the link in a new tab or window
-            target="_blank"
-            // Common practice to ensure that the link is opened securely
-            rel="noopener noreferrer"
-        >
-            {children}
-        </a>
+        // Span means the frame doesn't extend past the text (i.e. can be clicked past the text)
+        <span>
+            <a
+                href={url}
+                style={{
+                    width: wide ? "100%" : undefined,
+                    justifyItems: wide == undefined ? undefined : "center",
+                    lineHeight: verticalWrap ? 1 : undefined,
+                    ...linkTypography.getStylesheet(),
+                    ...style,
+                }}
+                // Open the link in a new tab or window
+                target="_blank"
+                // Common practice to ensure that the link is opened securely
+                rel="noopener noreferrer"
+            >
+                {children}
+            </a>
+        </span>
     );
 };
 
