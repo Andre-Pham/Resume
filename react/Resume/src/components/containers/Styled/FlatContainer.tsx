@@ -18,7 +18,12 @@ const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSel
         setPressed(true);
     };
 
-    const handleMouseExit = () => {
+    const handleMouseUp = () => {
+        onPress && onPress();
+        setPressed(false);
+    }
+
+    const handleMouseLeave = () => {
         setPressed(false);
     };
 
@@ -26,7 +31,12 @@ const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSel
         setTouched(true);
     };
 
-    const handleUntouched = () => {
+    const handleTouchEnd = () => {
+        onPress && onPress();
+        setTouched(false);
+    };
+
+    const handleTouchCancel = () => {
         setTouched(false);
     };
 
@@ -45,11 +55,11 @@ const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSel
     ) : (
         <div
             onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseExit}
-            onMouseLeave={handleMouseExit}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouched}
-            onTouchEnd={handleUntouched}
-            onTouchCancel={handleUntouched}
+            onTouchEnd={handleTouchEnd}
+            onTouchCancel={handleTouchCancel}
             style={{
                 borderRadius: 16,
                 padding: 18,

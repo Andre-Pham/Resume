@@ -16,7 +16,12 @@ const PressableContainer: React.FC<Props> = ({ onPress, disableSelection = false
         setPressed(true);
     };
 
-    const handleMouseExit = () => {
+    const handleMouseUp = () => {
+        onPress();
+        setPressed(false);
+    }
+
+    const handleMouseLeave = () => {
         setPressed(false);
     };
 
@@ -24,18 +29,23 @@ const PressableContainer: React.FC<Props> = ({ onPress, disableSelection = false
         setTouched(true);
     };
 
-    const handleUntouched = () => {
+    const handleTouchEnd = () => {
+        onPress();
+        setTouched(false);
+    };
+
+    const handleTouchCancel = () => {
         setTouched(false);
     };
 
     return (
         <div
             onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseExit}
-            onMouseLeave={handleMouseExit}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouched}
-            onTouchEnd={handleUntouched}
-            onTouchCancel={handleUntouched}
+            onTouchEnd={handleTouchEnd}
+            onTouchCancel={handleTouchCancel}
             style={{
                 display: "flex",
                 cursor: "pointer",

@@ -17,7 +17,12 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
         setPressed(true);
     };
 
-    const handleMouseExit = () => {
+    const handleMouseUp = () => {
+        onPress && onPress();
+        setPressed(false);
+    }
+
+    const handleMouseLeave = () => {
         setPressed(false);
     };
 
@@ -25,18 +30,23 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
         setTouched(true);
     };
 
-    const handleUntouched = () => {
+    const handleTouchEnd = () => {
+        onPress && onPress();
+        setTouched(false);
+    };
+
+    const handleTouchCancel = () => {
         setTouched(false);
     };
 
     return onPress ? (
         <div
             onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseExit}
-            onMouseLeave={handleMouseExit}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouched}
-            onTouchEnd={handleUntouched}
-            onTouchCancel={handleUntouched}
+            onTouchEnd={handleTouchEnd}
+            onTouchCancel={handleTouchCancel}
             style={{
                 borderRadius: "50px",
                 padding: "4px 12px",
