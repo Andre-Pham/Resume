@@ -44,7 +44,7 @@ const SplashButtonMobile: React.FC<Props> = ({ label, section, style }) => {
             style={{
                 maxWidth: buttonSize,
                 justifyContent: "flex-start",
-                paddingLeft: 32,
+                paddingLeft: 34,
                 alignSelf: "center",
                 ...(activeSection == section ? ResCSS.shadow : undefined),
                 ...style,

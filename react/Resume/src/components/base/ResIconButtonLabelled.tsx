@@ -50,7 +50,7 @@ const ResIconButtonLabelled: React.FC<Props> = ({
             <div
                 style={{
                     position: "absolute",
-                    marginTop: size + 4,
+                    marginTop: size + 2,
                     flex: 1,
                     textAlign: "center",
                 }}

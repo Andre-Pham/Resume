@@ -38,7 +38,7 @@ const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
                 key={file.fileName}
                 label={file.label}
                 iconPath={mdiTrayArrowDown}
-                typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
+                typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
                 color={ResColors.accent}
                 wide={false}
                 onPress={() => {
@@ -62,8 +62,8 @@ const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
             <HStack spacing={12} style={{ paddingBottom: 4 }}>
                 {experience.image != null ? (
                     <ResImage
-                        height={38}
-                        width={38}
+                        height={34}
+                        width={34}
                         fileName={experience.image}
                         scale={ResImageScale.none}
                         style={{

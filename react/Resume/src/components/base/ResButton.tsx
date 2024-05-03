@@ -50,7 +50,7 @@ const ResButton: React.FC<Props> = ({
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "center",
-                padding: "12px 24px",
+                padding: "14px 24px",
                 borderRadius: "50px",
                 backgroundColor: color.getColor(),
                 opacity: disabled ? 0.5 : 1,
@@ -64,7 +64,7 @@ const ResButton: React.FC<Props> = ({
             }}
             disabled={disabled}
         >
-            {iconPath && <Icon path={iconPath} color={typography.color} size={1} style={{ paddingRight: "6px" }} />}
+            {iconPath && <Icon path={iconPath} color={typography.color} size={0.8} style={{ paddingRight: "6px" }} />}
 
             <ResText typography={typography} wide={false}>
                 {label}

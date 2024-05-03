@@ -32,7 +32,7 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
             onMouseLeave={handleMouseLeave}
             style={{
                 borderRadius: "50px",
-                padding: "6px 12px",
+                padding: "4px 12px",
                 alignSelf: "flex-start",
                 backgroundColor: color.getColor(),
                 cursor: "pointer",
@@ -48,7 +48,7 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
         <div
             style={{
                 borderRadius: "50px",
-                padding: "6px 12px",
+                padding: "4px 12px",
                 alignSelf: "flex-start",
                 backgroundColor: color.getColor(),
                 ...style,

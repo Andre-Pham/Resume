@@ -52,7 +52,7 @@ const EducationContent: React.FC<Props> = ({ style }) => {
 
             <BasicCard title="First Class Honours">
                 <ResText typography={ResTypography.body}>
-                    {"WAM: 88.25"}
+                    {"WAM: 88.255"}
                     <br />
                     {"GPA: 3.938"}
                 </ResText>
@@ -91,7 +91,7 @@ const EducationContent: React.FC<Props> = ({ style }) => {
                 <ResCompactButton
                     label={DownloadManager.inst.transcript.label}
                     iconPath={mdiTrayArrowDown}
-                    typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
+                    typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
                     wide={false}
                     onPress={downloadAcademicTranscript}
@@ -109,7 +109,7 @@ const EducationContent: React.FC<Props> = ({ style }) => {
                 <ResCompactButton
                     label={DownloadManager.inst.honourListInclusions.label}
                     iconPath={mdiTrayArrowDown}
-                    typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
+                    typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
                     wide={false}
                     onPress={downloadHonoursListInclusions}
@@ -119,7 +119,7 @@ const EducationContent: React.FC<Props> = ({ style }) => {
                 <ResCompactButton
                     label={DownloadManager.inst.lettersOfCommendation.label}
                     iconPath={mdiTrayArrowDown}
-                    typography={ResTypography.buttonSmall.withColor(ResColors.textLightPersistent)}
+                    typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
                     wide={false}
                     onPress={downloadLettersOfCommendation}

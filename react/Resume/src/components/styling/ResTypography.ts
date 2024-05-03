@@ -12,7 +12,7 @@ class ResTypography {
     }
 
     static get splash(): ResTypographyConfig {
-        return new ResTypographyConfig(34, ResFontFamily.circular, ResColors.textDark, ResFontWeight.black);
+        return new ResTypographyConfig(34, ResFontFamily.circular, ResColors.textDark, ResFontWeight.bold);
     }
 
     static get standoutBody(): ResTypographyConfig {
@@ -44,8 +44,8 @@ class ResTypography {
         return new ResTypographyConfig(15, ResFontFamily.plexMono, ResColors.textLight);
     }
 
-    static get buttonSmall(): ResTypographyConfig {
-        return new ResTypographyConfig(14, ResFontFamily.plexMono, ResColors.textLight);
+    static get buttonCompact(): ResTypographyConfig {
+        return new ResTypographyConfig(14, ResFontFamily.plexMono, ResColors.textLight, ResFontWeight.regular);
     }
 
     static get sectionTitle(): ResTypographyConfig {
