@@ -3,6 +3,7 @@ import ResTypographyConfig from "../styling/typography/ResTypographyConfig";
 import ResText from "./ResText";
 import ResColor from "../styling/color/ResColor";
 import Icon from "@mdi/react";
+import ResCSS from "../styling/ResCSS";
 
 interface Props {
     label: string;
@@ -26,24 +27,32 @@ const ResCompactButton: React.FC<Props> = ({
     onPress,
 }) => {
     const [pressed, setPressed] = useState(false);
+    const [touched, setTouched] = useState(false);
 
     const handleMouseDown = () => {
         setPressed(true);
     };
 
-    const handleMouseUp = () => {
+    const handleMouseExit = () => {
         setPressed(false);
     };
 
-    const handleMouseLeave = () => {
-        setPressed(false);
+    const handleTouched = () => {
+        setTouched(true);
+    };
+
+    const handleUntouched = () => {
+        setTouched(false);
     };
 
     return (
         <button
             onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseExit}
+            onMouseLeave={handleMouseExit}
+            onTouchStart={handleTouched}
+            onTouchEnd={handleUntouched}
+            onTouchCancel={handleUntouched}
             onClick={!disabled ? onPress : undefined}
             style={{
                 display: "flex",
@@ -59,7 +68,8 @@ const ResCompactButton: React.FC<Props> = ({
                 border: "none",
                 cursor: disabled ? "default" : "pointer",
                 transition: "transform 0.1s",
-                transform: pressed ? "scale(0.95)" : "scale(1)",
+                transform: pressed || touched ? "scale(0.95)" : "scale(1)",
+                ...ResCSS.diableSelection,
                 ...style,
             }}
             disabled={disabled}

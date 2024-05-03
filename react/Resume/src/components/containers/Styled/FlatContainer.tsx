@@ -12,18 +12,22 @@ interface Props {
 
 const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSelection = false, children, style }) => {
     const [pressed, setPressed] = useState(false);
+    const [touched, setTouched] = useState(false);
 
     const handleMouseDown = () => {
         setPressed(true);
     };
 
-    const handleMouseUp = () => {
-        onPress && onPress();
+    const handleMouseExit = () => {
         setPressed(false);
     };
 
-    const handleMouseLeave = () => {
-        setPressed(false);
+    const handleTouched = () => {
+        setTouched(true);
+    };
+
+    const handleUntouched = () => {
+        setTouched(false);
     };
 
     return !onPress ? (
@@ -41,15 +45,18 @@ const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSel
     ) : (
         <div
             onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseExit}
+            onMouseLeave={handleMouseExit}
+            onTouchStart={handleTouched}
+            onTouchEnd={handleUntouched}
+            onTouchCancel={handleUntouched}
             style={{
                 borderRadius: 16,
                 padding: 18,
                 backgroundColor: color.getColor(),
                 cursor: "pointer",
                 transition: "transform 0.1s",
-                transform: pressed ? "scale(0.95)" : "scale(1)",
+                transform: pressed || touched ? "scale(0.95)" : "scale(1)",
                 ...(disableSelection ? ResCSS.diableSelection : undefined),
                 ...style,
             }}
