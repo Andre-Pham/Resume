@@ -19,6 +19,7 @@ function MainScreen() {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
     const [resizeRef, contentSize] = useResizeObserver();
     const scrollRef = useRef<HTMLDivElement>(null);
+    const firstScrollRender = useRef(true);
 
     useResetScroll();
 
@@ -61,6 +62,10 @@ function MainScreen() {
     };
 
     useEffect(() => {
+        if (firstScrollRender.current) {
+            firstScrollRender.current = false;
+            return;
+        }
         const shouldRenderPortrait = window.innerWidth <= ResDimensions.screenWidthToRenderPortrait;
         if (!shouldRenderPortrait) {
             scrollIntoContent();

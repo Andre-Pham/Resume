@@ -1,4 +1,3 @@
-import ResColors from "../../components/styling/ResColors";
 import ResValuePublisher from "./impl/ResValuePublisher";
 import { ActiveSection } from "./types/ActiveSection";
 
