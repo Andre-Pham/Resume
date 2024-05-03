@@ -24,15 +24,20 @@ class ResTypography {
     }
 
     static get subscript(): ResTypographyConfig {
-        return new ResTypographyConfig(14, ResFontFamily.plexMono, ResColors.textSemiDark);
+        return new ResTypographyConfig(14, ResFontFamily.plexMono, ResColors.textSemiDark, ResFontWeight.regular);
     }
 
     static get subscriptLabel(): ResTypographyConfig {
-        return new ResTypographyConfig(11.5, ResFontFamily.plexMono, ResColors.textSemiDark);
+        return new ResTypographyConfig(11.5, ResFontFamily.plexMono, ResColors.textSemiDark, ResFontWeight.regular);
     }
 
     static get chip(): ResTypographyConfig {
-        return new ResTypographyConfig(11.5, ResFontFamily.plexMono, ResColors.textLightPersistent);
+        return new ResTypographyConfig(
+            11.5,
+            ResFontFamily.plexMono,
+            ResColors.textLightPersistent,
+            ResFontWeight.regular,
+        );
     }
 
     static get button(): ResTypographyConfig {

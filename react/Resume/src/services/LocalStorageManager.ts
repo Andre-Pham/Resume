@@ -1,4 +1,4 @@
-import { ColorScheme } from './../state/publishers/types/ColorScheme';
+import { ColorScheme } from "./../state/publishers/types/ColorScheme";
 
 class LocalStorageManager {
     public static readonly inst = new LocalStorageManager();

@@ -1,5 +1,4 @@
 import { ResFontFamily } from "./ResFontFamily";
-import ResFontFamilyConfig from "./ResFontFamilyConfig";
 import { ResFontWeight } from "./ResFontWeight";
 import ResColor from "../color/ResColor";
 
@@ -13,10 +12,6 @@ class ResTypographyConfig {
     public underlined: boolean;
     public linedOut: boolean;
     public kerning: number;
-    get font(): string {
-        let config: ResFontFamilyConfig = ResFontFamily.getConfig(this.fontFamily);
-        return config.getFont(this.weight, this.italic);
-    }
     get color(): string | undefined {
         return this.resColor?.getColor();
     }
@@ -39,7 +34,7 @@ class ResTypographyConfig {
         size: number,
         fontFamily: ResFontFamily,
         color: ResColor | undefined,
-        weight: ResFontWeight = ResFontWeight.regular,
+        weight: ResFontWeight = ResFontWeight.medium,
         italic: boolean = false,
         underlined: boolean = false,
         linedOut: boolean = false,
