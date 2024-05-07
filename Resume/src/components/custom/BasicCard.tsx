@@ -1,16 +1,15 @@
 import React from "react";
-import { ViewStyle } from "react-native";
-import ResText from "../base/ResText/ResText";
-import FlatContainer from "../containers/FlatContainer";
-import VStack from "../containers/VStack";
+import FlatContainer from "../containers/Styled/FlatContainer";
 import ResColors from "../styling/ResColors";
-import ResDimensions from "../styling/ResDimensions";
+import ResText from "../base/ResText";
 import ResTypography from "../styling/ResTypography";
+import VStack from "../containers/Stacks/VStack";
+import ResDimensions from "../styling/ResDimensions";
 
 interface Props {
     title: string;
-    children: any;
-    style?: ViewStyle;
+    children: React.ReactNode;
+    style?: React.CSSProperties;
 }
 
 const BasicCard: React.FC<Props> = ({ title, children, style }) => {

@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, ViewStyle } from "react-native";
-import StateManager from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
-import ResButton from "../base/ResButton/ResButton";
-import ResColors from "../styling/ResColors";
+import StateManager from "../../state/publishers/StateManager";
 import ResTypography from "../styling/ResTypography";
+import ResColors from "../styling/ResColors";
+import ResButton from "../base/ResButton";
+import ResCSS from "../styling/ResCSS";
 
 interface Props {
     label: string;
     section: ActiveSection;
     radius: number;
-    style?: ViewStyle;
+    style?: React.CSSProperties;
 }
 
 const SplashButton: React.FC<Props> = ({ label, section, radius, style }) => {
@@ -39,25 +39,15 @@ const SplashButton: React.FC<Props> = ({ label, section, radius, style }) => {
                 StateManager.activeSection.publish(toPublish);
             }}
             wide={false}
-            style={[
-                { width: radius * 2, height: radius * 2, borderRadius: 100 },
-                activeSection == section ? styles.shadow : {},
-                style,
-            ]}
+            style={{
+                width: radius * 2,
+                height: radius * 2,
+                borderRadius: 100,
+                ...(activeSection == section ? ResCSS.shadow : undefined),
+                ...style,
+            }}
         />
     );
 };
-
-const styles = StyleSheet.create({
-    shadow: {
-        shadowColor: "#000000",
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
-        shadowOpacity: 0.4,
-        shadowRadius: 11,
-    },
-});
 
 export default SplashButton;

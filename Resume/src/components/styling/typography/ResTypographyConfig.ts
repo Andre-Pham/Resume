@@ -1,6 +1,4 @@
 import { ResFontFamily } from "./ResFontFamily";
-import ResFontFamilyConfig from "./ResFontFamilyConfig";
-import { StyleSheet } from "react-native";
 import { ResFontWeight } from "./ResFontWeight";
 import ResColor from "../color/ResColor";
 
@@ -14,10 +12,6 @@ class ResTypographyConfig {
     public underlined: boolean;
     public linedOut: boolean;
     public kerning: number;
-    get font(): string {
-        let config: ResFontFamilyConfig = ResFontFamily.getConfig(this.fontFamily);
-        return config.getFont(this.weight, this.italic);
-    }
     get color(): string | undefined {
         return this.resColor?.getColor();
     }
@@ -40,7 +34,7 @@ class ResTypographyConfig {
         size: number,
         fontFamily: ResFontFamily,
         color: ResColor | undefined,
-        weight: ResFontWeight = ResFontWeight.regular,
+        weight: ResFontWeight = ResFontWeight.medium,
         italic: boolean = false,
         underlined: boolean = false,
         linedOut: boolean = false,
@@ -86,16 +80,16 @@ class ResTypographyConfig {
         return this;
     }
 
-    public getStylesheet(): {} {
-        return StyleSheet.create({
-            typography: {
-                fontFamily: this.font,
-                color: this.color,
-                fontSize: this.size,
-                textDecorationLine: this.lineStyle,
-                letterSpacing: this.kerning,
-            },
-        }).typography;
+    public getStylesheet(): React.CSSProperties {
+        return {
+            fontFamily: this.fontFamily,
+            fontWeight: this.weight,
+            color: this.color || "inherit",
+            fontSize: this.size,
+            textDecorationLine: this.lineStyle,
+            letterSpacing: this.kerning,
+            fontStyle: this.italic ? "italic" : "normal",
+        };
     }
 }
 

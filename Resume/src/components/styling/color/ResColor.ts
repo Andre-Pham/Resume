@@ -1,7 +1,7 @@
 import { assert } from "../../../language/assertions/Assert";
 import { UnreachableCaseError } from "../../../language/errors/UnreachableCaseError";
 import StateManager from "../../../state/publishers/StateManager";
-import { ColorScheme } from "../../../state/types/ColorScheme";
+import { ColorScheme } from "../../../state/publishers/types/ColorScheme";
 
 class ResColor {
     // Hex string

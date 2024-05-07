@@ -1,39 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { Dimensions } from "react-native";
-import Environment from "../../state/environment/Environment";
-import StateManager from "../../state/publishers/StateManager";
-import { ActiveSection } from "../../state/publishers/types/ActiveSection";
-import HStack from "../containers/HStack";
-import VStack from "../containers/VStack";
+import React, { useState } from "react";
 import ResDimensions from "../styling/ResDimensions";
-import SplashButton from "./SplashButton";
-import SplashButtonMobile from "./SplashButtonMobile";
+import VStack from "../containers/Stacks/VStack";
+import HStack from "../containers/Stacks/HStack";
 import SplashIntro from "./SplashIntro";
+import SplashButtonMobile from "./SplashButtonMobile";
+import SplashButton from "./SplashButton";
+import { ActiveSection } from "../../state/publishers/types/ActiveSection";
+import usePortraitRendering from "../hooks/usePortraitRendering";
+import Environment from "../../state/Environment/Environment";
 
 interface Props {
     // No props
 }
 
 const Splash: React.FC<Props> = ({}) => {
-    const [screenIsPortrait, setScreenIsPortrait] = useState(Environment.instance.screenIsPortrait());
+    const [shouldRenderPortrait, setShouldRenderPortrait] = useState(Environment.shouldRenderPortrait);
 
-    useEffect(() => {
-        Dimensions.addEventListener("change", (newDimensions) => {
-            setScreenIsPortrait(Environment.instance.screenIsPortrait());
-        });
-    }, []);
+    usePortraitRendering((shouldRenderPortrait: boolean) => {
+        setShouldRenderPortrait(shouldRenderPortrait);
+    });
 
-    const onLayout = (event: any) => {
-        const layout = event.nativeEvent.layout;
-        if (layout.width > 0) {
-            // Only if this component is visible
-            StateManager.contentWidth.publish(layout.width);
-        }
-    };
-
-    if (screenIsPortrait) {
+    if (shouldRenderPortrait) {
         return (
-            <VStack spacing={ResDimensions.mainScreenSpacing} onLayout={onLayout}>
+            <VStack spacing={ResDimensions.mainScreenSpacing}>
                 <SplashIntro style={{ flex: 1 }} />
 
                 <VStack spacing={12}>
@@ -51,7 +40,7 @@ const Splash: React.FC<Props> = ({}) => {
         let horizontalButtonSpacing =
             Math.cos(Math.PI / 3 / 2) * (buttonRadius * 2 + verticalButtonSpacing) - buttonRadius * 2;
         return (
-            <HStack spacing={64} style={{ alignItems: "flex-start" }} onLayout={onLayout}>
+            <HStack spacing={64} style={{ alignItems: "flex-start" }}>
                 <SplashIntro />
 
                 <HStack spacing={horizontalButtonSpacing} style={{ alignItems: "center" }}>

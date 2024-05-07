@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, ViewStyle } from "react-native";
-import StateManager from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
-import ResButton from "../base/ResButton/ResButton";
-import ResColors from "../styling/ResColors";
+import StateManager from "../../state/publishers/StateManager";
 import ResTypography from "../styling/ResTypography";
+import ResColors from "../styling/ResColors";
+import ResButton from "../base/ResButton";
+import ResCSS from "../styling/ResCSS";
+import { mdiChevronRight } from "@mdi/js";
 
 interface Props {
     label: string;
     section: ActiveSection;
-    style?: ViewStyle;
+    style?: React.CSSProperties;
 }
 
 const SplashButtonMobile: React.FC<Props> = ({ label, section, style }) => {
@@ -25,16 +26,14 @@ const SplashButtonMobile: React.FC<Props> = ({ label, section, style }) => {
         };
     }, []);
 
-    let buttonSize = 300;
-    let selectedTypography = ResTypography.button;
-    selectedTypography.resColor = ResColors.textLight;
-    let unselectedTypography = ResTypography.button;
-    unselectedTypography.resColor = ResColors.textDark;
+    const buttonSize = 300;
+    const selectedTypography = ResTypography.button.withColor(ResColors.textLight);
+    const unselectedTypography = ResTypography.button.withColor(ResColors.textDark);
 
     return (
         <ResButton
             label={label}
-            icon="chevron-right"
+            iconPath={mdiChevronRight}
             typography={activeSection == section ? selectedTypography : unselectedTypography}
             color={activeSection == section ? ResColors.accent : ResColors.fillBackgroundLight}
             onPress={() => {
@@ -42,30 +41,16 @@ const SplashButtonMobile: React.FC<Props> = ({ label, section, style }) => {
                 StateManager.activeSection.publish(toPublish);
             }}
             wide={true}
-            style={[
-                {
-                    maxWidth: buttonSize,
-                    justifyContent: "flex-start",
-                    paddingLeft: 32,
-                    alignSelf: "center",
-                },
-                activeSection == section ? styles.shadow : {},
-                style,
-            ]}
+            style={{
+                maxWidth: buttonSize,
+                justifyContent: "flex-start",
+                paddingLeft: 34,
+                alignSelf: "center",
+                ...(activeSection == section ? ResCSS.shadow : undefined),
+                ...style,
+            }}
         />
     );
 };
-
-const styles = StyleSheet.create({
-    shadow: {
-        shadowColor: "#000000",
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
-        shadowOpacity: 0.4,
-        shadowRadius: 11,
-    },
-});
 
 export default SplashButtonMobile;

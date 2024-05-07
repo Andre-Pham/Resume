@@ -1,22 +1,21 @@
 import React from "react";
-import { View } from "react-native";
-import ResText from "../base/ResText/ResText";
-import HStack from "../containers/HStack";
+import HStack from "../containers/Stacks/HStack";
+import ResText from "../base/ResText";
 import ResTypography from "../styling/ResTypography";
 
 interface Props {
-    children: any;
+    children: React.ReactNode;
 }
 
 const YearHeader: React.FC<Props> = ({ children }) => {
     let typography = ResTypography.sectionTitle;
     return (
         <HStack spacing={16} style={{ alignItems: "baseline" }}>
-            <ResText typography={typography} wide={null}>
+            <ResText typography={typography} wide={false}>
                 {children}
             </ResText>
 
-            <View
+            <div
                 style={{
                     flex: 1,
                     flexGrow: 1,

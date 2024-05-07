@@ -1,45 +1,53 @@
-import { useEffect, useRef, useState } from "react";
-import { Dimensions, View, useColorScheme } from "react-native";
-import { UnreachableCaseError } from "../../language/errors/UnreachableCaseError";
-import Environment from "../../state/environment/Environment";
-import StateManager from "../../state/publishers/StateManager";
-import { ActiveSection } from "../../state/publishers/types/ActiveSection";
-import VStack from "../containers/VStack";
-import Education from "../custom/Education";
-import Experience from "../custom/Experience";
-import Header from "../custom/Header";
-import Skills from "../custom/Skills";
-import Splash from "../custom/Splash";
-import { NavProp } from "../navigation/NavProp";
+import VStack from "../containers/Stacks/VStack";
+import EducationContent from "../custom/EducationContent";
 import ResDimensions from "../styling/ResDimensions";
-import { ColorScheme } from "../../state/types/ColorScheme";
-import "./mainscreen.css";
+import Header from "../custom/Header";
+import Splash from "../custom/Splash";
+import { ActiveSection } from "../../state/publishers/types/ActiveSection";
+import { UnreachableCaseError } from "../../language/errors/UnreachableCaseError";
+import { useEffect, useRef, useState } from "react";
+import StateManager from "../../state/publishers/StateManager";
+import SkillsContent from "../custom/SkillsContent";
+import ExperienceContent from "../custom/ExperienceContent";
+import useResizeObserver from "../hooks/useResizeObserver";
+import { useNavigate } from "react-router-dom";
+import usePortraitRendering from "../hooks/usePortraitRendering";
+import useResetScroll from "../hooks/useResetScroll";
+import Environment from "../../state/Environment/Environment";
+import RouterNavigator from "../../services/RotuerNavigator";
 
-interface Props {
-    navigation?: NavProp;
-}
-
-const MainScreen: React.FC<Props> = ({ navigation }) => {
+function MainScreen() {
+    const navigate = useNavigate();
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
+    const [resizeRef, contentSize] = useResizeObserver();
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const firstScrollRender = useRef(true);
+
+    const [refresh, setRefresh] = useState(false);
+    StateManager.colorScheme.subscribe(() => {
+        setRefresh(!refresh);
+    });
+
+    useResetScroll();
 
     useEffect(() => {
-        Dimensions.addEventListener("change", (newDimensions) => {
-            if (Environment.instance.screenIsPortrait()) {
-                navigateToSection();
-            }
-        });
-
+        // Listen to active section
         const unsubscribe = StateManager.activeSection.subscribe(() => {
             setActiveSection(StateManager.activeSection.read());
-            if (Environment.instance.screenIsPortrait()) {
-                navigateToSection();
-            }
+            navigateIfNecessary();
         });
-
-        return () => {
-            unsubscribe();
-        };
+        return () => unsubscribe();
     }, []);
+
+    usePortraitRendering(() => {
+        navigateIfNecessary();
+    });
+
+    const navigateIfNecessary = () => {
+        if (Environment.shouldRenderPortrait) {
+            navigateToSection();
+        }
+    };
 
     const navigateToSection = () => {
         let activeSection = StateManager.activeSection.read();
@@ -47,13 +55,13 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
             case ActiveSection.none:
                 break;
             case ActiveSection.education:
-                navigation?.navigate("Andre Pham | Education");
+                RouterNavigator.inst.navigateEducation(navigate);
                 break;
             case ActiveSection.experience:
-                navigation?.navigate("Andre Pham | Experience");
+                RouterNavigator.inst.navigateExperience(navigate);
                 break;
             case ActiveSection.skills:
-                navigation?.navigate("Andre Pham | Skills");
+                RouterNavigator.inst.navigateSkills(navigate);
                 break;
             default:
                 throw new UnreachableCaseError(activeSection);
@@ -61,65 +69,52 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
     };
 
     useEffect(() => {
-        if (!Environment.instance.screenIsPortrait()) {
+        if (firstScrollRender.current) {
+            firstScrollRender.current = false;
+            return;
+        }
+        if (!Environment.shouldRenderPortrait) {
             scrollIntoContent();
         }
     }, [activeSection]);
-
-    // Disable automatic scrolling on page refresh
-    useEffect(() => {
-        if ("scrollRestoration" in window.history) {
-            window.history.scrollRestoration = "manual";
-        }
-    }, []);
 
     const renderPageContent = () => {
         switch (activeSection) {
             case ActiveSection.none:
                 return <></>;
             case ActiveSection.experience:
-                return <Experience />;
+                return <ExperienceContent style={{ maxWidth: contentSize.width, alignSelf: "center" }} />;
             case ActiveSection.skills:
-                return <Skills />;
+                return <SkillsContent style={{ maxWidth: contentSize.width, alignSelf: "center" }} />;
             case ActiveSection.education:
-                return <Education style={{ paddingBottom: 450 }} />;
+                return (
+                    <EducationContent
+                        style={{ maxWidth: contentSize.width, alignSelf: "center", paddingBottom: 450 }}
+                    />
+                );
             default:
                 throw new UnreachableCaseError(activeSection);
         }
     };
 
-    const scrollRef = useRef<any>(null);
     const scrollIntoContent = () => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollIntoView({ behavior: "smooth" });
+        if (scrollRef.current && activeSection != ActiveSection.none) {
+            scrollRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     };
 
-    const [refresh, setRefresh] = useState(false);
-    StateManager.colorScheme.subscribe(() => {
-        setRefresh(!refresh);
-    });
-
-    // React to the device changing its color scheme
-    const colorScheme = useColorScheme();
-    useEffect(() => {
-        if (colorScheme == "light") {
-            StateManager.colorScheme.publish(ColorScheme.light);
-        } else {
-            StateManager.colorScheme.publish(ColorScheme.dark);
-        }
-    }, [colorScheme]);
-
     return (
-        <View style={{ padding: ResDimensions.screenPadding }}>
+        <div style={{ padding: ResDimensions.screenPadding, minWidth: 300 }}>
             <VStack spacing={ResDimensions.mainScreenSpacing} style={{ alignContent: "center" }}>
                 <Header />
 
-                <Splash />
+                <div ref={resizeRef}>
+                    <Splash />
+                </div>
             </VStack>
 
             {/* We don't want to see the edge of the view above, so position this a little lower */}
-            <View ref={scrollRef} style={{ marginTop: 24, marginBottom: -24 }} />
+            <div ref={scrollRef} style={{ marginTop: 24, marginBottom: -24 }} />
 
             <VStack
                 spacing={ResDimensions.pageContentSpacing}
@@ -131,8 +126,8 @@ const MainScreen: React.FC<Props> = ({ navigation }) => {
             >
                 {renderPageContent()}
             </VStack>
-        </View>
+        </div>
     );
-};
+}
 
 export default MainScreen;

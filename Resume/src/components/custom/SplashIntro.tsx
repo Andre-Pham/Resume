@@ -1,15 +1,15 @@
 import React from "react";
-import { Linking, ViewStyle } from "react-native";
-import ResIconButtonLabelled from "../base/ResIconButtonLabelled/ResIconButtonLabelled";
-import ResText from "../base/ResText/ResText";
-import HStack from "../containers/HStack";
-import VStack from "../containers/VStack";
-import ResColors from "../styling/ResColors";
-import ResDimensions from "../styling/ResDimensions";
+import VStack from "../containers/Stacks/VStack";
+import ResText from "../base/ResText";
 import ResTypography from "../styling/ResTypography";
+import HStack from "../containers/Stacks/HStack";
+import ResDimensions from "../styling/ResDimensions";
+import ResIconButtonLabelled from "../base/ResIconButtonLabelled";
+import { mdiGithub, mdiLinkedin } from "@mdi/js";
+import ResColors from "../styling/ResColors";
 
 interface Props {
-    style?: ViewStyle;
+    style?: React.CSSProperties;
 }
 
 const SplashIntro: React.FC<Props> = ({ style }) => {
@@ -37,12 +37,12 @@ const SplashIntro: React.FC<Props> = ({ style }) => {
 
             <HStack spacing={ResDimensions.iconButtonSpacing} style={{ paddingTop: 8 }}>
                 <ResIconButtonLabelled
-                    icon="github"
+                    iconPath={mdiGithub}
                     color={ResColors.gitHub}
                     label="GitHub"
                     size={ResDimensions.iconButtonSize}
                     onPress={() => {
-                        Linking.openURL("https://github.com/Andre-Pham");
+                        window.open("https://github.com/Andre-Pham", "_blank");
                     }}
                 />
 
@@ -52,17 +52,17 @@ const SplashIntro: React.FC<Props> = ({ style }) => {
                     label="Behance"
                     size={ResDimensions.iconButtonSize}
                     onPress={() => {
-                        Linking.openURL("https://behance.net/andrepham");
+                        window.open("https://behance.net/andrepham", "_blank");
                     }}
                 />
 
                 <ResIconButtonLabelled
-                    icon="linkedin"
+                    iconPath={mdiLinkedin}
                     color={ResColors.linkedIn}
                     label="LinkedIn"
                     size={ResDimensions.iconButtonSize}
                     onPress={() => {
-                        Linking.openURL("https://www.linkedin.com/in/andrekypham");
+                        window.open("https://www.linkedin.com/in/andrekypham", "_blank");
                     }}
                 />
             </HStack>

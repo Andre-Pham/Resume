@@ -1,12 +1,10 @@
 /**
- * Dimensions to be used application-wide.
+ * Predefined dimensions to be used application-wide.
  */
 class ResDimensions {
-    static readonly screenPadding = 35;
+    static readonly screenPadding = 27;
 
-    static readonly cardPadding = 18;
-
-    static readonly fillRadius = 16;
+    static readonly screenWidthToRenderPortrait = 980;
 
     static readonly mainScreenSpacing = 68;
 

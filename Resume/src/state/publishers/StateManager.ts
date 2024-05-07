@@ -1,8 +1,7 @@
-import ResColors from "../../components/styling/ResColors";
-import Environment from "../environment/Environment";
-import { ColorScheme } from "../types/ColorScheme";
+import LocalStorageManager from "../../services/LocalStorageManager";
 import ResValuePublisher from "./impl/ResValuePublisher";
 import { ActiveSection } from "./types/ActiveSection";
+import { ColorScheme } from "./types/ColorScheme";
 
 /**
  * Stores application-level state to avoid having to pass state to different components, and reduces component coupling. Uses the publisher-subscriber pattern.
@@ -40,21 +39,10 @@ import { ActiveSection } from "./types/ActiveSection";
 class StateManager {
     public static readonly activeSection = new ResValuePublisher(ActiveSection.none);
 
-    public static readonly contentWidth = new ResValuePublisher(0.0);
-
-    public static readonly backgroundColor = new ResValuePublisher<string | undefined>(undefined);
-
     public static readonly colorScheme = new ResValuePublisher(ColorScheme.light);
 
     public static setup() {
-        // Init default values whilst avoiding circular dependencies
-        StateManager.colorScheme.publish(Environment.instance.getDeviceColorScheme());
-        StateManager.backgroundColor.publish(ResColors.background.getColor());
-
-        // Setup state that depends on other state
-        StateManager.colorScheme.subscribe(() => {
-            StateManager.backgroundColor.publish(ResColors.background.getColor());
-        });
+        StateManager.colorScheme.publish(LocalStorageManager.inst.readColorTheme());
     }
 }
 
