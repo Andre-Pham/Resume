@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import usePortraitRendering from "../hooks/usePortraitRendering";
 import useResetScroll from "../hooks/useResetScroll";
 import Environment from "../../state/Environment/Environment";
-import RouterNavigator from "../../services/RotuerNavigator";
+import RouterNavigator from "../../services/RouterNavigator";
 
 function MainScreen() {
     const navigate = useNavigate();

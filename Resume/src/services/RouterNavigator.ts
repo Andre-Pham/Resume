@@ -7,10 +7,10 @@ class RouterNavigator {
     private static readonly EXPERIENCE_TITLE = "Andre Pham | Experience";
     private static readonly SKILLS_TITLE = "Andre Pham | Skills";
     private static readonly EDUCATION_TITLE = "Andre Pham | Education";
-    private static readonly HOME_PATH = "/";
-    private static readonly EXPERIENCE_PATH = "/experience";
-    private static readonly SKILLS_PATH = "/skills";
-    private static readonly EDUCATION_PATH = "/education";
+    public static readonly HOME_PATH = "/";
+    public static readonly EXPERIENCE_PATH = "/experience";
+    public static readonly SKILLS_PATH = "/skills";
+    public static readonly EDUCATION_PATH = "/education";
 
     private constructor() {}
 

@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import StateManager from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import useResetScroll from "../hooks/useResetScroll";
-import RouterNavigator from "../../services/RotuerNavigator";
+import RouterNavigator from "../../services/RouterNavigator";
 
 interface Props {
     title: string;

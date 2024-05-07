@@ -66,7 +66,7 @@ const ResImage: React.FC<Props> = ({
 
     return (
         <img
-            src={`/images/${fileName}`}
+            src={`${import.meta.env.BASE_URL}images/${fileName}`}
             alt={fileName}
             onLoad={handleImageLoaded}
             style={{

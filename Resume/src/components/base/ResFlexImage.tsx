@@ -9,7 +9,7 @@ interface Props {
 const ResFlexImage: React.FC<Props> = ({ fileName, flexVertical, style }) => {
     return (
         <img
-            src={`/images/${fileName}`}
+            src={`${import.meta.env.BASE_URL}images/${fileName}`}
             alt={fileName}
             style={{
                 height: flexVertical ? "100%" : "auto",

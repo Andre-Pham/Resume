@@ -2,7 +2,7 @@ import ContentScreenWrapper from "../custom/ContentScreenWrapper";
 import { useNavigate } from "react-router-dom";
 import usePortraitRendering from "../hooks/usePortraitRendering";
 import EducationContent from "../custom/EducationContent";
-import RouterNavigator from "../../services/RotuerNavigator";
+import RouterNavigator from "../../services/RouterNavigator";
 
 function EducationScreen() {
     const navigate = useNavigate();

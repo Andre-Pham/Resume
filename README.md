@@ -47,9 +47,7 @@ To not lint specific code blocks, refer to the following: https://prettier.io/do
 To test in a production environment, run in the project directory:
 
 ```
-$ npm run build
-$ cd dist
-$ serve
+$ npm run build && cd dist && serve
 ```
 
 ## Initial Project Setup
@@ -145,5 +143,86 @@ $ npm install -g serve
 
 ```
 $ npm install react-device-detect
+```
+
+#### Setting up GitHub Pages
+
+```
+$ npm install gh-pages --save-dev
+```
+
+```
+$ npm install vite-plugin-static-copy --save-dev
+```
+
+Add the following to `package.json` inside the `scripts` property:
+
+```json
+"predeploy": "npm run build",
+"deploy": "gh-pages -d dist",
+"clean": "rm -rf dist"
+```
+
+Add to `vite.config.ts`:
+
+```typescript
+import { viteStaticCopy } from "vite-plugin-static-copy";
+
+// ...
+
+export default defineConfig({
+    plugins: [
+        react(),
+        viteStaticCopy({
+            targets: [
+                {
+                    src: "public/404.html",
+                    dest: ".",
+                },
+            ],
+        }),
+    ],
+    base: "/Resume/",
+});
+```
+
+Then in `/public`, add a new `404.html` file:
+
+```html
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="refresh" content="0; URL=/Resume/" />
+    </head>
+    <body>
+        <script>
+            // For old browsers that do not support the meta refresh tag
+            window.location.href = "/Resume/";
+        </script>
+    </body>
+</html>
+```
+
+Make sure your routing uses `HashRouter` for GitHub Pages:
+
+```typescript
+import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+
+// ...
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+    <React.StrictMode>
+        <Router>
+            <Routes>
+                <Route path="/" element={<MainScreen />} />
+                <Route path="/education" element={<EducationScreen />} />
+                {/* ... Other Routes... */}
+
+                {/* Invalid paths redirect to root */}
+                <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+        </Router>
+    </React.StrictMode>,
+);
 ```
 
