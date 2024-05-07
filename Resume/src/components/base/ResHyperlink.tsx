@@ -21,7 +21,7 @@ const ResHyperlink: React.FC<Props> = ({ children, url, typography, verticalWrap
     let linkTypography = typography.withWeight(ResFontWeight.bold).withUnderline(true);
     return (
         // Span means the frame doesn't extend past the text (i.e. can be clicked past the text)
-        <span>
+        <span style={style}>
             <a
                 href={url}
                 style={{
@@ -30,7 +30,6 @@ const ResHyperlink: React.FC<Props> = ({ children, url, typography, verticalWrap
                     lineHeight: verticalWrap ? 1 : undefined,
                     overflowWrap: "anywhere", // Overflows to the next line if too long to fit
                     ...linkTypography.getStylesheet(),
-                    ...style,
                 }}
                 // Open the link in a new tab or window
                 target="_blank"

@@ -41,7 +41,7 @@ export const ColorThemeProvider: React.FC<Props> = ({ children }) => {
 // Color scheme still has to be passed in to react
 const GlobalStyle = createGlobalStyle<{ colorScheme: ColorScheme }>`
     body {
-        scrollbar-color: ${() => `${ResColors.textSemiDark.getColor()} ${ResColors.fillBackgroundLight.getColor()}`};
+        scrollbar-color: ${() => `${ResColors.scrollBar.getColor()} ${ResColors.fillBackgroundLight.getColor()}`};
         transition: background-color 0.2s ease, color 0.2s ease;
     }
 
@@ -50,12 +50,12 @@ const GlobalStyle = createGlobalStyle<{ colorScheme: ColorScheme }>`
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: ${() => ResColors.textSemiDark.getColor()};
+        background-color: ${() => ResColors.scrollBar.getColor()};
         border-radius: 0px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background-color: ${() => ResColors.textSemiDark.getColor()};
+        background-color: ${() => ResColors.scrollBar.getColor()};
         border-radius: 0px;
         
     }

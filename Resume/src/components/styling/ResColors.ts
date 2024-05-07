@@ -23,7 +23,7 @@ class ResColors {
     }
 
     static get textSemiDark(): ResColor {
-        return new ResColor("#a6a8c5", "#818182");
+        return new ResColor("#9193b0", "#9191a2");
     }
 
     static get textLight(): ResColor {
@@ -52,6 +52,10 @@ class ResColors {
 
     static get linkedIn(): ResColor {
         return new ResColor("#2d64bc");
+    }
+
+    static get scrollBar(): ResColor {
+        return new ResColor("#bdc0d3", "#616176");
     }
 }
 

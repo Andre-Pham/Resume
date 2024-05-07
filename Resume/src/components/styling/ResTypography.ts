@@ -8,7 +8,16 @@ import ResTypographyConfig from "./typography/ResTypographyConfig";
  */
 class ResTypography {
     static get pageTitle(): ResTypographyConfig {
-        return new ResTypographyConfig(32, ResFontFamily.gilroy, ResColors.textDark, ResFontWeight.black);
+        return new ResTypographyConfig(
+            32,
+            ResFontFamily.gilroy,
+            ResColors.textDark,
+            ResFontWeight.black,
+            false,
+            false,
+            false,
+            0.2,
+        );
     }
 
     static get splash(): ResTypographyConfig {
@@ -49,20 +58,20 @@ class ResTypography {
     }
 
     static get sectionTitle(): ResTypographyConfig {
-        return new ResTypographyConfig(26, ResFontFamily.gilroy, ResColors.textDark, ResFontWeight.black);
-    }
-
-    static get header(): ResTypographyConfig {
         return new ResTypographyConfig(
-            31,
-            ResFontFamily.circular,
+            26,
+            ResFontFamily.gilroy,
             ResColors.textDark,
             ResFontWeight.black,
             false,
             false,
             false,
-            -0.5,
+            1.0,
         );
+    }
+
+    static get header(): ResTypographyConfig {
+        return new ResTypographyConfig(31, ResFontFamily.circular, ResColors.textDark, ResFontWeight.bold);
     }
 }
 
