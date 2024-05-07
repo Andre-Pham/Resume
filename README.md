@@ -42,14 +42,6 @@ $ npx prettier . --write
 
 To not lint specific code blocks, refer to the following: https://prettier.io/docs/en/ignore.html
 
-## Building for Production
-
-To test in a production environment, run in the project directory:
-
-```
-$ npm run build && cd dist && serve
-```
-
 ## Initial Project Setup
 
 #### Creating a New Project
@@ -129,14 +121,6 @@ $ npm install --save-dev @types/node
 
 ```
 $ npm install react-router-dom
-```
-
-#### Adding Production Builds
-
-You need `serve` to run a production build on your local machine. To install, run:
-
-```
-$ npm install -g serve
 ```
 
 #### Adding Device Detection
@@ -224,5 +208,18 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         </Router>
     </React.StrictMode>,
 );
+```
+
+You can add the following entry to `vite.config.js` to remove policy warnings:
+
+```typescript
+export default defineConfig({
+    // ...
+    server: {
+        headers: {
+            "Permissions-Policy": "",
+        },
+    },
+});
 ```
 
