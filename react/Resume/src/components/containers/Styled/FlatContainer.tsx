@@ -21,7 +21,7 @@ const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSel
     const handleMouseUp = () => {
         onPress && onPress();
         setPressed(false);
-    }
+    };
 
     const handleMouseLeave = () => {
         setPressed(false);

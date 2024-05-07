@@ -19,7 +19,7 @@ const PressableContainer: React.FC<Props> = ({ onPress, disableSelection = false
     const handleMouseUp = () => {
         onPress();
         setPressed(false);
-    }
+    };
 
     const handleMouseLeave = () => {
         setPressed(false);

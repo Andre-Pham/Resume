@@ -7,15 +7,14 @@ import SplashButtonMobile from "./SplashButtonMobile";
 import SplashButton from "./SplashButton";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import usePortraitRendering from "../hooks/usePortraitRendering";
+import Environment from "../../state/Environment/Environment";
 
 interface Props {
     // No props
 }
 
 const Splash: React.FC<Props> = ({}) => {
-    const [shouldRenderPortrait, setShouldRenderPortrait] = useState(
-        window.innerWidth <= ResDimensions.screenWidthToRenderPortrait,
-    );
+    const [shouldRenderPortrait, setShouldRenderPortrait] = useState(Environment.shouldRenderPortrait);
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
         setShouldRenderPortrait(shouldRenderPortrait);

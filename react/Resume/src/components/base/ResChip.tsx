@@ -20,7 +20,7 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
     const handleMouseUp = () => {
         onPress && onPress();
         setPressed(false);
-    }
+    };
 
     const handleMouseLeave = () => {
         setPressed(false);

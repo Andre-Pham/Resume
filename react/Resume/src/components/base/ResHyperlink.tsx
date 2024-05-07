@@ -28,6 +28,7 @@ const ResHyperlink: React.FC<Props> = ({ children, url, typography, verticalWrap
                     width: wide ? "100%" : undefined,
                     justifyItems: wide == undefined ? undefined : "center",
                     lineHeight: verticalWrap ? 1 : undefined,
+                    overflowWrap: "anywhere", // Overflows to the next line if too long to fit
                     ...linkTypography.getStylesheet(),
                     ...style,
                 }}

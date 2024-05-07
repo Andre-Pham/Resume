@@ -13,6 +13,7 @@ import useResizeObserver from "../hooks/useResizeObserver";
 import { useNavigate } from "react-router-dom";
 import usePortraitRendering from "../hooks/usePortraitRendering";
 import useResetScroll from "../hooks/useResetScroll";
+import Environment from "../../state/Environment/Environment";
 
 function MainScreen() {
     const navigate = useNavigate();
@@ -32,17 +33,17 @@ function MainScreen() {
         // Listen to active section
         const unsubscribe = StateManager.activeSection.subscribe(() => {
             setActiveSection(StateManager.activeSection.read());
-            navigateIfNecessary(window.innerWidth <= ResDimensions.screenWidthToRenderPortrait);
+            navigateIfNecessary();
         });
         return () => unsubscribe();
     }, []);
 
-    usePortraitRendering((shouldRenderPortrait: boolean) => {
-        navigateIfNecessary(shouldRenderPortrait);
+    usePortraitRendering(() => {
+        navigateIfNecessary();
     });
 
-    const navigateIfNecessary = (shouldRenderPortrait: boolean) => {
-        if (shouldRenderPortrait) {
+    const navigateIfNecessary = () => {
+        if (Environment.shouldRenderPortrait) {
             navigateToSection();
         }
     };
@@ -71,8 +72,7 @@ function MainScreen() {
             firstScrollRender.current = false;
             return;
         }
-        const shouldRenderPortrait = window.innerWidth <= ResDimensions.screenWidthToRenderPortrait;
-        if (!shouldRenderPortrait) {
+        if (!Environment.shouldRenderPortrait) {
             scrollIntoContent();
         }
     }, [activeSection]);
@@ -103,7 +103,7 @@ function MainScreen() {
     };
 
     return (
-        <div style={{ padding: ResDimensions.screenPadding }}>
+        <div style={{ padding: ResDimensions.screenPadding, minWidth: 300 }}>
             <VStack spacing={ResDimensions.mainScreenSpacing} style={{ alignContent: "center" }}>
                 <Header />
 
