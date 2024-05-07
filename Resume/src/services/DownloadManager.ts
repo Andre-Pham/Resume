@@ -32,7 +32,7 @@ class DownloadManger {
     public async download(file: DownloadFile): Promise<boolean> {
         try {
             const link = document.createElement("a");
-            link.href = `/files/${file.fileName}`;
+            link.href = `${import.meta.env.BASE_URL}files/${file.fileName}`;
             link.download = file.downloadName;
             document.body.appendChild(link);
             link.click();
