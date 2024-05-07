@@ -37,14 +37,13 @@ const EducationContent: React.FC<Props> = ({ style }) => {
     };
 
     let columnCount = shouldRenderPortrait ? 1 : 2;
-    let columnSizeRule = `${100 / columnCount}%`;
 
     return (
         <GridContainer
             columns={columnCount}
             spacing={ResDimensions.cardColumnSpacing}
-            columnSizeRule={columnSizeRule}
-            style={style}
+            columnSizeRule={"minmax(0, 1fr)"}
+            style={{ width: "100%", ...style }}
         >
             <BasicCard title="Bachelor of Software Engineering (Honours)">
                 <ResText typography={ResTypography.body}>{"Monash University, Mar 2020 - Nov 2023"}</ResText>

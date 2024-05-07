@@ -10,7 +10,7 @@ interface Props {
 
 const ExperienceContent: React.FC<Props> = ({ style }) => {
     return (
-        <VStack spacing={ResDimensions.pageContentSpacing} style={{ ...style }}>
+        <VStack spacing={ResDimensions.pageContentSpacing} style={{ width: "100%", ...style }}>
             {ExperiencePeriods().map((period) => (
                 <ExperienceSection period={period} key={period.label} />
             ))}

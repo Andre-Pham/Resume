@@ -11,7 +11,7 @@ interface Props {
 
 const SkillsContent: React.FC<Props> = ({ style }) => {
     return (
-        <VStack spacing={ResDimensions.cardColumnSpacing} style={style}>
+        <VStack spacing={ResDimensions.cardColumnSpacing} style={{ width: "100%", ...style }}>
             <BasicCard title="Being a Developer">
                 <ResText typography={ResTypography.body}>
                     {

@@ -25,7 +25,6 @@ const ExperienceSection: React.FC<Props> = ({ period }) => {
     };
 
     let columnCount = shouldRenderPortrait ? 1 : 2;
-    let columnSizeRule = `${100 / columnCount}%`;
 
     return (
         <VStack spacing={ResDimensions.pageContentSpacing}>
@@ -33,7 +32,7 @@ const ExperienceSection: React.FC<Props> = ({ period }) => {
 
             <GridContainer
                 columns={columnCount}
-                columnSizeRule={columnSizeRule}
+                columnSizeRule={"minmax(0, 1fr)"}
                 spacing={ResDimensions.cardColumnSpacing}
             >
                 {renderExperienceCards()}

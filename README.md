@@ -209,17 +209,3 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     </React.StrictMode>,
 );
 ```
-
-You can add the following entry to `vite.config.js` to remove policy warnings:
-
-```typescript
-export default defineConfig({
-    // ...
-    server: {
-        headers: {
-            "Permissions-Policy": "",
-        },
-    },
-});
-```
-

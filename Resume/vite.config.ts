@@ -16,9 +16,4 @@ export default defineConfig({
         }),
     ],
     base: "/Resume/",
-    server: {
-        headers: {
-            "Permissions-Policy": "",
-        },
-    },
 });
