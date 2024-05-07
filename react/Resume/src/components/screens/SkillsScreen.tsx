@@ -2,13 +2,14 @@ import ContentScreenWrapper from "../custom/ContentScreenWrapper";
 import { useNavigate } from "react-router-dom";
 import usePortraitRendering from "../hooks/usePortraitRendering";
 import SkillsContent from "../custom/SkillsContent";
+import RouterNavigator from "../../services/RotuerNavigator";
 
 function SkillsScreen() {
     const navigate = useNavigate();
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
         if (!shouldRenderPortrait) {
-            navigate("/", { replace: true });
+            RouterNavigator.inst.navigateHome(navigate);
         }
     });
 
