@@ -17,12 +17,12 @@ export const Experiences: Experience[] = [
 
     new Experience(
         "yonder_icon.png",
-        "Yonder",
+        "Everbound",
         "Active",
         "Personal Project",
         "2021 - Present",
         "An iOS rougelike RPG. Includes enemies and bosses to fight, NPCs to meet, and loot such as armour, accessories, weapons, and potions to collect.",
-        [new Link("GitHub", "GitHub.com/Andre-Pham/Yonder", "https://github.com/Andre-Pham/Yonder")],
+        [new Link("TestFlight", "TestFlight.apple.com", "https://testflight.apple.com/join/s8rhNhBa")],
         [],
         ["Swift", "SwiftUI", "MVVM", "Combine", "Serialisation", "Localisation", "Unit Tests"],
     ),
