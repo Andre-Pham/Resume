@@ -36,7 +36,7 @@ const ContentScreenWrapper: React.FC<Props> = ({ title, children, style }) => {
                     <ResIcon
                         iconPath={mdiChevronLeft}
                         size={45}
-                        color={ResTypography.header.resColor}
+                        color={ResTypography.header.colorObject}
                         style={{ marginLeft: -20 }}
                     />
                 </PressableContainer>

@@ -13,7 +13,7 @@ import useResizeObserver from "../hooks/useResizeObserver";
 import { useNavigate } from "react-router-dom";
 import usePortraitRendering from "../hooks/usePortraitRendering";
 import useResetScroll from "../hooks/useResetScroll";
-import Environment from "../../state/Environment/Environment";
+import Environment from "../../state/environment/Environment";
 import RouterNavigator from "../../services/RouterNavigator";
 
 function MainScreen() {

@@ -7,7 +7,7 @@ import SplashButtonMobile from "./SplashButtonMobile";
 import SplashButton from "./SplashButton";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import usePortraitRendering from "../hooks/usePortraitRendering";
-import Environment from "../../state/Environment/Environment";
+import Environment from "../../state/environment/Environment";
 
 interface Props {
     // No props

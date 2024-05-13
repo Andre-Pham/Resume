@@ -6,14 +6,14 @@ class ResTypographyConfig {
     public size: number;
     public fontFamily: ResFontFamily;
     // An undefined color allows the component handle the color
-    public resColor: ResColor | undefined;
+    public colorObject: ResColor | undefined;
     public weight: ResFontWeight;
     public italic: boolean;
     public underlined: boolean;
     public linedOut: boolean;
     public kerning: number;
     get color(): string | undefined {
-        return this.resColor?.getColor();
+        return this.colorObject?.getColor();
     }
     get lineStyle(): "none" | "underline" | "line-through" | "underline line-through" {
         let result = "";
@@ -42,7 +42,7 @@ class ResTypographyConfig {
     ) {
         this.size = size;
         this.fontFamily = fontFamily;
-        this.resColor = color;
+        this.colorObject = color;
         this.weight = weight;
         this.italic = italic;
         this.underlined = underlined;
@@ -56,7 +56,7 @@ class ResTypographyConfig {
     }
 
     public withColor(color: ResColor): ResTypographyConfig {
-        this.resColor = color;
+        this.colorObject = color;
         return this;
     }
 
