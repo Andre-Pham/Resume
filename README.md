@@ -42,6 +42,21 @@ $ npx prettier . --write
 
 To not lint specific code blocks, refer to the following: https://prettier.io/docs/en/ignore.html
 
+## Building for Production
+
+To test in a production environment, the base has to be set to `"/"` (it can be reverted after building).
+
+```typescript
+// Inside vite.config.ts
+base: "/",
+```
+
+Then run in the project directory:
+
+```
+$ npm run build && cd dist && serve
+```
+
 ## Initial Project Setup
 
 #### Creating a New Project
@@ -127,6 +142,14 @@ $ npm install react-router-dom
 
 ```
 $ npm install react-device-detect
+```
+
+#### Adding Production Builds
+
+You need `serve` to run a production build on your local machine. To install, run:
+
+```
+$ npm install -g serve
 ```
 
 #### Setting up GitHub Pages
