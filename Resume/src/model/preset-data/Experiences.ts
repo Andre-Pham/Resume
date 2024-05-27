@@ -10,7 +10,10 @@ export const Experiences: Experience[] = [
         "Paid Position",
         "2021 - 2023",
         "As an iOS developer at Cerulean Labs, I worked on all areas of the iPad Codesign (formerly Spaces) app including the UI, rendering, feature development, and more. Notable contributions include the cladding tool, multi-face editing, continuous face editing, footprint edge editing, colonnade vector editing, the site boundary editor, dimension editing, bounding box dimension editing, and the 2D vector rendering engine.",
-        [new Link("Codesign", "GetCodesign.co", "https://www.getcodesign.co/")],
+        [
+            new Link("Website", "GetCodesign.co", "https://www.getcodesign.co/"),
+            new Link("App Store", "Apps.Apple.com/app/id1530458770", "https://apps.apple.com/app/id1530458770"),
+        ],
         [],
         ["Swift", "SwiftUI", "UIKit", "Core Graphics", "SceneKit", "Realm", "Unit Tests", "Localisation"],
     ),
@@ -21,10 +24,29 @@ export const Experiences: Experience[] = [
         "Active",
         "Personal Project",
         "2021 - Present",
-        "An iOS rougelike RPG. Includes enemies and bosses to fight, NPCs to meet, and loot such as armour, accessories, weapons, and potions to collect.",
-        [new Link("TestFlight", "TestFlight.apple.com", "https://testflight.apple.com/join/s8rhNhBa")],
+        "An iOS rougelike RPG. Includes enemies and bosses to fight, NPCs to meet, and loot such as armour, accessories, weapons, items, and potions to collect.",
+        [
+            new Link("Website", "Everbound.net", "https://www.everbound.net/"),
+            new Link("App Store", "Apps.Apple.com/app/id6499560058", "https://apps.apple.com/app/id6499560058"),
+            new Link("Trailer", "YouTube.com/watch?v=Zl3jHVbDxws", "https://www.youtube.com/watch?v=Zl3jHVbDxws"),
+        ],
         [],
         ["Swift", "SwiftUI", "MVVM", "Combine", "Serialisation", "Localisation", "Unit Tests"],
+    ),
+
+    new Experience(
+        "everbound_website_icon.png",
+        "Everbound.net",
+        2024,
+        "Personal Project",
+        "2024",
+        "The official website for my game, Everbound (see above). Uses responsive web design and a completely custom UI built with my own components.",
+        [
+            new Link("Website", "Everbound.net", "https://www.everbound.net/"),
+            new Link("GitHub", "GitHub.com/Andre-Pham/Everbound", "https://github.com/Andre-Pham/Everbound"),
+        ],
+        [],
+        ["React", "TypeScript", "HTML", "CSS", "Vite", "Redux", "Styled Components"],
     ),
 
     new Experience(
@@ -57,7 +79,7 @@ export const Experiences: Experience[] = [
         2023,
         "Personal Project",
         "2023",
-        "A Swift package used for serialising and restoring Swift objects. Supports serialising, persisting, reading and restoring Swift objects. Provides legacy support.",
+        "A Swift package used for serialising and restoring Swift objects. Allows for serialising, persisting, reading, and restoring Swift objects. Provides legacy support. Supports transactions (including rollbacks) and actions from multiple concurrent threads. Powers many of my apps, including my game Everbound (see above).",
         [
             new Link(
                 "GitHub",
@@ -153,9 +175,9 @@ export const Experiences: Experience[] = [
         2023,
         "Personal Project",
         "2023",
-        "You're looking at it 😉. I wouldn't typically use (nor recommend) React Native for a website, but I wanted to get more practice using it.",
+        "You're looking at it 😉. Uses responsive web design and a completely custom UI built with my own components - designed by me to provide information, links, and downloads.",
         [new Link("GitHub", "GitHub.com/Andre-Pham/Resume", "https://github.com/Andre-Pham/Resume")],
         [],
-        ["React Native Expo", "TypeScript", "Redux"],
+        ["React", "TypeScript", "HTML", "CSS", "Vite", "Redux", "Styled Components"],
     ),
 ];

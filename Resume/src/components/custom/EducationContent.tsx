@@ -24,6 +24,10 @@ const EducationContent: React.FC<Props> = ({ style }) => {
         setShouldRenderPortrait(shouldRenderPortrait);
     });
 
+    const downloadDuxAward = async () => {
+        DownloadManager.inst.download(DownloadManager.inst.duxAward);
+    };
+
     const downloadAcademicTranscript = async () => {
         DownloadManager.inst.download(DownloadManager.inst.transcript);
     };
@@ -71,6 +75,44 @@ const EducationContent: React.FC<Props> = ({ style }) => {
                 </ResHyperlink>
             </BasicCard>
 
+            <BasicCard title="High Achiever">
+                <ResText typography={ResTypography.body} style={{ paddingBottom: 6 }}>
+                    {
+                        "I was the Software Engineering Dux, was included in the Faculty of Engineering Dean's Honour List every year of my degree, and received multiple letters of commendation for my high academic performance."
+                    }
+                </ResText>
+
+                <ResCompactButton
+                    label={DownloadManager.inst.duxAward.label}
+                    iconPath={mdiTrayArrowDown}
+                    typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
+                    color={ResColors.accent}
+                    wide={false}
+                    onPress={downloadDuxAward}
+                    style={{ alignSelf: "flex-start" }}
+                />
+
+                <ResCompactButton
+                    label={DownloadManager.inst.honourListInclusions.label}
+                    iconPath={mdiTrayArrowDown}
+                    typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
+                    color={ResColors.accent}
+                    wide={false}
+                    onPress={downloadHonoursListInclusions}
+                    style={{ alignSelf: "flex-start" }}
+                />
+
+                <ResCompactButton
+                    label={DownloadManager.inst.lettersOfCommendation.label}
+                    iconPath={mdiTrayArrowDown}
+                    typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
+                    color={ResColors.accent}
+                    wide={false}
+                    onPress={downloadLettersOfCommendation}
+                    style={{ alignSelf: "flex-start" }}
+                />
+            </BasicCard>
+
             <BasicCard title="Academic Transcript">
                 <ResHyperlink
                     typography={ResTypography.body}
@@ -94,34 +136,6 @@ const EducationContent: React.FC<Props> = ({ style }) => {
                     color={ResColors.accent}
                     wide={false}
                     onPress={downloadAcademicTranscript}
-                    style={{ alignSelf: "flex-start" }}
-                />
-            </BasicCard>
-
-            <BasicCard title="High Achiever">
-                <ResText typography={ResTypography.body} style={{ paddingBottom: 6 }}>
-                    {
-                        "I was included in the Faculty of Engineering Dean's Honour List every year of my degree, and have received multiple letters of commendation for my high academic performance."
-                    }
-                </ResText>
-
-                <ResCompactButton
-                    label={DownloadManager.inst.honourListInclusions.label}
-                    iconPath={mdiTrayArrowDown}
-                    typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
-                    color={ResColors.accent}
-                    wide={false}
-                    onPress={downloadHonoursListInclusions}
-                    style={{ alignSelf: "flex-start" }}
-                />
-
-                <ResCompactButton
-                    label={DownloadManager.inst.lettersOfCommendation.label}
-                    iconPath={mdiTrayArrowDown}
-                    typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
-                    color={ResColors.accent}
-                    wide={false}
-                    onPress={downloadLettersOfCommendation}
                     style={{ alignSelf: "flex-start" }}
                 />
             </BasicCard>

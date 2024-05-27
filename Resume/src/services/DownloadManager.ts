@@ -27,6 +27,8 @@ class DownloadManger {
         "letters_of_commendation_andrepham.zip",
     );
 
+    public readonly duxAward = new DownloadFile("Dux Award", "dux_award.zip", "dux_award_andrepham.zip");
+
     private constructor() {}
 
     public async download(file: DownloadFile): Promise<boolean> {
