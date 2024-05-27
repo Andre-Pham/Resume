@@ -15,7 +15,7 @@ const SkillsContent: React.FC<Props> = ({ style }) => {
             <BasicCard title="Being a Developer">
                 <ResText typography={ResTypography.body}>
                     {
-                        "I know all the basic skills you would expect a developer to have such as git and source control, IDE tools, development practices, etc. I'm experienced in many different areas of development including UI, 3D computer graphics, 2D computer graphics, thread management, interacting with web services, applied mathematics, data persistence, databases, package management, localisation, and more."
+                        "I have the skills you would expect a developer to have such as git and source control, IDE tools, development practices, etc. I'm experienced in many different areas of development including UI, 3D computer graphics, 2D computer graphics, thread management, interacting with web services, applied mathematics, data persistence, databases, package management, localisation, and more."
                     }
                 </ResText>
             </BasicCard>
@@ -31,7 +31,7 @@ const SkillsContent: React.FC<Props> = ({ style }) => {
             <BasicCard title="React Native">
                 <ResText typography={ResTypography.body}>
                     {
-                        "I have experience building React Native apps using expo (including this site!), having worked on both individual and team-based projects. Using TypeScript I've become familiar with the React Native ecosystem, having used redux architecture to develop multi-platform apps. Areas of experience include frontend development, interfacing with databases, localisation, and more."
+                        "I have experience building React Native apps using expo, having worked on both individual and team-based projects. Using TypeScript I've become familiar with the React Native ecosystem, having used Redux architecture to develop multi-platform apps. Areas of experience include frontend development, interfacing with databases, localisation, and more."
                     }
                 </ResText>
             </BasicCard>
@@ -40,6 +40,14 @@ const SkillsContent: React.FC<Props> = ({ style }) => {
                 <ResText typography={ResTypography.body}>
                     {
                         "I have experience building native Android apps in Kotlin and Java using XML Layouts. I'm formally educated in Android development and have built two apps in team settings. I'm experienced in basic Android architecture, activity and fragment lifecycles, UI development, persisting data using Shared Preferences and Room, interacting with web services, and interfacing with accessibility services."
+                    }
+                </ResText>
+            </BasicCard>
+
+            <BasicCard title="Web Development">
+                <ResText typography={ResTypography.body}>
+                    {
+                        "I have experience building websites using React. Using HTML, CSS, and TypeScript, I've built and published websites (including this one!) using responsive web design and my own custom components. I've used Redux architecture for state management, Styled Components for integrating CSS into my TypeScript, and React Router's HashRouter to implement navigation."
                     }
                 </ResText>
             </BasicCard>
@@ -63,7 +71,7 @@ const SkillsContent: React.FC<Props> = ({ style }) => {
             <BasicCard title="Python">
                 <ResText typography={ResTypography.body}>
                     {
-                        "Sort of an outlier, but oddly enough I have a lot of experience with Python. I've used it in my own personal projects, in university projects, and for building scripts for processing and manipulating data. I have experience with Pandas, NumPy, OpenCV, PIL, and a bunch more."
+                        "An outlier - I have a lot of experience with Python. I've consistently used it over the years in my own personal projects, in university projects, and for building scripts for processing and manipulating data. I have experience with Pandas, NumPy, OpenCV, PIL, and a bunch more."
                     }
                 </ResText>
             </BasicCard>
