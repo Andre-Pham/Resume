@@ -32,7 +32,7 @@ const ContentScreenWrapper: React.FC<Props> = ({ title, children, style }) => {
     return (
         <VStack spacing={ResDimensions.screenPadding} style={{ padding: ResDimensions.screenPadding, ...style }}>
             <HStack spacing={8} style={{ alignItems: "center" }}>
-                <PressableContainer onPress={goBack}>
+                <PressableContainer onPress={goBack} disableSelection={true}>
                     <ResIcon
                         iconPath={mdiChevronLeft}
                         size={45}
