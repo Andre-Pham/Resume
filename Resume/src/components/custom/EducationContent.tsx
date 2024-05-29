@@ -78,7 +78,7 @@ const EducationContent: React.FC<Props> = ({ style }) => {
             <BasicCard title="High Achiever">
                 <ResText typography={ResTypography.body} style={{ paddingBottom: 6 }}>
                     {
-                        "I was the Software Engineering Dux, was included in the Faculty of Engineering Dean's Honour List every year of my degree, and received multiple letters of commendation for my high academic performance."
+                        "I was the Software Engineering Dux, was included in the Faculty of Engineering Dean's Honour List every year of my degree, and have received multiple letters of commendation for my high academic performance."
                     }
                 </ResText>
 
