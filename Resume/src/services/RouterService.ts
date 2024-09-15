@@ -7,7 +7,7 @@ export class RouterService {
     public static readonly EXPERIENCE_PATH = "/experience";
     public static readonly SKILLS_PATH = "/skills";
     public static readonly EDUCATION_PATH = "/education";
-    public static readonly TITLES: { [key: string]: string } = {
+    public static readonly titles: { [key: string]: string } = {
         [RouterService.HOME_PATH]: "Andre Pham",
         [RouterService.EXPERIENCE_PATH]: "Andre Pham | Experience",
         [RouterService.SKILLS_PATH]: "Andre Pham | Skills",
