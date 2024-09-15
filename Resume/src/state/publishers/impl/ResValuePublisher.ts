@@ -44,7 +44,7 @@ export class ResValuePublisher<Type> {
         return this.publisher.subscribe(callback);
     }
 
-    public publish(value: Type) {
+    public publish(value: Type): void {
         this.publisher.dispatch(this.slice.actions.publishAction(value));
     }
 

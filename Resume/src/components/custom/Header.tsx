@@ -11,14 +11,10 @@ import { Spacer } from "../containers/Spacing/Spacer";
 import { StateManager } from "../../state/publishers/StateManager";
 import { ColorScheme } from "../../state/publishers/types/ColorScheme";
 
-interface Props {
-    // None
-}
-
-export const Header: React.FC<Props> = ({}) => {
-    const inverseColorScheme = () => {
-        let current = StateManager.colorScheme.read();
-        if (current == ColorScheme.light) {
+export const Header: React.FC = () => {
+    const inverseColorScheme = (): void => {
+        const current = StateManager.colorScheme.read();
+        if (current === ColorScheme.light) {
             StateManager.colorScheme.publish(ColorScheme.dark);
         } else {
             StateManager.colorScheme.publish(ColorScheme.light);
@@ -49,7 +45,7 @@ export const Header: React.FC<Props> = ({}) => {
 
                 <ResIconButton
                     color={ResColors.background}
-                    fileName={StateManager.colorScheme.read() == ColorScheme.dark ? "moon.png" : "sun.png"}
+                    fileName={StateManager.colorScheme.read() === ColorScheme.dark ? "moon.png" : "sun.png"}
                     size={ResDimensions.iconButtonSize}
                     onPress={inverseColorScheme}
                     onlyIcon={true}

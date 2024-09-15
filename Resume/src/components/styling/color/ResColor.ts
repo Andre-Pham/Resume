@@ -12,7 +12,7 @@ export class ResColor {
     constructor(lightMode: string, darkMode?: string) {
         const hexRegex = /^#[0-9a-fA-F]+$/;
         // If no dark mode is provided, dark mode / light mode is equivalent
-        let setDarkMode = darkMode || lightMode;
+        const setDarkMode = darkMode ?? lightMode;
         assert(hexRegex.test(lightMode), `Invalid lightMode hex color string provided: '${lightMode}'`);
         assert(hexRegex.test(setDarkMode), `Invalid darkMode hex color string provided: '${setDarkMode}'`);
         this.lightMode = lightMode;
@@ -25,7 +25,7 @@ export class ResColor {
      * @returns Validated color string
      */
     public getColor(): string {
-        let colorScheme = StateManager.colorScheme.read();
+        const colorScheme = StateManager.colorScheme.read();
         switch (colorScheme) {
             case ColorScheme.dark:
                 return this.darkMode;
@@ -44,9 +44,9 @@ export class ResColor {
             hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
         }
         assert(hex.length === 6, "Invalid hex color found");
-        let r = parseInt(hex.slice(0, 2), 16),
-            g = parseInt(hex.slice(2, 4), 16),
-            b = parseInt(hex.slice(4, 6), 16);
+        const r = parseInt(hex.slice(0, 2), 16);
+        const g = parseInt(hex.slice(2, 4), 16);
+        const b = parseInt(hex.slice(4, 6), 16);
         return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? "#000000" : "#FFFFFF";
     }
 }

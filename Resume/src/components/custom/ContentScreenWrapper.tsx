@@ -24,7 +24,7 @@ export const ContentScreenWrapper: React.FC<Props> = ({ title, children, style }
 
     useResetScroll();
 
-    const goBack = () => {
+    const goBack = (): void => {
         StateManager.activeSection.publish(ActiveSection.none);
         RouterService.inst.navigateHome(navigate);
     };

@@ -29,19 +29,19 @@ export const ResButton: React.FC<Props> = ({
     const [pressed, setPressed] = useState(false);
     const [touched, setTouched] = useState(false);
 
-    const handleMouseDown = () => {
+    const handleMouseDown = (): void => {
         setPressed(true);
     };
 
-    const handleMouseExit = () => {
+    const handleMouseExit = (): void => {
         setPressed(false);
     };
 
-    const handleTouched = () => {
+    const handleTouched = (): void => {
         setTouched(true);
     };
 
-    const handleUntouched = () => {
+    const handleUntouched = (): void => {
         setTouched(false);
     };
 
@@ -74,7 +74,9 @@ export const ResButton: React.FC<Props> = ({
             }}
             disabled={disabled}
         >
-            {iconPath && <Icon path={iconPath} color={typography.color} size={0.8} style={{ paddingRight: "6px" }} />}
+            {iconPath !== undefined && (
+                <Icon path={iconPath} color={typography.color} size={0.8} style={{ paddingRight: "6px" }} />
+            )}
 
             <ResText typography={typography} wide={false}>
                 {label}

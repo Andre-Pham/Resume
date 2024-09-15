@@ -20,7 +20,7 @@ export function useResizeObserver(): [RefObject<HTMLDivElement>, Size] {
             });
         });
 
-        if (observeTarget) {
+        if (observeTarget !== null) {
             resizeObserver.observe(observeTarget);
         }
 

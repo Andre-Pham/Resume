@@ -10,8 +10,8 @@ export const ZStack: React.FC<Props> = ({ children, style }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [minHeight, setMinHeight] = useState(0);
 
-    const updateDimensions = () => {
-        if (containerRef.current) {
+    const updateDimensions = (): void => {
+        if (containerRef.current != null) {
             let maxHeight = 0;
             const childNodes = containerRef.current.childNodes;
             childNodes.forEach((node) => {
@@ -29,7 +29,9 @@ export const ZStack: React.FC<Props> = ({ children, style }) => {
         // Initial update on component mount
         updateDimensions();
         // Cleanup the event listener on component unmount
-        return () => window.removeEventListener("resize", updateDimensions);
+        return () => {
+            window.removeEventListener("resize", updateDimensions);
+        };
     }, [children]);
 
     return (

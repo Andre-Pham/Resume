@@ -26,16 +26,16 @@ export const SplashButton: React.FC<Props> = ({ label, section, radius, style })
         };
     }, []);
 
-    let selectedTypography = ResTypography.button.withColor(ResColors.textLightPersistent);
-    let unselectedTypography = ResTypography.button.withColor(ResColors.textDark);
+    const selectedTypography = ResTypography.button.withColor(ResColors.textLightPersistent);
+    const unselectedTypography = ResTypography.button.withColor(ResColors.textDark);
 
     return (
         <ResButton
             label={label}
-            typography={activeSection == section ? selectedTypography : unselectedTypography}
-            color={activeSection == section ? ResColors.accent : ResColors.fillBackgroundLight}
+            typography={activeSection === section ? selectedTypography : unselectedTypography}
+            color={activeSection === section ? ResColors.accent : ResColors.fillBackgroundLight}
             onPress={() => {
-                let toPublish = activeSection == section ? ActiveSection.none : section;
+                const toPublish = activeSection === section ? ActiveSection.none : section;
                 StateManager.activeSection.publish(toPublish);
             }}
             wide={false}
@@ -43,7 +43,7 @@ export const SplashButton: React.FC<Props> = ({ label, section, radius, style })
                 width: radius * 2,
                 height: radius * 2,
                 borderRadius: 100,
-                ...(activeSection == section ? ResCSS.shadow : undefined),
+                ...(activeSection === section ? ResCSS.shadow : undefined),
                 ...style,
             }}
         />

@@ -6,7 +6,7 @@ import { AssertionError } from "../errors/AssertionError";
  * @param condition The condition to be tested
  * @param message The message to output if the condition fails
  */
-export function assert(condition: boolean, message: string) {
+export function assert(condition: boolean, message: string): void {
     if (!condition) {
         throw new AssertionError(message);
     }

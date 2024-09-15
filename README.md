@@ -42,6 +42,14 @@ $ npx prettier . --write
 
 To not lint specific code blocks, refer to the following: https://prettier.io/docs/en/ignore.html
 
+## Lint
+
+To lint all code, run the following in the project directory:
+
+```
+$ npm run lint
+```
+
 ## Building for Production
 
 To test in a production environment, the base has to be set to `"/"` (it can be reverted after building).
@@ -55,6 +63,19 @@ Then run in the project directory:
 
 ```
 $ npm run build && cd dist && serve
+```
+
+## Nuke
+
+To nuke (clean cache and all that) run the following command (**only works on Unix**):
+
+```bash
+find . -name 'node_modules' -type d -prune -exec echo "Deleting: {}" \; -exec rm -rf {} \;
+find . -name 'tsconfig.tsbuildinfo' -type f -exec echo "Deleting: {}" \; -exec rm {} \; 
+find . -name 'dist' -type d -exec echo "Deleting directory: {}" \; -exec rm -rf {} \;
+find . -name '.pnpm-store' -type d -exec echo "Deleting directory: {}" \; -exec rm -rf {} \;
+npm i ;
+npm run build ;
 ```
 
 ## Initial Project Setup
@@ -100,6 +121,86 @@ Then in the project root directory, create a file called `.prettierrc`. Add the 
     "bracketSameLine": false,
     "printWidth": 120
 }
+```
+
+#### Adding Lint
+
+```
+npm uninstall @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+npm install eslint-config-standard-with-typescript @typescript-eslint/eslint-plugin@^6.4.0 @typescript-eslint/parser@^6.4.0 --save-dev
+```
+
+```
+$ npx eslint --init
+```
+
+> **How would you like to use ESLint?**: To check syntax, find problems, and enforce code style.
+
+> **What type of modules does your project use?**: JavaScript modules (import/export).
+
+> **Which framework does your project use?**: React.
+
+> **Does your project use TypeScript?**: Yes.
+
+> **Where does your code run?**: Browser.
+
+> **How would you like to define a style for your project?**: Use a popular style guide or customize your own.
+
+> **What format do you want your config file to be in?** JavaScript
+
+> **Would you like to install them now?** Yes
+
+Add the following script to `package.json`:
+
+```ts
+"scripts": {
+  "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+}
+```
+
+Then to align ESLint with the prettier settings, first run:
+
+```
+npm install --save-dev eslint-config-prettier eslint-plugin-prettier
+```
+
+Then add the following extension to `.eslintrc.cjs` (which will read the rules set in your prettier rule file):
+
+```js
+extends: [
+    "plugin:prettier/recommended" // Add this
+]
+```
+
+Then add the following rules to `.eslintrc.cjs`:
+
+```js
+rules: {
+    "@typescript-eslint/consistent-type-imports": "off",
+    "@typescript-eslint/no-extraneous-class": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "object-shorthand": "off",
+},
+```
+
+Then add the following setting:
+
+```js
+settings: {
+    react: {
+        version: "detect",
+    },
+},
+```
+
+Then create a `.eslintignore` file:
+
+```
+vite-env.d.ts
+vite.config.ts
 ```
 
 #### Adding Icons

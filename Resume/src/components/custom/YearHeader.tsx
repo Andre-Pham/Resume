@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const YearHeader: React.FC<Props> = ({ children }) => {
-    let typography = ResTypography.sectionTitle;
+    const typography = ResTypography.sectionTitle;
     return (
         <HStack spacing={16} style={{ alignItems: "baseline" }}>
             <ResText typography={typography} wide={false}>

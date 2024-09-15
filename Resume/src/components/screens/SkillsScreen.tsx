@@ -4,7 +4,7 @@ import { usePortraitRendering } from "../hooks/usePortraitRendering";
 import { SkillsContent } from "../custom/SkillsContent";
 import { RouterService } from "../../services/RouterService";
 
-export function SkillsScreen() {
+export const SkillsScreen: React.FC = () => {
     const navigate = useNavigate();
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
@@ -18,4 +18,4 @@ export function SkillsScreen() {
             <SkillsContent />
         </ContentScreenWrapper>
     );
-}
+};

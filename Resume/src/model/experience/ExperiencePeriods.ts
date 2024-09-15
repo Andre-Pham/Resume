@@ -2,11 +2,11 @@ import { ExperiencePeriod } from "./ExperiencePeriod";
 import { Experiences } from "../preset-data/Experiences";
 
 export const ExperiencePeriods: () => ExperiencePeriod[] = () => {
-    let result: ExperiencePeriod[] = [];
-    for (let experience of Experiences) {
+    const result: ExperiencePeriod[] = [];
+    for (const experience of Experiences) {
         let added = false;
-        for (let section of result) {
-            if (section.label == experience.section) {
+        for (const section of result) {
+            if (section.label === experience.section) {
                 section.experiences.push(experience);
                 added = true;
                 break;
@@ -31,7 +31,7 @@ export const ExperiencePeriods: () => ExperiencePeriod[] = () => {
 
         // Numbers are sorted in decreasing order
         if (typeof a.label === "number" && typeof b.label === "number") {
-            return (b.label as number) - (a.label as number);
+            return b.label - a.label;
         }
 
         // Preserve the original order if both values are not strings or numbers

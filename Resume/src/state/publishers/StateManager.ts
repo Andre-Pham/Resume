@@ -41,7 +41,7 @@ export class StateManager {
 
     public static readonly colorScheme = new ResValuePublisher(ColorScheme.light);
 
-    public static setup() {
+    public static setup(): void {
         StateManager.colorScheme.publish(LocalStorageService.inst.readColorTheme());
     }
 }

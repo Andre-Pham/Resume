@@ -25,7 +25,7 @@ export const ResHyperlink: React.FC<Props> = ({
     wide = true,
     style,
 }) => {
-    let linkTypography = typography.withWeight(ResFontWeight.bold).withUnderline(true);
+    const linkTypography = typography.withWeight(ResFontWeight.bold).withUnderline(true);
     return (
         // Span means the frame doesn't extend past the text (i.e. can be clicked past the text)
         <span style={style}>
@@ -33,7 +33,6 @@ export const ResHyperlink: React.FC<Props> = ({
                 href={url}
                 style={{
                     width: wide ? "100%" : undefined,
-                    justifyItems: wide == undefined ? undefined : "center",
                     lineHeight: verticalWrap ? 1 : undefined,
                     overflowWrap: "anywhere", // Overflows to the next line if too long to fit
                     ...linkTypography.getStylesheet(),

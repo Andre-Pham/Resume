@@ -20,7 +20,7 @@ interface Props {
 }
 
 export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
-    const renderLinks = () => {
+    const renderLinks = (): React.ReactNode => {
         return experience.links.map((link) => (
             <ResText typography={ResTypography.body} key={link.url}>
                 {link.label + ": "}
@@ -32,7 +32,7 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
         ));
     };
 
-    const renderDownloads = () => {
+    const renderDownloads = (): React.ReactNode => {
         return experience.files.map((file) => (
             <ResCompactButton
                 key={file.fileName}
@@ -42,14 +42,15 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
                 color={ResColors.accent}
                 wide={false}
                 onPress={() => {
-                    DownloadService.inst.download(file);
+                    // Fire-and-forget (discard boolean promise)
+                    void DownloadService.inst.download(file);
                 }}
                 style={{ alignSelf: "flex-start" }}
             />
         ));
     };
 
-    const renderTags = () => {
+    const renderTags = (): React.ReactNode => {
         return experience.tags.map((tag) => (
             <ResChip color={ResColors.chipBackground} key={tag}>
                 <ResText typography={ResTypography.chip}>{tag}</ResText>
@@ -60,7 +61,7 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
     return (
         <FlatContainer color={ResColors.fillBackgroundLight} style={{ flex: 1, ...style }}>
             <HStack spacing={12} style={{ paddingBottom: 4 }}>
-                {experience.image != null ? (
+                {experience.image !== null ? (
                     <ResImage
                         height={34}
                         width={34}
@@ -86,7 +87,7 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
 
                 {renderLinks()}
 
-                {experience.files.length == 0 ? undefined : (
+                {experience.files.length === 0 ? undefined : (
                     <VStack spacing={ResDimensions.tagSpacing} style={{ paddingTop: 6 }}>
                         {renderDownloads()}
                     </VStack>

@@ -34,10 +34,10 @@ export const SplashButtonMobile: React.FC<Props> = ({ label, section, style }) =
         <ResButton
             label={label}
             iconPath={mdiChevronRight}
-            typography={activeSection == section ? selectedTypography : unselectedTypography}
-            color={activeSection == section ? ResColors.accent : ResColors.fillBackgroundLight}
+            typography={activeSection === section ? selectedTypography : unselectedTypography}
+            color={activeSection === section ? ResColors.accent : ResColors.fillBackgroundLight}
             onPress={() => {
-                let toPublish = activeSection == section ? ActiveSection.none : section;
+                const toPublish = activeSection === section ? ActiveSection.none : section;
                 StateManager.activeSection.publish(toPublish);
             }}
             wide={true}
@@ -46,7 +46,7 @@ export const SplashButtonMobile: React.FC<Props> = ({ label, section, style }) =
                 justifyContent: "flex-start",
                 paddingLeft: 34,
                 alignSelf: "center",
-                ...(activeSection == section ? ResCSS.shadow : undefined),
+                ...(activeSection === section ? ResCSS.shadow : undefined),
                 ...style,
             }}
         />

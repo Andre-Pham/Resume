@@ -4,7 +4,7 @@ import { usePortraitRendering } from "../hooks/usePortraitRendering";
 import { EducationContent } from "../custom/EducationContent";
 import { RouterService } from "../../services/RouterService";
 
-export function EducationScreen() {
+export const EducationScreen: React.FC = () => {
     const navigate = useNavigate();
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
@@ -18,4 +18,4 @@ export function EducationScreen() {
             <EducationContent />
         </ContentScreenWrapper>
     );
-}
+};

@@ -38,7 +38,7 @@ export class ResPublisher {
         return this.publisher.subscribe(callback);
     }
 
-    public publish() {
+    public publish(): void {
         this.publisher.dispatch(this.slice.actions.newForm());
     }
 }

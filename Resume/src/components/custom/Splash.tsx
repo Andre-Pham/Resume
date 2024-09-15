@@ -9,11 +9,7 @@ import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import { usePortraitRendering } from "../hooks/usePortraitRendering";
 import { Environment } from "../../state/environment/Environment";
 
-interface Props {
-    // No props
-}
-
-export const Splash: React.FC<Props> = ({}) => {
+export const Splash: React.FC = () => {
     const [shouldRenderPortrait, setShouldRenderPortrait] = useState(Environment.shouldRenderPortrait);
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
@@ -35,9 +31,9 @@ export const Splash: React.FC<Props> = ({}) => {
             </VStack>
         );
     } else {
-        let buttonRadius = 58;
-        let verticalButtonSpacing = 32;
-        let horizontalButtonSpacing =
+        const buttonRadius = 58;
+        const verticalButtonSpacing = 32;
+        const horizontalButtonSpacing =
             Math.cos(Math.PI / 3 / 2) * (buttonRadius * 2 + verticalButtonSpacing) - buttonRadius * 2;
         return (
             <HStack spacing={64} style={{ alignItems: "flex-start" }}>

@@ -24,23 +24,27 @@ export const EducationContent: React.FC<Props> = ({ style }) => {
         setShouldRenderPortrait(shouldRenderPortrait);
     });
 
-    const downloadDuxAward = async () => {
-        DownloadService.inst.download(DownloadService.inst.duxAward);
+    const downloadDuxAward = (): void => {
+        // Fire-and-forget (discard boolean promise)
+        void DownloadService.inst.download(DownloadService.inst.duxAward);
     };
 
-    const downloadAcademicTranscript = async () => {
-        DownloadService.inst.download(DownloadService.inst.transcript);
+    const downloadAcademicTranscript = (): void => {
+        // Fire-and-forget (discard boolean promise)
+        void DownloadService.inst.download(DownloadService.inst.transcript);
     };
 
-    const downloadHonoursListInclusions = async () => {
-        DownloadService.inst.download(DownloadService.inst.honourListInclusions);
+    const downloadHonoursListInclusions = (): void => {
+        // Fire-and-forget (discard boolean promise)
+        void DownloadService.inst.download(DownloadService.inst.honourListInclusions);
     };
 
-    const downloadLettersOfCommendation = async () => {
-        DownloadService.inst.download(DownloadService.inst.lettersOfCommendation);
+    const downloadLettersOfCommendation = (): void => {
+        // Fire-and-forget (discard boolean promise)
+        void DownloadService.inst.download(DownloadService.inst.lettersOfCommendation);
     };
 
-    let columnCount = shouldRenderPortrait ? 1 : 2;
+    const columnCount = shouldRenderPortrait ? 1 : 2;
 
     return (
         <GridContainer

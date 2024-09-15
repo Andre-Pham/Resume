@@ -9,7 +9,8 @@ interface Props {
 export const TitleProvider: React.FC<Props> = ({ children }) => {
     const location = useLocation();
     useEffect(() => {
-        document.title = RouterService.titles[location.pathname] || RouterService.titles[RouterService.HOME_PATH]!;
+        // If the path doesn't have a custom title, we just use the home path
+        document.title = RouterService.titles[location.pathname] ?? RouterService.titles[RouterService.HOME_PATH]!;
     }, [location]);
     return <>{children}</>;
 };

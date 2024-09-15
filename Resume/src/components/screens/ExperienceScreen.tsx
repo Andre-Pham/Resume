@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { usePortraitRendering } from "../hooks/usePortraitRendering";
 import { RouterService } from "../../services/RouterService";
 
-export function ExperienceScreen() {
+export const ExperienceScreen: React.FC = () => {
     const navigate = useNavigate();
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
@@ -18,4 +18,4 @@ export function ExperienceScreen() {
             <ExperienceContent />
         </ContentScreenWrapper>
     );
-}
+};

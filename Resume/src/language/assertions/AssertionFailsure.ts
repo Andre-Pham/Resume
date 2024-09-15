@@ -5,6 +5,6 @@ import { AssertionError } from "../errors/AssertionError";
  *
  * @param message The message to output if the condition fails
  */
-export function assertionFailure(message: string) {
+export function assertionFailure(message: string): void {
     throw new AssertionError(message);
 }

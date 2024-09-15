@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Environment } from "../../state/environment/Environment";
 
-export function usePortraitRendering(callback: (shouldRenderPortrait: boolean) => void) {
+export function usePortraitRendering(callback: (shouldRenderPortrait: boolean) => void): void {
     useEffect(() => {
-        const handleResize = () => {
+        const handleResize = (): void => {
             callback(Environment.shouldRenderPortrait);
         };
         handleResize();

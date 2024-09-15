@@ -20,31 +20,31 @@ export const FlatContainer: React.FC<Props> = ({
     const [pressed, setPressed] = useState(false);
     const [touched, setTouched] = useState(false);
 
-    const handleMouseDown = () => {
+    const handleMouseDown = (): void => {
         setPressed(true);
     };
 
-    const handleMouseUp = () => {
+    const handleMouseUp = (): void => {
         setPressed(false);
     };
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = (): void => {
         setPressed(false);
     };
 
-    const handleTouched = () => {
+    const handleTouched = (): void => {
         setTouched(true);
     };
 
-    const handleTouchEnd = () => {
+    const handleTouchEnd = (): void => {
         setTouched(false);
     };
 
-    const handleTouchCancel = () => {
+    const handleTouchCancel = (): void => {
         setTouched(false);
     };
 
-    return !onPress ? (
+    return onPress === undefined ? (
         <div
             style={{
                 borderRadius: 16,

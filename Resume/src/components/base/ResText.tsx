@@ -24,16 +24,15 @@ export const ResText: React.FC<Props> = ({
     numberOfLines,
     style,
 }) => {
-    let computedStyle: React.CSSProperties = {
+    const computedStyle: React.CSSProperties = {
         width: wide ? "100%" : undefined,
-        justifyItems: wide == undefined ? undefined : "center",
         lineHeight: verticalWrap ? 1 : undefined,
         overflowWrap: "break-word",
         ...typography.getStylesheet(),
         ...style,
     };
-    // Trucate at number of lines
-    if (numberOfLines) {
+    // Truncate at number of lines
+    if (numberOfLines !== undefined) {
         computedStyle.overflow = "hidden";
         computedStyle.display = "-webkit-box";
         computedStyle.WebkitBoxOrient = "vertical";

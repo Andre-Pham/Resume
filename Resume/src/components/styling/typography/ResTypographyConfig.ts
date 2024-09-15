@@ -4,17 +4,26 @@ import { ResColor } from "../color/ResColor";
 
 export class ResTypographyConfig {
     public size: number;
+
     public fontFamily: ResFontFamily;
+
     // An undefined color allows the component handle the color
     public colorObject: ResColor | undefined;
+
     public weight: ResFontWeight;
+
     public italic: boolean;
+
     public underlined: boolean;
+
     public linedOut: boolean;
+
     public kerning: number;
+
     get color(): string | undefined {
         return this.colorObject?.getColor();
     }
+
     get lineStyle(): "none" | "underline" | "line-through" | "underline line-through" {
         let result = "";
         if (!this.underlined && !this.linedOut) {
@@ -50,32 +59,32 @@ export class ResTypographyConfig {
         this.kerning = kerning;
     }
 
-    public withSize(size: number): ResTypographyConfig {
+    public withSize(size: number): this {
         this.size = size;
         return this;
     }
 
-    public withColor(color: ResColor): ResTypographyConfig {
+    public withColor(color: ResColor): this {
         this.colorObject = color;
         return this;
     }
 
-    public withWeight(weight: ResFontWeight): ResTypographyConfig {
+    public withWeight(weight: ResFontWeight): this {
         this.weight = weight;
         return this;
     }
 
-    public withItalic(italic: boolean): ResTypographyConfig {
+    public withItalic(italic: boolean): this {
         this.italic = italic;
         return this;
     }
 
-    public withUnderline(underline: boolean): ResTypographyConfig {
+    public withUnderline(underline: boolean): this {
         this.underlined = underline;
         return this;
     }
 
-    public withLineOut(lineOut: boolean): ResTypographyConfig {
+    public withLineOut(lineOut: boolean): this {
         this.linedOut = lineOut;
         return this;
     }
@@ -84,7 +93,7 @@ export class ResTypographyConfig {
         return {
             fontFamily: this.fontFamily,
             fontWeight: this.weight,
-            color: this.color || "inherit",
+            color: this.color ?? "inherit",
             fontSize: this.size,
             textDecorationLine: this.lineStyle,
             letterSpacing: this.kerning,

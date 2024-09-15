@@ -20,11 +20,11 @@ export const ExperienceSection: React.FC<Props> = ({ period }) => {
         setShouldRenderPortrait(shouldRenderPortrait);
     });
 
-    const renderExperienceCards = () => {
+    const renderExperienceCards = (): React.ReactNode => {
         return period.experiences.map((experience) => <ExperienceCard key={experience.name} experience={experience} />);
     };
 
-    let columnCount = shouldRenderPortrait ? 1 : 2;
+    const columnCount = shouldRenderPortrait ? 1 : 2;
 
     return (
         <VStack spacing={ResDimensions.pageContentSpacing}>

@@ -18,8 +18,8 @@ export const ResImage: React.FC<Props> = ({ fileName, width = "auto", height = "
         undefined,
     );
 
-    const handleImageLoaded = (event: any) => {
-        if (scale == "scaleToFill" && typeof width == "number" && typeof height == "number") {
+    const handleImageLoaded = (event: any): void => {
+        if (scale === "scaleToFill" && typeof width === "number" && typeof height === "number") {
             if (width > height) {
                 setSize({ width: width, height: undefined });
             } else {

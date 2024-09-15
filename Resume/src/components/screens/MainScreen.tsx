@@ -16,7 +16,7 @@ import { useResetScroll } from "../hooks/useResetScroll";
 import { Environment } from "../../state/environment/Environment";
 import { RouterService } from "../../services/RouterService";
 
-export function MainScreen() {
+export const MainScreen: React.FC = () => {
     const navigate = useNavigate();
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
     const [resizeRef, contentSize] = useResizeObserver();
@@ -36,21 +36,23 @@ export function MainScreen() {
             setActiveSection(StateManager.activeSection.read());
             navigateIfNecessary();
         });
-        return () => unsubscribe();
+        return () => {
+            unsubscribe();
+        };
     }, []);
 
     usePortraitRendering(() => {
         navigateIfNecessary();
     });
 
-    const navigateIfNecessary = () => {
+    const navigateIfNecessary = (): void => {
         if (Environment.shouldRenderPortrait) {
             navigateToSection();
         }
     };
 
-    const navigateToSection = () => {
-        let activeSection = StateManager.activeSection.read();
+    const navigateToSection = (): void => {
+        const activeSection = StateManager.activeSection.read();
         switch (activeSection) {
             case ActiveSection.none:
                 break;
@@ -78,7 +80,7 @@ export function MainScreen() {
         }
     }, [activeSection]);
 
-    const renderPageContent = () => {
+    const renderPageContent = (): React.ReactNode => {
         switch (activeSection) {
             case ActiveSection.none:
                 return <></>;
@@ -97,8 +99,8 @@ export function MainScreen() {
         }
     };
 
-    const scrollIntoContent = () => {
-        if (scrollRef.current && activeSection != ActiveSection.none) {
+    const scrollIntoContent = (): void => {
+        if (scrollRef.current !== null && activeSection !== ActiveSection.none) {
             scrollRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     };
@@ -120,12 +122,12 @@ export function MainScreen() {
                 spacing={ResDimensions.pageContentSpacing}
                 style={{
                     alignContent: "center",
-                    paddingTop: activeSection == ActiveSection.none ? 0 : ResDimensions.mainScreenSpacing,
-                    paddingBottom: activeSection == ActiveSection.none ? 200 : 0,
+                    paddingTop: activeSection === ActiveSection.none ? 0 : ResDimensions.mainScreenSpacing,
+                    paddingBottom: activeSection === ActiveSection.none ? 200 : 0,
                 }}
             >
                 {renderPageContent()}
             </VStack>
         </div>
     );
-}
+};
