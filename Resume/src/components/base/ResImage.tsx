@@ -1,28 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { UnreachableCaseError } from "../../language/errors/UnreachableCaseError";
 
-export enum ResImageScale {
-    none,
-    scaleToFit,
-    scaleToFill,
-    scaleToFillCrop,
-}
-
 interface Props {
     fileName: string;
     width?: number | string;
     height?: number | string;
-    scale?: ResImageScale;
+    scale?: "none" | "scaleToFit" | "scaleToFill" | "scaleToFillCrop";
     style?: React.CSSProperties;
 }
 
-export const ResImage: React.FC<Props> = ({
-    fileName,
-    width = "auto",
-    height = "auto",
-    scale = ResImageScale.none,
-    style,
-}) => {
+export const ResImage: React.FC<Props> = ({ fileName, width = "auto", height = "auto", scale = "none", style }) => {
     const [size, setSize] = useState<{ width?: number | string; height?: number | string }>({
         width: width,
         height: height,
@@ -32,7 +19,7 @@ export const ResImage: React.FC<Props> = ({
     );
 
     const handleImageLoaded = (event: any) => {
-        if (scale == ResImageScale.scaleToFill && typeof width == "number" && typeof height == "number") {
+        if (scale == "scaleToFill" && typeof width == "number" && typeof height == "number") {
             if (width > height) {
                 setSize({ width: width, height: undefined });
             } else {
@@ -44,19 +31,16 @@ export const ResImage: React.FC<Props> = ({
         }
     };
 
-    // NOTE: Don't assign these values to the enum, since there are duplicates
     useEffect(() => {
         switch (scale) {
-            case ResImageScale.none:
+            case "none":
                 setResizeMode("fill");
                 break;
-            case ResImageScale.scaleToFit:
+            case "scaleToFit":
                 setResizeMode("contain");
                 break;
-            case ResImageScale.scaleToFill:
-                setResizeMode("cover");
-                break;
-            case ResImageScale.scaleToFillCrop:
+            case "scaleToFill":
+            case "scaleToFillCrop":
                 setResizeMode("cover");
                 break;
             default:

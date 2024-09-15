@@ -1,7 +1,7 @@
-import { DownloadFile } from "./DownloadFile";
+import { DownloadFile } from "./types/DownloadFile";
 
-export class DownloadManager {
-    public static readonly inst = new DownloadManager();
+export class DownloadService {
+    public static readonly inst = new DownloadService();
 
     public readonly transcript = new DownloadFile(
         "Transcript",

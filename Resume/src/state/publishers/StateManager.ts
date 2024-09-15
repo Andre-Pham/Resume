@@ -1,4 +1,4 @@
-import { LocalStorageManager } from "../../services/LocalStorageManager";
+import { LocalStorageService } from "../../services/LocalStorageService";
 import { ResValuePublisher } from "./impl/ResValuePublisher";
 import { ActiveSection } from "./types/ActiveSection";
 import { ColorScheme } from "./types/ColorScheme";
@@ -42,7 +42,7 @@ export class StateManager {
     public static readonly colorScheme = new ResValuePublisher(ColorScheme.light);
 
     public static setup() {
-        StateManager.colorScheme.publish(LocalStorageManager.inst.readColorTheme());
+        StateManager.colorScheme.publish(LocalStorageService.inst.readColorTheme());
     }
 }
 

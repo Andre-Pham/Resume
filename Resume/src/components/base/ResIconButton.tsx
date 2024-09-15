@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ResColor } from "../styling/color/ResColor";
-import { ResImage, ResImageScale } from "./ResImage";
+import { ResImage } from "./ResImage";
 import { ResIcon } from "./ResIcon";
 import { ResCSS } from "../styling/ResCSS";
 
@@ -74,7 +74,7 @@ export const ResIconButton: React.FC<Props> = ({
                     fileName={fileName}
                     width={(size * 1.8) / 3.0}
                     height={(size * 1.8) / 3.0}
-                    scale={ResImageScale.scaleToFit}
+                    scale="scaleToFit"
                     style={{
                         alignSelf: "center",
                     }}

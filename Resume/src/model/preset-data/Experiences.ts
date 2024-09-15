@@ -1,5 +1,5 @@
-import { DownloadManager } from "../../services/DownloadManager";
-import { Link } from "../../services/Link";
+import { DownloadService } from "../../services/DownloadService";
+import { Link } from "../../services/types/Link";
 import { Experience } from "../experience/Experience";
 
 export const Experiences: Experience[] = [
@@ -105,7 +105,7 @@ export const Experiences: Experience[] = [
                 "https://github.com/TalkbackTutorial/Application",
             ),
         ],
-        [DownloadManager.inst.teachMeTalkbackUserGuide],
+        [DownloadService.inst.teachMeTalkbackUserGuide],
         ["Kotlin", "XML Layouts", "Room", "Shared Preferences", "TextToSpeech"],
     ),
 

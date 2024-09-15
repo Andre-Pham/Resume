@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { StateManager } from "../../state/publishers/StateManager";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import { useResetScroll } from "../hooks/useResetScroll";
-import { RouterNavigator } from "../../services/RouterNavigator";
+import { RouterService } from "../../services/RouterService";
 
 interface Props {
     title: string;
@@ -26,7 +26,7 @@ export const ContentScreenWrapper: React.FC<Props> = ({ title, children, style }
 
     const goBack = () => {
         StateManager.activeSection.publish(ActiveSection.none);
-        RouterNavigator.inst.navigateHome(navigate);
+        RouterService.inst.navigateHome(navigate);
     };
 
     return (

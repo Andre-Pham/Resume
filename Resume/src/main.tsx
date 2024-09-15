@@ -7,7 +7,7 @@ import { ExperienceScreen } from "./components/screens/ExperienceScreen.tsx";
 import { SkillsScreen } from "./components/screens/SkillsScreen.tsx";
 import { EducationScreen } from "./components/screens/EducationScreen.tsx";
 import { ColorThemeProvider } from "./components/providers/ThemeProvider.tsx";
-import { RouterNavigator } from "./services/RouterNavigator.ts";
+import { RouterService } from "./services/RouterService.ts";
 import { TitleProvider } from "./components/providers/TitleProvider.tsx";
 
 // For more about routing:
@@ -19,12 +19,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Router>
                 <TitleProvider>
                     <Routes>
-                        <Route path={RouterNavigator.HOME_PATH} element={<MainScreen />} />
-                        <Route path={RouterNavigator.EDUCATION_PATH} element={<EducationScreen />} />
-                        <Route path={RouterNavigator.EXPERIENCE_PATH} element={<ExperienceScreen />} />
-                        <Route path={RouterNavigator.SKILLS_PATH} element={<SkillsScreen />} />
+                        <Route path={RouterService.HOME_PATH} element={<MainScreen />} />
+                        <Route path={RouterService.EDUCATION_PATH} element={<EducationScreen />} />
+                        <Route path={RouterService.EXPERIENCE_PATH} element={<ExperienceScreen />} />
+                        <Route path={RouterService.SKILLS_PATH} element={<SkillsScreen />} />
                         {/* Invalid paths redirect to root */}
-                        <Route path="*" element={<Navigate to={RouterNavigator.HOME_PATH} />} />
+                        <Route path="*" element={<Navigate to={RouterService.HOME_PATH} />} />
                     </Routes>
                 </TitleProvider>
             </Router>

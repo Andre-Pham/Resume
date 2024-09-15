@@ -9,10 +9,10 @@ import { Experience } from "../../model/experience/Experience";
 import { ResHyperlink } from "../base/ResHyperlink";
 import { ResCompactButton } from "../base/ResCompactButton";
 import { mdiTrayArrowDown } from "@mdi/js";
-import { DownloadManager } from "../../services/DownloadManager";
+import { DownloadService } from "../../services/DownloadService";
 import { ResChip } from "../base/ResChip";
 import { HStack } from "../containers/Stacks/HStack";
-import { ResImage, ResImageScale } from "../base/ResImage";
+import { ResImage } from "../base/ResImage";
 
 interface Props {
     experience: Experience;
@@ -42,7 +42,7 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
                 color={ResColors.accent}
                 wide={false}
                 onPress={() => {
-                    DownloadManager.inst.download(file);
+                    DownloadService.inst.download(file);
                 }}
                 style={{ alignSelf: "flex-start" }}
             />
@@ -65,7 +65,7 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
                         height={34}
                         width={34}
                         fileName={experience.image}
-                        scale={ResImageScale.none}
+                        scale="none"
                         style={{
                             borderRadius: 8,
                             alignSelf: "center",

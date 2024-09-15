@@ -1,5 +1,5 @@
-import { Link } from "../../services/Link";
-import { DownloadFile } from "../../services/DownloadFile";
+import { Link } from "../../services/types/Link";
+import { DownloadFile } from "../../services/types/DownloadFile";
 
 export class Experience {
     public get subscriptText(): string {

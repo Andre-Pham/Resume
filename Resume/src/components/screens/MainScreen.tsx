@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { usePortraitRendering } from "../hooks/usePortraitRendering";
 import { useResetScroll } from "../hooks/useResetScroll";
 import { Environment } from "../../state/environment/Environment";
-import { RouterNavigator } from "../../services/RouterNavigator";
+import { RouterService } from "../../services/RouterService";
 
 export function MainScreen() {
     const navigate = useNavigate();
@@ -55,13 +55,13 @@ export function MainScreen() {
             case ActiveSection.none:
                 break;
             case ActiveSection.education:
-                RouterNavigator.inst.navigateEducation(navigate);
+                RouterService.inst.navigateEducation(navigate);
                 break;
             case ActiveSection.experience:
-                RouterNavigator.inst.navigateExperience(navigate);
+                RouterService.inst.navigateExperience(navigate);
                 break;
             case ActiveSection.skills:
-                RouterNavigator.inst.navigateSkills(navigate);
+                RouterService.inst.navigateSkills(navigate);
                 break;
             default:
                 throw new UnreachableCaseError(activeSection);

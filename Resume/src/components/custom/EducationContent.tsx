@@ -7,7 +7,7 @@ import { ResHyperlink } from "../base/ResHyperlink";
 import { ResCompactButton } from "../base/ResCompactButton";
 import { ResColors } from "../styling/ResColors";
 import { GridContainer } from "../containers/GridContainer";
-import { DownloadManager } from "../../services/DownloadManager";
+import { DownloadService } from "../../services/DownloadService";
 import { mdiTrayArrowDown } from "@mdi/js";
 import { usePortraitRendering } from "../hooks/usePortraitRendering";
 
@@ -25,19 +25,19 @@ export const EducationContent: React.FC<Props> = ({ style }) => {
     });
 
     const downloadDuxAward = async () => {
-        DownloadManager.inst.download(DownloadManager.inst.duxAward);
+        DownloadService.inst.download(DownloadService.inst.duxAward);
     };
 
     const downloadAcademicTranscript = async () => {
-        DownloadManager.inst.download(DownloadManager.inst.transcript);
+        DownloadService.inst.download(DownloadService.inst.transcript);
     };
 
     const downloadHonoursListInclusions = async () => {
-        DownloadManager.inst.download(DownloadManager.inst.honourListInclusions);
+        DownloadService.inst.download(DownloadService.inst.honourListInclusions);
     };
 
     const downloadLettersOfCommendation = async () => {
-        DownloadManager.inst.download(DownloadManager.inst.lettersOfCommendation);
+        DownloadService.inst.download(DownloadService.inst.lettersOfCommendation);
     };
 
     let columnCount = shouldRenderPortrait ? 1 : 2;
@@ -83,7 +83,7 @@ export const EducationContent: React.FC<Props> = ({ style }) => {
                 </ResText>
 
                 <ResCompactButton
-                    label={DownloadManager.inst.duxAward.label}
+                    label={DownloadService.inst.duxAward.label}
                     iconPath={mdiTrayArrowDown}
                     typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
@@ -93,7 +93,7 @@ export const EducationContent: React.FC<Props> = ({ style }) => {
                 />
 
                 <ResCompactButton
-                    label={DownloadManager.inst.honourListInclusions.label}
+                    label={DownloadService.inst.honourListInclusions.label}
                     iconPath={mdiTrayArrowDown}
                     typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
@@ -103,7 +103,7 @@ export const EducationContent: React.FC<Props> = ({ style }) => {
                 />
 
                 <ResCompactButton
-                    label={DownloadManager.inst.lettersOfCommendation.label}
+                    label={DownloadService.inst.lettersOfCommendation.label}
                     iconPath={mdiTrayArrowDown}
                     typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
@@ -130,7 +130,7 @@ export const EducationContent: React.FC<Props> = ({ style }) => {
                 </ResHyperlink>
 
                 <ResCompactButton
-                    label={DownloadManager.inst.transcript.label}
+                    label={DownloadService.inst.transcript.label}
                     iconPath={mdiTrayArrowDown}
                     typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
                     color={ResColors.accent}
