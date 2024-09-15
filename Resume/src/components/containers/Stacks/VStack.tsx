@@ -7,7 +7,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const VStack: React.FC<Props> = ({ children, spacing = 0, horizontalSpacing, style }) => {
+export const VStack: React.FC<Props> = ({ children, spacing = 0, horizontalSpacing, style }) => {
     return (
         <div
             style={{
@@ -23,5 +23,3 @@ const VStack: React.FC<Props> = ({ children, spacing = 0, horizontalSpacing, sty
         </div>
     );
 };
-
-export default VStack;

@@ -1,6 +1,6 @@
 import { NavigateFunction } from "react-router-dom";
 
-class RouterNavigator {
+export class RouterNavigator {
     public static readonly inst = new RouterNavigator();
 
     public static readonly HOME_PATH = "/";
@@ -32,5 +32,3 @@ class RouterNavigator {
         navigate(RouterNavigator.EDUCATION_PATH, { replace: true });
     }
 }
-
-export default RouterNavigator;

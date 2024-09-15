@@ -1,7 +1,7 @@
-import Link from "../../services/Link";
-import DownloadFile from "../../services/DownloadFile";
+import { Link } from "../../services/Link";
+import { DownloadFile } from "../../services/DownloadFile";
 
-class Experience {
+export class Experience {
     public get subscriptText(): string {
         return this.projectType + " • " + this.duration;
     }
@@ -18,5 +18,3 @@ class Experience {
         public readonly tags: string[],
     ) {}
 }
-
-export default Experience;

@@ -1,10 +1,10 @@
-import ContentScreenWrapper from "../custom/ContentScreenWrapper";
+import { ContentScreenWrapper } from "../custom/ContentScreenWrapper";
 import { useNavigate } from "react-router-dom";
-import usePortraitRendering from "../hooks/usePortraitRendering";
-import SkillsContent from "../custom/SkillsContent";
-import RouterNavigator from "../../services/RouterNavigator";
+import { usePortraitRendering } from "../hooks/usePortraitRendering";
+import { SkillsContent } from "../custom/SkillsContent";
+import { RouterNavigator } from "../../services/RouterNavigator";
 
-function SkillsScreen() {
+export function SkillsScreen() {
     const navigate = useNavigate();
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
@@ -19,5 +19,3 @@ function SkillsScreen() {
         </ContentScreenWrapper>
     );
 }
-
-export default SkillsScreen;

@@ -1,25 +1,25 @@
 import React from "react";
-import FlatContainer from "../containers/Styled/FlatContainer";
-import ResColors from "../styling/ResColors";
-import ResText from "../base/ResText";
-import ResTypography from "../styling/ResTypography";
-import VStack from "../containers/Stacks/VStack";
-import ResDimensions from "../styling/ResDimensions";
-import Experience from "../../model/experience/Experience";
-import ResHyperlink from "../base/ResHyperlink";
-import ResCompactButton from "../base/ResCompactButton";
+import { FlatContainer } from "../containers/Styled/FlatContainer";
+import { ResColors } from "../styling/ResColors";
+import { ResText } from "../base/ResText";
+import { ResTypography } from "../styling/ResTypography";
+import { VStack } from "../containers/Stacks/VStack";
+import { ResDimensions } from "../styling/ResDimensions";
+import { Experience } from "../../model/experience/Experience";
+import { ResHyperlink } from "../base/ResHyperlink";
+import { ResCompactButton } from "../base/ResCompactButton";
 import { mdiTrayArrowDown } from "@mdi/js";
-import DownloadManger from "../../services/DownloadManager";
-import ResChip from "../base/ResChip";
-import HStack from "../containers/Stacks/HStack";
-import ResImage, { ResImageScale } from "../base/ResImage";
+import { DownloadManager } from "../../services/DownloadManager";
+import { ResChip } from "../base/ResChip";
+import { HStack } from "../containers/Stacks/HStack";
+import { ResImage, ResImageScale } from "../base/ResImage";
 
 interface Props {
     experience: Experience;
     style?: React.CSSProperties;
 }
 
-const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
+export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
     const renderLinks = () => {
         return experience.links.map((link) => (
             <ResText typography={ResTypography.body} key={link.url}>
@@ -42,7 +42,7 @@ const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
                 color={ResColors.accent}
                 wide={false}
                 onPress={() => {
-                    DownloadManger.inst.download(file);
+                    DownloadManager.inst.download(file);
                 }}
                 style={{ alignSelf: "flex-start" }}
             />
@@ -99,5 +99,3 @@ const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
         </FlatContainer>
     );
 };
-
-export default ExperienceCard;

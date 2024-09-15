@@ -1,10 +1,10 @@
-import ContentScreenWrapper from "../custom/ContentScreenWrapper";
+import { ContentScreenWrapper } from "../custom/ContentScreenWrapper";
 import { useNavigate } from "react-router-dom";
-import usePortraitRendering from "../hooks/usePortraitRendering";
-import EducationContent from "../custom/EducationContent";
-import RouterNavigator from "../../services/RouterNavigator";
+import { usePortraitRendering } from "../hooks/usePortraitRendering";
+import { EducationContent } from "../custom/EducationContent";
+import { RouterNavigator } from "../../services/RouterNavigator";
 
-function EducationScreen() {
+export function EducationScreen() {
     const navigate = useNavigate();
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
@@ -19,5 +19,3 @@ function EducationScreen() {
         </ContentScreenWrapper>
     );
 }
-
-export default EducationScreen;

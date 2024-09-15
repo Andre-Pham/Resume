@@ -1,10 +1,8 @@
-import Experience from "./Experience";
+import { Experience } from "./Experience";
 
-class ExperiencePeriod {
+export class ExperiencePeriod {
     constructor(
         public readonly label: number | "Active",
         public readonly experiences: Experience[],
     ) {}
 }
-
-export default ExperiencePeriod;

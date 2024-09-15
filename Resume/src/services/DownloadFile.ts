@@ -1,4 +1,4 @@
-class DownloadFile {
+export class DownloadFile {
     public readonly label: string;
     public readonly fileName: string;
     public readonly downloadName: string;
@@ -9,5 +9,3 @@ class DownloadFile {
         this.downloadName = downloadName;
     }
 }
-
-export default DownloadFile;

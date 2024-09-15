@@ -1,5 +1,5 @@
 import React from "react";
-import ResTypographyConfig from "../styling/typography/ResTypographyConfig";
+import { ResTypographyConfig } from "../styling/typography/ResTypographyConfig";
 
 interface Props {
     // Text or other components to be embedded
@@ -16,7 +16,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const ResText: React.FC<Props> = ({
+export const ResText: React.FC<Props> = ({
     children,
     typography,
     verticalWrap = false,
@@ -42,5 +42,3 @@ const ResText: React.FC<Props> = ({
     }
     return <span style={computedStyle}>{children}</span>;
 };
-
-export default ResText;

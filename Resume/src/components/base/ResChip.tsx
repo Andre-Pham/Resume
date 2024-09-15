@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ResColor from "../styling/color/ResColor";
-import ResCSS from "../styling/ResCSS";
+import { ResColor } from "../styling/color/ResColor";
+import { ResCSS } from "../styling/ResCSS";
 
 interface Props {
     color: ResColor;
@@ -9,7 +9,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
+export const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
     const [pressed, setPressed] = useState(false);
     const [touched, setTouched] = useState(false);
 
@@ -54,7 +54,7 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed || touched ? "scale(0.95)" : "scale(1)",
-                ...ResCSS.diableSelection,
+                ...ResCSS.disableSelection,
                 ...style,
             }}
         >
@@ -74,5 +74,3 @@ const ResChip: React.FC<Props> = ({ color, onPress, children, style }) => {
         </div>
     );
 };
-
-export default ResChip;

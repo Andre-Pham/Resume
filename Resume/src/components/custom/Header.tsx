@@ -1,21 +1,21 @@
 import React from "react";
-import HStack from "../containers/Stacks/HStack";
-import ResImage from "../base/ResImage";
-import VStack from "../containers/Stacks/VStack";
-import ResText from "../base/ResText";
-import ResTypography from "../styling/ResTypography";
-import ResIconButton from "../base/ResIconButton";
-import ResColors from "../styling/ResColors";
-import ResDimensions from "../styling/ResDimensions";
-import Spacer from "../containers/Spacing/Spacer";
-import StateManager from "../../state/publishers/StateManager";
+import { HStack } from "../containers/Stacks/HStack";
+import { ResImage } from "../base/ResImage";
+import { VStack } from "../containers/Stacks/VStack";
+import { ResText } from "../base/ResText";
+import { ResTypography } from "../styling/ResTypography";
+import { ResIconButton } from "../base/ResIconButton";
+import { ResColors } from "../styling/ResColors";
+import { ResDimensions } from "../styling/ResDimensions";
+import { Spacer } from "../containers/Spacing/Spacer";
+import { StateManager } from "../../state/publishers/StateManager";
 import { ColorScheme } from "../../state/publishers/types/ColorScheme";
 
 interface Props {
     // None
 }
 
-const Header: React.FC<Props> = ({}) => {
+export const Header: React.FC<Props> = ({}) => {
     const inverseColorScheme = () => {
         let current = StateManager.colorScheme.read();
         if (current == ColorScheme.light) {
@@ -58,5 +58,3 @@ const Header: React.FC<Props> = ({}) => {
         </HStack>
     );
 };
-
-export default Header;

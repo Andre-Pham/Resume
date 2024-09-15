@@ -13,7 +13,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const GridContainer: React.FC<Props> = ({ columns, spacing, columnSizeRule = "1fr", children, style }) => {
+export const GridContainer: React.FC<Props> = ({ columns, spacing, columnSizeRule = "1fr", children, style }) => {
     return (
         <div
             style={{
@@ -27,5 +27,3 @@ const GridContainer: React.FC<Props> = ({ columns, spacing, columnSizeRule = "1f
         </div>
     );
 };
-
-export default GridContainer;

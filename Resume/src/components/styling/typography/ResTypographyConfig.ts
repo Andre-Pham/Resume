@@ -1,8 +1,8 @@
 import { ResFontFamily } from "./ResFontFamily";
 import { ResFontWeight } from "./ResFontWeight";
-import ResColor from "../color/ResColor";
+import { ResColor } from "../color/ResColor";
 
-class ResTypographyConfig {
+export class ResTypographyConfig {
     public size: number;
     public fontFamily: ResFontFamily;
     // An undefined color allows the component handle the color
@@ -92,5 +92,3 @@ class ResTypographyConfig {
         };
     }
 }
-
-export default ResTypographyConfig;

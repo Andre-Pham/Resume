@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect, useMemo } from "react";
-import StateManager from "../../state/publishers/StateManager";
-import ResColors from "../styling/ResColors";
-import LocalStorageManager from "../../services/LocalStorageManager";
+import { StateManager } from "../../state/publishers/StateManager";
+import { ResColors } from "../styling/ResColors";
+import { LocalStorageManager } from "../../services/LocalStorageManager";
 import { createGlobalStyle } from "styled-components";
 import { ColorScheme } from "../../state/publishers/types/ColorScheme";
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ResCSS from "../../styling/ResCSS";
-import ResColor from "../../styling/color/ResColor";
+import { ResCSS } from "../../styling/ResCSS";
+import { ResColor } from "../../styling/color/ResColor";
 
 interface Props {
     color: ResColor;
@@ -10,7 +10,13 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSelection = false, children, style }) => {
+export const FlatContainer: React.FC<Props> = ({
+    color,
+    onPress = undefined,
+    disableSelection = false,
+    children,
+    style,
+}) => {
     const [pressed, setPressed] = useState(false);
     const [touched, setTouched] = useState(false);
 
@@ -44,7 +50,7 @@ const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSel
                 borderRadius: 16,
                 padding: 18,
                 backgroundColor: color.getColor(),
-                ...(disableSelection ? ResCSS.diableSelection : undefined),
+                ...(disableSelection ? ResCSS.disableSelection : undefined),
                 ...style,
             }}
         >
@@ -66,7 +72,7 @@ const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSel
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed || touched ? "scale(0.95)" : "scale(1)",
-                ...(disableSelection ? ResCSS.diableSelection : undefined),
+                ...(disableSelection ? ResCSS.disableSelection : undefined),
                 ...style,
             }}
         >
@@ -74,5 +80,3 @@ const FlatContainer: React.FC<Props> = ({ color, onPress = undefined, disableSel
         </div>
     );
 };
-
-export default FlatContainer;

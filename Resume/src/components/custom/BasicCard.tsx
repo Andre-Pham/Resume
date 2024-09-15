@@ -1,10 +1,10 @@
 import React from "react";
-import FlatContainer from "../containers/Styled/FlatContainer";
-import ResColors from "../styling/ResColors";
-import ResText from "../base/ResText";
-import ResTypography from "../styling/ResTypography";
-import VStack from "../containers/Stacks/VStack";
-import ResDimensions from "../styling/ResDimensions";
+import { FlatContainer } from "../containers/Styled/FlatContainer";
+import { ResColors } from "../styling/ResColors";
+import { ResText } from "../base/ResText";
+import { ResTypography } from "../styling/ResTypography";
+import { VStack } from "../containers/Stacks/VStack";
+import { ResDimensions } from "../styling/ResDimensions";
 
 interface Props {
     title: string;
@@ -12,7 +12,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const BasicCard: React.FC<Props> = ({ title, children, style }) => {
+export const BasicCard: React.FC<Props> = ({ title, children, style }) => {
     return (
         <FlatContainer color={ResColors.fillBackgroundLight} style={style}>
             <VStack spacing={ResDimensions.bodyParagraphSpacing}>
@@ -23,5 +23,3 @@ const BasicCard: React.FC<Props> = ({ title, children, style }) => {
         </FlatContainer>
     );
 };
-
-export default BasicCard;

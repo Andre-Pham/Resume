@@ -1,4 +1,4 @@
-import ExperiencePeriod from "./ExperiencePeriod";
+import { ExperiencePeriod } from "./ExperiencePeriod";
 import { Experiences } from "../preset-data/Experiences";
 
 export const ExperiencePeriods: () => ExperiencePeriod[] = () => {

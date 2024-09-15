@@ -1,10 +1,10 @@
-import ContentScreenWrapper from "../custom/ContentScreenWrapper";
-import ExperienceContent from "../custom/ExperienceContent";
+import { ContentScreenWrapper } from "../custom/ContentScreenWrapper";
+import { ExperienceContent } from "../custom/ExperienceContent";
 import { useNavigate } from "react-router-dom";
-import usePortraitRendering from "../hooks/usePortraitRendering";
-import RouterNavigator from "../../services/RouterNavigator";
+import { usePortraitRendering } from "../hooks/usePortraitRendering";
+import { RouterNavigator } from "../../services/RouterNavigator";
 
-function ExperienceScreen() {
+export function ExperienceScreen() {
     const navigate = useNavigate();
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
@@ -19,5 +19,3 @@ function ExperienceScreen() {
         </ContentScreenWrapper>
     );
 }
-
-export default ExperienceScreen;

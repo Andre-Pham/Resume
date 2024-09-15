@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import ExperiencePeriod from "../../model/experience/ExperiencePeriod";
-import ResDimensions from "../styling/ResDimensions";
-import ExperienceCard from "./ExperienceCard";
-import GridContainer from "../containers/GridContainer";
-import VStack from "../containers/Stacks/VStack";
-import YearHeader from "./YearHeader";
-import usePortraitRendering from "../hooks/usePortraitRendering";
+import { ExperiencePeriod } from "../../model/experience/ExperiencePeriod";
+import { ResDimensions } from "../styling/ResDimensions";
+import { ExperienceCard } from "./ExperienceCard";
+import { GridContainer } from "../containers/GridContainer";
+import { VStack } from "../containers/Stacks/VStack";
+import { YearHeader } from "./YearHeader";
+import { usePortraitRendering } from "../hooks/usePortraitRendering";
 
 interface Props {
     period: ExperiencePeriod;
 }
 
-const ExperienceSection: React.FC<Props> = ({ period }) => {
+export const ExperienceSection: React.FC<Props> = ({ period }) => {
     const [shouldRenderPortrait, setShouldRenderPortrait] = useState(
         window.innerWidth <= ResDimensions.screenWidthToRenderPortrait,
     );
@@ -40,5 +40,3 @@ const ExperienceSection: React.FC<Props> = ({ period }) => {
         </VStack>
     );
 };
-
-export default ExperienceSection;

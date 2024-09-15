@@ -1,6 +1,6 @@
 import { ColorScheme } from "./../state/publishers/types/ColorScheme";
 
-class LocalStorageManager {
+export class LocalStorageManager {
     public static readonly inst = new LocalStorageManager();
 
     private static readonly DARKMODE_KEY = "darkmode";
@@ -20,5 +20,3 @@ class LocalStorageManager {
         return read === "true" ? ColorScheme.dark : ColorScheme.light;
     }
 }
-
-export default LocalStorageManager;

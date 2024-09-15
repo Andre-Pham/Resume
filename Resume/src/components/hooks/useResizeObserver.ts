@@ -5,7 +5,7 @@ interface Size {
     height: number;
 }
 
-function useResizeObserver(): [RefObject<HTMLDivElement>, Size] {
+export function useResizeObserver(): [RefObject<HTMLDivElement>, Size] {
     const [size, setSize] = useState<Size>({ width: 0, height: 0 });
     const ref = useRef<HTMLDivElement>(null);
 
@@ -31,5 +31,3 @@ function useResizeObserver(): [RefObject<HTMLDivElement>, Size] {
 
     return [ref, size];
 }
-
-export default useResizeObserver;

@@ -1,7 +1,7 @@
 import { isMobile } from "react-device-detect";
-import ResDimensions from "../../components/styling/ResDimensions";
+import { ResDimensions } from "../../components/styling/ResDimensions";
 
-class Environment {
+export class Environment {
     public static get shouldRenderPortrait(): boolean {
         if (isMobile) {
             const isPortrait = window.innerWidth < window.innerHeight;
@@ -20,5 +20,3 @@ class Environment {
         }
     }
 }
-
-export default Environment;

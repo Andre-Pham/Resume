@@ -1,12 +1,12 @@
-import ResColors from "./ResColors";
+import { ResColors } from "./ResColors";
 import { ResFontFamily } from "./typography/ResFontFamily";
 import { ResFontWeight } from "./typography/ResFontWeight";
-import ResTypographyConfig from "./typography/ResTypographyConfig";
+import { ResTypographyConfig } from "./typography/ResTypographyConfig";
 
 /**
  * Predefined typography to be used application-wide.
  */
-class ResTypography {
+export class ResTypography {
     static get pageTitle(): ResTypographyConfig {
         return new ResTypographyConfig(
             32,
@@ -74,5 +74,3 @@ class ResTypography {
         return new ResTypographyConfig(31, ResFontFamily.circular, ResColors.textDark, ResFontWeight.bold);
     }
 }
-
-export default ResTypography;

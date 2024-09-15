@@ -1,13 +1,13 @@
 import React from "react";
-import HStack from "../containers/Stacks/HStack";
-import ResText from "../base/ResText";
-import ResTypography from "../styling/ResTypography";
+import { HStack } from "../containers/Stacks/HStack";
+import { ResText } from "../base/ResText";
+import { ResTypography } from "../styling/ResTypography";
 
 interface Props {
     children: React.ReactNode;
 }
 
-const YearHeader: React.FC<Props> = ({ children }) => {
+export const YearHeader: React.FC<Props> = ({ children }) => {
     let typography = ResTypography.sectionTitle;
     return (
         <HStack spacing={16} style={{ alignItems: "baseline" }}>
@@ -26,5 +26,3 @@ const YearHeader: React.FC<Props> = ({ children }) => {
         </HStack>
     );
 };
-
-export default YearHeader;

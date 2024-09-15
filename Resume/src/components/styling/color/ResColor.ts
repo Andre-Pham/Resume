@@ -1,9 +1,9 @@
 import { assert } from "../../../language/assertions/Assert";
 import { UnreachableCaseError } from "../../../language/errors/UnreachableCaseError";
-import StateManager from "../../../state/publishers/StateManager";
+import { StateManager } from "../../../state/publishers/StateManager";
 import { ColorScheme } from "../../../state/publishers/types/ColorScheme";
 
-class ResColor {
+export class ResColor {
     // Hex string
     private readonly lightMode: string;
     // Hex string
@@ -50,5 +50,3 @@ class ResColor {
         return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? "#000000" : "#FFFFFF";
     }
 }
-
-export default ResColor;

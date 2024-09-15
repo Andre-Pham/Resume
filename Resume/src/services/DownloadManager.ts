@@ -1,7 +1,7 @@
-import DownloadFile from "./DownloadFile";
+import { DownloadFile } from "./DownloadFile";
 
-class DownloadManger {
-    public static readonly inst = new DownloadManger();
+export class DownloadManager {
+    public static readonly inst = new DownloadManager();
 
     public readonly transcript = new DownloadFile(
         "Transcript",
@@ -46,5 +46,3 @@ class DownloadManger {
         }
     }
 }
-
-export default DownloadManger;

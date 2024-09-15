@@ -1,5 +1,5 @@
 import React from "react";
-import ResTypographyConfig from "../styling/typography/ResTypographyConfig";
+import { ResTypographyConfig } from "../styling/typography/ResTypographyConfig";
 import { ResFontWeight } from "../styling/typography/ResFontWeight";
 
 interface Props {
@@ -17,7 +17,14 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const ResHyperlink: React.FC<Props> = ({ children, url, typography, verticalWrap = false, wide = true, style }) => {
+export const ResHyperlink: React.FC<Props> = ({
+    children,
+    url,
+    typography,
+    verticalWrap = false,
+    wide = true,
+    style,
+}) => {
     let linkTypography = typography.withWeight(ResFontWeight.bold).withUnderline(true);
     return (
         // Span means the frame doesn't extend past the text (i.e. can be clicked past the text)
@@ -41,5 +48,3 @@ const ResHyperlink: React.FC<Props> = ({ children, url, typography, verticalWrap
         </span>
     );
 };
-
-export default ResHyperlink;

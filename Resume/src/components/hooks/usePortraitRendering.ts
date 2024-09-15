@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import Environment from "../../state/environment/Environment";
+import { Environment } from "../../state/environment/Environment";
 
-function usePortraitRendering(callback: (shouldRenderPortrait: boolean) => void) {
+export function usePortraitRendering(callback: (shouldRenderPortrait: boolean) => void) {
     useEffect(() => {
         const handleResize = () => {
             callback(Environment.shouldRenderPortrait);
@@ -18,5 +18,3 @@ function usePortraitRendering(callback: (shouldRenderPortrait: boolean) => void)
         };
     }, []);
 }
-
-export default usePortraitRendering;

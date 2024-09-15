@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import ResTypographyConfig from "../styling/typography/ResTypographyConfig";
-import ResText from "./ResText";
-import ResColor from "../styling/color/ResColor";
+import { ResTypographyConfig } from "../styling/typography/ResTypographyConfig";
+import { ResText } from "./ResText";
+import { ResColor } from "../styling/color/ResColor";
 import Icon from "@mdi/react";
-import ResCSS from "../styling/ResCSS";
+import { ResCSS } from "../styling/ResCSS";
 
 interface Props {
     label: string;
@@ -16,7 +16,7 @@ interface Props {
     onPress: () => void;
 }
 
-const ResCompactButton: React.FC<Props> = ({
+export const ResCompactButton: React.FC<Props> = ({
     label,
     typography,
     color,
@@ -69,7 +69,7 @@ const ResCompactButton: React.FC<Props> = ({
                 cursor: disabled ? "default" : "pointer",
                 transition: "transform 0.1s",
                 transform: pressed || touched ? "scale(0.95)" : "scale(1)",
-                ...ResCSS.diableSelection,
+                ...ResCSS.disableSelection,
                 ...style,
             }}
             disabled={disabled}
@@ -89,5 +89,3 @@ const ResCompactButton: React.FC<Props> = ({
         </button>
     );
 };
-
-export default ResCompactButton;

@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import ResDimensions from "../styling/ResDimensions";
-import VStack from "../containers/Stacks/VStack";
-import HStack from "../containers/Stacks/HStack";
-import SplashIntro from "./SplashIntro";
-import SplashButtonMobile from "./SplashButtonMobile";
-import SplashButton from "./SplashButton";
+import { ResDimensions } from "../styling/ResDimensions";
+import { VStack } from "../containers/Stacks/VStack";
+import { HStack } from "../containers/Stacks/HStack";
+import { SplashIntro } from "./SplashIntro";
+import { SplashButtonMobile } from "./SplashButtonMobile";
+import { SplashButton } from "./SplashButton";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
-import usePortraitRendering from "../hooks/usePortraitRendering";
-import Environment from "../../state/environment/Environment";
+import { usePortraitRendering } from "../hooks/usePortraitRendering";
+import { Environment } from "../../state/environment/Environment";
 
 interface Props {
     // No props
 }
 
-const Splash: React.FC<Props> = ({}) => {
+export const Splash: React.FC<Props> = ({}) => {
     const [shouldRenderPortrait, setShouldRenderPortrait] = useState(Environment.shouldRenderPortrait);
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
@@ -56,5 +56,3 @@ const Splash: React.FC<Props> = ({}) => {
         );
     }
 };
-
-export default Splash;

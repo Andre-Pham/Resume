@@ -1,8 +1,8 @@
 /**
  * Predefined CSS to be used application-wide.
  */
-class ResCSS {
-    static get diableSelection(): React.CSSProperties {
+export class ResCSS {
+    static get disableSelection(): React.CSSProperties {
         return {
             // Non-prefixed version, currently supported by Chrome, Opera and Edge
             userSelect: "none",
@@ -21,5 +21,3 @@ class ResCSS {
         };
     }
 }
-
-export default ResCSS;

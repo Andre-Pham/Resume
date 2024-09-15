@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
-import StateManager from "../../state/publishers/StateManager";
-import ResTypography from "../styling/ResTypography";
-import ResColors from "../styling/ResColors";
-import ResButton from "../base/ResButton";
-import ResCSS from "../styling/ResCSS";
+import { StateManager } from "../../state/publishers/StateManager";
+import { ResTypography } from "../styling/ResTypography";
+import { ResColors } from "../styling/ResColors";
+import { ResButton } from "../base/ResButton";
+import { ResCSS } from "../styling/ResCSS";
 
 interface Props {
     label: string;
@@ -13,7 +13,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const SplashButton: React.FC<Props> = ({ label, section, radius, style }) => {
+export const SplashButton: React.FC<Props> = ({ label, section, radius, style }) => {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
 
     useEffect(() => {
@@ -49,5 +49,3 @@ const SplashButton: React.FC<Props> = ({ label, section, radius, style }) => {
         />
     );
 };
-
-export default SplashButton;

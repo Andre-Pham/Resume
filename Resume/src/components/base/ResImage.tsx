@@ -16,7 +16,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const ResImage: React.FC<Props> = ({
+export const ResImage: React.FC<Props> = ({
     fileName,
     width = "auto",
     height = "auto",
@@ -78,5 +78,3 @@ const ResImage: React.FC<Props> = ({
         />
     );
 };
-
-export default ResImage;

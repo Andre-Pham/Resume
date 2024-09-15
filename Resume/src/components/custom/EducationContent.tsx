@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import ResDimensions from "../styling/ResDimensions";
-import BasicCard from "./BasicCard";
-import ResText from "../base/ResText";
-import ResTypography from "../styling/ResTypography";
-import ResHyperlink from "../base/ResHyperlink";
-import ResCompactButton from "../base/ResCompactButton";
-import ResColors from "../styling/ResColors";
-import GridContainer from "../containers/GridContainer";
-import DownloadManager from "../../services/DownloadManager";
+import { ResDimensions } from "../styling/ResDimensions";
+import { BasicCard } from "./BasicCard";
+import { ResText } from "../base/ResText";
+import { ResTypography } from "../styling/ResTypography";
+import { ResHyperlink } from "../base/ResHyperlink";
+import { ResCompactButton } from "../base/ResCompactButton";
+import { ResColors } from "../styling/ResColors";
+import { GridContainer } from "../containers/GridContainer";
+import { DownloadManager } from "../../services/DownloadManager";
 import { mdiTrayArrowDown } from "@mdi/js";
-import usePortraitRendering from "../hooks/usePortraitRendering";
+import { usePortraitRendering } from "../hooks/usePortraitRendering";
 
 interface Props {
     style?: React.CSSProperties;
 }
 
-const EducationContent: React.FC<Props> = ({ style }) => {
+export const EducationContent: React.FC<Props> = ({ style }) => {
     const [shouldRenderPortrait, setShouldRenderPortrait] = useState(
         window.innerWidth <= ResDimensions.screenWidthToRenderPortrait,
     );
@@ -142,5 +142,3 @@ const EducationContent: React.FC<Props> = ({ style }) => {
         </GridContainer>
     );
 };
-
-export default EducationContent;

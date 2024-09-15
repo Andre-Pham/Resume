@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
-import StateManager from "../../state/publishers/StateManager";
-import ResTypography from "../styling/ResTypography";
-import ResColors from "../styling/ResColors";
-import ResButton from "../base/ResButton";
-import ResCSS from "../styling/ResCSS";
+import { StateManager } from "../../state/publishers/StateManager";
+import { ResTypography } from "../styling/ResTypography";
+import { ResColors } from "../styling/ResColors";
+import { ResButton } from "../base/ResButton";
+import { ResCSS } from "../styling/ResCSS";
 import { mdiChevronRight } from "@mdi/js";
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const SplashButtonMobile: React.FC<Props> = ({ label, section, style }) => {
+export const SplashButtonMobile: React.FC<Props> = ({ label, section, style }) => {
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
 
     useEffect(() => {
@@ -52,5 +52,3 @@ const SplashButtonMobile: React.FC<Props> = ({ label, section, style }) => {
         />
     );
 };
-
-export default SplashButtonMobile;

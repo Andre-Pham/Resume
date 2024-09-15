@@ -1,6 +1,6 @@
-import DownloadManger from "../../services/DownloadManager";
-import Link from "../../services/Link";
-import Experience from "../experience/Experience";
+import { DownloadManager } from "../../services/DownloadManager";
+import { Link } from "../../services/Link";
+import { Experience } from "../experience/Experience";
 
 export const Experiences: Experience[] = [
     new Experience(
@@ -105,7 +105,7 @@ export const Experiences: Experience[] = [
                 "https://github.com/TalkbackTutorial/Application",
             ),
         ],
-        [DownloadManger.inst.teachMeTalkbackUserGuide],
+        [DownloadManager.inst.teachMeTalkbackUserGuide],
         ["Kotlin", "XML Layouts", "Room", "Shared Preferences", "TextToSpeech"],
     ),
 

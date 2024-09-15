@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-function usePageBlur(callback: () => void) {
+export function usePageBlur(callback: () => void) {
     const location = useLocation();
 
     useEffect(() => {
@@ -11,5 +11,3 @@ function usePageBlur(callback: () => void) {
         };
     }, [location]); // Runs every time the route changes
 }
-
-export default usePageBlur;

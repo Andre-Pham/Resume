@@ -6,7 +6,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const ZStack: React.FC<Props> = ({ children, style }) => {
+export const ZStack: React.FC<Props> = ({ children, style }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [minHeight, setMinHeight] = useState(0);
 
@@ -55,5 +55,3 @@ const ZStackDiv = styled.div`
         position: absolute;
     }
 `;
-
-export default ZStack;

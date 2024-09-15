@@ -1,15 +1,15 @@
 import React from "react";
-import ResDimensions from "../styling/ResDimensions";
-import BasicCard from "./BasicCard";
-import ResText from "../base/ResText";
-import ResTypography from "../styling/ResTypography";
-import VStack from "../containers/Stacks/VStack";
+import { ResDimensions } from "../styling/ResDimensions";
+import { BasicCard } from "./BasicCard";
+import { ResText } from "../base/ResText";
+import { ResTypography } from "../styling/ResTypography";
+import { VStack } from "../containers/Stacks/VStack";
 
 interface Props {
     style?: React.CSSProperties;
 }
 
-const SkillsContent: React.FC<Props> = ({ style }) => {
+export const SkillsContent: React.FC<Props> = ({ style }) => {
     return (
         <VStack spacing={ResDimensions.cardColumnSpacing} style={{ width: "100%", ...style }}>
             <BasicCard title="Being a Developer">
@@ -78,5 +78,3 @@ const SkillsContent: React.FC<Props> = ({ style }) => {
         </VStack>
     );
 };
-
-export default SkillsContent;

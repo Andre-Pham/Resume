@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ResCSS from "../../styling/ResCSS";
+import { ResCSS } from "../../styling/ResCSS";
 
 interface Props {
     onPress: () => void;
@@ -8,7 +8,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const PressableContainer: React.FC<Props> = ({ onPress, disableSelection = false, children, style }) => {
+export const PressableContainer: React.FC<Props> = ({ onPress, disableSelection = false, children, style }) => {
     const [pressed, setPressed] = useState(false);
     const [touched, setTouched] = useState(false);
 
@@ -50,7 +50,7 @@ const PressableContainer: React.FC<Props> = ({ onPress, disableSelection = false
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed || touched ? "scale(0.95)" : "scale(1)",
-                ...(disableSelection ? ResCSS.diableSelection : undefined),
+                ...(disableSelection ? ResCSS.disableSelection : undefined),
                 ...style,
             }}
         >
@@ -58,5 +58,3 @@ const PressableContainer: React.FC<Props> = ({ onPress, disableSelection = false
         </div>
     );
 };
-
-export default PressableContainer;

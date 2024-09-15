@@ -1,22 +1,22 @@
-import VStack from "../containers/Stacks/VStack";
-import EducationContent from "../custom/EducationContent";
-import ResDimensions from "../styling/ResDimensions";
-import Header from "../custom/Header";
-import Splash from "../custom/Splash";
+import { VStack } from "../containers/Stacks/VStack";
+import { EducationContent } from "../custom/EducationContent";
+import { ResDimensions } from "../styling/ResDimensions";
+import { Header } from "../custom/Header";
+import { Splash } from "../custom/Splash";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import { UnreachableCaseError } from "../../language/errors/UnreachableCaseError";
 import { useEffect, useRef, useState } from "react";
-import StateManager from "../../state/publishers/StateManager";
-import SkillsContent from "../custom/SkillsContent";
-import ExperienceContent from "../custom/ExperienceContent";
-import useResizeObserver from "../hooks/useResizeObserver";
+import { StateManager } from "../../state/publishers/StateManager";
+import { SkillsContent } from "../custom/SkillsContent";
+import { ExperienceContent } from "../custom/ExperienceContent";
+import { useResizeObserver } from "../hooks/useResizeObserver";
 import { useNavigate } from "react-router-dom";
-import usePortraitRendering from "../hooks/usePortraitRendering";
-import useResetScroll from "../hooks/useResetScroll";
-import Environment from "../../state/environment/Environment";
-import RouterNavigator from "../../services/RouterNavigator";
+import { usePortraitRendering } from "../hooks/usePortraitRendering";
+import { useResetScroll } from "../hooks/useResetScroll";
+import { Environment } from "../../state/environment/Environment";
+import { RouterNavigator } from "../../services/RouterNavigator";
 
-function MainScreen() {
+export function MainScreen() {
     const navigate = useNavigate();
     const [activeSection, setActiveSection] = useState(StateManager.activeSection.read());
     const [resizeRef, contentSize] = useResizeObserver();
@@ -129,5 +129,3 @@ function MainScreen() {
         </div>
     );
 }
-
-export default MainScreen;

@@ -1,9 +1,9 @@
 import React from "react";
-import ResColor from "../styling/color/ResColor";
-import VStack from "../containers/Stacks/VStack";
-import ResIconButton from "./ResIconButton";
-import ResText from "./ResText";
-import ResTypography from "../styling/ResTypography";
+import { ResColor } from "../styling/color/ResColor";
+import { VStack } from "../containers/Stacks/VStack";
+import { ResIconButton } from "./ResIconButton";
+import { ResText } from "./ResText";
+import { ResTypography } from "../styling/ResTypography";
 
 interface Props {
     color: ResColor;
@@ -16,7 +16,7 @@ interface Props {
     onPress: () => void;
 }
 
-const ResIconButtonLabelled: React.FC<Props> = ({
+export const ResIconButtonLabelled: React.FC<Props> = ({
     color,
     iconPath = undefined,
     iconColor = undefined,
@@ -62,5 +62,3 @@ const ResIconButtonLabelled: React.FC<Props> = ({
         </VStack>
     );
 };
-
-export default ResIconButtonLabelled;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import ResColor from "../styling/color/ResColor";
-import ResImage, { ResImageScale } from "./ResImage";
-import ResIcon from "./ResIcon";
-import ResCSS from "../styling/ResCSS";
+import { ResColor } from "../styling/color/ResColor";
+import { ResImage, ResImageScale } from "./ResImage";
+import { ResIcon } from "./ResIcon";
+import { ResCSS } from "../styling/ResCSS";
 
 interface Props {
     color: ResColor;
@@ -15,7 +15,7 @@ interface Props {
     onPress?: () => void;
 }
 
-const ResIconButton: React.FC<Props> = ({
+export const ResIconButton: React.FC<Props> = ({
     color,
     iconPath = undefined,
     iconColor = undefined,
@@ -65,7 +65,7 @@ const ResIconButton: React.FC<Props> = ({
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed || touched ? "scale(0.95)" : "scale(1)",
-                ...ResCSS.diableSelection,
+                ...ResCSS.disableSelection,
                 ...style,
             }}
         >
@@ -94,5 +94,3 @@ const ResIconButton: React.FC<Props> = ({
         </button>
     );
 };
-
-export default ResIconButton;

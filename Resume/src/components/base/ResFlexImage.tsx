@@ -6,7 +6,7 @@ interface Props {
     style?: React.CSSProperties;
 }
 
-const ResFlexImage: React.FC<Props> = ({ fileName, flexVertical, style }) => {
+export const ResFlexImage: React.FC<Props> = ({ fileName, flexVertical, style }) => {
     return (
         <img
             src={`${import.meta.env.BASE_URL}images/${fileName}`}
@@ -21,5 +21,3 @@ const ResFlexImage: React.FC<Props> = ({ fileName, flexVertical, style }) => {
         />
     );
 };
-
-export default ResFlexImage;

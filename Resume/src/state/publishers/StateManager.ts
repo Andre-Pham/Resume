@@ -1,5 +1,5 @@
-import LocalStorageManager from "../../services/LocalStorageManager";
-import ResValuePublisher from "./impl/ResValuePublisher";
+import { LocalStorageManager } from "../../services/LocalStorageManager";
+import { ResValuePublisher } from "./impl/ResValuePublisher";
 import { ActiveSection } from "./types/ActiveSection";
 import { ColorScheme } from "./types/ColorScheme";
 
@@ -36,7 +36,7 @@ import { ColorScheme } from "./types/ColorScheme";
  * // Note: call unsubscribe() when component is unmounted
  * ```
  */
-class StateManager {
+export class StateManager {
     public static readonly activeSection = new ResValuePublisher(ActiveSection.none);
 
     public static readonly colorScheme = new ResValuePublisher(ColorScheme.light);
@@ -46,7 +46,5 @@ class StateManager {
     }
 }
 
-export default StateManager;
-
-// Setup after export, otherwise circular depenencies occur
+// Setup after export, otherwise circular dependencies occur
 StateManager.setup();

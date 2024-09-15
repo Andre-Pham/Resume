@@ -1,18 +1,18 @@
 import React from "react";
-import VStack from "../containers/Stacks/VStack";
-import ResText from "../base/ResText";
-import ResTypography from "../styling/ResTypography";
-import HStack from "../containers/Stacks/HStack";
-import ResDimensions from "../styling/ResDimensions";
-import ResIconButtonLabelled from "../base/ResIconButtonLabelled";
+import { VStack } from "../containers/Stacks/VStack";
+import { ResText } from "../base/ResText";
+import { ResTypography } from "../styling/ResTypography";
+import { HStack } from "../containers/Stacks/HStack";
+import { ResDimensions } from "../styling/ResDimensions";
+import { ResIconButtonLabelled } from "../base/ResIconButtonLabelled";
 import { mdiGithub, mdiLinkedin } from "@mdi/js";
-import ResColors from "../styling/ResColors";
+import { ResColors } from "../styling/ResColors";
 
 interface Props {
     style?: React.CSSProperties;
 }
 
-const SplashIntro: React.FC<Props> = ({ style }) => {
+export const SplashIntro: React.FC<Props> = ({ style }) => {
     return (
         <VStack spacing={16} style={style}>
             <ResText
@@ -69,5 +69,3 @@ const SplashIntro: React.FC<Props> = ({ style }) => {
         </VStack>
     );
 };
-
-export default SplashIntro;

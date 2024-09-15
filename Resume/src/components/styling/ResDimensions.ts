@@ -1,7 +1,7 @@
 /**
  * Predefined dimensions to be used application-wide.
  */
-class ResDimensions {
+export class ResDimensions {
     static readonly screenPadding = 27;
 
     static readonly screenWidthToRenderPortrait = 980;
@@ -20,5 +20,3 @@ class ResDimensions {
 
     static readonly iconButtonSpacing = 28;
 }
-
-export default ResDimensions;

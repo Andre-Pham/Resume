@@ -4,7 +4,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
  * A redux wrapper for managing application-wide state using the publisher-subscriber pattern.
  * To only be initialised within StateManager.
  */
-class ResPublisher {
+export class ResPublisher {
     private readonly slice = createSlice({
         name: "ResPublisher",
         initialState: {
@@ -42,5 +42,3 @@ class ResPublisher {
         this.publisher.dispatch(this.slice.actions.newForm());
     }
 }
-
-export default ResPublisher;
