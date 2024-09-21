@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ResColor } from "../styling/color/ResColor";
 import { ResImage } from "./ResImage";
 import { ResIcon } from "./ResIcon";
-import { ResCSS } from "../styling/ResCSS";
+import { ResStylePresets } from "../styling/ResStylePresets";
 
 interface Props {
     color: ResColor;
@@ -65,7 +65,7 @@ export const ResIconButton: React.FC<Props> = ({
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed || touched ? "scale(0.95)" : "scale(1)",
-                ...ResCSS.disableSelection,
+                ...ResStylePresets.disableSelection,
                 ...style,
             }}
         >

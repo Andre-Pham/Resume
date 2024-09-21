@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ResDimensions } from "../styling/ResDimensions";
+import { ResDimensionPresets } from "../styling/ResDimensionPresets";
 import { VStack } from "../containers/stacks/VStack";
 import { HStack } from "../containers/stacks/HStack";
 import { SplashIntro } from "./SplashIntro";
@@ -18,7 +18,7 @@ export const Splash: React.FC = () => {
 
     if (shouldRenderPortrait) {
         return (
-            <VStack spacing={ResDimensions.mainScreenSpacing}>
+            <VStack spacing={ResDimensionPresets.mainScreenSpacing}>
                 <SplashIntro style={{ flex: 1 }} />
 
                 <VStack spacing={12}>

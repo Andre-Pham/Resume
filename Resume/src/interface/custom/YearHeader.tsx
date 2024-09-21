@@ -1,14 +1,14 @@
 import React from "react";
 import { HStack } from "../containers/stacks/HStack";
 import { ResText } from "../components/ResText";
-import { ResTypography } from "../styling/ResTypography";
+import { ResTypographyPresets } from "../styling/ResTypographyPresets";
 
 interface Props {
     children: React.ReactNode;
 }
 
 export const YearHeader: React.FC<Props> = ({ children }) => {
-    const typography = ResTypography.sectionTitle;
+    const typography = ResTypographyPresets.sectionTitle;
     return (
         <HStack spacing={16} style={{ alignItems: "baseline" }}>
             <ResText typography={typography} wide={false}>

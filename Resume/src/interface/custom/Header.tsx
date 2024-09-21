@@ -3,10 +3,10 @@ import { HStack } from "../containers/stacks/HStack";
 import { ResImage } from "../components/ResImage";
 import { VStack } from "../containers/stacks/VStack";
 import { ResText } from "../components/ResText";
-import { ResTypography } from "../styling/ResTypography";
+import { ResTypographyPresets } from "../styling/ResTypographyPresets";
 import { ResIconButton } from "../components/ResIconButton";
-import { ResColors } from "../styling/ResColors";
-import { ResDimensions } from "../styling/ResDimensions";
+import { ResColorPresets } from "../styling/ResColorPresets";
+import { ResDimensionPresets } from "../styling/ResDimensionPresets";
 import { Spacer } from "../containers/spacing/Spacer";
 import { StateManager } from "../../state/publishers/StateManager";
 import { ColorScheme } from "../../state/publishers/types/ColorScheme";
@@ -31,11 +31,11 @@ export const Header: React.FC = () => {
             />
 
             <VStack spacing={4} style={{ alignSelf: "center" }}>
-                <ResText typography={ResTypography.pageTitle} verticalWrap={true}>
+                <ResText typography={ResTypographyPresets.pageTitle} verticalWrap={true}>
                     {"Andre Pham"}
                 </ResText>
 
-                <ResText typography={ResTypography.subscript} verticalWrap={true}>
+                <ResText typography={ResTypographyPresets.subscript} verticalWrap={true}>
                     {"andrekypham@gmail.com"}
                 </ResText>
             </VStack>
@@ -44,9 +44,9 @@ export const Header: React.FC = () => {
                 <Spacer />
 
                 <ResIconButton
-                    color={ResColors.background}
+                    color={ResColorPresets.background}
                     fileName={StateManager.colorScheme.read() === ColorScheme.dark ? "moon.png" : "sun.png"}
-                    size={ResDimensions.iconButtonSize}
+                    size={ResDimensionPresets.iconButtonSize}
                     onPress={inverseColorScheme}
                     onlyIcon={true}
                 />

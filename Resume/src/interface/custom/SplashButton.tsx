@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import { StateManager } from "../../state/publishers/StateManager";
-import { ResTypography } from "../styling/ResTypography";
-import { ResColors } from "../styling/ResColors";
+import { ResTypographyPresets } from "../styling/ResTypographyPresets";
+import { ResColorPresets } from "../styling/ResColorPresets";
 import { ResButton } from "../components/ResButton";
-import { ResCSS } from "../styling/ResCSS";
+import { ResStylePresets } from "../styling/ResStylePresets";
 
 interface Props {
     label: string;
@@ -26,14 +26,14 @@ export const SplashButton: React.FC<Props> = ({ label, section, radius, style })
         };
     }, []);
 
-    const selectedTypography = ResTypography.button.withColor(ResColors.textLightPersistent);
-    const unselectedTypography = ResTypography.button.withColor(ResColors.textDark);
+    const selectedTypography = ResTypographyPresets.button.withColor(ResColorPresets.textLightPersistent);
+    const unselectedTypography = ResTypographyPresets.button.withColor(ResColorPresets.textDark);
 
     return (
         <ResButton
             label={label}
             typography={activeSection === section ? selectedTypography : unselectedTypography}
-            color={activeSection === section ? ResColors.accent : ResColors.fillBackgroundLight}
+            color={activeSection === section ? ResColorPresets.accent : ResColorPresets.fillBackgroundLight}
             onPress={() => {
                 const toPublish = activeSection === section ? ActiveSection.none : section;
                 StateManager.activeSection.publish(toPublish);
@@ -43,7 +43,7 @@ export const SplashButton: React.FC<Props> = ({ label, section, radius, style })
                 width: radius * 2,
                 height: radius * 2,
                 borderRadius: 100,
-                ...(activeSection === section ? ResCSS.shadow : undefined),
+                ...(activeSection === section ? ResStylePresets.shadow : undefined),
                 ...style,
             }}
         />

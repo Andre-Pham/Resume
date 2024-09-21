@@ -1,10 +1,10 @@
 import React from "react";
 import { FlatContainer } from "../containers/styled/FlatContainer";
-import { ResColors } from "../styling/ResColors";
+import { ResColorPresets } from "../styling/ResColorPresets";
 import { ResText } from "../components/ResText";
-import { ResTypography } from "../styling/ResTypography";
+import { ResTypographyPresets } from "../styling/ResTypographyPresets";
 import { VStack } from "../containers/stacks/VStack";
-import { ResDimensions } from "../styling/ResDimensions";
+import { ResDimensionPresets } from "../styling/ResDimensionPresets";
 import { Experience } from "../../model/experience/Experience";
 import { ResHyperlink } from "../components/ResHyperlink";
 import { ResCompactButton } from "../components/ResCompactButton";
@@ -22,10 +22,10 @@ interface Props {
 export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
     const renderLinks = (): React.ReactNode => {
         return experience.links.map((link) => (
-            <ResText typography={ResTypography.body} key={link.url}>
+            <ResText typography={ResTypographyPresets.body} key={link.url}>
                 {link.label + ": "}
 
-                <ResHyperlink url={link.url} typography={ResTypography.body}>
+                <ResHyperlink url={link.url} typography={ResTypographyPresets.body}>
                     {link.shownURL}
                 </ResHyperlink>
             </ResText>
@@ -38,8 +38,8 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
                 key={file.fileName}
                 label={file.label}
                 iconPath={mdiTrayArrowDown}
-                typography={ResTypography.buttonCompact.withColor(ResColors.textLightPersistent)}
-                color={ResColors.accent}
+                typography={ResTypographyPresets.buttonCompact.withColor(ResColorPresets.textLightPersistent)}
+                color={ResColorPresets.accent}
                 wide={false}
                 onPress={() => {
                     // Fire-and-forget (discard boolean promise)
@@ -52,14 +52,14 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
 
     const renderTags = (): React.ReactNode => {
         return experience.tags.map((tag) => (
-            <ResChip color={ResColors.chipBackground} key={tag}>
-                <ResText typography={ResTypography.chip}>{tag}</ResText>
+            <ResChip color={ResColorPresets.chipBackground} key={tag}>
+                <ResText typography={ResTypographyPresets.chip}>{tag}</ResText>
             </ResChip>
         ));
     };
 
     return (
-        <FlatContainer color={ResColors.fillBackgroundLight} style={{ flex: 1, ...style }}>
+        <FlatContainer color={ResColorPresets.fillBackgroundLight} style={{ flex: 1, ...style }}>
             <HStack spacing={12} style={{ paddingBottom: 4 }}>
                 {experience.image !== null ? (
                     <ResImage
@@ -70,30 +70,30 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
                         style={{
                             borderRadius: 8,
                             alignSelf: "center",
-                            border: `2px solid ${ResColors.textSemiDark.getColor()}`,
+                            border: `2px solid ${ResColorPresets.textSemiDark.getColor()}`,
                         }}
                     />
                 ) : undefined}
 
-                <ResText typography={ResTypography.header} wide={false} numberOfLines={3}>
+                <ResText typography={ResTypographyPresets.header} wide={false} numberOfLines={3}>
                     {experience.name}
                 </ResText>
             </HStack>
 
-            <VStack spacing={ResDimensions.bodyParagraphSpacing} style={{ paddingTop: 4 }}>
-                <ResText typography={ResTypography.subscript}>{experience.subscriptText}</ResText>
+            <VStack spacing={ResDimensionPresets.bodyParagraphSpacing} style={{ paddingTop: 4 }}>
+                <ResText typography={ResTypographyPresets.subscript}>{experience.subscriptText}</ResText>
 
-                <ResText typography={ResTypography.body}>{experience.description}</ResText>
+                <ResText typography={ResTypographyPresets.body}>{experience.description}</ResText>
 
                 {renderLinks()}
 
                 {experience.files.length === 0 ? undefined : (
-                    <VStack spacing={ResDimensions.tagSpacing} style={{ paddingTop: 6 }}>
+                    <VStack spacing={ResDimensionPresets.tagSpacing} style={{ paddingTop: 6 }}>
                         {renderDownloads()}
                     </VStack>
                 )}
 
-                <HStack spacing={ResDimensions.tagSpacing} style={{ paddingTop: 6 }}>
+                <HStack spacing={ResDimensionPresets.tagSpacing} style={{ paddingTop: 6 }}>
                     {renderTags()}
                 </HStack>
             </VStack>

@@ -1,7 +1,7 @@
 /**
  * Predefined dimensions to be used application-wide.
  */
-export class ResDimensions {
+export class ResDimensionPresets {
     static readonly screenPadding = 27;
 
     static readonly screenWidthToRenderPortrait = 980;

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { ResTypographyConfig } from "../styling/typography/ResTypographyConfig";
+import { ResTypography } from "../styling/typography/ResTypography";
 import { ResText } from "./ResText";
 import { ResColor } from "../styling/color/ResColor";
 import Icon from "@mdi/react";
-import { ResCSS } from "../styling/ResCSS";
+import { ResStylePresets } from "../styling/ResStylePresets";
 
 interface Props {
     label: string;
-    typography: ResTypographyConfig;
+    typography: ResTypography;
     color: ResColor;
     iconPath?: string; // https://pictogrammers.com/library/mdi/
     disabled?: boolean;
@@ -69,7 +69,7 @@ export const ResButton: React.FC<Props> = ({
                 cursor: disabled ? "default" : "pointer",
                 transition: "transform 0.1s",
                 transform: pressed || touched ? "scale(0.95)" : "scale(1)",
-                ...ResCSS.disableSelection,
+                ...ResStylePresets.disableSelection,
                 ...style,
             }}
             disabled={disabled}

@@ -3,7 +3,7 @@ import { ResColor } from "../styling/color/ResColor";
 import { VStack } from "../containers/stacks/VStack";
 import { ResIconButton } from "./ResIconButton";
 import { ResText } from "./ResText";
-import { ResTypography } from "../styling/ResTypography";
+import { ResTypographyPresets } from "../styling/ResTypographyPresets";
 
 interface Props {
     color: ResColor;
@@ -55,7 +55,10 @@ export const ResIconButtonLabelled: React.FC<Props> = ({
                     textAlign: "center",
                 }}
             >
-                <ResText typography={ResTypography.subscriptLabel} style={{ alignSelf: "center", textAlign: "center" }}>
+                <ResText
+                    typography={ResTypographyPresets.subscriptLabel}
+                    style={{ alignSelf: "center", textAlign: "center" }}
+                >
                     {label}
                 </ResText>
             </div>

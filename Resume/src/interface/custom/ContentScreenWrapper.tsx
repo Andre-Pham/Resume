@@ -1,8 +1,8 @@
 import React from "react";
 import { ResText } from "../components/ResText";
-import { ResTypography } from "../styling/ResTypography";
+import { ResTypographyPresets } from "../styling/ResTypographyPresets";
 import { VStack } from "../containers/stacks/VStack";
-import { ResDimensions } from "../styling/ResDimensions";
+import { ResDimensionPresets } from "../styling/ResDimensionPresets";
 import { HStack } from "../containers/stacks/HStack";
 import { PressableContainer } from "../containers/interactive/PressableContainer";
 import { ResIcon } from "../components/ResIcon";
@@ -30,18 +30,21 @@ export const ContentScreenWrapper: React.FC<Props> = ({ title, children, style }
     };
 
     return (
-        <VStack spacing={ResDimensions.screenPadding} style={{ padding: ResDimensions.screenPadding, ...style }}>
+        <VStack
+            spacing={ResDimensionPresets.screenPadding}
+            style={{ padding: ResDimensionPresets.screenPadding, ...style }}
+        >
             <HStack spacing={8} style={{ alignItems: "center" }}>
                 <PressableContainer onPress={goBack} disableSelection={true}>
                     <ResIcon
                         iconPath={mdiChevronLeft}
                         size={45}
-                        color={ResTypography.header.colorObject}
+                        color={ResTypographyPresets.header.colorObject}
                         style={{ marginLeft: -20 }}
                     />
                 </PressableContainer>
 
-                <ResText typography={ResTypography.header} wide={false}>
+                <ResText typography={ResTypographyPresets.header} wide={false}>
                     {title}
                 </ResText>
             </HStack>

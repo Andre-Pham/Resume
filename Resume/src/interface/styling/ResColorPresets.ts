@@ -5,7 +5,7 @@ import { ResColor } from "./color/ResColor";
  * Colors are defined with a light-mode and an optional dark-mode variant.
  * Colors should be named using light-mode convention, that is, colors should be named according to how they should be read in light mode. "Dark text" is text that is dark in light mode, and light in dark mode.
  */
-export class ResColors {
+export class ResColorPresets {
     static get accent(): ResColor {
         return new ResColor({ lightMode: "#1769ff" });
     }

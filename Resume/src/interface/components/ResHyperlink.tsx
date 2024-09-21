@@ -1,5 +1,5 @@
 import React from "react";
-import { ResTypographyConfig } from "../styling/typography/ResTypographyConfig";
+import { ResTypography } from "../styling/typography/ResTypography";
 import { ResFontWeight } from "../styling/typography/ResFontWeight";
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
     // The URL to open
     url: string;
     // Typography applied
-    typography: ResTypographyConfig;
+    typography: ResTypography;
     // If the component should expand to take up available horizontal space
     wide?: boolean;
     // If the frame should exactly match the text

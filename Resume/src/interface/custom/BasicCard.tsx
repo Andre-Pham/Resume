@@ -1,10 +1,10 @@
 import React from "react";
 import { FlatContainer } from "../containers/styled/FlatContainer";
-import { ResColors } from "../styling/ResColors";
+import { ResColorPresets } from "../styling/ResColorPresets";
 import { ResText } from "../components/ResText";
-import { ResTypography } from "../styling/ResTypography";
+import { ResTypographyPresets } from "../styling/ResTypographyPresets";
 import { VStack } from "../containers/stacks/VStack";
-import { ResDimensions } from "../styling/ResDimensions";
+import { ResDimensionPresets } from "../styling/ResDimensionPresets";
 
 interface Props {
     title: string;
@@ -14,9 +14,9 @@ interface Props {
 
 export const BasicCard: React.FC<Props> = ({ title, children, style }) => {
     return (
-        <FlatContainer color={ResColors.fillBackgroundLight} style={style}>
-            <VStack spacing={ResDimensions.bodyParagraphSpacing}>
-                <ResText typography={ResTypography.header}>{title}</ResText>
+        <FlatContainer color={ResColorPresets.fillBackgroundLight} style={style}>
+            <VStack spacing={ResDimensionPresets.bodyParagraphSpacing}>
+                <ResText typography={ResTypographyPresets.header}>{title}</ResText>
 
                 {children}
             </VStack>

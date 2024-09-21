@@ -1,6 +1,6 @@
 import { VStack } from "../containers/stacks/VStack";
 import { EducationContent } from "../custom/EducationContent";
-import { ResDimensions } from "../styling/ResDimensions";
+import { ResDimensionPresets } from "../styling/ResDimensionPresets";
 import { Header } from "../custom/Header";
 import { Splash } from "../custom/Splash";
 import { ActiveSection } from "../../state/publishers/types/ActiveSection";
@@ -106,8 +106,8 @@ export const MainScreen: React.FC = () => {
     };
 
     return (
-        <div style={{ padding: ResDimensions.screenPadding, minWidth: 300 }}>
-            <VStack spacing={ResDimensions.mainScreenSpacing} style={{ alignContent: "center" }}>
+        <div style={{ padding: ResDimensionPresets.screenPadding, minWidth: 300 }}>
+            <VStack spacing={ResDimensionPresets.mainScreenSpacing} style={{ alignContent: "center" }}>
                 <Header />
 
                 <div ref={resizeRef}>
@@ -119,10 +119,10 @@ export const MainScreen: React.FC = () => {
             <div ref={scrollRef} style={{ marginTop: 24, marginBottom: -24 }} />
 
             <VStack
-                spacing={ResDimensions.pageContentSpacing}
+                spacing={ResDimensionPresets.pageContentSpacing}
                 style={{
                     alignContent: "center",
-                    paddingTop: activeSection === ActiveSection.none ? 0 : ResDimensions.mainScreenSpacing,
+                    paddingTop: activeSection === ActiveSection.none ? 0 : ResDimensionPresets.mainScreenSpacing,
                     paddingBottom: activeSection === ActiveSection.none ? 200 : 0,
                 }}
             >

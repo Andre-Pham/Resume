@@ -1,12 +1,12 @@
 import React from "react";
 import { VStack } from "../containers/stacks/VStack";
 import { ResText } from "../components/ResText";
-import { ResTypography } from "../styling/ResTypography";
+import { ResTypographyPresets } from "../styling/ResTypographyPresets";
 import { HStack } from "../containers/stacks/HStack";
-import { ResDimensions } from "../styling/ResDimensions";
+import { ResDimensionPresets } from "../styling/ResDimensionPresets";
 import { ResIconButtonLabelled } from "../components/ResIconButtonLabelled";
 import { mdiGithub, mdiLinkedin } from "@mdi/js";
-import { ResColors } from "../styling/ResColors";
+import { ResColorPresets } from "../styling/ResColorPresets";
 
 interface Props {
     style?: React.CSSProperties;
@@ -16,7 +16,7 @@ export const SplashIntro: React.FC<Props> = ({ style }) => {
     return (
         <VStack spacing={16} style={style}>
             <ResText
-                typography={ResTypography.splash}
+                typography={ResTypographyPresets.splash}
                 style={{
                     maxWidth: 550,
                 }}
@@ -27,7 +27,7 @@ export const SplashIntro: React.FC<Props> = ({ style }) => {
             </ResText>
 
             <ResText
-                typography={ResTypography.standoutBody}
+                typography={ResTypographyPresets.standoutBody}
                 style={{
                     maxWidth: 500,
                 }}
@@ -35,12 +35,12 @@ export const SplashIntro: React.FC<Props> = ({ style }) => {
                 {"Find my social links below, or explore my qualifications and experience."}
             </ResText>
 
-            <HStack spacing={ResDimensions.iconButtonSpacing} style={{ paddingTop: 8 }}>
+            <HStack spacing={ResDimensionPresets.iconButtonSpacing} style={{ paddingTop: 8 }}>
                 <ResIconButtonLabelled
                     iconPath={mdiGithub}
-                    color={ResColors.gitHub}
+                    color={ResColorPresets.gitHub}
                     label="GitHub"
-                    size={ResDimensions.iconButtonSize}
+                    size={ResDimensionPresets.iconButtonSize}
                     onPress={() => {
                         window.open("https://github.com/Andre-Pham", "_blank");
                     }}
@@ -48,9 +48,9 @@ export const SplashIntro: React.FC<Props> = ({ style }) => {
 
                 <ResIconButtonLabelled
                     fileName={"behance_white.png"}
-                    color={ResColors.behance}
+                    color={ResColorPresets.behance}
                     label="Behance"
-                    size={ResDimensions.iconButtonSize}
+                    size={ResDimensionPresets.iconButtonSize}
                     onPress={() => {
                         window.open("https://behance.net/andrepham", "_blank");
                     }}
@@ -58,9 +58,9 @@ export const SplashIntro: React.FC<Props> = ({ style }) => {
 
                 <ResIconButtonLabelled
                     iconPath={mdiLinkedin}
-                    color={ResColors.linkedIn}
+                    color={ResColorPresets.linkedIn}
                     label="LinkedIn"
-                    size={ResDimensions.iconButtonSize}
+                    size={ResDimensionPresets.iconButtonSize}
                     onPress={() => {
                         window.open("https://www.linkedin.com/in/andrekypham", "_blank");
                     }}

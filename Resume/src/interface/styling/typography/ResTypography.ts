@@ -54,7 +54,7 @@ interface Params {
     kerning?: number;
 }
 
-export class ResTypographyConfig {
+export class ResTypography {
     /**
      * Font size.
      */

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ResColor } from "../styling/color/ResColor";
-import { ResCSS } from "../styling/ResCSS";
+import { ResStylePresets } from "../styling/ResStylePresets";
 
 interface Props {
     color: ResColor;
@@ -54,7 +54,7 @@ export const ResChip: React.FC<Props> = ({ color, onPress, children, style }) =>
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed || touched ? "scale(0.95)" : "scale(1)",
-                ...ResCSS.disableSelection,
+                ...ResStylePresets.disableSelection,
                 ...style,
             }}
         >

@@ -1,6 +1,6 @@
 import React from "react";
 import { VStack } from "../containers/stacks/VStack";
-import { ResDimensions } from "../styling/ResDimensions";
+import { ResDimensionPresets } from "../styling/ResDimensionPresets";
 import { ExperiencePeriods } from "../../model/experience/ExperiencePeriods";
 import { ExperienceSection } from "./ExperienceSection";
 
@@ -10,7 +10,7 @@ interface Props {
 
 export const ExperienceContent: React.FC<Props> = ({ style }) => {
     return (
-        <VStack spacing={ResDimensions.pageContentSpacing} style={{ width: "100%", ...style }}>
+        <VStack spacing={ResDimensionPresets.pageContentSpacing} style={{ width: "100%", ...style }}>
             {ExperiencePeriods().map((period) => (
                 <ExperienceSection period={period} key={period.label} />
             ))}

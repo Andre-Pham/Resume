@@ -1,11 +1,11 @@
 import React from "react";
-import { ResTypographyConfig } from "../styling/typography/ResTypographyConfig";
+import { ResTypography } from "../styling/typography/ResTypography";
 
 interface Props {
     // Text or other components to be embedded
     children: React.ReactNode;
     // Typography applied
-    typography: ResTypographyConfig;
+    typography: ResTypography;
     // If the component should expand to take up available horizontal space
     wide?: boolean;
     // If the frame should exactly match the text

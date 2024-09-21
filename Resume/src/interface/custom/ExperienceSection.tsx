@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ExperiencePeriod } from "../../model/experience/ExperiencePeriod";
-import { ResDimensions } from "../styling/ResDimensions";
+import { ResDimensionPresets } from "../styling/ResDimensionPresets";
 import { ExperienceCard } from "./ExperienceCard";
 import { GridContainer } from "../containers/grid/GridContainer";
 import { VStack } from "../containers/stacks/VStack";
@@ -13,7 +13,7 @@ interface Props {
 
 export const ExperienceSection: React.FC<Props> = ({ period }) => {
     const [shouldRenderPortrait, setShouldRenderPortrait] = useState(
-        window.innerWidth <= ResDimensions.screenWidthToRenderPortrait,
+        window.innerWidth <= ResDimensionPresets.screenWidthToRenderPortrait,
     );
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
@@ -27,13 +27,13 @@ export const ExperienceSection: React.FC<Props> = ({ period }) => {
     const columnCount = shouldRenderPortrait ? 1 : 2;
 
     return (
-        <VStack spacing={ResDimensions.pageContentSpacing}>
+        <VStack spacing={ResDimensionPresets.pageContentSpacing}>
             <YearHeader>{period.label}</YearHeader>
 
             <GridContainer
                 columns={columnCount}
                 columnSizeRule={"minmax(0, 1fr)"}
-                spacing={ResDimensions.cardColumnSpacing}
+                spacing={ResDimensionPresets.cardColumnSpacing}
             >
                 {renderExperienceCards()}
             </GridContainer>

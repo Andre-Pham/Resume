@@ -1,7 +1,7 @@
 /**
  * Predefined CSS to be used application-wide.
  */
-export class ResCSS {
+export class ResStylePresets {
     static get disableSelection(): React.CSSProperties {
         return {
             // Non-prefixed version, currently supported by Chrome, Opera and Edge

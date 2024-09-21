@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ResCSS } from "../../styling/ResCSS";
+import { ResStylePresets } from "../../styling/ResStylePresets";
 import { ResColor } from "../../styling/color/ResColor";
 
 interface Props {
@@ -50,7 +50,7 @@ export const FlatContainer: React.FC<Props> = ({
                 borderRadius: 16,
                 padding: 18,
                 backgroundColor: color.getColor(),
-                ...(disableSelection ? ResCSS.disableSelection : undefined),
+                ...(disableSelection ? ResStylePresets.disableSelection : undefined),
                 ...style,
             }}
         >
@@ -72,7 +72,7 @@ export const FlatContainer: React.FC<Props> = ({
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed || touched ? "scale(0.95)" : "scale(1)",
-                ...(disableSelection ? ResCSS.disableSelection : undefined),
+                ...(disableSelection ? ResStylePresets.disableSelection : undefined),
                 ...style,
             }}
         >
