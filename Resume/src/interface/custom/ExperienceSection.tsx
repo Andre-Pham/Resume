@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ExperiencePeriod } from "../../model/experience/ExperiencePeriod";
 import { ResDimensions } from "../styling/ResDimensions";
 import { ExperienceCard } from "./ExperienceCard";
-import { GridContainer } from "../containers/GridContainer";
-import { VStack } from "../containers/Stacks/VStack";
+import { GridContainer } from "../containers/grid/GridContainer";
+import { VStack } from "../containers/stacks/VStack";
 import { YearHeader } from "./YearHeader";
 import { usePortraitRendering } from "../hooks/usePortraitRendering";
 

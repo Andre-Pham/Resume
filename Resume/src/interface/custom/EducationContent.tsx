@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { ResDimensions } from "../styling/ResDimensions";
 import { BasicCard } from "./BasicCard";
-import { ResText } from "../base/ResText";
+import { ResText } from "../components/ResText";
 import { ResTypography } from "../styling/ResTypography";
-import { ResHyperlink } from "../base/ResHyperlink";
-import { ResCompactButton } from "../base/ResCompactButton";
+import { ResHyperlink } from "../components/ResHyperlink";
+import { ResCompactButton } from "../components/ResCompactButton";
 import { ResColors } from "../styling/ResColors";
-import { GridContainer } from "../containers/GridContainer";
+import { GridContainer } from "../containers/grid/GridContainer";
 import { DownloadService } from "../../services/DownloadService";
 import { mdiTrayArrowDown } from "@mdi/js";
 import { usePortraitRendering } from "../hooks/usePortraitRendering";

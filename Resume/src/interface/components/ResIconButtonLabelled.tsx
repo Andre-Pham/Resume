@@ -1,6 +1,6 @@
 import React from "react";
 import { ResColor } from "../styling/color/ResColor";
-import { VStack } from "../containers/Stacks/VStack";
+import { VStack } from "../containers/stacks/VStack";
 import { ResIconButton } from "./ResIconButton";
 import { ResText } from "./ResText";
 import { ResTypography } from "../styling/ResTypography";

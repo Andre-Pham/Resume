@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ResDimensions } from "../styling/ResDimensions";
-import { VStack } from "../containers/Stacks/VStack";
-import { HStack } from "../containers/Stacks/HStack";
+import { VStack } from "../containers/stacks/VStack";
+import { HStack } from "../containers/stacks/HStack";
 import { SplashIntro } from "./SplashIntro";
 import { SplashButtonMobile } from "./SplashButtonMobile";
 import { SplashButton } from "./SplashButton";

@@ -1,5 +1,5 @@
 import { isMobile } from "react-device-detect";
-import { ResDimensions } from "../../components/styling/ResDimensions";
+import { ResDimensions } from "../../interface/styling/ResDimensions";
 
 export class Environment {
     public static get shouldRenderPortrait(): boolean {

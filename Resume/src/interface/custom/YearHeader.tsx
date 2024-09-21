@@ -1,6 +1,6 @@
 import React from "react";
-import { HStack } from "../containers/Stacks/HStack";
-import { ResText } from "../base/ResText";
+import { HStack } from "../containers/stacks/HStack";
+import { ResText } from "../components/ResText";
 import { ResTypography } from "../styling/ResTypography";
 
 interface Props {

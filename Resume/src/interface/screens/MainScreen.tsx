@@ -1,4 +1,4 @@
-import { VStack } from "../containers/Stacks/VStack";
+import { VStack } from "../containers/stacks/VStack";
 import { EducationContent } from "../custom/EducationContent";
 import { ResDimensions } from "../styling/ResDimensions";
 import { Header } from "../custom/Header";

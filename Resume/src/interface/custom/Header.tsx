@@ -1,13 +1,13 @@
 import React from "react";
-import { HStack } from "../containers/Stacks/HStack";
-import { ResImage } from "../base/ResImage";
-import { VStack } from "../containers/Stacks/VStack";
-import { ResText } from "../base/ResText";
+import { HStack } from "../containers/stacks/HStack";
+import { ResImage } from "../components/ResImage";
+import { VStack } from "../containers/stacks/VStack";
+import { ResText } from "../components/ResText";
 import { ResTypography } from "../styling/ResTypography";
-import { ResIconButton } from "../base/ResIconButton";
+import { ResIconButton } from "../components/ResIconButton";
 import { ResColors } from "../styling/ResColors";
 import { ResDimensions } from "../styling/ResDimensions";
-import { Spacer } from "../containers/Spacing/Spacer";
+import { Spacer } from "../containers/spacing/Spacer";
 import { StateManager } from "../../state/publishers/StateManager";
 import { ColorScheme } from "../../state/publishers/types/ColorScheme";
 

@@ -3,7 +3,7 @@ import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import { StateManager } from "../../state/publishers/StateManager";
 import { ResTypography } from "../styling/ResTypography";
 import { ResColors } from "../styling/ResColors";
-import { ResButton } from "../base/ResButton";
+import { ResButton } from "../components/ResButton";
 import { ResCSS } from "../styling/ResCSS";
 
 interface Props {

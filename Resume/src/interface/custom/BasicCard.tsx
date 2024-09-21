@@ -1,9 +1,9 @@
 import React from "react";
-import { FlatContainer } from "../containers/Styled/FlatContainer";
+import { FlatContainer } from "../containers/styled/FlatContainer";
 import { ResColors } from "../styling/ResColors";
-import { ResText } from "../base/ResText";
+import { ResText } from "../components/ResText";
 import { ResTypography } from "../styling/ResTypography";
-import { VStack } from "../containers/Stacks/VStack";
+import { VStack } from "../containers/stacks/VStack";
 import { ResDimensions } from "../styling/ResDimensions";
 
 interface Props {

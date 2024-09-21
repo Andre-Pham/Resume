@@ -1,11 +1,11 @@
 import React from "react";
-import { ResText } from "../base/ResText";
+import { ResText } from "../components/ResText";
 import { ResTypography } from "../styling/ResTypography";
-import { VStack } from "../containers/Stacks/VStack";
+import { VStack } from "../containers/stacks/VStack";
 import { ResDimensions } from "../styling/ResDimensions";
-import { HStack } from "../containers/Stacks/HStack";
-import { PressableContainer } from "../containers/Interactive/PressableContainer";
-import { ResIcon } from "../base/ResIcon";
+import { HStack } from "../containers/stacks/HStack";
+import { PressableContainer } from "../containers/interactive/PressableContainer";
+import { ResIcon } from "../components/ResIcon";
 import { mdiChevronLeft } from "@mdi/js";
 import { useNavigate } from "react-router-dom";
 import { StateManager } from "../../state/publishers/StateManager";

@@ -1,18 +1,18 @@
 import React from "react";
-import { FlatContainer } from "../containers/Styled/FlatContainer";
+import { FlatContainer } from "../containers/styled/FlatContainer";
 import { ResColors } from "../styling/ResColors";
-import { ResText } from "../base/ResText";
+import { ResText } from "../components/ResText";
 import { ResTypography } from "../styling/ResTypography";
-import { VStack } from "../containers/Stacks/VStack";
+import { VStack } from "../containers/stacks/VStack";
 import { ResDimensions } from "../styling/ResDimensions";
 import { Experience } from "../../model/experience/Experience";
-import { ResHyperlink } from "../base/ResHyperlink";
-import { ResCompactButton } from "../base/ResCompactButton";
+import { ResHyperlink } from "../components/ResHyperlink";
+import { ResCompactButton } from "../components/ResCompactButton";
 import { mdiTrayArrowDown } from "@mdi/js";
 import { DownloadService } from "../../services/DownloadService";
-import { ResChip } from "../base/ResChip";
-import { HStack } from "../containers/Stacks/HStack";
-import { ResImage } from "../base/ResImage";
+import { ResChip } from "../components/ResChip";
+import { HStack } from "../containers/stacks/HStack";
+import { ResImage } from "../components/ResImage";
 
 interface Props {
     experience: Experience;

@@ -1,10 +1,10 @@
 import React from "react";
-import { VStack } from "../containers/Stacks/VStack";
-import { ResText } from "../base/ResText";
+import { VStack } from "../containers/stacks/VStack";
+import { ResText } from "../components/ResText";
 import { ResTypography } from "../styling/ResTypography";
-import { HStack } from "../containers/Stacks/HStack";
+import { HStack } from "../containers/stacks/HStack";
 import { ResDimensions } from "../styling/ResDimensions";
-import { ResIconButtonLabelled } from "../base/ResIconButtonLabelled";
+import { ResIconButtonLabelled } from "../components/ResIconButtonLabelled";
 import { mdiGithub, mdiLinkedin } from "@mdi/js";
 import { ResColors } from "../styling/ResColors";
 

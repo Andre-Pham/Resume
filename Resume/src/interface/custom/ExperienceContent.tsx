@@ -1,5 +1,5 @@
 import React from "react";
-import { VStack } from "../containers/Stacks/VStack";
+import { VStack } from "../containers/stacks/VStack";
 import { ResDimensions } from "../styling/ResDimensions";
 import { ExperiencePeriods } from "../../model/experience/ExperiencePeriods";
 import { ExperienceSection } from "./ExperienceSection";
