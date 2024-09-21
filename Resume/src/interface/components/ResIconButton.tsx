@@ -85,7 +85,7 @@ export const ResIconButton: React.FC<Props> = ({
                 <ResIcon
                     iconPath={iconPath}
                     size={(size * 2.2) / 3.0}
-                    color={iconColor ?? new ResColor("#ffffff")}
+                    color={iconColor ?? ResColor.white}
                     style={{
                         alignSelf: "center",
                     }}

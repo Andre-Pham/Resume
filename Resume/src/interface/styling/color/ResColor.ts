@@ -3,13 +3,45 @@ import { UnreachableCaseError } from "../../../language/errors/UnreachableCaseEr
 import { StateManager } from "../../../state/publishers/StateManager";
 import { ColorScheme } from "../../../state/publishers/types/ColorScheme";
 
+interface Params {
+    /**
+     * Hex string color to be used in light mode.
+     */
+    lightMode: string;
+
+    /**
+     * Hex string color to be used in dark mode.
+     * If undefined, dark mode uses same color as light mode.
+     */
+    darkMode?: string;
+}
+
 export class ResColor {
-    // Hex string
+    /**
+     * White color.
+     */
+    public static get white(): ResColor {
+        return new ResColor({ lightMode: "#ffffff" });
+    }
+
+    /**
+     * Black color.
+     */
+    public static get black(): ResColor {
+        return new ResColor({ lightMode: "#000000" });
+    }
+
+    /**
+     * Hex string color to be used in light mode.
+     */
     private readonly lightMode: string;
-    // Hex string
+
+    /**
+     * Hex string color to be used in dark mode.
+     */
     private readonly darkMode: string;
 
-    constructor(lightMode: string, darkMode?: string) {
+    constructor({ lightMode, darkMode }: Params) {
         const hexRegex = /^#[0-9a-fA-F]+$/;
         // If no dark mode is provided, dark mode / light mode is equivalent
         const setDarkMode = darkMode ?? lightMode;
@@ -20,9 +52,9 @@ export class ResColor {
     }
 
     /**
-     * Gets the color based on the user's active color scheme (light mode / dark mode)
+     * Gets the color (hex string) based on the user's active color scheme (light mode / dark mode).
      *
-     * @returns Validated color string
+     * @returns Hex color string
      */
     public getColor(): string {
         const colorScheme = StateManager.colorScheme.read();
@@ -36,6 +68,11 @@ export class ResColor {
         }
     }
 
+    /**
+     * Gets white/black, whichever is more contrasted against this color.
+     *
+     * @returns Black or white hex string (whichever is more contrasted)
+     */
     public getContrastColor(): string {
         let hex = this.getColor();
         hex = hex.slice(1); // Remove "#"

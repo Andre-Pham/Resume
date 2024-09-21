@@ -2,28 +2,111 @@ import { ResFontFamily } from "./ResFontFamily";
 import { ResFontWeight } from "./ResFontWeight";
 import { ResColor } from "../color/ResColor";
 
+interface Params {
+    /**
+     * Font size.
+     */
+    size: number;
+
+    /**
+     * Font family.
+     */
+    fontFamily: ResFontFamily;
+
+    /**
+     * Font color.
+     */
+    color?: ResColor;
+
+    /**
+     * Font weight.
+     *
+     * @default ResFontWeight.medium
+     */
+    weight?: ResFontWeight;
+
+    /**
+     * True to make font italic.
+     *
+     * @default false
+     */
+    italic?: boolean;
+
+    /**
+     * True to make font underlined.
+     *
+     * @default false
+     */
+    underlined?: boolean;
+
+    /**
+     * True to make font lined out.
+     *
+     * @default false
+     */
+    linedOut?: boolean;
+
+    /**
+     * The font's kerning (spacing between letters).
+     *
+     * @default 0
+     */
+    kerning?: number;
+}
+
 export class ResTypographyConfig {
+    /**
+     * Font size.
+     */
     public size: number;
 
+    /**
+     * Font family.
+     */
     public fontFamily: ResFontFamily;
 
-    // An undefined color allows the component handle the color
+    /**
+     * Font color.
+     * An undefined color causes the font inherit the color from its parent.
+     */
     public colorObject: ResColor | undefined;
 
+    /**
+     * Font weight.
+     */
     public weight: ResFontWeight;
 
+    /**
+     * True to make font italic.
+     */
     public italic: boolean;
 
+    /**
+     * True to make font underlined.
+     */
     public underlined: boolean;
 
+    /**
+     * True to make font lined out.
+     */
     public linedOut: boolean;
 
+    /**
+     * The font's kerning (spacing between letters).
+     */
     public kerning: number;
 
+    /**
+     * The color as a hex string.
+     */
     get color(): string | undefined {
         return this.colorObject?.getColor();
     }
 
+    /**
+     * The line style of this font.
+     * Indicates if the font is underlined, lined out, neither, or both.
+     */
     get lineStyle(): "none" | "underline" | "line-through" | "underline line-through" {
         let result = "";
         if (!this.underlined && !this.linedOut) {
@@ -39,16 +122,16 @@ export class ResTypographyConfig {
         return result as "none" | "underline" | "line-through" | "underline line-through";
     }
 
-    constructor(
-        size: number,
-        fontFamily: ResFontFamily,
-        color: ResColor | undefined,
-        weight: ResFontWeight = ResFontWeight.medium,
-        italic: boolean = false,
-        underlined: boolean = false,
-        linedOut: boolean = false,
-        kerning: number = 0,
-    ) {
+    constructor({
+        size,
+        fontFamily,
+        color,
+        weight = ResFontWeight.medium,
+        italic = false,
+        underlined = false,
+        linedOut = false,
+        kerning = 0,
+    }: Params) {
         this.size = size;
         this.fontFamily = fontFamily;
         this.colorObject = color;
