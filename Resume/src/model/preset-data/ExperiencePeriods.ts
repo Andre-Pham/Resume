@@ -1,5 +1,5 @@
-import { ExperiencePeriod } from "./ExperiencePeriod";
-import { Experiences } from "../preset-data/Experiences";
+import { ExperiencePeriod } from "../types/ExperiencePeriod";
+import { Experiences } from "./Experiences";
 
 export const ExperiencePeriods: () => ExperiencePeriod[] = () => {
     const result: ExperiencePeriod[] = [];
@@ -13,7 +13,12 @@ export const ExperiencePeriods: () => ExperiencePeriod[] = () => {
             }
         }
         if (!added) {
-            result.push(new ExperiencePeriod(experience.section, [experience]));
+            result.push(
+                new ExperiencePeriod({
+                    label: experience.section,
+                    experiences: [experience],
+                }),
+            );
         }
     }
     result.sort((a, b) => {

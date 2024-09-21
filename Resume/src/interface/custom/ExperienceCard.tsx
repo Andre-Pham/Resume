@@ -5,7 +5,7 @@ import { ResText } from "../components/ResText";
 import { ResTypographyPresets } from "../styling/ResTypographyPresets";
 import { VStack } from "../containers/stacks/VStack";
 import { ResDimensionPresets } from "../styling/ResDimensionPresets";
-import { Experience } from "../../model/experience/Experience";
+import { Experience } from "../../model/types/Experience";
 import { ResHyperlink } from "../components/ResHyperlink";
 import { ResCompactButton } from "../components/ResCompactButton";
 import { mdiTrayArrowDown } from "@mdi/js";

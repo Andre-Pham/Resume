@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ExperiencePeriod } from "../../model/experience/ExperiencePeriod";
+import { ExperiencePeriod } from "../../model/types/ExperiencePeriod";
 import { ResDimensionPresets } from "../styling/ResDimensionPresets";
 import { ExperienceCard } from "./ExperienceCard";
 import { GridContainer } from "../containers/grid/GridContainer";

@@ -1,7 +1,7 @@
 import React from "react";
 import { VStack } from "../containers/stacks/VStack";
 import { ResDimensionPresets } from "../styling/ResDimensionPresets";
-import { ExperiencePeriods } from "../../model/experience/ExperiencePeriods";
+import { ExperiencePeriods } from "../../model/preset-data/ExperiencePeriods";
 import { ExperienceSection } from "./ExperienceSection";
 
 interface Props {

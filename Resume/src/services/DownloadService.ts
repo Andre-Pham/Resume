@@ -3,31 +3,35 @@ import { DownloadFile } from "./types/DownloadFile";
 export class DownloadService {
     public static readonly inst = new DownloadService();
 
-    public readonly transcript = new DownloadFile(
-        "Transcript",
-        "academic_transcript_official.pdf",
-        "academic_transcript_andrepham.pdf",
-    );
+    public readonly transcript = new DownloadFile({
+        label: "Transcript",
+        fileName: "academic_transcript_official.pdf",
+        downloadName: "academic_transcript_andrepham.pdf",
+    });
 
-    public readonly teachMeTalkbackUserGuide = new DownloadFile(
-        "Teach Me Talkback User Guide",
-        "user_guide_teach_me_talkback.pdf",
-        "user_guide_teach_me_talkback.pdf",
-    );
+    public readonly teachMeTalkbackUserGuide = new DownloadFile({
+        label: "Teach Me Talkback User Guide",
+        fileName: "user_guide_teach_me_talkback.pdf",
+        downloadName: "user_guide_teach_me_talkback.pdf",
+    });
 
-    public readonly honourListInclusions = new DownloadFile(
-        "Honour List Inclusions",
-        "honour_list_inclusions.zip",
-        "honour_list_inclusions_andrepham.zip",
-    );
+    public readonly honourListInclusions = new DownloadFile({
+        label: "Honour List Inclusions",
+        fileName: "honour_list_inclusions.zip",
+        downloadName: "honour_list_inclusions_andrepham.zip",
+    });
 
-    public readonly lettersOfCommendation = new DownloadFile(
-        "Letters of Commendation",
-        "letters_of_commendation.zip",
-        "letters_of_commendation_andrepham.zip",
-    );
+    public readonly lettersOfCommendation = new DownloadFile({
+        label: "Letters of Commendation",
+        fileName: "letters_of_commendation.zip",
+        downloadName: "letters_of_commendation_andrepham.zip",
+    });
 
-    public readonly duxAward = new DownloadFile("Dux Award", "dux_award.zip", "dux_award_andrepham.zip");
+    public readonly duxAward = new DownloadFile({
+        label: "Dux Award",
+        fileName: "dux_award.zip",
+        downloadName: "dux_award_andrepham.zip",
+    });
 
     private constructor() {}
 
