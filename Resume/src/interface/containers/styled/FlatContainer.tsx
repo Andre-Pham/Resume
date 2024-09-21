@@ -49,7 +49,7 @@ export const FlatContainer: React.FC<Props> = ({
             style={{
                 borderRadius: 16,
                 padding: 18,
-                backgroundColor: color.getColor(),
+                backgroundColor: color.hexString,
                 ...(disableSelection ? ResStylePresets.disableSelection : undefined),
                 ...style,
             }}
@@ -68,7 +68,7 @@ export const FlatContainer: React.FC<Props> = ({
             style={{
                 borderRadius: 16,
                 padding: 18,
-                backgroundColor: color.getColor(),
+                backgroundColor: color.hexString,
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed || touched ? "scale(0.95)" : "scale(1)",

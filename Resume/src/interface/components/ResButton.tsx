@@ -61,7 +61,7 @@ export const ResButton: React.FC<Props> = ({
                 justifyContent: "center",
                 padding: "14px 24px",
                 borderRadius: "50px",
-                backgroundColor: color.getColor(),
+                backgroundColor: color.hexString,
                 opacity: disabled ? 0.5 : 1,
                 width: wide ? "100%" : undefined,
                 alignSelf: wide ? undefined : "center",

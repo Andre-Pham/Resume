@@ -56,7 +56,7 @@ export const ResIconButton: React.FC<Props> = ({
             style={{
                 padding: 0,
                 borderRadius: "50px",
-                backgroundColor: color.getColor(),
+                backgroundColor: color.hexString,
                 width: onlyIcon ? 0 : size,
                 height: onlyIcon ? 0 : size,
                 justifyContent: "center",

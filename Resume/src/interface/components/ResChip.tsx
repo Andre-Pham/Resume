@@ -50,7 +50,7 @@ export const ResChip: React.FC<Props> = ({ color, onPress, children, style }) =>
                 borderRadius: "50px",
                 padding: "4px 12px",
                 alignSelf: "flex-start",
-                backgroundColor: color.getColor(),
+                backgroundColor: color.hexString,
                 cursor: "pointer",
                 transition: "transform 0.1s",
                 transform: pressed || touched ? "scale(0.95)" : "scale(1)",
@@ -66,7 +66,7 @@ export const ResChip: React.FC<Props> = ({ color, onPress, children, style }) =>
                 borderRadius: "50px",
                 padding: "4px 12px",
                 alignSelf: "flex-start",
-                backgroundColor: color.getColor(),
+                backgroundColor: color.hexString,
                 ...style,
             }}
         >

@@ -26,7 +26,7 @@ export const ColorThemeProvider: React.FC<Props> = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        document.body.style.backgroundColor = ResColorPresets.background.getColor();
+        document.body.style.backgroundColor = ResColorPresets.background.hexString;
         LocalStorageService.inst.writeColorTheme(colorScheme);
     }, [colorScheme]);
 
@@ -41,7 +41,7 @@ export const ColorThemeProvider: React.FC<Props> = ({ children }) => {
 // Color scheme still has to be passed in to react
 const GlobalStyle = createGlobalStyle<{ colorScheme: ColorScheme }>`
     body {
-        scrollbar-color: ${() => `${ResColorPresets.scrollBar.getColor()} ${ResColorPresets.fillBackgroundLight.getColor()}`};
+        scrollbar-color: ${() => `${ResColorPresets.scrollBar.hexString} ${ResColorPresets.fillBackgroundLight.hexString}`};
         transition: background-color 0.2s ease, color 0.2s ease;
     }
 
@@ -50,18 +50,18 @@ const GlobalStyle = createGlobalStyle<{ colorScheme: ColorScheme }>`
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: ${() => ResColorPresets.scrollBar.getColor()};
+        background-color: ${() => ResColorPresets.scrollBar.hexString};
         border-radius: 0px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background-color: ${() => ResColorPresets.scrollBar.getColor()};
+        background-color: ${() => ResColorPresets.scrollBar.hexString};
         border-radius: 0px;
         
     }
 
     ::-webkit-scrollbar-track {
-        background-color: ${() => ResColorPresets.fillBackgroundLight.getColor()};
+        background-color: ${() => ResColorPresets.fillBackgroundLight.hexString};
         border-radius: 0px;
     }
 `;

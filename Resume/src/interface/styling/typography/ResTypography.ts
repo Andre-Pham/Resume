@@ -100,7 +100,7 @@ export class ResTypography {
      * The color as a hex string.
      */
     get color(): string | undefined {
-        return this.colorObject?.getColor();
+        return this.colorObject?.hexString;
     }
 
     /**
