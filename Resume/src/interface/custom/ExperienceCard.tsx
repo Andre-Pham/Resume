@@ -26,7 +26,7 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
                 {link.label + ": "}
 
                 <ResHyperlink url={link.url} typography={ResTypographyPresets.body}>
-                    {link.shownURL}
+                    {link.shownURL.toLowerCase()}
                 </ResHyperlink>
             </ResText>
         ));

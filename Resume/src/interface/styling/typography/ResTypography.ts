@@ -2,58 +2,6 @@ import { ResFontFamily } from "./ResFontFamily";
 import { ResFontWeight } from "./ResFontWeight";
 import { ResColor } from "../color/ResColor";
 
-interface Params {
-    /**
-     * Font size.
-     */
-    size: number;
-
-    /**
-     * Font family.
-     */
-    fontFamily: ResFontFamily;
-
-    /**
-     * Font color.
-     */
-    color?: ResColor;
-
-    /**
-     * Font weight.
-     *
-     * @default ResFontWeight.medium
-     */
-    weight?: ResFontWeight;
-
-    /**
-     * True to make font italic.
-     *
-     * @default false
-     */
-    italic?: boolean;
-
-    /**
-     * True to make font underlined.
-     *
-     * @default false
-     */
-    underlined?: boolean;
-
-    /**
-     * True to make font lined out.
-     *
-     * @default false
-     */
-    linedOut?: boolean;
-
-    /**
-     * The font's kerning (spacing between letters).
-     *
-     * @default 0
-     */
-    kerning?: number;
-}
-
 export class ResTypography {
     /**
      * Font size.
@@ -131,7 +79,16 @@ export class ResTypography {
         underlined = false,
         linedOut = false,
         kerning = 0,
-    }: Params) {
+    }: {
+        size: number;
+        fontFamily: ResFontFamily;
+        color?: ResColor;
+        weight?: ResFontWeight;
+        italic?: boolean;
+        underlined?: boolean;
+        linedOut?: boolean;
+        kerning?: number;
+    }) {
         this.size = size;
         this.fontFamily = fontFamily;
         this.colorObject = color;

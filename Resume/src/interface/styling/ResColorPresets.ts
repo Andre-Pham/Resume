@@ -2,8 +2,8 @@ import { ResColor } from "./color/ResColor";
 
 /**
  * Predefined colors to be used application-wide.
- * 
- * Colors should be named using light-mode convention, that is, colors should be named according to how they should be 
+ *
+ * Colors should be named using light-mode convention, that is, colors should be named according to how they should be
  * read in light mode. "Dark text" is text that is dark in light mode, and light in dark mode.
  */
 export class ResColorPresets {

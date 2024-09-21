@@ -3,19 +3,6 @@ import { UnreachableCaseError } from "../../../language/errors/UnreachableCaseEr
 import { StateManager } from "../../../state/publishers/StateManager";
 import { ColorScheme } from "../../../state/publishers/types/ColorScheme";
 
-interface Params {
-    /**
-     * Hex string color to be used in light mode.
-     */
-    lightMode: string;
-
-    /**
-     * Hex string color to be used in dark mode.
-     * If undefined, dark mode uses same color as light mode.
-     */
-    darkMode?: string;
-}
-
 export class ResColor {
     /**
      * White color.
@@ -38,6 +25,7 @@ export class ResColor {
 
     /**
      * Hex string color to be used in dark mode.
+     * If undefined was passed, uses the same color as light mode.
      */
     private readonly darkMode: string;
 
@@ -77,7 +65,7 @@ export class ResColor {
         return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? ResColor.black : ResColor.white;
     }
 
-    constructor({ lightMode, darkMode }: Params) {
+    constructor({ lightMode, darkMode }: { lightMode: string; darkMode?: string }) {
         const hexRegex = /^#[0-9a-fA-F]+$/;
         // If no dark mode is provided, dark mode / light mode is equivalent
         const setDarkMode = darkMode ?? lightMode;
