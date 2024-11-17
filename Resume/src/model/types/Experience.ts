@@ -1,5 +1,6 @@
 import { Link } from "../../services/types/Link";
 import { DownloadFile } from "../../services/types/DownloadFile";
+import { InlineLink } from "../../services/types/InlineLink";
 
 export class Experience {
     /**
@@ -40,6 +41,11 @@ export class Experience {
     public readonly description: string;
 
     /**
+     * The experience's optional body to render.
+     */
+    public readonly inlineLinks?: InlineLink[];
+
+    /**
      * Links associated with the experience.
      */
     public readonly links: Link[];
@@ -55,6 +61,16 @@ export class Experience {
     public readonly tags: string[];
 
     /**
+     * The AWS services categories of all the AWS services used.
+     * View them at: https://docs.aws.amazon.com/whitepapers/latest/aws-overview/amazon-web-services-cloud-platform.html
+     * Services: https://aws.amazon.com/products/?aws-products-all
+     *
+     * Because a "AWS Networking & Content Delivery services" tag is way too long.
+     * So we add a new tags section for specifically AWS categories and just have "Networking & Content Delivery".
+     */
+    public readonly awsServicesCategories?: AwsServiceCategory[];
+
+    /**
      * The experience's subscript text to be rendered.
      */
     public get subscriptText(): string {
@@ -64,32 +80,64 @@ export class Experience {
     constructor({
         image,
         name,
-        section,
         projectType,
-        duration,
+        start,
+        end,
         description,
+        inlineLinks,
         links,
         files,
         tags,
+        awsServicesCategories,
     }: {
         image: string | null;
         name: string;
-        section: number | "Active";
         projectType: string;
-        duration: string;
+        start: number;
+        end: number | null;
         description: string;
+        inlineLinks?: InlineLink[];
         links: Link[];
         files: DownloadFile[];
         tags: string[];
+        awsServicesCategories?: AwsServiceCategory[];
     }) {
         this.image = image;
         this.name = name;
-        this.section = section;
+        this.section = end ?? "Active";
         this.projectType = projectType;
-        this.duration = duration;
+        if (start === end) {
+            this.duration = String(end);
+        } else {
+            this.duration = `${start} - ${end ?? "Present"}`;
+        }
         this.description = description;
+        this.inlineLinks = inlineLinks;
         this.links = links;
         this.files = files;
         this.tags = tags;
+        this.awsServicesCategories =
+            awsServicesCategories && (this.pairShortAndLongStrings(awsServicesCategories) as AwsServiceCategory[]);
+    }
+
+    private pairShortAndLongStrings(arr: string[]): string[] {
+        // Sort the array by length (ascending)
+        const sortedByLength = [...arr].sort((a, b) => a.length - b.length);
+        // Create two pointers for shortest and longest
+        let left = 0;
+        let right = sortedByLength.length - 1;
+        const result: string[] = [];
+        // Alternate picking shortest and longest
+        while (left <= right) {
+            if (left === right) {
+                result.push(sortedByLength[left]);
+            } else {
+                result.push(sortedByLength[left]);
+                result.push(sortedByLength[right]);
+            }
+            left++;
+            right--;
+        }
+        return result;
     }
 }

@@ -1,36 +1,112 @@
 import { DownloadService } from "../../services/DownloadService";
+import { InlineLink } from "../../services/types/InlineLink";
 import { Link } from "../../services/types/Link";
 import { Experience } from "../types/Experience";
 
+/**
+ * ==========================
+ * Rules for determining tags
+ * ==========================
+ * Every tag must be one of the following:
+ * - A technology I can link to (e.g. React, Swift, PostgreSQL)
+ * - An application's architecture (e.g. MVVM, MVC)
+ */
+
 export const Experiences: Experience[] = [
+    new Experience({
+        image: "zerodual_icon.png",
+        name: "ZeroDual",
+        projectType: "Paid Position",
+        start: 2024,
+        end: null,
+        description:
+            "A platform that enables law firms to identify and resolve dual representation issues in mass tort and multidistrict litigation (MDL) cases.",
+        links: [new Link({ label: "Website", shownURL: "ZeroDual.com", url: "https://www.zerodual.com/" })],
+        files: [],
+        tags: [
+            "TypeScript",
+            "React",
+            "Redux",
+            "Material UI",
+            "Storybook",
+            "Vite",
+            "Nx",
+            "Node.js",
+            "Koa",
+            "routing-controllers",
+            "Inversify",
+            "TypeORM",
+            "PostgreSQL",
+            "Redis",
+            "AWS SDK",
+            "Jest",
+            "Vitest",
+        ],
+        // Breakdown of services used found at AWS Cost Explorer
+        awsServicesCategories: [
+            "Database",
+            "Compute",
+            "Networking and Content Delivery",
+            "Management and Governance",
+            "Security, Identity, and Compliance",
+            "Front-End Web and Mobile",
+            "Application Integration",
+            "Containers",
+            "Business Applications",
+        ],
+    }),
+
+    new Experience({
+        image: null,
+        name: "ACCESS",
+        projectType: "Paid Position",
+        start: 2024,
+        end: null,
+        description:
+            "A platform used by affiliates to manage and process advertiser-provided suppression lists, comply with opt-out requirements, and access analytics for their email campaigns.",
+        links: [new Link({ label: "Website", shownURL: "App.Optizmo.com", url: "https://app.optizmo.com/" })],
+        files: [],
+        tags: ["TODO"],
+    }),
+
     new Experience({
         image: "codesign_icon.png",
         name: "Codesign",
-        section: 2023,
         projectType: "Paid Position",
-        duration: "2021 - 2023",
+        start: 2021,
+        end: 2023,
         description:
             "As an iOS developer at Cerulean Labs, I worked on all areas of the iPad Codesign (formerly Spaces) app including the UI, rendering, feature development, and more. Notable contributions include the cladding tool, multi-face editing, continuous face editing, footprint edge editing, colonnade vector editing, the site boundary editor, dimension editing, bounding box dimension editing, and the 2D vector rendering engine.",
+        inlineLinks: [
+            new InlineLink({
+                text: "Codesign unfortunately closed down in 2024.",
+                url: "https://www.linkedin.com/posts/codesign-3d_following-an-extensive-internal-review-including-activity-7213547981864632320-On6R/",
+            }),
+        ],
         links: [
-            new Link({ label: "Website", shownURL: "GetCodesign.co", url: "https://www.getcodesign.co/" }),
             new Link({
-                label: "App Store",
-                shownURL: "Apps.Apple.com/app/id1530458770",
-                url: "https://apps.apple.com/app/id1530458770",
+                label: "LinkedIn",
+                shownURL: "LinkedIn.com/company/codesign-3d/posts/",
+                url: "https://www.linkedin.com/company/codesign-3d/posts/",
+            }),
+            new Link({
+                label: "App Demo",
+                shownURL: "Vimeo.com/743385799",
+                url: "https://vimeo.com/743385799",
             }),
         ],
         files: [],
-        tags: ["Swift", "SwiftUI", "UIKit", "Core Graphics", "SceneKit", "Realm", "Unit Tests", "Localisation"],
+        tags: ["Swift", "SwiftUI", "UIKit", "Core Graphics", "SceneKit", "Realm", "XCTest"],
     }),
 
     new Experience({
         image: "yonder_icon.png",
         name: "Everbound",
-        section: "Active",
         projectType: "Personal Project",
-        duration: "2021 - Present",
+        start: 2021,
+        end: 2024,
         description:
-            "An iOS rougelike RPG. Includes enemies and bosses to fight, NPCs to meet, and loot such as armour, accessories, weapons, items, and potions to collect.",
+            "An iOS rougelike RPG. Includes enemies and bosses to fight, NPCs to meet, and loot such as armour, accessories, weapons, items, and potions to collect.\nEverbound has received over 20,000 downloads and a global rating of 4.5/5 on the App Store.",
         links: [
             new Link({ label: "Website", shownURL: "Everbound.net", url: "https://www.everbound.net/" }),
             new Link({
@@ -45,15 +121,15 @@ export const Experiences: Experience[] = [
             }),
         ],
         files: [],
-        tags: ["Swift", "SwiftUI", "MVVM", "Combine", "Serialisation", "Localisation", "Unit Tests"],
+        tags: ["Swift", "SwiftUI", "MVVM", "Combine", "SwiftSerialisation", "XCTest"],
     }),
 
     new Experience({
         image: "everbound_website_icon.png",
         name: "Everbound.net",
-        section: 2024,
         projectType: "Personal Project",
-        duration: "2024",
+        start: 2024,
+        end: 2024,
         description:
             "The official website for my game, Everbound (see above). Uses responsive web design and a completely custom UI built with my own components.",
         links: [
@@ -65,15 +141,15 @@ export const Experiences: Experience[] = [
             }),
         ],
         files: [],
-        tags: ["React", "TypeScript", "HTML", "CSS", "Vite", "Redux", "Styled Components"],
+        tags: ["React", "TypeScript", "Vite", "Redux"],
     }),
 
     new Experience({
         image: "auslanspell_icon.png",
         name: "AuslanSpell",
-        section: "Active",
-        projectType: "Uni Individual Project, Paid Position",
-        duration: "2023 - Present",
+        projectType: "Paid Position",
+        start: 2023,
+        end: null,
         description:
             "An iOS app that converts any text prompt into an animated, interactive 3D model performing the prompt in Auslan fingerspelling. Also includes an experimental recognition feature to recognise when a letter is performed by the user using the device's camera.",
         links: [
@@ -88,11 +164,54 @@ export const Experiences: Experience[] = [
     }),
 
     new Experience({
+        image: null,
+        name: "Family Tree",
+        projectType: "Personal Project",
+        start: 2024,
+        end: null,
+        description: "TODO",
+        links: [],
+        files: [],
+        tags: ["TODO"],
+    }),
+
+    new Experience({
+        image: null,
+        name: "SwiftMath",
+        projectType: "Personal Project",
+        start: 2023,
+        end: null,
+        description: "TODO",
+        links: [],
+        files: [],
+        tags: ["TODO"],
+    }),
+
+    new Experience({
+        image: null,
+        name: "SwiftSerialization",
+        projectType: "Personal Project",
+        start: 2023,
+        end: 2023,
+        description:
+            "A Swift package used for serialising and restoring Swift objects. Allows for serialising, persisting, reading, and restoring Swift objects. Provides legacy support. Supports transactions (including rollbacks) and actions from multiple concurrent threads. Powers many of my apps, including my game Everbound (see above).",
+        links: [
+            new Link({
+                label: "GitHub",
+                shownURL: "GitHub.com/Andre-Pham/SwiftSerialization",
+                url: "https://github.com/Andre-Pham/SwiftSerialization",
+            }),
+        ],
+        files: [],
+        tags: ["Swift", "SQLite3", "XCTest"],
+    }),
+
+    new Experience({
         image: "beesly_icon.png",
         name: "Beesly",
-        section: 2023,
         projectType: "Paid Position",
-        duration: "2023",
+        start: 2023,
+        end: 2023,
         description:
             'An iOS application for audibly recognising commands and providing text-to-speech feedback based on object recognition and hand detection using the device\'s camera. Interacts with a 3D printed modular insect model, "Beesly".',
         links: [
@@ -108,29 +227,10 @@ export const Experiences: Experience[] = [
 
     new Experience({
         image: null,
-        name: "SwiftSerialization",
-        section: 2023,
-        projectType: "Personal Project",
-        duration: "2023",
-        description:
-            "A Swift package used for serialising and restoring Swift objects. Allows for serialising, persisting, reading, and restoring Swift objects. Provides legacy support. Supports transactions (including rollbacks) and actions from multiple concurrent threads. Powers many of my apps, including my game Everbound (see above).",
-        links: [
-            new Link({
-                label: "GitHub",
-                shownURL: "GitHub.com/Andre-Pham/SwiftSerialization",
-                url: "https://github.com/Andre-Pham/SwiftSerialization",
-            }),
-        ],
-        files: [],
-        tags: ["Swift", "SQLite3", "Unit Tests"],
-    }),
-
-    new Experience({
-        image: null,
         name: "Teach Me Talkback",
-        section: 2022,
         projectType: "Uni Team Project",
-        duration: "2022",
+        start: 2022,
+        end: 2022,
         description:
             "An Android app with the purpose of teaching visually impaired users how to use the Google screen reader Talkback. It uses lessons to teach the user gestures and navigation, and incorporates a 'sandbox mode' and 'game mode'.",
         links: [
@@ -147,9 +247,9 @@ export const Experiences: Experience[] = [
     new Experience({
         image: "portfolio_icon.png",
         name: "Portfolio",
-        section: 2021,
         projectType: "Uni Individual Project",
-        duration: "2021",
+        start: 2021,
+        end: 2021,
         description:
             "An iOS app that tracks an investment portfolio, such as stocks, cryptocurrencies, ETFs, etc. Allows you to see the performance of financial assets, create watchlists, and create a portfolio with insights on performance and return.",
         links: [
@@ -165,29 +265,10 @@ export const Experiences: Experience[] = [
 
     new Experience({
         image: null,
-        name: "Intake",
-        section: 2023,
-        projectType: "Uni Team Project",
-        duration: "2023",
-        description:
-            "A multi-platform mental health triage app. Allows for nurses to triage and manage patients, create and track patient events, and view other triage cases. Allows admins to manage accounts and export patient data, and allows nurse leaders to manage shift turnover and manage patient allocation. Has account login, live data, and supports mobile, tablet, and web.",
-        links: [
-            new Link({
-                label: "GitHub",
-                shownURL: "GitHub.com/FIT4002-TEAM9/Leaf",
-                url: "https://github.com/FIT4002-TEAM9/Leaf",
-            }),
-        ],
-        files: [],
-        tags: ["React Native Expo", "TypeScript", "Redux", "Firestore"],
-    }),
-
-    new Experience({
-        image: null,
         name: "Information Visualiser",
-        section: 2021,
         projectType: "Personal Project",
-        duration: "2020 - 2021",
+        start: 2020,
+        end: 2021,
         description:
             "A self-made QR code program that can turn text into a visual pattern, and back again. Allows the creation and saving of a 'VISREP', as well as the recognition of them via image file or live video stream.",
         links: [
@@ -204,9 +285,9 @@ export const Experiences: Experience[] = [
     new Experience({
         image: null,
         name: "Dynamic Tic-Tac-Toe",
-        section: 2021,
         projectType: "Personal Project",
-        duration: "2021",
+        start: 2021,
+        end: 2021,
         description:
             "A Tic-tac-toe game in which the computer plays the user and either draws or wins. The user decides how many columns, rows, and how many in a row to win, though processing is limited to a board with 20 spaces. Implements lexicographic permutation for computer decisions.",
         links: [
@@ -223,9 +304,9 @@ export const Experiences: Experience[] = [
     new Experience({
         image: null,
         name: "Resume",
-        section: 2023,
         projectType: "Personal Project",
-        duration: "2023",
+        start: 2023,
+        end: 2023,
         description:
             "You're looking at it 😉. Uses responsive web design and a completely custom UI built with my own components - designed by me to provide information, links, and downloads.",
         links: [
@@ -236,6 +317,25 @@ export const Experiences: Experience[] = [
             }),
         ],
         files: [],
-        tags: ["React", "TypeScript", "HTML", "CSS", "Vite", "Redux", "Styled Components"],
+        tags: ["React", "TypeScript", "Vite", "Redux"],
+    }),
+
+    new Experience({
+        image: null,
+        name: "Intake",
+        projectType: "Uni Team Project",
+        start: 2023,
+        end: 2023,
+        description:
+            "A multi-platform mental health triage app. Allows for nurses to triage and manage patients, create and track patient events, and view other triage cases. Allows admins to manage accounts and export patient data, and allows nurse leaders to manage shift turnover and manage patient allocation. Has account login, live data, and supports mobile, tablet, and web.",
+        links: [
+            new Link({
+                label: "GitHub",
+                shownURL: "GitHub.com/FIT4002-TEAM9/Leaf",
+                url: "https://github.com/FIT4002-TEAM9/Leaf",
+            }),
+        ],
+        files: [],
+        tags: ["React Native Expo", "TypeScript", "Redux", "Firestore"],
     }),
 ];

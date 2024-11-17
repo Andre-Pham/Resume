@@ -48,8 +48,11 @@ export const ResChip: React.FC<Props> = ({ color, onPress, children, style }) =>
             onClick={onPress}
             style={{
                 borderRadius: "50px",
-                padding: "4px 12px",
+                padding: "5.5px 12px",
                 alignSelf: "flex-start",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 backgroundColor: color.hexString,
                 cursor: "pointer",
                 transition: "transform 0.1s",
@@ -64,8 +67,11 @@ export const ResChip: React.FC<Props> = ({ color, onPress, children, style }) =>
         <div
             style={{
                 borderRadius: "50px",
-                padding: "4px 12px",
+                padding: "5.5px 12px",
                 alignSelf: "flex-start",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 backgroundColor: color.hexString,
                 ...style,
             }}

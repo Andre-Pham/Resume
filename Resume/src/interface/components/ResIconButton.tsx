@@ -5,7 +5,7 @@ import { ResIcon } from "./ResIcon";
 import { ResStylePresets } from "../styling/ResStylePresets";
 
 interface Props {
-    color: ResColor;
+    color?: ResColor;
     iconPath?: string; // https://pictogrammers.com/library/mdi/
     iconColor?: ResColor;
     fileName?: string;
@@ -56,9 +56,9 @@ export const ResIconButton: React.FC<Props> = ({
             style={{
                 padding: 0,
                 borderRadius: "50px",
-                backgroundColor: color.hexString,
-                width: onlyIcon ? 0 : size,
-                height: onlyIcon ? 0 : size,
+                backgroundColor: color?.hexString ?? "transparent",
+                width: onlyIcon ? (fileName ? 0 : undefined) : size,
+                height: onlyIcon ? (fileName ? 0 : undefined) : size,
                 justifyContent: "center",
                 display: "flex",
                 border: "none",
