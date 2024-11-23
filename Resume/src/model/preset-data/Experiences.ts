@@ -42,7 +42,7 @@ export const Experiences: Experience[] = [
             "Jest",
             "Vitest",
         ],
-        // Breakdown of services used found at AWS Cost Explorer
+        // Breakdown of categories of services used found at AWS Cost Explorer
         awsServicesCategories: [
             "Database",
             "Compute",
@@ -57,7 +57,7 @@ export const Experiences: Experience[] = [
     }),
 
     new Experience({
-        image: null,
+        image: "access_icon.png",
         name: "ACCESS",
         projectType: "Paid Position",
         start: 2024,
@@ -66,7 +66,38 @@ export const Experiences: Experience[] = [
             "A platform used by affiliates to manage and process advertiser-provided suppression lists, comply with opt-out requirements, and access analytics for their email campaigns.",
         links: [new Link({ label: "Website", shownURL: "App.Optizmo.com", url: "https://app.optizmo.com/" })],
         files: [],
-        tags: ["TODO"],
+        tags: [
+            "TypeScript",
+            "React",
+            "Redux",
+            "Material UI",
+            "Storybook",
+            "Vite",
+            "Nx",
+            "Node.js",
+            "Koa",
+            "routing-controllers",
+            "Inversify",
+            "TypeORM",
+            "PostgreSQL",
+            "Redis",
+            "AWS SDK",
+            "Jest",
+            "Vitest",
+        ],
+        // Breakdown of categories of services used found at AWS Cost Explorer
+        awsServicesCategories: [
+            "Database",
+            "Compute",
+            "Networking and Content Delivery",
+            "Management and Governance",
+            "Security, Identity, and Compliance",
+            "Front-End Web and Mobile",
+            "Application Integration",
+            "Containers",
+            "Business Applications",
+            "Analytics",
+        ],
     }),
 
     new Experience({
@@ -76,7 +107,7 @@ export const Experiences: Experience[] = [
         start: 2021,
         end: 2023,
         description:
-            "As an iOS developer at Cerulean Labs, I worked on all areas of the iPad Codesign (formerly Spaces) app including the UI, rendering, feature development, and more. Notable contributions include the cladding tool, multi-face editing, continuous face editing, footprint edge editing, colonnade vector editing, the site boundary editor, dimension editing, bounding box dimension editing, and the 2D vector rendering engine.",
+            "An iPad app for architects to streamline the conceptual design process by bridging traditional sketching and advanced BIM workflows. Includes 2D sketching, 2D vector editing, 3D modelling and visualisation, building design, space planning, site planning, sun studies, compliance checks, exporting to other platforms, and more.",
         inlineLinks: [
             new InlineLink({
                 text: "Codesign unfortunately closed down in 2024.",
@@ -131,7 +162,7 @@ export const Experiences: Experience[] = [
         start: 2024,
         end: 2024,
         description:
-            "The official website for my game, Everbound (see above). Uses responsive web design and a completely custom UI built with my own components.",
+            "The official website for my game, Everbound. Uses responsive web design and a completely custom UI built with my own components.",
         links: [
             new Link({ label: "Website", shownURL: "Everbound.net", url: "https://www.everbound.net/" }),
             new Link({
@@ -154,7 +185,7 @@ export const Experiences: Experience[] = [
             "An iOS app that converts any text prompt into an animated, interactive 3D model performing the prompt in Auslan fingerspelling. Also includes an experimental recognition feature to recognise when a letter is performed by the user using the device's camera.",
         links: [
             new Link({
-                label: "GitHub",
+                label: "Legacy GitHub",
                 shownURL: "GitHub.com/Andre-Pham/LimeApp",
                 url: "https://github.com/Andre-Pham/LimeApp",
             }),
@@ -327,7 +358,7 @@ export const Experiences: Experience[] = [
         start: 2023,
         end: 2023,
         description:
-            "A multi-platform mental health triage app. Allows for nurses to triage and manage patients, create and track patient events, and view other triage cases. Allows admins to manage accounts and export patient data, and allows nurse leaders to manage shift turnover and manage patient allocation. Has account login, live data, and supports mobile, tablet, and web.",
+            "A multi-platform mental health triage app. Allows for nurses to triage and manage patients, create and track patient events, and view other triage cases. Allows admins to manage accounts and export patient data, and allows nurse leaders to manage shift turnover and manage patient allocation.",
         links: [
             new Link({
                 label: "GitHub",
