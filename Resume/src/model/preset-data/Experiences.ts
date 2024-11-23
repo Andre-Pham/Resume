@@ -205,7 +205,7 @@ export const Experiences: Experience[] = [
             }),
         ],
         files: [],
-        tags: ["Swift", "UIKit", "MVC", "SceneKit", "Vision", "AVFoundation", "Core Graphics"],
+        tags: ["Swift", "UIKit", "MVC", "SceneKit"],
     }),
 
     new Experience({
