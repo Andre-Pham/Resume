@@ -17,13 +17,13 @@ import { Experience } from "../types/Experience";
  * patterns like dependency injection or the delegate pattern - they are useful
  * patterns but not fundamental to the application. Technologies like
  * Nx and Storybook that are not functionally part of the application but determine
- * how the application is built/approached/arranged (e.g. Nx sets up the monorepo 
+ * how the application is built/approached/arranged (e.g. Nx sets up the monorepo
  * architecture) should be included. Technologies that support the business or
  * support side (like Zendesk, Sentry, etc.) should not be included - they are
- * there for monitoring, but not core to actually building the application itself. 
- * Same goes for services and pipelines for deploying or testing the application, 
- * like GitLab CI/CD pipelines or GitHub Actions - they're not core to actually 
- * building the application itself.
+ * there for monitoring, but not core to actually building the application itself.
+ * Same goes for services and pipelines for deploying or testing the application,
+ * like TestFlight, GitLab CI/CD pipelines, or GitHub Actions - they're not core to 
+ * actually building the application itself.
  */
 
 export const Experiences: Experience[] = [
@@ -199,7 +199,7 @@ export const Experiences: Experience[] = [
             "An iOS app that converts any text prompt into an animated, interactive 3D model performing the prompt in Auslan fingerspelling. Includes playback and camera controls, and various quiz modes.",
         links: [
             new Link({
-                label: "Legacy GitHub",
+                label: "Public GitHub",
                 shownURL: "GitHub.com/Andre-Pham/LimeApp",
                 url: "https://github.com/Andre-Pham/LimeApp",
             }),
@@ -214,10 +214,14 @@ export const Experiences: Experience[] = [
         projectType: "Personal Project",
         start: 2024,
         end: null,
-        description: "TODO",
-        links: [],
+        description: "An iOS app for building out and rendering a family tree. Algorithmically positions all family members in the optimal family tree structure.",
+        links: [new Link({
+            label: "GitHub",
+            shownURL: "GitHub.com/Andre-Pham/FamApp",
+            url: "https://github.com/Andre-Pham/FamApp"
+        })],
         files: [],
-        tags: ["TODO"],
+        tags: ["Swift", "UIKit", "MVC", "Core Graphics", "XCTest"],
     }),
 
     new Experience({
@@ -226,10 +230,17 @@ export const Experiences: Experience[] = [
         projectType: "Personal Project",
         start: 2023,
         end: null,
-        description: "TODO",
-        links: [],
+        description:
+            "A Swift math package with a focus on 2D geometry. Prioritises safety and robustness over performance.",
+        links: [
+            new Link({
+                label: "GitHub",
+                shownURL: "GitHub.com/Andre-Pham/SwiftMath",
+                url: "https://github.com/Andre-Pham/SwiftMath",
+            }),
+        ],
         files: [],
-        tags: ["TODO"],
+        tags: ["Swift", "Core Graphics", "XCTest"],
     }),
 
     new Experience({
