@@ -196,7 +196,7 @@ export const Experiences: Experience[] = [
         start: 2023,
         end: null,
         description:
-            "An iOS app that converts any text prompt into an animated, interactive 3D model performing the prompt in Auslan fingerspelling. Also includes an experimental recognition feature to recognise when a letter is performed by the user using the device's camera.",
+            "An iOS app that converts any text prompt into an animated, interactive 3D model performing the prompt in Auslan fingerspelling. Includes playback and camera controls, and various quiz modes.",
         links: [
             new Link({
                 label: "Legacy GitHub",
