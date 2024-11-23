@@ -127,7 +127,7 @@ export const Experiences: Experience[] = [
             }),
         ],
         files: [],
-        tags: ["Swift", "SwiftUI", "UIKit", "Core Graphics", "SceneKit", "Realm", "XCTest"],
+        tags: ["Swift", "SwiftUI", "UIKit", "Core Graphics", "SceneKit", "StoreKit", "AWS Amplify", "Realm", "XCTest"],
     }),
 
     new Experience({
@@ -152,7 +152,7 @@ export const Experiences: Experience[] = [
             }),
         ],
         files: [],
-        tags: ["Swift", "SwiftUI", "MVVM", "Combine", "SwiftSerialisation", "XCTest"],
+        tags: ["Swift", "SwiftUI", "MVVM", "Combine", "SwiftSerialisation", "StoreKit", "XCTest"],
     }),
 
     new Experience({
