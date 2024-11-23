@@ -1,6 +1,6 @@
 export enum ActiveSection {
     none,
     experience,
-    skills,
+    career,
     education,
 }

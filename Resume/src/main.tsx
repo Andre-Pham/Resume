@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { MainScreen } from "./interface/screens/MainScreen.tsx";
 import { ExperienceScreen } from "./interface/screens/ExperienceScreen.tsx";
-import { SkillsScreen } from "./interface/screens/SkillsScreen.tsx";
+import { CareerScreen } from "./interface/screens/CareerScreen.tsx";
 import { EducationScreen } from "./interface/screens/EducationScreen.tsx";
 import { ColorThemeProvider } from "./interface/providers/ThemeProvider.tsx";
 import { RouterService } from "./services/RouterService.ts";
@@ -22,7 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                         <Route path={RouterService.HOME_PATH} element={<MainScreen />} />
                         <Route path={RouterService.EDUCATION_PATH} element={<EducationScreen />} />
                         <Route path={RouterService.EXPERIENCE_PATH} element={<ExperienceScreen />} />
-                        <Route path={RouterService.SKILLS_PATH} element={<SkillsScreen />} />
+                        <Route path={RouterService.CAREER_PATH} element={<CareerScreen />} />
                         {/* Invalid paths redirect to root */}
                         <Route path="*" element={<Navigate to={RouterService.HOME_PATH} />} />
                     </Routes>

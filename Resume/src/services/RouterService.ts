@@ -5,12 +5,12 @@ export class RouterService {
 
     public static readonly HOME_PATH = "/";
     public static readonly EXPERIENCE_PATH = "/experience";
-    public static readonly SKILLS_PATH = "/skills";
+    public static readonly CAREER_PATH = "/career";
     public static readonly EDUCATION_PATH = "/education";
     public static readonly titles: Record<string, string | undefined> = {
         [RouterService.HOME_PATH]: "Andre Pham",
         [RouterService.EXPERIENCE_PATH]: "Andre Pham | Experience",
-        [RouterService.SKILLS_PATH]: "Andre Pham | Skills",
+        [RouterService.CAREER_PATH]: "Andre Pham | Career",
         [RouterService.EDUCATION_PATH]: "Andre Pham | Education",
     };
 
@@ -24,8 +24,8 @@ export class RouterService {
         navigate(RouterService.EXPERIENCE_PATH, { replace: true });
     }
 
-    public navigateSkills(navigate: NavigateFunction): void {
-        navigate(RouterService.SKILLS_PATH, { replace: true });
+    public navigateCareer(navigate: NavigateFunction): void {
+        navigate(RouterService.CAREER_PATH, { replace: true });
     }
 
     public navigateEducation(navigate: NavigateFunction): void {

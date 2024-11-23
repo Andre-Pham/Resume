@@ -67,7 +67,7 @@ export class Experience {
      *
      * Because a "AWS Networking & Content Delivery services" tag is way too long.
      * So we add a new tags section for specifically AWS categories and just have "Networking & Content Delivery".
-     * 
+     *
      * IMPORTANT:
      * To check a service's category, DON'T just search them up at https://aws.amazon.com/products/?aws-products-all.
      * You have to open it. For example, search SES:

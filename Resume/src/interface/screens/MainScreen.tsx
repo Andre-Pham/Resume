@@ -7,7 +7,7 @@ import { ActiveSection } from "../../state/publishers/types/ActiveSection";
 import { UnreachableCaseError } from "../../language/errors/UnreachableCaseError";
 import { useEffect, useRef, useState } from "react";
 import { StateManager } from "../../state/publishers/StateManager";
-import { SkillsContent } from "../custom/SkillsContent";
+import { CareerContent } from "../custom/CareerContent";
 import { ExperienceContent } from "../custom/ExperienceContent";
 import { useResizeObserver } from "../hooks/useResizeObserver";
 import { useNavigate } from "react-router-dom";
@@ -62,8 +62,8 @@ export const MainScreen: React.FC = () => {
             case ActiveSection.experience:
                 RouterService.inst.navigateExperience(navigate);
                 break;
-            case ActiveSection.skills:
-                RouterService.inst.navigateSkills(navigate);
+            case ActiveSection.career:
+                RouterService.inst.navigateCareer(navigate);
                 break;
             default:
                 throw new UnreachableCaseError(activeSection);
@@ -86,8 +86,8 @@ export const MainScreen: React.FC = () => {
                 return <></>;
             case ActiveSection.experience:
                 return <ExperienceContent style={{ maxWidth: contentSize.width, alignSelf: "center" }} />;
-            case ActiveSection.skills:
-                return <SkillsContent style={{ maxWidth: contentSize.width, alignSelf: "center" }} />;
+            case ActiveSection.career:
+                return <CareerContent style={{ maxWidth: contentSize.width, alignSelf: "center" }} />;
             case ActiveSection.education:
                 return (
                     <EducationContent

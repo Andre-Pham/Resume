@@ -22,7 +22,7 @@ import { Experience } from "../types/Experience";
  * support side (like Zendesk, Sentry, etc.) should not be included - they are
  * there for monitoring, but not core to actually building the application itself.
  * Same goes for services and pipelines for deploying or testing the application,
- * like TestFlight, GitLab CI/CD pipelines, or GitHub Actions - they're not core to 
+ * like TestFlight, GitLab CI/CD pipelines, or GitHub Actions - they're not core to
  * actually building the application itself.
  */
 
@@ -214,12 +214,15 @@ export const Experiences: Experience[] = [
         projectType: "Personal Project",
         start: 2024,
         end: null,
-        description: "An iOS app for building out and rendering a family tree. Algorithmically positions all family members in the optimal family tree structure.",
-        links: [new Link({
-            label: "GitHub",
-            shownURL: "GitHub.com/Andre-Pham/FamApp",
-            url: "https://github.com/Andre-Pham/FamApp"
-        })],
+        description:
+            "An iOS app for building out and rendering a family tree. Algorithmically positions all family members in the optimal family tree structure.",
+        links: [
+            new Link({
+                label: "GitHub",
+                shownURL: "GitHub.com/Andre-Pham/FamApp",
+                url: "https://github.com/Andre-Pham/FamApp",
+            }),
+        ],
         files: [],
         tags: ["Swift", "UIKit", "MVC", "Core Graphics", "XCTest"],
     }),

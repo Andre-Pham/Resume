@@ -1,10 +1,10 @@
 import { ContentScreenWrapper } from "../custom/ContentScreenWrapper";
 import { useNavigate } from "react-router-dom";
 import { usePortraitRendering } from "../hooks/usePortraitRendering";
-import { SkillsContent } from "../custom/SkillsContent";
+import { CareerContent } from "../custom/CareerContent";
 import { RouterService } from "../../services/RouterService";
 
-export const SkillsScreen: React.FC = () => {
+export const CareerScreen: React.FC = () => {
     const navigate = useNavigate();
 
     usePortraitRendering((shouldRenderPortrait: boolean) => {
@@ -14,8 +14,8 @@ export const SkillsScreen: React.FC = () => {
     });
 
     return (
-        <ContentScreenWrapper title="Skills">
-            <SkillsContent />
+        <ContentScreenWrapper title="Career">
+            <CareerContent />
         </ContentScreenWrapper>
     );
 };

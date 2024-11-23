@@ -24,7 +24,7 @@ export const Splash: React.FC = () => {
                 <VStack spacing={12}>
                     <SplashButtonMobile label="experience" section={ActiveSection.experience} />
 
-                    <SplashButtonMobile label="skills" section={ActiveSection.skills} />
+                    <SplashButtonMobile label="career" section={ActiveSection.career} />
 
                     <SplashButtonMobile label="education" section={ActiveSection.education} />
                 </VStack>
@@ -43,7 +43,7 @@ export const Splash: React.FC = () => {
                     <VStack spacing={verticalButtonSpacing}>
                         <SplashButton label="experience" section={ActiveSection.experience} radius={buttonRadius} />
 
-                        <SplashButton label="skills" section={ActiveSection.skills} radius={buttonRadius} />
+                        <SplashButton label="career" section={ActiveSection.career} radius={buttonRadius} />
                     </VStack>
 
                     <SplashButton label="education" section={ActiveSection.education} radius={buttonRadius} />

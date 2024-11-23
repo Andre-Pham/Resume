@@ -122,9 +122,9 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
             <VStack spacing={ResDimensionPresets.bodyParagraphSpacing} style={{ paddingTop: 4 }}>
                 <ResText typography={ResTypographyPresets.subscript}>{experience.subscriptText}</ResText>
 
-                {experience.description.split("\n").map((line, index) => (
+                {experience.description.split("\n").map((paragraph, index) => (
                     <ResText key={index} typography={ResTypographyPresets.body}>
-                        {line}
+                        {paragraph}
                     </ResText>
                 ))}
 
