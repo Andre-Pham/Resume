@@ -13,8 +13,8 @@ interface Props {
 export const SkillsContent: React.FC<Props> = ({ style }) => {
     return (
         <VStack spacing={ResDimensionPresets.cardColumnSpacing} style={{ width: "100%", ...style }}>
-            {Skills.map((skill) => (
-                <BasicCard title={skill.title}>
+            {Skills.map((skill, index) => (
+                <BasicCard key={index} title={skill.title}>
                     <ResText typography={ResTypographyPresets.body}>{skill.description}</ResText>
                 </BasicCard>
             ))}

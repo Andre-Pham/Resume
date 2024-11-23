@@ -36,7 +36,7 @@ export const Splash: React.FC = () => {
         const horizontalButtonSpacing =
             Math.cos(Math.PI / 3 / 2) * (buttonRadius * 2 + verticalButtonSpacing) - buttonRadius * 2;
         return (
-            <HStack spacing={64} style={{ alignItems: "flex-start" }}>
+            <HStack spacing={80} style={{ alignItems: "flex-start" }}>
                 <SplashIntro />
 
                 <HStack spacing={horizontalButtonSpacing} style={{ alignItems: "center" }}>
