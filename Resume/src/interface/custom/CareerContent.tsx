@@ -5,6 +5,7 @@ import { ResText } from "../components/ResText";
 import { ResTypographyPresets } from "../styling/ResTypographyPresets";
 import { VStack } from "../containers/stacks/VStack";
 import { Employments } from "../../model/preset-data/Employments";
+import { CareerProject } from "./CareerProject";
 
 interface Props {
     style?: React.CSSProperties;
@@ -22,6 +23,14 @@ export const CareerContent: React.FC<Props> = ({ style }) => {
                             {paragraph}
                         </ResText>
                     ))}
+
+                    <ResText typography={ResTypographyPresets.subscript}>{"Projects"}</ResText>
+
+                    <VStack spacing={12}>
+                        {employment.experiences.map((experience) => (
+                            <CareerProject key={experience.name} experience={experience} />
+                        ))}
+                    </VStack>
                 </BasicCard>
             ))}
         </VStack>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FlatContainer } from "../containers/styled/FlatContainer";
 import { ResColorPresets } from "../styling/ResColorPresets";
 import { ResText } from "../components/ResText";
 import { ResTypographyPresets } from "../styling/ResTypographyPresets";
@@ -14,13 +13,19 @@ import { ResChip } from "../components/ResChip";
 import { HStack } from "../containers/stacks/HStack";
 import { ResImage } from "../components/ResImage";
 import { ResIconButton } from "../components/ResIconButton";
+import { GridContainer } from "../containers/grid/GridContainer";
+import { ResFontWeight } from "../styling/typography/ResFontWeight";
+import { ResLinkButton } from "../components/ResLinkButton";
 
 interface Props {
     experience: Experience;
     style?: React.CSSProperties;
 }
 
-export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
+export const CareerProject: React.FC<Props> = ({ experience, style }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [awsTagsExpanded, setAwsTagsExpanded] = useState(false);
+
     const renderInlineLinks = (): React.ReactNode => {
         return experience.inlineLinks?.map((link) => (
             <ResHyperlink url={link.url} key={link.url} typography={ResTypographyPresets.body}>
@@ -68,7 +73,6 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
     };
 
     const renderAwsTags = (): React.ReactNode => {
-        const [awsTagsExpanded, setAwsTagsExpanded] = useState(false);
         const awsTagsCutoff = 4;
         const awsTagsLength = experience.awsServicesCategories?.length ?? 0;
         const expandAwsTagsVisible = awsTagsLength > awsTagsCutoff;
@@ -98,8 +102,8 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
     };
 
     return (
-        <FlatContainer color={ResColorPresets.fillBackgroundLight} style={{ flex: 1, ...style }}>
-            <HStack spacing={12} style={{ paddingBottom: 4 }}>
+        <VStack spacing={12} style={style}>
+            <HStack spacing={12} style={{ alignItems: "center" }}>
                 {experience.image !== null ? (
                     <ResImage
                         height={34}
@@ -114,59 +118,80 @@ export const ExperienceCard: React.FC<Props> = ({ experience, style }) => {
                     />
                 ) : undefined}
 
-                <ResText typography={ResTypographyPresets.header} wide={false} numberOfLines={3}>
-                    {experience.name}
-                </ResText>
+                <VStack spacing={2}>
+                    <ResText typography={ResTypographyPresets.body.withWeight(ResFontWeight.bold)}>
+                        {experience.name}
+                    </ResText>
+
+                    <ResLinkButton
+                        typography={ResTypographyPresets.subscriptLabel}
+                        label={isExpanded ? "Show Less" : "Show More"}
+                        onPress={() => {
+                            setIsExpanded((before) => !before);
+                        }}
+                    />
+                </VStack>
             </HStack>
 
-            <VStack spacing={ResDimensionPresets.bodyParagraphSpacing} style={{ paddingTop: 4 }}>
-                <ResText typography={ResTypographyPresets.subscript}>{experience.subscriptText}</ResText>
+            {isExpanded ? (
+                <GridContainer columns={2} spacing={12} columnSizeRule="min-content auto">
+                    <div
+                        style={{
+                            width: 2,
+                            height: "100%",
+                            backgroundColor: ResColorPresets.textSemiDark.hexString,
+                            borderRadius: 1,
+                        }}
+                    />
 
-                {experience.description.split("\n").map((paragraph, index) => (
-                    <ResText key={index} typography={ResTypographyPresets.body}>
-                        {paragraph}
-                    </ResText>
-                ))}
-
-                {renderInlineLinks()}
-
-                {renderLinks()}
-
-                {experience.files.length === 0 ? undefined : (
-                    <VStack spacing={ResDimensionPresets.tagSpacing} style={{ paddingTop: 4 }}>
-                        {renderDownloads()}
-                    </VStack>
-                )}
-
-                <HStack spacing={ResDimensionPresets.tagSpacing} style={{ paddingTop: 4 }}>
-                    {renderTags()}
-                </HStack>
-
-                {experience.awsServicesCategories ? (
-                    <>
-                        <HStack spacing={8} style={{ alignItems: "center" }}>
-                            <ResText typography={ResTypographyPresets.subscript} wide={false}>
-                                {"AWS Service Categories"}
+                    <VStack spacing={ResDimensionPresets.bodyParagraphSpacing}>
+                        {experience.description.split("\n").map((paragraph, index) => (
+                            <ResText key={index} typography={ResTypographyPresets.body}>
+                                {paragraph}
                             </ResText>
+                        ))}
 
-                            <ResIconButton
-                                iconColor={ResColorPresets.textSemiDark}
-                                iconPath={mdiOpenInNew}
-                                size={24}
-                                onlyIcon
-                                onPress={() => {
-                                    window.open(
-                                        "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/amazon-web-services-cloud-platform.html",
-                                        "_blank",
-                                    );
-                                }}
-                            />
+                        {renderInlineLinks()}
+
+                        {renderLinks()}
+
+                        {experience.files.length === 0 ? undefined : (
+                            <VStack spacing={ResDimensionPresets.tagSpacing} style={{ paddingTop: 4 }}>
+                                {renderDownloads()}
+                            </VStack>
+                        )}
+
+                        <HStack spacing={ResDimensionPresets.tagSpacing} style={{ paddingTop: 4 }}>
+                            {renderTags()}
                         </HStack>
 
-                        <HStack spacing={ResDimensionPresets.tagSpacing}>{renderAwsTags()}</HStack>
-                    </>
-                ) : undefined}
-            </VStack>
-        </FlatContainer>
+                        {experience.awsServicesCategories ? (
+                            <>
+                                <HStack spacing={8} style={{ alignItems: "center" }}>
+                                    <ResText typography={ResTypographyPresets.subscript} wide={false}>
+                                        {"AWS Service Categories"}
+                                    </ResText>
+
+                                    <ResIconButton
+                                        iconColor={ResColorPresets.textSemiDark}
+                                        iconPath={mdiOpenInNew}
+                                        size={24}
+                                        onlyIcon
+                                        onPress={() => {
+                                            window.open(
+                                                "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/amazon-web-services-cloud-platform.html",
+                                                "_blank",
+                                            );
+                                        }}
+                                    />
+                                </HStack>
+
+                                <HStack spacing={ResDimensionPresets.tagSpacing}>{renderAwsTags()}</HStack>
+                            </>
+                        ) : undefined}
+                    </VStack>
+                </GridContainer>
+            ) : undefined}
+        </VStack>
     );
 };

@@ -1,3 +1,6 @@
+import { Experiences } from "../preset-data/Experiences";
+import { Experience } from "./Experience";
+
 export class Employment {
     /**
      * The title of the role.
@@ -25,6 +28,11 @@ export class Employment {
     public readonly description: string;
 
     /**
+     * The experiences corresponding to this employment.
+     */
+    public readonly experiences: Experience[];
+
+    /**
      * The employment's subscript text to be rendered.
      */
     public get subscriptText(): string {
@@ -36,15 +44,26 @@ export class Employment {
         company,
         duration,
         description,
+        experienceNames,
     }: {
         title: string;
         company: string;
         duration: string;
         description: string;
+        experienceNames: string[];
     }) {
         this.title = title;
         this.company = company;
         this.duration = duration;
         this.description = description;
+        this.experiences = [];
+        for (const name of experienceNames) {
+            const experience = Experiences.find((experience) => experience.name === name);
+            if (experience) {
+                this.experiences.push(experience);
+            } else {
+                throw new Error(`No matching experience with name "${name}"`);
+            }
+        }
     }
 }
