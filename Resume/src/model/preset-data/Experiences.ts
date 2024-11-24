@@ -121,7 +121,7 @@ export const Experiences: Experience[] = [
         start: 2021,
         end: 2023,
         description:
-            "An iPad app for architects to streamline the conceptual design process by bridging traditional sketching and advanced BIM workflows. Includes 2D sketching, 2D vector editing, 3D modelling and visualisation, building design, space planning, site planning, sun studies, compliance checks, exporting to other platforms, and more.",
+            "An iPad app for architects that bridges traditional sketching and advanced BIM workflows (i.e. you design buildings in 2D and 3D). Includes 2D sketching, 2D vector editing, 3D modelling and visualisation, building design, space planning, site planning, sun studies, compliance checks, exporting to other platforms, and more.",
         inlineLinks: [
             new InlineLink({
                 text: "Codesign unfortunately closed down in 2024.",

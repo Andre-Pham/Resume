@@ -24,7 +24,7 @@ export const Employments: Employment[] = [
         company: "Cerulean Labs",
         duration: "Jul 2021 - Nov 2023",
         description:
-            "As an iOS developer at Cerulean Labs, I worked on all areas of the iPad Codesign app including the UI, rendering, core application logic, application architecture, data serialisation, and more. Using a diverse range of disciplines - such as UI/UX, 2D rendering, 3D rendering, thread management, applied mathematics, and more - I developed features including many of the 3D editing tools, 2D vector editing tools, the 2D vector rendering engine, and much more.",
+            "As an iOS developer at Cerulean Labs, I worked on all areas of the iPad Codesign app including the UI, rendering, core application logic, application architecture, data serialisation, and more. Using a diverse range of disciplines - such as UI/UX, 2D rendering, 3D rendering, thread management, applied mathematics, and more - I developed features including many of the 3D editing tools, 2D vector editing tools, the 2D vector rendering engine, and more.",
         experienceNames: ["Codesign"],
     }),
 
