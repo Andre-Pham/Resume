@@ -61,7 +61,6 @@ export const CareerProject: React.FC<Props> = ({ experience, style }) => {
                     <div
                         style={{
                             width: 2,
-                            height: "100%",
                             backgroundColor: ResColorPresets.textSemiDark.hexString,
                             borderRadius: 1,
                         }}

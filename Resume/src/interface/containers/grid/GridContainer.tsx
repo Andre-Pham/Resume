@@ -8,6 +8,7 @@ interface Props {
     // - 100px: Columns are 100px each
     // - 50%: Columns take up 50% each
     // - minmax(100px, 1fr): Minimum width of 100 pixels and a maximum width of whatever fraction remains
+    // - min-content auto: Take up minimum width, take up rest of width
     columnSizeRule?: string;
     children: React.ReactNode;
     style?: React.CSSProperties;
