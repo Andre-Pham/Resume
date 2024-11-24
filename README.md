@@ -62,7 +62,7 @@ base: "/",
 Then run in the project directory:
 
 ```
-$ npm run build && cd dist && serve
+$ npm run build && (cd dist && serve)
 ```
 
 ## Nuke
