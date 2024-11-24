@@ -1,6 +1,7 @@
 import { Link } from "../../services/types/Link";
 import { DownloadFile } from "../../services/types/DownloadFile";
 import { InlineLink } from "../../services/types/InlineLink";
+import { AwsServiceCategory } from "./AwsServiceCategory";
 
 export class Experience {
     /**
@@ -124,7 +125,9 @@ export class Experience {
         this.files = files;
         this.tags = tags;
         this.awsServicesCategories =
-            awsServicesCategories && (this.pairShortAndLongStrings(awsServicesCategories) as AwsServiceCategory[]);
+            awsServicesCategories !== undefined
+                ? (this.pairShortAndLongStrings(awsServicesCategories) as AwsServiceCategory[])
+                : undefined;
     }
 
     private pairShortAndLongStrings(arr: string[]): string[] {

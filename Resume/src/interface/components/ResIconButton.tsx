@@ -44,6 +44,7 @@ export const ResIconButton: React.FC<Props> = ({
         setTouched(false);
     };
 
+    const renderingImage = fileName !== null && fileName !== undefined;
     return (
         <button
             onMouseDown={handleMouseDown}
@@ -57,8 +58,8 @@ export const ResIconButton: React.FC<Props> = ({
                 padding: 0,
                 borderRadius: "50px",
                 backgroundColor: color?.hexString ?? "transparent",
-                width: onlyIcon ? (fileName ? 0 : undefined) : size,
-                height: onlyIcon ? (fileName ? 0 : undefined) : size,
+                width: onlyIcon ? (renderingImage ? 0 : undefined) : size,
+                height: onlyIcon ? (renderingImage ? 0 : undefined) : size,
                 justifyContent: "center",
                 display: "flex",
                 border: "none",

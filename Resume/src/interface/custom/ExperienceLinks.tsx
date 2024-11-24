@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const ExperienceLinks: React.FC<Props> = ({ experience }) => {
-    if (!experience.links) {
+    if (experience.links.length === 0) {
         return undefined;
     }
     return experience.links.map((link) => (

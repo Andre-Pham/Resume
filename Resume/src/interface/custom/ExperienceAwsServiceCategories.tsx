@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const ExperienceAwsServiceCategories: React.FC<Props> = ({ experience }) => {
-    if (!experience.awsServicesCategories) {
+    if (experience.awsServicesCategories === undefined || experience.awsServicesCategories.length === 0) {
         return undefined;
     }
     return (

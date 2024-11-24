@@ -1,4 +1,4 @@
-type AwsServiceCategory =
+export type AwsServiceCategory =
     | "Analytics"
     | "Application Integration"
     | "Blockchain"

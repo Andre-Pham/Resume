@@ -59,7 +59,7 @@ export class Employment {
         this.experiences = [];
         for (const name of experienceNames) {
             const experience = Experiences.find((experience) => experience.name === name);
-            if (experience) {
+            if (experience !== undefined) {
                 this.experiences.push(experience);
             } else {
                 throw new Error(`No matching experience with name "${name}"`);

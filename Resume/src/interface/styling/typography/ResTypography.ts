@@ -106,31 +106,31 @@ export class ResTypography {
     }
 
     public withColor(color: ResColor | undefined): this {
-        const clone = this.clone()
+        const clone = this.clone();
         clone.colorObject = color;
         return clone;
     }
 
     public withWeight(weight: ResFontWeight): this {
-        const clone = this.clone()
+        const clone = this.clone();
         clone.weight = weight;
         return clone;
     }
 
     public withItalic(italic: boolean): this {
-        const clone = this.clone()
+        const clone = this.clone();
         clone.italic = italic;
         return clone;
     }
 
     public withUnderline(underline: boolean): this {
-        const clone = this.clone()
+        const clone = this.clone();
         clone.underlined = underline;
         return clone;
     }
 
     public withLineOut(lineOut: boolean): this {
-        const clone = this.clone()
+        const clone = this.clone();
         clone.linedOut = lineOut;
         return clone;
     }
@@ -148,6 +148,6 @@ export class ResTypography {
     }
 
     private clone(): this {
-        return Object.assign(Object.create(Object.getPrototypeOf(this)), this);
+        return Object.assign(Object.create(Object.getPrototypeOf(this) as object | null), this);
     }
 }

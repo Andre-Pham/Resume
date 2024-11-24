@@ -23,13 +23,17 @@ export const ResLinkButton: React.FC<Props> = ({
     onPress,
 }) => {
     const [isHovered, setIsHovered] = useState(false);
-    const textColor = isHovered && hoverColor ? hoverColor : typography.colorObject;
+    const textColor = isHovered ? hoverColor : typography.colorObject;
     const linkButtonTypography = typography.withUnderline(true).withColor(textColor);
     return (
         <button
             onClick={!disabled ? onPress : undefined}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseEnter={() => {
+                setIsHovered(true);
+            }}
+            onMouseLeave={() => {
+                setIsHovered(false);
+            }}
             style={{
                 all: "unset",
                 opacity: disabled ? 0.5 : 1,
