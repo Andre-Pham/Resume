@@ -333,3 +333,56 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     </React.StrictMode>,
 );
 ```
+
+#### Setting Up Custom Domain
+
+On GitHub, open the repo:
+
+1. Go to Settings, Pages
+2. Under "Custom domain", enter the the custom domain (e.g. "www.andrepham.com") and click Save
+
+Go to [Managing a custom domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+
+1. For each `A` record IP (format: `NNN.NNN.NNN.NNN`)
+2. Go to Squarespace, your domain, DNS Settings, DNS Settings, Custom records
+3. Click ADD RECORD
+    * Host: @
+    * Type: A
+    * Priority: -
+    * Data: \<insert record ip>
+
+There should be 4 records at this point.
+
+Delete any "Squarespace Defaults" records.
+
+Click ADD RECORD again.
+
+* Host: www
+* Type: CNAME
+* Priority: -
+* Data: \<user>.github.io (e.g. "andre-pham.github.io")
+
+Go back to GitHub, repo, Settings, Pages. Click "Check again" in the Domain DNS alert (under "Custom domain"). This can take a few hours before it works.
+
+In the project, in the root directory, add a file called `CNAME`. Add the custom domain to it and save it:
+
+```
+www.andrepham.com
+```
+
+In the `package.json` file, add to the predeploy command: `&& cp CNAME dist/`:
+
+```json
+"predeploy": "npm run build && cp CNAME dist/",
+```
+
+In any places that previously referred to the repo name as a path, replace with just `/`. In `vite.config.ts`:
+
+```diff
+- base: "/Resume/",
++ base: "/",
+```
+
+*ctrl+f in project `/Resume/` and replace with `/`*.
+
+That's it.
