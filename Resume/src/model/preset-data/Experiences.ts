@@ -370,6 +370,11 @@ export const Experiences: Experience[] = [
             "You're looking at it 😉. Uses responsive web design and a completely custom UI built with my own components - designed by me to provide information, links, and downloads.",
         links: [
             new Link({
+                label: "Website",
+                shownURL: "AndrePham.com",
+                url: "https://www.andrepham.com/",
+            }),
+            new Link({
                 label: "GitHub",
                 shownURL: "GitHub.com/Andre-Pham/Resume",
                 url: "https://github.com/Andre-Pham/Resume",

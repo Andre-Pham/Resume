@@ -1,5 +1,5 @@
 # Resume
-My digital resume. Try out the latest release on web [here](https://Andre-Pham.github.io/Resume/).
+My digital resume. Try out the latest release on web [here](https://www.andrepham.com/).
 
 Built using React, TypeScript, and Redux. Hosted by GitHub Pages.
 
@@ -362,8 +362,6 @@ Click ADD RECORD again.
 * Priority: -
 * Data: \<user>.github.io (e.g. "andre-pham.github.io")
 
-Go back to GitHub, repo, Settings, Pages. Click "Check again" in the Domain DNS alert (under "Custom domain"). This can take a few hours before it works.
-
 In the project, in the root directory, add a file called `CNAME`. Add the custom domain to it and save it:
 
 ```
@@ -384,5 +382,11 @@ In any places that previously referred to the repo name as a path, replace with 
 ```
 
 *ctrl+f in project `/Resume/` and replace with `/`*.
+
+Push the changes to the main branch.
+
+Go back to GitHub, repo, Settings, Pages. Click "Check again" in the Domain DNS alert (under "Custom domain"). This can take a few hours before it works. Like, up to 24 hours. Remember to tick "Enforce HTTPS".
+
+Redeploy (re-publish) the app.
 
 That's it.
