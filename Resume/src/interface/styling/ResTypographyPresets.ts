@@ -9,11 +9,10 @@ import { ResTypography } from "./typography/ResTypography";
 export class ResTypographyPresets {
     static get pageTitle(): ResTypography {
         return new ResTypography({
-            size: 32,
-            fontFamily: ResFontFamily.gilroy,
+            size: 26,
+            fontFamily: ResFontFamily.circular,
             color: ResColorPresets.textDark,
-            weight: ResFontWeight.black,
-            kerning: 0.2,
+            weight: ResFontWeight.bold,
         });
     }
 
@@ -89,10 +88,9 @@ export class ResTypographyPresets {
     static get sectionTitle(): ResTypography {
         return new ResTypography({
             size: 26,
-            fontFamily: ResFontFamily.gilroy,
+            fontFamily: ResFontFamily.circular,
             color: ResColorPresets.textDark,
-            weight: ResFontWeight.black,
-            kerning: 1.0,
+            weight: ResFontWeight.bold,
         });
     }
 
