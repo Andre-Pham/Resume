@@ -6,8 +6,6 @@ export class ResDimensionPresets {
 
     static readonly screenWidthToRenderPortrait = 980;
 
-    static readonly mainScreenSpacing = 68;
-
     static readonly pageContentSpacing = 24;
 
     static readonly cardColumnSpacing = 20;

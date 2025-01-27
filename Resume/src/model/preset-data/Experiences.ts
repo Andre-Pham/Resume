@@ -253,12 +253,17 @@ export const Experiences: Experience[] = [
         start: 2023,
         end: 2023,
         description:
-            "A Swift package used for serialising and restoring Swift objects. Allows for serialising, persisting, reading, and restoring Swift objects. Provides legacy support. Supports transactions (including rollbacks) and actions from multiple concurrent threads. Powers many of my apps, including my game Everbound (see above).",
+            "A Swift package for serialising, persisting, reading, and restoring Swift objects. Provides legacy support. Supports transactions (including rollbacks) and actions from multiple concurrent threads. Powers many of my apps, including my game Everbound (see above).",
         links: [
             new Link({
                 label: "GitHub",
                 shownURL: "GitHub.com/Andre-Pham/SwiftSerialization",
                 url: "https://github.com/Andre-Pham/SwiftSerialization",
+            }),
+            new Link({
+                label: "Package",
+                shownURL: "SwiftPackageIndex.com/Andre-Pham/SwiftSerialization",
+                url: "https://swiftpackageindex.com/Andre-Pham/SwiftSerialization",
             }),
         ],
         files: [],
@@ -361,13 +366,13 @@ export const Experiences: Experience[] = [
     }),
 
     new Experience({
-        image: null,
+        image: "resume_icon.png",
         name: "Resume",
         projectType: "Personal Project",
         start: 2023,
         end: 2023,
         description:
-            "You're looking at it 😉. Uses responsive web design and a completely custom UI built with my own components - designed by me to provide information, links, and downloads.",
+            "You're looking at it! Uses responsive web design and a completely custom UI built with my own components - designed by me to provide information, links, and downloads.",
         links: [
             new Link({
                 label: "Website",

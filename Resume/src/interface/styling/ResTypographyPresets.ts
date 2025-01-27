@@ -13,6 +13,7 @@ export class ResTypographyPresets {
             fontFamily: ResFontFamily.circular,
             color: ResColorPresets.textDark,
             weight: ResFontWeight.bold,
+            kerning: -0.5,
         });
     }
 

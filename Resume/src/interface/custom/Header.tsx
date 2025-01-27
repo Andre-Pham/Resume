@@ -1,6 +1,5 @@
 import React from "react";
 import { HStack } from "../containers/stacks/HStack";
-import { ResImage } from "../components/ResImage";
 import { VStack } from "../containers/stacks/VStack";
 import { ResText } from "../components/ResText";
 import { ResTypographyPresets } from "../styling/ResTypographyPresets";
@@ -23,13 +22,6 @@ export const Header: React.FC = () => {
 
     return (
         <HStack spacing={16} style={{ alignItems: "center" }}>
-            <ResImage
-                height={64}
-                width={64}
-                fileName="profile_picture.png"
-                style={{ borderRadius: 50, alignSelf: "center" }}
-            />
-
             <VStack spacing={4} style={{ alignSelf: "center" }}>
                 <ResText typography={ResTypographyPresets.pageTitle} verticalWrap={true}>
                     {"Andre Pham"}

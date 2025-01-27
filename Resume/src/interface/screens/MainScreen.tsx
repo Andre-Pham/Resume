@@ -107,7 +107,7 @@ export const MainScreen: React.FC = () => {
 
     return (
         <div style={{ padding: ResDimensionPresets.screenPadding, minWidth: 300 }}>
-            <VStack spacing={ResDimensionPresets.mainScreenSpacing} style={{ alignContent: "center" }}>
+            <VStack spacing={90} style={{ alignContent: "center" }}>
                 <Header />
 
                 <div ref={resizeRef}>
@@ -122,8 +122,8 @@ export const MainScreen: React.FC = () => {
                 spacing={ResDimensionPresets.pageContentSpacing}
                 style={{
                     alignContent: "center",
-                    paddingTop: activeSection === ActiveSection.none ? 0 : ResDimensionPresets.mainScreenSpacing,
-                    paddingBottom: activeSection === ActiveSection.none ? 200 : 0,
+                    paddingTop: activeSection === ActiveSection.none ? 0 : 94,
+                    paddingBottom: activeSection === ActiveSection.none ? 94 : 0,
                 }}
             >
                 {renderPageContent()}
