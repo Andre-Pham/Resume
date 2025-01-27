@@ -22,6 +22,11 @@ export const MainScreen: React.FC = () => {
     const [resizeRef, contentSize] = useResizeObserver();
     const scrollRef = useRef<HTMLDivElement>(null);
     const firstScrollRender = useRef(true);
+    const [shouldRenderPortrait, setShouldRenderPortrait] = useState(Environment.shouldRenderPortrait);
+
+    usePortraitRendering((shouldRenderPortrait: boolean) => {
+        setShouldRenderPortrait(shouldRenderPortrait);
+    });
 
     const [refresh, setRefresh] = useState(false);
     StateManager.colorScheme.subscribe(() => {
@@ -107,7 +112,7 @@ export const MainScreen: React.FC = () => {
 
     return (
         <div style={{ padding: ResDimensionPresets.screenPadding, minWidth: 300 }}>
-            <VStack spacing={90} style={{ alignContent: "center" }}>
+            <VStack spacing={shouldRenderPortrait ? 70 : 90} style={{ alignContent: "center" }}>
                 <Header />
 
                 <div ref={resizeRef}>
