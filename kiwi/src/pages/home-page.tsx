@@ -1,7 +1,7 @@
-import { Button } from "./components/ui";
-import { useTheme } from "./hooks";
+import { Button } from "@/components/ui";
+import { useTheme } from "@/hooks";
 
-export function App() {
+export const HomePage = () => {
   const { theme, toggleTheme } = useTheme();
   return (
     <div>
@@ -10,4 +10,4 @@ export function App() {
       <Button onClick={toggleTheme}>Toggle</Button>
     </div>
   );
-}
+};
