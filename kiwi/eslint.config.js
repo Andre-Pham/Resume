@@ -37,6 +37,10 @@ export default tseslint.config(
     rules: {
       // Ban default exports
       "import/no-default-export": "error",
+      // Error if a union/discriminant isn't fully handled (requires type info)
+      "@typescript-eslint/switch-exhaustiveness-check": "error",
+      // Disallow falling through from one case to the next
+      "no-fallthrough": ["error", { allowEmptyCase: false }],
     },
   },
 
