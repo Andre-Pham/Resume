@@ -6,8 +6,8 @@ export const Employments: Employment[] = [
         company: "Optizmo",
         duration: "Jun 2024 - Present",
         description:
-            "As a fullstack developer at Optizmo, I've practiced and contributed to all aspects of the ACCESS and ZeroDual platforms, including frontend, backend, security, overall system architecture, database design, AWS infrastructure, and more.\nWhilst following agile methodologies and best development practices, I've also practiced skills outside development having taken on rotating roles such as scrum master and review boss.",
-        experienceNames: ["ZeroDual", "ACCESS"],
+            "As a fullstack developer at Optizmo, I've practiced and contributed to all aspects of the DEPLOYER, ACCESS, and ZeroDual platforms, including frontend, backend, security, overall system architecture, database design, AWS infrastructure, CI/CD, and more.\nFollowing agile methodologies and best development practices, I've owned and delivered user stories, performed code reviews, and taken on rotating scrum master and review boss roles.",
+        experienceNames: ["DEPLOYER", "ZeroDual", "ACCESS"],
     }),
 
     new Employment({
@@ -15,7 +15,7 @@ export const Employments: Employment[] = [
         company: "Monash University, Department of Human Centred Computing",
         duration: "Jan 2024 - Present",
         description:
-            "I am the developer for AuslanSpell, having lead and developed all aspects of the app, including the design, features, UI/UX, 3D scene, animation rendering and blending, scene controls, and data persistence.",
+            "I am the developer for AuslanSpell, having lead and developed all aspects of the app, including the design, features, UI/UX, 3D scene, animation rendering and blending, and data persistence.",
         experienceNames: ["AuslanSpell"],
     }),
 

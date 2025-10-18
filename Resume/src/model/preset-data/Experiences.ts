@@ -28,6 +28,20 @@ import { Experience } from "../types/Experience";
 
 export const Experiences: Experience[] = [
     new Experience({
+        image: "",
+        name: "DEPLOYER",
+        projectType: "Paid Position",
+        start: 2024,
+        end: null,
+        description: "",
+        links: [new Link({ label: "Website", shownURL: "Coming soon...", url: "" })],
+        files: [],
+        tags: [],
+        // Breakdown of categories of services used found at AWS Cost Explorer
+        awsServicesCategories: [],
+    }),
+
+    new Experience({
         image: "zerodual_icon.png",
         name: "ZeroDual",
         projectType: "Paid Position",
@@ -199,13 +213,50 @@ export const Experiences: Experience[] = [
             "An iOS app that converts any text prompt into an animated, interactive 3D model performing the prompt in Auslan fingerspelling. Includes playback and camera controls, and various quiz modes.",
         links: [
             new Link({
-                label: "Public GitHub",
-                shownURL: "GitHub.com/Andre-Pham/LimeApp",
-                url: "https://github.com/Andre-Pham/LimeApp",
+                label: "TestFlight",
+                // TODO: Update all URLs to not show the target URL, just have the label
+                shownURL: "TestFlight",
+                // TODO: This link doesn't work (???)
+                url: "https://testflight.apple.com/join/6VxHrL7z",
+
+                // RIGHT NOW I AM:
+                // Creating the deployer card
+
+                // TODO: Also...
+                // Make every page a separate page so I can link them separately
+                // Get rid of "Find my social links below, or explore my qualifications and experience."
+                // Centre the main content
+                // Switch to GitLab font (???)
+                // Make chips stand out less
+                // Make the year (e.g. 2025) dividers slightly smaller and maybe in the centre
             }),
         ],
         files: [],
-        tags: ["Swift", "UIKit", "MVC", "SceneKit"],
+        tags: ["Swift", "UIKit", "MVC", "SceneKit", "Supabase", "SwiftLocal", "XCTest"],
+    }),
+
+    new Experience({
+        image: null,
+        name: "SwiftLocal",
+        projectType: "Personal Project",
+        start: 2025,
+        end: 2025,
+        description:
+            "A Swift package for locally serialising, persisting, and restoring Swift objects. Features legacy support, transactions, and thread-safe concurrency handling. Powers apps such as AuslanSpell (see above).",
+        links: [
+            new Link({
+                label: "GitHub",
+                shownURL: "GitHub.com/Andre-Pham/SwiftLocal",
+                url: "https://github.com/Andre-Pham/SwiftLocal",
+            }),
+            new Link({
+                label: "Package",
+                shownURL: "SwiftPackageIndex.com/Andre-Pham/SwiftLocal",
+                url: "https://swiftpackageindex.com/Andre-Pham/SwiftLocal",
+            }),
+        ],
+        files: [],
+        tags: ["Swift", "SQLite3", "XCTest"],
     }),
 
     new Experience({
@@ -253,7 +304,13 @@ export const Experiences: Experience[] = [
         start: 2023,
         end: 2023,
         description:
-            "A Swift package for serialising, persisting, reading, and restoring Swift objects. Provides legacy support. Supports transactions (including rollbacks) and actions from multiple concurrent threads. Powers many of my apps, including my game Everbound (see above).",
+            "A Swift package for locally serialising, persisting, and restoring Swift objects. Features legacy support, transactions, and thread-safe concurrency handling. Powers apps such as my game Everbound (see above).",
+        inlineLinks: [
+            new InlineLink({
+                text: "Has been succeeded by SwiftLocal, rewritten to use Swift Concurrency.",
+                url: "https://github.com/Andre-Pham/SwiftLocal",
+            }),
+        ],
         links: [
             new Link({
                 label: "GitHub",
