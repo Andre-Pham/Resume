@@ -1,3 +1,3 @@
 export function assertUnreachable(_: never): never {
-  throw new Error("Unexpected code path");
+  throw new Error("Unexpected code path")
 }
