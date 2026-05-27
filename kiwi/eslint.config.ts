@@ -133,6 +133,7 @@ export default tseslint.config(
       curly: ["error", "all"],
       eqeqeq: "error",
       "no-console": "error",
+      "no-case-declarations": "off",
       "no-self-assign": ["error", { props: true }],
       "no-useless-rename": "error",
       "spaced-comment": ["error", "always", { markers: ["/"] }],
