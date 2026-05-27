@@ -1,3 +1,2 @@
 cd kiwi
-npm run format
-git add .
+npx lint-staged
