@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "Cal Sans Text";
-  src: url("/fonts/CalSansText-Variable.woff2") format("woff2");
+  src: url("/fonts/cal-sans-text-variable.woff2") format("woff2");
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("/fonts/PlusJakartaSans[wght].ttf") format("truetype");
+  src: url("/fonts/plus-jakarta-sans-variable.ttf") format("truetype");
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;
@@ -21,7 +21,7 @@
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("/fonts/PlusJakartaSans-Italic[wght].ttf") format("truetype");
+  src: url("/fonts/plus-jakarta-sans-italic-variable.ttf") format("truetype");
   font-weight: 200 800;
   font-style: italic;
   font-display: swap;
