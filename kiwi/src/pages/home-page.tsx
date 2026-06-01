@@ -1,13 +1,16 @@
+import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import { useTheme } from "@/hooks"
 
 export function HomePage() {
-  // const { theme, toggleTheme } = useTheme()
+  const { theme, toggleTheme } = useTheme()
   return (
     <div>
-      {/* <h1>Hello World</h1>
+      <h1>Hello World</h1>
       <p>{theme}</p>
-      <Button onClick={toggleTheme}>Toggle</Button> */}
-      <div className="flex min-h-[80svh] flex-1 flex-col items-center p-6">
+      <Button onClick={toggleTheme}>Toggle</Button>
+
+      <div className="flex min-h-[80svh] flex-1 flex-col items-center p-8">
         <div className="min-h-0 flex-1" />
 
         <div className="w-fit max-w-full">
