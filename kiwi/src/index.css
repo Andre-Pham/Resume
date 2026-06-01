@@ -30,7 +30,7 @@
 @font-face {
   font-family: "GitLab Mono";
   src: url("/fonts/gitlab-mono.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: 100 800;
   font-style: normal;
   font-display: swap;
 }
