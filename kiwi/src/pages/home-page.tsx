@@ -11,10 +11,10 @@ export function HomePage() {
         <div className="min-h-0 flex-1" />
 
         <div className="w-fit max-w-full">
-          <p className="font-plus-jakarta-sans max-w-full text-[32px] leading-9 font-black min-[460px]:hidden">
+          <p className="font-plus-jakarta-sans max-w-full text-[32px] leading-9 font-black min-[500px]:hidden">
             Andre Pham
           </p>
-          <p className="font-plus-jakarta-sans hidden max-w-full leading-none font-black whitespace-nowrap min-[460px]:block min-[460px]:text-[48px] sm:text-[64px]">
+          <p className="font-plus-jakarta-sans hidden max-w-full leading-none font-black whitespace-nowrap min-[500px]:block min-[500px]:text-[48px] md:text-[64px]">
             andre<span className="italic">pham</span>.com
           </p>
           <p className="font-cal-sans-text mt-6 max-w-lg text-[18px] font-medium">
@@ -24,7 +24,7 @@ export function HomePage() {
 
           <Separator className="mt-8" />
 
-          <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-3 md:gap-4">
             <p className="font-gitlab-mono bg-accent w-min rounded-lg px-3 py-1 text-[14px] font-semibold">
               Showcase
             </p>
