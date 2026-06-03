@@ -1,15 +1,19 @@
 import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { Separator } from "@/components/ui/separator"
 import { useTheme } from "@/hooks"
+import { Ellipsis, Moon, Sun } from "lucide-react"
 
 export function HomePage() {
   const { theme, toggleTheme } = useTheme()
   return (
     <div>
-      <h1>Hello World</h1>
-      <p>{theme}</p>
-      <Button onClick={toggleTheme}>Toggle</Button>
-
       <div className="flex min-h-[80svh] flex-1 flex-col items-center p-8">
         <div className="min-h-0 flex-1" />
 
@@ -25,21 +29,63 @@ export function HomePage() {
             Node.js, and React.
           </p>
 
-          <Separator className="mt-8" />
+          <Separator className="mt-8 min-h-0.5" />
 
           <div className="mt-8 flex flex-wrap items-center gap-3 md:gap-4">
-            <p className="font-gitlab-mono bg-accent w-min rounded-lg px-3 py-1 text-[14px] font-semibold">
+            <Button
+              className="font-gitlab-mono font-semibold"
+              variant="secondary"
+              size="sm"
+            >
               Showcase
-            </p>
-            <p className="font-gitlab-mono bg-accent w-min rounded-lg px-3 py-1 text-[14px] font-semibold">
+            </Button>
+
+            <Button
+              className="font-gitlab-mono font-semibold"
+              variant="secondary"
+              size="sm"
+            >
               Career
-            </p>
-            <p className="font-gitlab-mono bg-accent w-min rounded-lg px-3 py-1 text-[14px] font-semibold">
+            </Button>
+
+            <Button
+              className="font-gitlab-mono font-semibold"
+              variant="secondary"
+              size="sm"
+            >
               Socials
-            </p>
-            <p className="font-gitlab-mono bg-accent w-min rounded-lg px-3 py-1 text-[14px] font-semibold">
+            </Button>
+
+            <Button
+              className="font-gitlab-mono font-semibold"
+              variant="secondary"
+              size="sm"
+            >
               Education
-            </p>
+            </Button>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  className="font-gitlab-mono font-semibold"
+                  variant="secondary"
+                  size="sm"
+                >
+                  <Ellipsis />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="start"
+                onCloseAutoFocus={(event) => event.preventDefault()}
+              >
+                <DropdownMenuGroup>
+                  <DropdownMenuItem onClick={toggleTheme}>
+                    {theme === "dark" ? <Moon /> : <Sun />}
+                    Toggle Theme
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
 
