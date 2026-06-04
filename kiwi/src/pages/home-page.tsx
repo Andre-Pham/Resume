@@ -9,6 +9,7 @@ import {
 import { Separator } from "@/components/ui/separator"
 import { useTheme } from "@/hooks"
 import { Ellipsis, Moon, Sun } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export function HomePage() {
   const { theme, toggleTheme } = useTheme()
@@ -45,32 +46,36 @@ export function HomePage() {
               className="font-gitlab-mono font-semibold"
               variant="secondary"
               size="sm"
+              asChild
             >
-              Showcase
+              <Link to="/showcase">Showcase</Link>
             </Button>
 
             <Button
               className="font-gitlab-mono font-semibold"
               variant="secondary"
               size="sm"
+              asChild
             >
-              Career
+              <Link to="/career">Career</Link>
             </Button>
 
             <Button
               className="font-gitlab-mono font-semibold"
               variant="secondary"
               size="sm"
+              asChild
             >
-              Socials
+              <Link to="/socials">Socials</Link>
             </Button>
 
             <Button
               className="font-gitlab-mono font-semibold"
               variant="secondary"
               size="sm"
+              asChild
             >
-              Education
+              <Link to="/education">Education</Link>
             </Button>
 
             <DropdownMenu>

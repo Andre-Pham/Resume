@@ -3,7 +3,13 @@ import { createRoot } from "react-dom/client"
 import { Navigate, Route, HashRouter as Router, Routes } from "react-router-dom"
 import { ThemeProvider } from "./hooks"
 import "./index.css"
-import { HomePage } from "./pages"
+import {
+  CareerPage,
+  EducationPage,
+  HomePage,
+  ShowcasePage,
+  SocialsPage,
+} from "./pages"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -11,6 +17,10 @@ createRoot(document.getElementById("root")!).render(
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/showcase" element={<ShowcasePage />} />
+          <Route path="/career" element={<CareerPage />} />
+          <Route path="/socials" element={<SocialsPage />} />
+          <Route path="/education" element={<EducationPage />} />
 
           {/* Invalid paths redirect to root */}
           <Route path="*" element={<Navigate to="/" />} />

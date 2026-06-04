@@ -1,1 +1,5 @@
+export * from "./career-page"
+export * from "./education-page"
 export * from "./home-page"
+export * from "./showcase-page"
+export * from "./socials-page"
