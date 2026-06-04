@@ -12,15 +12,16 @@ import { Ellipsis, Moon, Sun } from "lucide-react"
 
 export function HomePage() {
   const { theme, toggleTheme } = useTheme()
+
   return (
-    <div>
+    <div className="bg-background">
       <div className="flex min-h-[80svh] flex-1 flex-col items-center p-8">
         <div className="min-h-0 flex-1" />
 
         <div className="w-fit max-w-full">
           <img
             src="/computer-frog.png"
-            alt="Cool frog profile picture"
+            alt="Cool frog profile"
             className="h-auto w-14 max-w-full rounded-full min-[500px]:w-16 md:w-22"
           />
 
