@@ -18,16 +18,24 @@ export function HomePage() {
         <div className="min-h-0 flex-1" />
 
         <div className="w-fit max-w-full">
-          <p className="font-plus-jakarta-sans max-w-full text-[32px] leading-9 font-black min-[500px]:hidden">
-            Andre Pham
-          </p>
-          <p className="font-plus-jakarta-sans hidden max-w-full leading-none font-black whitespace-nowrap min-[500px]:block min-[500px]:text-[48px] md:text-[64px]">
-            andre<span className="italic">pham</span>.com
-          </p>
-          <p className="font-cal-sans-text mt-6 max-w-lg text-[18px] font-medium">
-            I’m a mobile and full stack developer who specialises in native iOS,
-            Node.js, and React.
-          </p>
+          <img
+            src="/computer-frog.png"
+            alt="Cool frog profile picture"
+            className="h-auto w-14 max-w-full rounded-full min-[500px]:w-16 md:w-22"
+          />
+
+          <div className="mt-6">
+            <p className="font-plus-jakarta-sans max-w-full text-[32px] leading-9 font-black min-[500px]:hidden">
+              Andre Pham
+            </p>
+            <p className="font-plus-jakarta-sans hidden max-w-full leading-none font-black whitespace-nowrap min-[500px]:block min-[500px]:text-[48px] md:text-[64px]">
+              andre<span className="italic">pham</span>.com
+            </p>
+            <p className="font-cal-sans-text mt-6 max-w-lg text-[18px] font-medium">
+              I’m a mobile and full stack developer who specialises in native
+              iOS, Node.js, and React.
+            </p>
+          </div>
 
           <Separator className="mt-8 min-h-0.5" />
 
@@ -89,7 +97,8 @@ export function HomePage() {
           </div>
         </div>
 
-        <div className="h-6" />
+        <div className="h-12" />
+
         <div className="min-h-0 flex-1" />
       </div>
     </div>
