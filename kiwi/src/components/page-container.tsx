@@ -1,7 +1,8 @@
 import { MobileNav } from "@/components/mobile-nav"
 import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
-import { SunMedium } from "lucide-react"
+import { useTheme } from "@/hooks"
+import { Moon, SunMedium } from "lucide-react"
 import type { ReactNode } from "react"
 import { Link } from "react-router-dom"
 
@@ -13,6 +14,8 @@ const NAV_ITEMS = [
 ]
 
 export function PageContainer({ children }: { children: ReactNode }) {
+  const { theme, toggleTheme } = useTheme()
+
   return (
     <div className="bg-background">
       <div className="bg-background sticky top-0 z-50 flex flex-col items-center p-6">
@@ -37,7 +40,17 @@ export function PageContainer({ children }: { children: ReactNode }) {
                 </Link>
               ))}
 
-              <SunMedium className="size-4" />
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="cursor-pointer"
+              >
+                {theme === "dark" ? (
+                  <Moon className="size-4" />
+                ) : (
+                  <SunMedium className="size-4" />
+                )}
+              </button>
             </div>
 
             <MobileNav items={NAV_ITEMS} className="sm:hidden" />
