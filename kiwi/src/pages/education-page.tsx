@@ -6,55 +6,22 @@ export function EducationPage() {
   return (
     <div className="bg-background">
       <div className="flex flex-col items-center p-8">
-        <div className="text-muted-foreground flex cursor-pointer items-end gap-2">
-          <p className="font-plus-jakarta-san max-w-full text-[26px] leading-none font-bold whitespace-nowrap">
-            andre<span className="italic">pham</span>.com
-          </p>
-
-          {/* <ChevronDown className="size-5 stroke-3" /> */}
+        <div className="">
+          <div className="flex items-center gap-8">
+            <p className="font-plus-jakarta-san text-[18px] font-semibold">
+              Andre Pham
+            </p>
+            <Separator orientation="vertical" className="min-h-6" />
+            <div className="flex items-center gap-6">
+              <p className="text-[15px]">Showcase</p>
+              <p className="text-[15px]">Career</p>
+              <p className="text-[15px]">Socials</p>
+              <p className="text-[15px]">Education</p>
+            </div>
+          </div>
         </div>
 
-        {/* TODO: On small screens, make this a grid with equal sized buttons */}
-        {/* TODO: Make these shown/hidden based on if the above div with the chevron is toggled */}
-        {/* <div className="mt-4 flex flex-wrap items-center justify-center gap-3 md:gap-4">
-          <Button
-            className="font-gitlab-mono font-semibold"
-            variant="secondary"
-            size="sm"
-            asChild
-          >
-            <Link to="/education">Home</Link>
-          </Button>
-
-          <Button
-            className="font-gitlab-mono font-semibold"
-            variant="secondary"
-            size="sm"
-            asChild
-          >
-            <Link to="/showcase">Showcase</Link>
-          </Button>
-
-          <Button
-            className="font-gitlab-mono font-semibold"
-            variant="secondary"
-            size="sm"
-            asChild
-          >
-            <Link to="/career">Career</Link>
-          </Button>
-
-          <Button
-            className="font-gitlab-mono font-semibold"
-            variant="secondary"
-            size="sm"
-            asChild
-          >
-            <Link to="/socials">Socials</Link>
-          </Button>
-        </div> */}
-
-        <div className="mt-14">
+        <div className="mt-16">
           <p className="font-plus-jakarta-san max-w-full text-[48px] leading-none font-bold whitespace-nowrap sm:text-[64px]">
             Education
           </p>
