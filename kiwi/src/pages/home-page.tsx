@@ -24,7 +24,7 @@ export function HomePage() {
           <img
             src="/computer-frog.png"
             alt="Cool frog profile"
-            className="h-auto w-14 max-w-full rounded-full min-[500px]:w-16 md:w-22"
+            className="bg-muted aspect-square w-14 max-w-full rounded-full object-cover min-[500px]:w-16 md:w-22"
           />
 
           <div className="mt-6">
