@@ -16,7 +16,7 @@ export function EducationPage() {
       <div className="flex flex-col items-center p-8">
         <div className="">
           <div className="flex items-center gap-8">
-            <p className="font-plus-jakarta-san relative z-50 text-[18px] font-semibold">
+            <p className="font-plus-jakarta-sans relative z-50 text-[18px] font-semibold">
               Andre Pham
             </p>
             <Separator
@@ -36,13 +36,13 @@ export function EducationPage() {
         </div>
 
         <div className="mt-16">
-          <p className="font-plus-jakarta-san max-w-full text-[48px] leading-none font-bold whitespace-nowrap sm:text-[64px]">
+          <p className="font-cal-sans-text max-w-full text-[48px] leading-none font-bold tracking-tighter whitespace-nowrap sm:text-[64px]">
             Education
           </p>
         </div>
 
         <div className="mt-16 w-full max-w-xl">
-          <p className="font-plus-jakarta-san text-[26px] font-semibold">
+          <p className="font-cal-sans-text text-[26px] font-medium tracking-tight">
             Bachelor of Software Engineering (Honours)
           </p>
           <p className="font-gitlab-mono text-muted-foreground mt-2 text-[15px] font-normal">
@@ -52,7 +52,7 @@ export function EducationPage() {
         </div>
 
         <div className="mt-6 w-full max-w-xl">
-          <p className="font-plus-jakarta-san text-[26px] font-semibold">
+          <p className="font-cal-sans-text text-[26px] font-medium tracking-tight">
             First Class Honours
           </p>
           <p className="font-gitlab-mono text-muted-foreground mt-2 text-[15px] font-normal">
@@ -70,7 +70,7 @@ export function EducationPage() {
         </div>
 
         <div className="mt-6 w-full max-w-xl">
-          <p className="font-plus-jakarta-san text-[26px] font-semibold">
+          <p className="font-cal-sans-text text-[26px] font-medium tracking-tight">
             Achievements
           </p>
           <p className="font-gitlab-mono text-muted-foreground mt-2 text-[15px] font-normal">
@@ -94,7 +94,7 @@ export function EducationPage() {
         </div>
 
         <div className="mt-6 w-full max-w-xl">
-          <p className="font-plus-jakarta-san text-[26px] font-semibold">
+          <p className="font-cal-sans-text text-[26px] font-medium tracking-tight">
             Academic Transcript
           </p>
           <p className="font-gitlab-mono mt-2 text-[15px] font-normal underline underline-offset-2">

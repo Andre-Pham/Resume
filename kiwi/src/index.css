@@ -43,6 +43,7 @@
   --font-cal-sans-text:
     "Cal Sans Text", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: var(--font-cal-sans-text);
   --font-plus-jakarta-sans:
     "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
