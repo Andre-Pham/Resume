@@ -58,7 +58,7 @@ export function PageContainer({ children }: { children: ReactNode }) {
         </div>
       </div>
 
-      <div className="flex flex-col items-center p-8 pt-0">{children}</div>
+      <div className="flex flex-col items-center px-8 pb-12">{children}</div>
     </div>
   )
 }
