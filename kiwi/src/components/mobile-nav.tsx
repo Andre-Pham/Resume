@@ -112,7 +112,18 @@ export function MobileNav({
                   onClick={toggleTheme}
                   className="cursor-pointer text-left"
                 >
-                  <Text variant="h3">Toggle Theme</Text>
+                  <Text variant="h3">
+                    Toggle Theme Toggle ThemeToggle Theme Toggle ThemeToggle
+                    Theme Toggle ThemeToggle Theme Toggle ThemeToggle Theme
+                    Toggle ThemeToggle Theme Toggle ThemeToggle Theme Toggle
+                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
+                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
+                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
+                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
+                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
+                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
+                    ThemeToggle Theme Toggle Theme
+                  </Text>
                 </button>
               </div>
             </div>
