@@ -1,7 +1,7 @@
 import { Text } from "@/components/ui/text"
 import { useTheme } from "@/hooks"
 import { cn } from "@/lib/utils"
-import * as React from "react"
+import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 import { Link } from "react-router-dom"
 import { Button } from "./ui/button"
@@ -13,10 +13,10 @@ export function MobileNav({
   items: { href: string; label: string }[]
   className?: string
 }) {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
   const { toggleTheme } = useTheme()
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!open) {
       return
     }
@@ -111,7 +111,10 @@ export function MobileNav({
                 <div className="flex flex-col items-start gap-3">
                   <button
                     type="button"
-                    onClick={toggleTheme}
+                    onClick={() => {
+                      toggleTheme()
+                      setOpen(false)
+                    }}
                     className="cursor-pointer text-left"
                   >
                     <Text variant="h3">Toggle Theme</Text>
