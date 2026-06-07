@@ -15,8 +15,8 @@ const NAV_ITEMS = [
 export function PageContainer({ children }: { children: ReactNode }) {
   return (
     <div className="bg-background">
-      <div className="flex flex-col items-center p-8">
-        <div className="">
+      <div className="bg-background sticky top-0 z-50 flex flex-col items-center p-6">
+        <div>
           <div className="flex items-center gap-8">
             <Link to="/">
               <Text variant="h5" className="relative z-50">
@@ -42,9 +42,9 @@ export function PageContainer({ children }: { children: ReactNode }) {
             <MobileNav items={NAV_ITEMS} className="sm:hidden" />
           </div>
         </div>
-
-        {children}
       </div>
+
+      <div className="flex flex-col items-center p-8 pt-0">{children}</div>
     </div>
   )
 }

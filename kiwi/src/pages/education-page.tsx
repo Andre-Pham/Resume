@@ -7,7 +7,7 @@ import { Download } from "lucide-react"
 export function EducationPage() {
   return (
     <PageContainer>
-      <div className="mt-16">
+      <div className="mt-12">
         <Text variant="display">Education</Text>
       </div>
 
