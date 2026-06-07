@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { ArrowUpRight, Download } from "lucide-react"
+import { Download } from "lucide-react"
 
 export function EducationPage() {
   return (
@@ -85,22 +85,6 @@ export function EducationPage() {
           <p className="font-gitlab-mono mt-2 text-[14px] font-normal underline underline-offset-2">
             Reading GPA
           </p>
-          {/* <div className="mt-4 flex flex-col items-start gap-3">
-            <Button
-              className="h-7 rounded-lg text-xs"
-              variant="secondary"
-              size="sm"
-            >
-              Reading WAM <ArrowUpRight />
-            </Button>
-            <Button
-              className="h-7 rounded-lg text-xs"
-              variant="secondary"
-              size="sm"
-            >
-              Reading GPA <ArrowUpRight />
-            </Button>
-          </div> */}
           <Separator className="mt-7" />
         </div>
 
@@ -144,21 +128,13 @@ export function EducationPage() {
           <p className="font-plus-jakarta-san text-[22px] font-semibold">
             Academic Transcript
           </p>
+          <p className="font-gitlab-mono mt-2 text-[14px] font-normal underline underline-offset-2">
+            Online academic transcript
+          </p>
+          <p className="font-gitlab-mono mt-2 text-[14px] font-normal underline underline-offset-2">
+            What’s an academic transcript?
+          </p>
           <div className="mt-4 flex flex-col items-start gap-3">
-            <Button
-              className="h-7 rounded-lg text-xs"
-              variant="secondary"
-              size="sm"
-            >
-              Online Academic Transcript <ArrowUpRight />
-            </Button>
-            <Button
-              className="h-7 rounded-lg text-xs"
-              variant="secondary"
-              size="sm"
-            >
-              What’s an Academic Transcript? <ArrowUpRight />
-            </Button>
             <Button
               className="h-7 rounded-lg text-xs"
               variant="secondary"
