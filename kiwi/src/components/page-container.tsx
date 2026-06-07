@@ -19,41 +19,37 @@ export function PageContainer() {
     <div className="bg-background">
       <div className="bg-background sticky top-0 z-50 flex flex-col items-center p-6">
         <div className="bg-background/60 absolute top-full h-0.5 w-full backdrop-blur-[256px]" />
-        <div>
-          <div className="flex items-center gap-8">
-            <Link to="/">
-              <Text variant="h5" className="relative z-50">
-                Andre Pham
-              </Text>
-            </Link>
 
-            <Separator
-              orientation="vertical"
-              className="relative z-50 min-h-6"
-            />
+        <div className="flex items-center gap-8">
+          <Link to="/">
+            <Text variant="h5" className="relative z-50">
+              Andre Pham
+            </Text>
+          </Link>
 
-            <div className="hidden items-center gap-6 sm:flex">
-              {NAV_ITEMS.map((item) => (
-                <Link key={item.href} to={item.href}>
-                  <Text>{item.label}</Text>
-                </Link>
-              ))}
+          <Separator orientation="vertical" className="relative z-50 min-h-6" />
 
-              <button
-                type="button"
-                onClick={toggleTheme}
-                className="cursor-pointer"
-              >
-                {theme === "dark" ? (
-                  <Moon className="size-4" />
-                ) : (
-                  <SunMedium className="size-4" />
-                )}
-              </button>
-            </div>
+          <div className="hidden items-center gap-6 sm:flex">
+            {NAV_ITEMS.map((item) => (
+              <Link key={item.href} to={item.href}>
+                <Text>{item.label}</Text>
+              </Link>
+            ))}
 
-            <MobileNav items={NAV_ITEMS} className="sm:hidden" />
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="cursor-pointer"
+            >
+              {theme === "dark" ? (
+                <Moon className="size-4" />
+              ) : (
+                <SunMedium className="size-4" />
+              )}
+            </button>
           </div>
+
+          <MobileNav items={NAV_ITEMS} className="sm:hidden" />
         </div>
       </div>
 
