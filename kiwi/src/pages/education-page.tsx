@@ -1,6 +1,14 @@
+import { MobileNav } from "@/components/mobile-nav"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Download, SunMedium } from "lucide-react"
+
+const NAV_ITEMS = [
+  { href: "/showcase", label: "Showcase" },
+  { href: "/career", label: "Career" },
+  { href: "/socials", label: "Socials" },
+  { href: "/education", label: "Education" },
+]
 
 export function EducationPage() {
   return (
@@ -8,17 +16,22 @@ export function EducationPage() {
       <div className="flex flex-col items-center p-8">
         <div className="">
           <div className="flex items-center gap-8">
-            <p className="font-plus-jakarta-san text-[18px] font-semibold">
+            <p className="font-plus-jakarta-san relative z-50 text-[18px] font-semibold">
               Andre Pham
             </p>
-            <Separator orientation="vertical" className="min-h-6" />
-            <div className="flex items-center gap-6">
-              <p className="text-[15px]">Showcase</p>
-              <p className="text-[15px]">Career</p>
-              <p className="text-[15px]">Socials</p>
-              <p className="text-[15px]">Education</p>
+            <Separator
+              orientation="vertical"
+              className="relative z-50 min-h-6"
+            />
+            <div className="hidden items-center gap-6 sm:flex">
+              {NAV_ITEMS.map((item) => (
+                <p key={item.href} className="text-[15px]">
+                  {item.label}
+                </p>
+              ))}
               <SunMedium className="size-4" />
             </div>
+            <MobileNav items={NAV_ITEMS} className="sm:hidden" />
           </div>
         </div>
 
