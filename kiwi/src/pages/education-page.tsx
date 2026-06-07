@@ -1,7 +1,9 @@
 import { MobileNav } from "@/components/mobile-nav"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import { Text } from "@/components/ui/text"
 import { Download, SunMedium } from "lucide-react"
+import { Link } from "react-router-dom"
 
 const NAV_ITEMS = [
   { href: "/showcase", label: "Showcase" },
@@ -16,35 +18,37 @@ export function EducationPage() {
       <div className="flex flex-col items-center p-8">
         <div className="">
           <div className="flex items-center gap-8">
-            <p className="font-plus-jakarta-sans relative z-50 text-[18px] font-semibold">
-              Andre Pham
-            </p>
+            <Link to="/">
+              <Text variant="h5" className="relative z-50">
+                Andre Pham
+              </Text>
+            </Link>
+
             <Separator
               orientation="vertical"
               className="relative z-50 min-h-6"
             />
+
             <div className="hidden items-center gap-6 sm:flex">
               {NAV_ITEMS.map((item) => (
-                <p key={item.href} className="text-[15px]">
-                  {item.label}
-                </p>
+                <Link key={item.href} to={item.href}>
+                  <Text>{item.label}</Text>
+                </Link>
               ))}
+
               <SunMedium className="size-4" />
             </div>
+
             <MobileNav items={NAV_ITEMS} className="sm:hidden" />
           </div>
         </div>
 
         <div className="mt-16">
-          <p className="font-cal-sans-text max-w-full text-[48px] leading-none font-bold tracking-tighter whitespace-nowrap sm:text-[64px]">
-            Education
-          </p>
+          <Text variant="display">Education</Text>
         </div>
 
         <div className="mt-16 w-full max-w-xl">
-          <p className="font-cal-sans-text text-[26px] font-medium tracking-tight">
-            Bachelor of Software Engineering (Honours)
-          </p>
+          <Text variant="h3">Bachelor of Software Engineering (Honours)</Text>
           <p className="font-gitlab-mono text-muted-foreground mt-2 text-[15px] font-normal">
             Monash University, Mar 2020 – Nov 2023
           </p>
@@ -52,57 +56,63 @@ export function EducationPage() {
         </div>
 
         <div className="mt-6 w-full max-w-xl">
-          <p className="font-cal-sans-text text-[26px] font-medium tracking-tight">
-            First Class Honours
-          </p>
-          <p className="font-gitlab-mono text-muted-foreground mt-2 text-[15px] font-normal">
+          <Text variant="h3">First Class Honours</Text>
+
+          <Text variant="mono" className="text-muted-foreground mt-2">
             WAM: 88.255
             <br />
             GPA: 3.938
-          </p>
-          <p className="font-gitlab-mono mt-2 text-[15px] font-normal underline underline-offset-2">
+          </Text>
+
+          <Text variant="mono" className="mt-2" underline>
             Reading WAM
-          </p>
-          <p className="font-gitlab-mono mt-2 text-[15px] font-normal underline underline-offset-2">
+          </Text>
+
+          <Text variant="mono" className="mt-2" underline>
             Reading GPA
-          </p>
+          </Text>
+
           <Separator className="mt-7" />
         </div>
 
         <div className="mt-6 w-full max-w-xl">
-          <p className="font-cal-sans-text text-[26px] font-medium tracking-tight">
-            Achievements
-          </p>
-          <p className="font-gitlab-mono text-muted-foreground mt-2 text-[15px] font-normal">
+          <Text variant="h3">Achievements</Text>
+
+          <Text variant="mono" className="text-muted-foreground mt-2">
             I was the Software Engineering Dux, was included in the Faculty of
             Engineering Dean’s Honour List every year of my degree, and have
             received multiple letters of commendation for my high academic
             performance.
-          </p>
+          </Text>
+
           <div className="mt-4 flex flex-col items-start gap-3">
             <Button className="h-7 rounded-lg" variant="secondary" size="sm">
               <Download /> Dux Award
             </Button>
+
             <Button className="h-7 rounded-lg" variant="secondary" size="sm">
               <Download /> Honour List Inclusions
             </Button>
+
             <Button className="h-7 rounded-lg" variant="secondary" size="sm">
               <Download /> Letters of Commendation
             </Button>
           </div>
+
           <Separator className="mt-7" />
         </div>
 
         <div className="mt-6 w-full max-w-xl">
-          <p className="font-cal-sans-text text-[26px] font-medium tracking-tight">
-            Academic Transcript
-          </p>
-          <p className="font-gitlab-mono mt-2 text-[15px] font-normal underline underline-offset-2">
+          <Text variant="h3">Academic Transcript</Text>
+
+          <Text variant="mono" className="mt-2" underline>
             Online academic transcript
-          </p>
-          <p className="font-gitlab-mono mt-2 text-[15px] font-normal underline underline-offset-2">
+          </Text>
+
+          <Text variant="mono" className="mt-2" underline>
             What’s an academic transcript?
-          </p>
+          </Text>
+
           <div className="mt-4 flex flex-col items-start gap-3">
             <Button className="h-7 rounded-lg" variant="secondary" size="sm">
               <Download /> Transcript
