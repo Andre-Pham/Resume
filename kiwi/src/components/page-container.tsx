@@ -3,8 +3,7 @@ import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
 import { useTheme } from "@/hooks"
 import { Moon, SunMedium } from "lucide-react"
-import type { ReactNode } from "react"
-import { Link } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 const NAV_ITEMS = [
   { href: "/showcase", label: "Showcase" },
@@ -13,7 +12,7 @@ const NAV_ITEMS = [
   { href: "/education", label: "Education" },
 ]
 
-export function PageContainer({ children }: { children: ReactNode }) {
+export function PageContainer() {
   const { theme, toggleTheme } = useTheme()
 
   return (
@@ -58,7 +57,9 @@ export function PageContainer({ children }: { children: ReactNode }) {
         </div>
       </div>
 
-      <div className="flex flex-col items-center px-8 pb-12">{children}</div>
+      <div className="flex flex-col items-center px-8 pb-12">
+        <Outlet />
+      </div>
     </div>
   )
 }

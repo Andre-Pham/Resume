@@ -1,4 +1,3 @@
-import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
@@ -6,9 +5,11 @@ import { Download } from "lucide-react"
 
 export function EducationPage() {
   return (
-    <PageContainer>
+    <div>
       <div className="mt-12">
-        <Text variant="display">Education</Text>
+        <Text variant="display" className="text-center">
+          Education
+        </Text>
       </div>
 
       <div className="mt-16 w-full max-w-xl">
@@ -84,6 +85,6 @@ export function EducationPage() {
         </div>
         <Separator className="mt-7" />
       </div>
-    </PageContainer>
+    </div>
   )
 }

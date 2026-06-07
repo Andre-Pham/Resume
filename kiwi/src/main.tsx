@@ -1,6 +1,7 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { Navigate, Route, HashRouter as Router, Routes } from "react-router-dom"
+import { PageContainer } from "./components/page-container"
 import { ThemeProvider } from "./hooks"
 import "./index.css"
 import {
@@ -17,10 +18,13 @@ createRoot(document.getElementById("root")!).render(
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/showcase" element={<ShowcasePage />} />
-          <Route path="/career" element={<CareerPage />} />
-          <Route path="/socials" element={<SocialsPage />} />
-          <Route path="/education" element={<EducationPage />} />
+
+          <Route element={<PageContainer />}>
+            <Route path="/showcase" element={<ShowcasePage />} />
+            <Route path="/career" element={<CareerPage />} />
+            <Route path="/socials" element={<SocialsPage />} />
+            <Route path="/education" element={<EducationPage />} />
+          </Route>
 
           {/* Invalid paths redirect to root */}
           <Route path="*" element={<Navigate to="/" />} />

@@ -3,7 +3,7 @@ import { useTheme } from "@/hooks"
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { Button } from "./ui/button"
 
 export function MobileNav({
@@ -15,6 +15,11 @@ export function MobileNav({
 }) {
   const [open, setOpen] = useState(false)
   const { toggleTheme } = useTheme()
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
 
   useEffect(() => {
     if (!open) {
@@ -95,7 +100,11 @@ export function MobileNav({
                     <Link
                       key={item.href}
                       to={item.href}
-                      onClick={() => setOpen(false)}
+                      onClick={() => {
+                        if (item.href === pathname) {
+                          setOpen(false)
+                        }
+                      }}
                       className="flex items-center gap-2"
                     >
                       <Text variant="h3">{item.label}</Text>
