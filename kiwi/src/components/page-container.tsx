@@ -16,6 +16,7 @@ export function PageContainer({ children }: { children: ReactNode }) {
   return (
     <div className="bg-background">
       <div className="bg-background sticky top-0 z-50 flex flex-col items-center p-6">
+        <div className="bg-background/60 absolute top-full h-0.5 w-full backdrop-blur-[256px]" />
         <div>
           <div className="flex items-center gap-8">
             <Link to="/">
