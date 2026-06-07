@@ -81,7 +81,7 @@ export function MobileNav({
       </Button>
 
       {open && (
-        <div className="bg-background fixed inset-0 z-40 overflow-y-auto sm:hidden">
+        <div className="bg-background fixed inset-0 z-40 overflow-y-auto [-ms-overflow-style:none] [scrollbar-width:none] sm:hidden [&::-webkit-scrollbar]:hidden">
           <div className="flex flex-col gap-12 px-8 pt-26 pb-8">
             <div className="flex flex-col gap-4">
               <Text variant="sub3" className="text-muted-foreground">
