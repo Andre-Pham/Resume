@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { Download } from "lucide-react"
+import { Download, SunMedium } from "lucide-react"
 
 export function EducationPage() {
   return (
@@ -17,6 +17,7 @@ export function EducationPage() {
               <p className="text-[15px]">Career</p>
               <p className="text-[15px]">Socials</p>
               <p className="text-[15px]">Education</p>
+              <SunMedium className="size-4" />
             </div>
           </div>
         </div>
