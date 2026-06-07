@@ -2,6 +2,7 @@ import { Text } from "@/components/ui/text"
 import { useTheme } from "@/hooks"
 import { cn } from "@/lib/utils"
 import * as React from "react"
+import { createPortal } from "react-dom"
 import { Link } from "react-router-dom"
 import { Button } from "./ui/button"
 
@@ -80,56 +81,47 @@ export function MobileNav({
         <Text variant="sub1">Menu</Text>
       </Button>
 
-      {open && (
-        <div className="bg-background fixed inset-0 z-40 overflow-y-auto [-ms-overflow-style:none] [scrollbar-width:none] sm:hidden [&::-webkit-scrollbar]:hidden">
-          <div className="flex flex-col gap-12 px-8 pt-26 pb-8">
-            <div className="flex flex-col gap-4">
-              <Text variant="sub3" className="text-muted-foreground">
-                Menu
-              </Text>
+      {open &&
+        createPortal(
+          <div className="bg-background fixed inset-0 z-40 overflow-y-auto [-ms-overflow-style:none] [scrollbar-width:none] sm:hidden [&::-webkit-scrollbar]:hidden">
+            <div className="flex flex-col gap-12 px-8 pt-26 pb-8">
+              <div className="flex flex-col gap-4">
+                <Text variant="sub3" className="text-muted-foreground">
+                  Menu
+                </Text>
 
-              <div className="flex flex-col gap-3">
-                {items.map((item) => (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    onClick={() => setOpen(false)}
-                    className="flex items-center gap-2"
+                <div className="flex flex-col gap-3">
+                  {items.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      onClick={() => setOpen(false)}
+                      className="flex items-center gap-2"
+                    >
+                      <Text variant="h3">{item.label}</Text>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                <Text variant="sub3" className="text-muted-foreground">
+                  Actions
+                </Text>
+                <div className="flex flex-col items-start gap-3">
+                  <button
+                    type="button"
+                    onClick={toggleTheme}
+                    className="cursor-pointer text-left"
                   >
-                    <Text variant="h3">{item.label}</Text>
-                  </Link>
-                ))}
+                    <Text variant="h3">Toggle Theme</Text>
+                  </button>
+                </div>
               </div>
             </div>
-
-            <div className="flex flex-col gap-4">
-              <Text variant="sub3" className="text-muted-foreground">
-                Actions
-              </Text>
-              <div className="flex flex-col items-start gap-3">
-                <button
-                  type="button"
-                  onClick={toggleTheme}
-                  className="cursor-pointer text-left"
-                >
-                  <Text variant="h3">
-                    Toggle Theme Toggle ThemeToggle Theme Toggle ThemeToggle
-                    Theme Toggle ThemeToggle Theme Toggle ThemeToggle Theme
-                    Toggle ThemeToggle Theme Toggle ThemeToggle Theme Toggle
-                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
-                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
-                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
-                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
-                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
-                    ThemeToggle Theme Toggle ThemeToggle Theme Toggle
-                    ThemeToggle Theme Toggle Theme
-                  </Text>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          globalThis.document.body,
+        )}
     </>
   )
 }
