@@ -4,7 +4,7 @@ import React from "react"
 
 export const typographyStyles = {
   display:
-    "font-cal-sans-text tracking-tighter text-[64px] font-bold leading-none",
+    "font-cal-sans-text tracking-tighter text-[48px] sm:text-[64px] font-bold leading-none",
   h1: "font-inter text-[48px] font-bold leading-13",
   h2: "font-inter text-[36px] font-bold leading-10",
   h3: "font-inter text-[26px] font-semibold leading-8",
