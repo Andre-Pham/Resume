@@ -1,3 +1,4 @@
+import { Text } from "@/components/ui/text"
 import { useTheme } from "@/hooks"
 import { cn } from "@/lib/utils"
 import * as React from "react"
@@ -75,43 +76,43 @@ export function MobileNav({
             />
           </div>
         </div>
-        <span className="flex h-8 items-center text-lg leading-none font-medium">
-          Menu
-        </span>
+
+        <Text variant="sub1">Menu</Text>
       </Button>
 
       {open && (
         <div className="bg-background fixed inset-0 z-40 overflow-y-auto sm:hidden">
-          <div className="flex flex-col gap-12 px-8 pt-24 pb-8">
+          <div className="flex flex-col gap-12 px-8 pt-26 pb-8">
             <div className="flex flex-col gap-4">
-              <div className="text-muted-foreground text-sm font-medium">
+              <Text variant="sub3" className="text-muted-foreground">
                 Menu
-              </div>
+              </Text>
+
               <div className="flex flex-col gap-3">
                 {items.map((item) => (
                   <Link
                     key={item.href}
                     to={item.href}
                     onClick={() => setOpen(false)}
-                    className="flex items-center gap-2 text-2xl font-medium"
+                    className="flex items-center gap-2"
                   >
-                    {item.label}
+                    <Text variant="h3">{item.label}</Text>
                   </Link>
                 ))}
               </div>
             </div>
 
             <div className="flex flex-col gap-4">
-              <div className="text-muted-foreground text-sm font-medium">
+              <Text variant="sub3" className="text-muted-foreground">
                 Actions
-              </div>
-              <div className="flex flex-col gap-3">
+              </Text>
+              <div className="flex flex-col items-start gap-3">
                 <button
                   type="button"
                   onClick={toggleTheme}
-                  className="flex cursor-pointer items-center gap-2 text-2xl font-medium"
+                  className="cursor-pointer text-left"
                 >
-                  Toggle Theme
+                  <Text variant="h3">Toggle Theme</Text>
                 </button>
               </div>
             </div>

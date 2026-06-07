@@ -7,6 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Separator } from "@/components/ui/separator"
+import { Text } from "@/components/ui/text"
 import { useTheme } from "@/hooks"
 import { Ellipsis, Moon, Sun } from "lucide-react"
 import { Link } from "react-router-dom"
@@ -33,10 +34,11 @@ export function HomePage() {
             <p className="font-plus-jakarta-sans hidden max-w-full leading-none font-black whitespace-nowrap min-[500px]:block min-[500px]:text-[48px] md:text-[64px]">
               andre<span className="italic">pham</span>.com
             </p>
-            <p className="font-cal-sans-text mt-6 max-w-lg text-[18px] font-medium tracking-tight">
+
+            <Text variant="lg" className="mt-6 max-w-lg">
               I’m a mobile and full stack developer who specialises in native
               iOS, Node.js, and React.
-            </p>
+            </Text>
           </div>
 
           <Separator className="mt-8" />
