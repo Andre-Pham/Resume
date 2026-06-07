@@ -79,7 +79,13 @@ export function EducationPage() {
             <br />
             GPA: 3.938
           </p>
-          <div className="mt-4 flex flex-col items-start gap-3">
+          <p className="font-gitlab-mono mt-2 text-[14px] font-normal underline underline-offset-2">
+            Reading WAM
+          </p>
+          <p className="font-gitlab-mono mt-2 text-[14px] font-normal underline underline-offset-2">
+            Reading GPA
+          </p>
+          {/* <div className="mt-4 flex flex-col items-start gap-3">
             <Button
               className="h-7 rounded-lg text-xs"
               variant="secondary"
@@ -94,7 +100,7 @@ export function EducationPage() {
             >
               Reading GPA <ArrowUpRight />
             </Button>
-          </div>
+          </div> */}
           <Separator className="mt-7" />
         </div>
 
