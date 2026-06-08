@@ -64,16 +64,20 @@ export function MobileNav({
         <div className="relative flex h-8 w-4 items-center justify-center">
           <div className="relative size-4">
             <span
-              className={cn(
-                "bg-foreground absolute left-0 block h-0.5 w-4 transition-all duration-100",
-                open ? "top-[0.4rem] -rotate-45" : "top-1",
-              )}
+              className="bg-foreground absolute top-0 left-0 block h-0.5 w-4 transition-transform duration-100"
+              style={{
+                transform: open
+                  ? "translateY(7px) rotate(-45deg)"
+                  : "translateY(4px) rotate(0deg)",
+              }}
             />
             <span
-              className={cn(
-                "bg-foreground absolute left-0 block h-0.5 w-4 transition-all duration-100",
-                open ? "top-[0.4rem] rotate-45" : "top-2.5",
-              )}
+              className="bg-foreground absolute top-0 left-0 block h-0.5 w-4 transition-transform duration-100"
+              style={{
+                transform: open
+                  ? "translateY(7px) rotate(45deg)"
+                  : "translateY(10px) rotate(0deg)",
+              }}
             />
           </div>
         </div>
