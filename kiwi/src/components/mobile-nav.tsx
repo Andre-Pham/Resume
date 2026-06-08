@@ -26,10 +26,6 @@ export function MobileNav({
       return
     }
 
-    const root = globalThis.document.documentElement
-    const previousOverflow = root.style.overflow
-    root.style.overflow = "hidden"
-
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setOpen(false)
@@ -48,7 +44,6 @@ export function MobileNav({
     mediaQuery.addEventListener("change", onMediaChange)
 
     return () => {
-      root.style.overflow = previousOverflow
       globalThis.removeEventListener("keydown", onKeyDown)
       mediaQuery.removeEventListener("change", onMediaChange)
     }
@@ -88,7 +83,10 @@ export function MobileNav({
 
       {open &&
         createPortal(
-          <div className="bg-background fixed inset-0 z-40 overflow-y-auto [-ms-overflow-style:none] [scrollbar-width:none] sm:hidden [&::-webkit-scrollbar]:hidden">
+          <div
+            data-mobile-menu
+            className="bg-background fixed inset-0 z-40 overflow-y-auto [-ms-overflow-style:none] [scrollbar-width:none] sm:hidden [&::-webkit-scrollbar]:hidden"
+          >
             <div className="flex flex-col gap-12 px-8 pt-26 pb-8">
               <div className="flex flex-col gap-4">
                 <Text variant="sub3" className="text-muted-foreground">

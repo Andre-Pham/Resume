@@ -16,11 +16,11 @@ export function PageContainer() {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <div className="bg-background">
-      <div className="bg-background sticky top-0 z-50 flex flex-col items-center p-6">
-        <div className="bg-background/60 absolute top-full h-0.5 w-full backdrop-blur-[256px]" />
+    <div className="bg-background min-w-max">
+      <div className="bg-background sticky top-0 z-50">
+        <div className="bg-background/60 absolute inset-x-0 top-full h-0.5 backdrop-blur-[256px]" />
 
-        <div className="flex items-center gap-8">
+        <div className="mx-auto flex w-max items-center gap-8 px-8 py-6 whitespace-nowrap">
           <Link to="/">
             <Text variant="h5" className="relative z-50">
               Andre Pham
@@ -53,7 +53,7 @@ export function PageContainer() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center px-8 pb-12">
+      <div className="flex w-0 min-w-full flex-col items-center px-8 pb-12">
         <Outlet />
       </div>
     </div>

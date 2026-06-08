@@ -179,8 +179,10 @@
     @apply border-border outline-ring/50;
   }
   html {
-    overflow-y: scroll;
     scrollbar-gutter: stable;
+  }
+  html:has([data-mobile-menu]) {
+    overflow: hidden;
   }
   body {
     @apply bg-background text-foreground;
