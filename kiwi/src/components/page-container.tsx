@@ -18,7 +18,7 @@ export function PageContainer() {
   return (
     <div className="bg-background min-w-max">
       <div className="bg-background sticky top-0 z-50">
-        <div className="bg-background/60 absolute inset-x-0 top-full h-0.5 backdrop-blur-[256px]" />
+        <div className="bg-background/20 absolute inset-x-0 top-full h-0.5 backdrop-blur-[256px]" />
 
         <div className="mx-auto flex w-max items-center gap-8 px-8 py-6 whitespace-nowrap">
           <Link to="/">
