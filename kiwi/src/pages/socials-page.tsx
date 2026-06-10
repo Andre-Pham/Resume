@@ -16,7 +16,9 @@ export function SocialsPage() {
           </Text>
 
           <a
-            href="https://www.example.com"
+            href="https://www.linkedin.com/in/andrekypham"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-4 flex items-center gap-2.5"
           >
             <div className="flex size-9 items-center justify-center rounded-full bg-[#0A66C2]">
@@ -33,7 +35,9 @@ export function SocialsPage() {
           </a>
 
           <a
-            href="https://www.example.com"
+            href="https://github.com/andre-pham"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-2.5 flex items-center gap-2.5"
           >
             <div className="flex size-9 items-center justify-center rounded-full bg-[#181717] dark:bg-white">
@@ -55,7 +59,9 @@ export function SocialsPage() {
           </a>
 
           <a
-            href="https://www.example.com"
+            href="https://behance.net/andrepham"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-2.5 flex items-center gap-2.5"
           >
             <div className="flex size-9 items-center justify-center rounded-full bg-[#115efa]">
