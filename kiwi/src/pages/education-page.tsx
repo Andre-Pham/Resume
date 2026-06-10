@@ -14,9 +14,10 @@ export function EducationPage() {
 
       <div className="mt-16 w-full max-w-xl">
         <Text variant="h3">Bachelor of Software Engineering (Honours)</Text>
-        <p className="font-gitlab-mono text-muted-foreground mt-2 text-[15px] font-normal">
+
+        <Text variant="mono" className="text-muted-foreground mt-2">
           Monash University, Mar 2020 – Nov 2023
-        </p>
+        </Text>
         <Separator className="mt-7" />
       </div>
 
