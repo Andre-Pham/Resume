@@ -65,6 +65,7 @@ export function MobileNav({
           <div className="relative size-4">
             <span
               className="bg-foreground absolute top-0 left-0 block h-0.5 w-4 transition-transform duration-100"
+              // Literal transform (not Tailwind) so the animation is smooth across all browsers and platforms
               style={{
                 transform: open
                   ? "translateY(7px) rotate(-45deg)"
@@ -74,6 +75,7 @@ export function MobileNav({
             <span
               className="bg-foreground absolute top-0 left-0 block h-0.5 w-4 transition-transform duration-100"
               style={{
+                // Literal transform (not Tailwind) so the animation is smooth across all browsers and platforms
                 transform: open
                   ? "translateY(7px) rotate(45deg)"
                   : "translateY(10px) rotate(0deg)",
