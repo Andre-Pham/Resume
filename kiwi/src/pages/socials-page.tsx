@@ -15,7 +15,10 @@ export function SocialsPage() {
             </a>
           </Text>
 
-          <div className="mt-4 flex items-center gap-2.5">
+          <a
+            href="https://www.example.com"
+            className="mt-4 flex items-center gap-2.5"
+          >
             <div className="flex size-9 items-center justify-center rounded-full bg-[#0A66C2]">
               <img
                 src="/assets/linkedin.svg"
@@ -27,9 +30,12 @@ export function SocialsPage() {
             <Text variant="mono" underline>
               LinkedIn
             </Text>
-          </div>
+          </a>
 
-          <div className="mt-2.5 flex items-center gap-2.5">
+          <a
+            href="https://www.example.com"
+            className="mt-2.5 flex items-center gap-2.5"
+          >
             <div className="flex size-9 items-center justify-center rounded-full bg-[#181717] dark:bg-white">
               <img
                 src="/assets/github-light.svg"
@@ -46,9 +52,12 @@ export function SocialsPage() {
             <Text variant="mono" underline>
               GitHub
             </Text>
-          </div>
+          </a>
 
-          <div className="mt-2.5 flex items-center gap-2.5">
+          <a
+            href="https://www.example.com"
+            className="mt-2.5 flex items-center gap-2.5"
+          >
             <div className="flex size-9 items-center justify-center rounded-full bg-[#115efa]">
               <img src="/assets/behance.svg" alt="Behance" className="size-6" />
             </div>
@@ -56,7 +65,7 @@ export function SocialsPage() {
             <Text variant="mono" underline>
               Behance
             </Text>
-          </div>
+          </a>
         </div>
       </div>
     </div>
