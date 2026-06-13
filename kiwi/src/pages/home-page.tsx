@@ -22,7 +22,7 @@ export function HomePage() {
 
         <div className="w-fit max-w-full">
           <img
-            src="/computer-frog.png"
+            src="/assets/computer-frog.png"
             alt="Cool frog profile"
             className="bg-muted aspect-square w-14 max-w-full rounded-full object-cover min-[500px]:w-16 md:w-22"
           />

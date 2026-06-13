@@ -8,7 +8,13 @@ export function SocialsPage() {
           Socials
         </Text>
         <div className="mt-16 w-full max-w-xl">
-          <Text variant="h3">
+          <img
+            src="/assets/andre-pham.png"
+            alt="Portrait photo"
+            className="bg-muted h-64 w-full max-w-full rounded-xl object-cover"
+          />
+
+          <Text variant="h3" className="mt-4 wrap-anywhere">
             {"Contact me at "}
             <a href="mailto:andrekypham@gmail.com" className="underline">
               andrekypham@gmail.com
