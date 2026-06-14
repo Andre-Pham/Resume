@@ -18,6 +18,7 @@ export function EducationPage() {
         <Text variant="mono" className="text-muted-foreground mt-2">
           Monash University, Mar 2020 – Nov 2023
         </Text>
+
         <Separator className="mt-7" />
       </div>
 
@@ -84,6 +85,7 @@ export function EducationPage() {
             <Download /> Transcript
           </Button>
         </div>
+
         <Separator className="mt-7" />
       </div>
     </div>
