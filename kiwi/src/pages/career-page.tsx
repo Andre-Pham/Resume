@@ -26,14 +26,14 @@ export function CareerPage() {
         <Accordion type="single" collapsible className="mt-4">
           <AccordionItem value="content">
             <AccordionTrigger>Description</AccordionTrigger>
-            <AccordionContent>...</AccordionContent>
+            <AccordionContent>TODO:</AccordionContent>
           </AccordionItem>
         </Accordion>
 
         <Accordion type="single" collapsible className="mt-3">
           <AccordionItem value="content">
-            <AccordionTrigger>Technologies</AccordionTrigger>
-            <AccordionContent>...</AccordionContent>
+            <AccordionTrigger>Projects</AccordionTrigger>
+            <AccordionContent>TODO:</AccordionContent>
           </AccordionItem>
         </Accordion>
 
@@ -52,14 +52,14 @@ export function CareerPage() {
         <Accordion type="single" collapsible className="mt-4">
           <AccordionItem value="content">
             <AccordionTrigger>Description</AccordionTrigger>
-            <AccordionContent>...</AccordionContent>
+            <AccordionContent>TODO:</AccordionContent>
           </AccordionItem>
         </Accordion>
 
         <Accordion type="single" collapsible className="mt-3">
           <AccordionItem value="content">
-            <AccordionTrigger>Technologies</AccordionTrigger>
-            <AccordionContent>...</AccordionContent>
+            <AccordionTrigger>Projects</AccordionTrigger>
+            <AccordionContent>TODO:</AccordionContent>
           </AccordionItem>
         </Accordion>
 
@@ -87,8 +87,8 @@ export function CareerPage() {
 
         <Accordion type="single" collapsible className="mt-3">
           <AccordionItem value="content">
-            <AccordionTrigger>Technologies</AccordionTrigger>
-            <AccordionContent>...</AccordionContent>
+            <AccordionTrigger>Projects</AccordionTrigger>
+            <AccordionContent>TODO:</AccordionContent>
           </AccordionItem>
         </Accordion>
 
@@ -105,14 +105,14 @@ export function CareerPage() {
         <Accordion type="single" collapsible className="mt-4">
           <AccordionItem value="content">
             <AccordionTrigger>Description</AccordionTrigger>
-            <AccordionContent>...</AccordionContent>
+            <AccordionContent>TODO:</AccordionContent>
           </AccordionItem>
         </Accordion>
 
         <Accordion type="single" collapsible className="mt-3">
           <AccordionItem value="content">
-            <AccordionTrigger>Technologies</AccordionTrigger>
-            <AccordionContent>...</AccordionContent>
+            <AccordionTrigger>Projects</AccordionTrigger>
+            <AccordionContent>TODO:</AccordionContent>
           </AccordionItem>
         </Accordion>
 
@@ -131,14 +131,14 @@ export function CareerPage() {
         <Accordion type="single" collapsible className="mt-4">
           <AccordionItem value="content">
             <AccordionTrigger>Description</AccordionTrigger>
-            <AccordionContent>...</AccordionContent>
+            <AccordionContent>TODO:</AccordionContent>
           </AccordionItem>
         </Accordion>
 
         <Accordion type="single" collapsible className="mt-3">
           <AccordionItem value="content">
-            <AccordionTrigger>Technologies</AccordionTrigger>
-            <AccordionContent>...</AccordionContent>
+            <AccordionTrigger>Projects</AccordionTrigger>
+            <AccordionContent>TODO:</AccordionContent>
           </AccordionItem>
         </Accordion>
 
