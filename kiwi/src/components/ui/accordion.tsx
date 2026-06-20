@@ -17,7 +17,7 @@ function AccordionItem({
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn("overflow-hidden rounded-xl border", className)}
+      className={cn("overflow-hidden", className)}
       {...props}
     />
   )
@@ -33,7 +33,7 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "group/trigger focus-visible:border-ring focus-visible:ring-ring/50 flex w-full flex-1 items-center gap-1.5 p-4 text-left outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 data-[state=open]:pb-2",
+          "group/trigger focus-visible:border-ring focus-visible:ring-ring/50 flex cursor-pointer items-center gap-1.5 text-left outline-none hover:underline hover:underline-offset-2 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50",
           className,
         )}
         {...props}
@@ -54,13 +54,10 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="overflow-hidden"
+      className="mt-2 overflow-hidden border-l-[2px] pl-4"
       {...props}
     >
-      <Text
-        variant="mono"
-        className={cn("text-muted-foreground px-4 pb-4", className)}
-      >
+      <Text variant="mono" className={cn("text-muted-foreground", className)}>
         {children}
       </Text>
     </AccordionPrimitive.Content>
