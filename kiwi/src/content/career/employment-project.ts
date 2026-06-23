@@ -29,10 +29,8 @@ export interface EmploymentProject {
    * Tags associated with the project.
    *
    * Rules for determining tags
-   * ==========================
-   * Every tag must be one of the following:
-   * - A technology I can link to (e.g. React, Swift, PostgreSQL)
-   * - An application's architecture (e.g. MVVM, MVC)
+   * --------------------------
+   * Every tag must be a technology I can link to (e.g. React, Swift, PostgreSQL)
    * Each tag must also be fundamental to building the project.
    * While react-dropzone may have been used in the project to allow files to
    * be dragged in, this does NOT quality as a fundamental nor core technology to

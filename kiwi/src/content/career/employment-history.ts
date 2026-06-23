@@ -15,7 +15,23 @@ export const EmploymentHistory: Employment[] = [
     duration: "Jan 2024 – June 2026",
     description:
       "I am the developer for AuslanSpell, having lead and developed all aspects of the app, including the design, features, UI/UX, 3D scene, animation rendering and blending, and data persistence.",
-    projects: [],
+    projects: [
+      {
+        image: "auslanspell-icon.png",
+        title: "AuslanSpell",
+        description:
+          "An iOS app that converts any text prompt into an animated, interactive 3D model performing the prompt in Auslan fingerspelling. Includes playback and camera controls, and various quiz modes.",
+        links: [
+          {
+            label: "GitHub",
+            shownUrl: "github.com/monash-assistive-tech/auslan-spell-ios",
+            url: "https://github.com/monash-assistive-tech/auslan-spell-ios",
+          },
+        ],
+        tags: ["Swift", "UIKit", "SceneKit", "SwiftLocal", "Zilliax", "XCTest"],
+        awsServicesCategories: [],
+      },
+    ],
   },
   {
     title: "Fullstack Developer",
