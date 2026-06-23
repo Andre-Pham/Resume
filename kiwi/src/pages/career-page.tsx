@@ -62,16 +62,15 @@ export function CareerPage() {
             <AccordionTrigger>
               <div className="flex items-center gap-4">
                 <div className="size-9 rounded-sm border-2 bg-white" />
-                ZeroDual
+                <Text variant="inherit">ZeroDual</Text>
               </div>
             </AccordionTrigger>
             <AccordionContent>
-              <Text variant="mono" className="text-muted-foreground">
+              <Text variant="inherit">
                 A platform that enables law firms to identify and resolve dual
                 representation issues in mass tort and multidistrict litigation
                 (MDL) cases.
               </Text>
-
               <BadgeGroup className="mt-4">
                 <Badge>TypeScript</Badge>
                 <Badge>React</Badge>
@@ -85,16 +84,15 @@ export function CareerPage() {
             <AccordionTrigger>
               <div className="flex items-center gap-4">
                 <div className="size-9 rounded-sm border-2 bg-white" />
-                Access
+                <Text variant="inherit">Access</Text>
               </div>
             </AccordionTrigger>
             <AccordionContent>
-              <Text variant="mono" className="text-muted-foreground">
+              <Text variant="inherit">
                 A platform used by affiliates to manage and process
                 advertiser-provided suppression lists, comply with opt-out
                 requirements, and access analytics for their email campaigns.
               </Text>
-
               <BadgeGroup className="mt-4">
                 <Badge>TypeScript</Badge>
                 <Badge>React</Badge>
@@ -102,19 +100,6 @@ export function CareerPage() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-
-        <div className="mt-4 border-l-2 pl-4">
-          <Text variant="mono" className="text-muted-foreground">
-            A platform that enables law firms to identify and resolve dual
-            representation issues in mass tort and multidistrict litigation
-            (MDL) cases.
-          </Text>
-
-          <BadgeGroup className="mt-4">
-            <Badge>TypeScript</Badge>
-            <Badge>React</Badge>
-          </BadgeGroup>
-        </div>
 
         <Separator className="mt-7" />
       </div>
