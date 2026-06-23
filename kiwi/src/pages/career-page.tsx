@@ -24,17 +24,25 @@ export function CareerPage() {
           Contour, Aug 2025 – Present
         </Text>
 
+        <Text variant="mono" className="text-muted-foreground mt-2.5">
+          TODO: Description
+        </Text>
+
         <Accordion type="single" collapsible className="mt-4">
           <AccordionItem value="content">
-            <AccordionTrigger>Description</AccordionTrigger>
-            <AccordionContent>TODO:</AccordionContent>
-          </AccordionItem>
-        </Accordion>
-
-        <Accordion type="single" collapsible className="mt-3">
-          <AccordionItem value="content">
-            <AccordionTrigger>Projects</AccordionTrigger>
-            <AccordionContent>TODO:</AccordionContent>
+            <AccordionTrigger>
+              <div className="flex items-center gap-4">
+                <div className="size-9 rounded-sm border-2 bg-white" />
+                <Text variant="inherit">Project</Text>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent>
+              <Text variant="inherit">TODO: Description</Text>
+              <BadgeGroup className="mt-4">
+                <Badge>TypeScript</Badge>
+                <Badge>React</Badge>
+              </BadgeGroup>
+            </AccordionContent>
           </AccordionItem>
         </Accordion>
 
@@ -111,61 +119,24 @@ export function CareerPage() {
           Optizmo Technologies, Jun 2024 – Aug 2025
         </Text>
 
-        {/* <Text variant="mono" className="text-muted-foreground mt-2.5">I am the developer for AuslanSpell, having lead and developed all
-              aspects of the app, including the design, features, UI/UX, 3D
-              scene, animation rendering and blending, scene controls, and data
-              persistence.</Text> */}
-
-        {/* <Text variant="md" className="mt-2.5 text-muted-foreground">
-          I am the developer for AuslanSpell, having lead and developed all
-          aspects of the app, including the design, features, UI/UX, 3D scene,
-          animation rendering and blending, scene controls, and data
-          persistence.
+        <Text variant="mono" className="text-muted-foreground mt-2.5">
+          TODO: Description
         </Text>
-
-        <Text variant="md" className="mt-2.5">
-          Projects
-        </Text> */}
 
         <Accordion type="single" collapsible className="mt-4">
           <AccordionItem value="content">
-            <AccordionTrigger>Description</AccordionTrigger>
+            <AccordionTrigger>
+              <div className="flex items-center gap-4">
+                <div className="size-9 rounded-sm border-2 bg-white" />
+                <Text variant="inherit">Project</Text>
+              </div>
+            </AccordionTrigger>
             <AccordionContent>
-              I am the developer for AuslanSpell, having lead and developed all
-              aspects of the app, including the design, features, UI/UX, 3D
-              scene, animation rendering and blending, scene controls, and data
-              persistence.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-
-        <Accordion type="single" collapsible className="mt-3">
-          <AccordionItem value="content">
-            <AccordionTrigger>Projects</AccordionTrigger>
-            <AccordionContent>
-              <div className="flex items-center gap-3">
-                <div className="size-7 rounded-sm bg-red-500" /> ZeroDual
-              </div>
-              <div className="mt-2">
-                A platform that enables law firms to identify and resolve dual
-                representation issues in mass tort and multidistrict litigation
-                (MDL) cases.
-              </div>
-              <div className="mt-2">
-                TypeScript / React / Redux / Material UI / Storybook
-              </div>
-
-              <div className="mt-2 flex items-center gap-3">
-                <div className="size-7 rounded-sm bg-red-500" /> Access
-              </div>
-              <div className="mt-2">
-                A platform used by affiliates to manage and process
-                advertiser-provided suppression lists, comply with opt-out
-                requirements, and access analytics for their email campaigns.
-              </div>
-              <div className="mt-2">
-                TypeScript / React / Redux / Material UI / Storybook
-              </div>
+              <Text variant="inherit">TODO: Description</Text>
+              <BadgeGroup className="mt-4">
+                <Badge>TypeScript</Badge>
+                <Badge>React</Badge>
+              </BadgeGroup>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -180,17 +151,25 @@ export function CareerPage() {
           Cerulean Labs, Jun 2021 – Nov 2023
         </Text>
 
+        <Text variant="mono" className="text-muted-foreground mt-2.5">
+          TODO: Description
+        </Text>
+
         <Accordion type="single" collapsible className="mt-4">
           <AccordionItem value="content">
-            <AccordionTrigger>Description</AccordionTrigger>
-            <AccordionContent>TODO:</AccordionContent>
-          </AccordionItem>
-        </Accordion>
-
-        <Accordion type="single" collapsible className="mt-3">
-          <AccordionItem value="content">
-            <AccordionTrigger>Projects</AccordionTrigger>
-            <AccordionContent>TODO:</AccordionContent>
+            <AccordionTrigger>
+              <div className="flex items-center gap-4">
+                <div className="size-9 rounded-sm border-2 bg-white" />
+                <Text variant="inherit">Project</Text>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent>
+              <Text variant="inherit">TODO: Description</Text>
+              <BadgeGroup className="mt-4">
+                <Badge>TypeScript</Badge>
+                <Badge>React</Badge>
+              </BadgeGroup>
+            </AccordionContent>
           </AccordionItem>
         </Accordion>
 
@@ -206,17 +185,25 @@ export function CareerPage() {
           Department of Human Centred Computing
         </Text>
 
+        <Text variant="mono" className="text-muted-foreground mt-2.5">
+          TODO: Description
+        </Text>
+
         <Accordion type="single" collapsible className="mt-4">
           <AccordionItem value="content">
-            <AccordionTrigger>Description</AccordionTrigger>
-            <AccordionContent>TODO:</AccordionContent>
-          </AccordionItem>
-        </Accordion>
-
-        <Accordion type="single" collapsible className="mt-3">
-          <AccordionItem value="content">
-            <AccordionTrigger>Projects</AccordionTrigger>
-            <AccordionContent>TODO:</AccordionContent>
+            <AccordionTrigger>
+              <div className="flex items-center gap-4">
+                <div className="size-9 rounded-sm border-2 bg-white" />
+                <Text variant="inherit">Project</Text>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent>
+              <Text variant="inherit">TODO: Description</Text>
+              <BadgeGroup className="mt-4">
+                <Badge>TypeScript</Badge>
+                <Badge>React</Badge>
+              </BadgeGroup>
+            </AccordionContent>
           </AccordionItem>
         </Accordion>
 
