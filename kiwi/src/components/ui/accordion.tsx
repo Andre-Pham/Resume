@@ -1,4 +1,4 @@
-import { Text } from "@/components/ui/text"
+import { typographyStyles } from "@/components/ui/text"
 import { cn } from "@/lib/utils"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import { Accordion as AccordionPrimitive } from "radix-ui"
@@ -34,11 +34,12 @@ function AccordionTrigger({
         data-slot="accordion-trigger"
         className={cn(
           "group/trigger focus-visible:border-ring focus-visible:ring-ring/50 flex cursor-pointer items-center gap-2 text-left outline-none hover:underline hover:underline-offset-2 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50",
+          typographyStyles.sub2,
           className,
         )}
         {...props}
       >
-        <Text variant="sub2">{children}</Text>
+        {children}
         <ChevronDown className="pointer-events-none size-4 shrink-0 stroke-3 group-data-[state=open]/trigger:hidden" />
         <ChevronUp className="pointer-events-none size-4 shrink-0 stroke-3 group-data-[state=closed]/trigger:hidden" />
       </AccordionPrimitive.Trigger>
@@ -54,12 +55,14 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="mt-4 overflow-hidden border-l-[2px] pl-4"
+      className={cn(
+        "text-muted-foreground mt-4 overflow-hidden border-l-[2px] pl-4",
+        typographyStyles.mono,
+        className,
+      )}
       {...props}
     >
-      <Text variant="mono" className={cn("text-muted-foreground", className)}>
-        {children}
-      </Text>
+      {children}
     </AccordionPrimitive.Content>
   )
 }

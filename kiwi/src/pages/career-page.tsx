@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Badge, BadgeGroup } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
 
@@ -71,18 +72,10 @@ export function CareerPage() {
                 (MDL) cases.
               </Text>
 
-              <div className="mt-4 flex flex-wrap items-center gap-2.5">
-                <div className="bg-accent px-2 py-1">
-                  <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
-                    TypeScript
-                  </Text>
-                </div>
-                <div className="bg-accent px-2 py-1">
-                  <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
-                    React
-                  </Text>
-                </div>
-              </div>
+              <BadgeGroup className="mt-4">
+                <Badge>TypeScript</Badge>
+                <Badge>React</Badge>
+              </BadgeGroup>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -102,18 +95,10 @@ export function CareerPage() {
                 requirements, and access analytics for their email campaigns.
               </Text>
 
-              <div className="mt-4 flex flex-wrap items-center gap-2.5">
-                <div className="bg-accent px-2 py-1">
-                  <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
-                    TypeScript
-                  </Text>
-                </div>
-                <div className="bg-accent px-2 py-1">
-                  <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
-                    React
-                  </Text>
-                </div>
-              </div>
+              <BadgeGroup className="mt-4">
+                <Badge>TypeScript</Badge>
+                <Badge>React</Badge>
+              </BadgeGroup>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -125,18 +110,10 @@ export function CareerPage() {
             (MDL) cases.
           </Text>
 
-          <div className="mt-4 flex flex-wrap items-center gap-2.5">
-            <div className="bg-accent px-2 py-1">
-              <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
-                TypeScript
-              </Text>
-            </div>
-            <div className="bg-accent px-2 py-1">
-              <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
-                React
-              </Text>
-            </div>
-          </div>
+          <BadgeGroup className="mt-4">
+            <Badge>TypeScript</Badge>
+            <Badge>React</Badge>
+          </BadgeGroup>
         </div>
 
         <Separator className="mt-7" />
