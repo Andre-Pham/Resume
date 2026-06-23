@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/accordion"
 import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
+import { ChevronDown } from "lucide-react"
 
 export function CareerPage() {
   return (
@@ -49,7 +50,69 @@ export function CareerPage() {
           Department of Human Centred Computing
         </Text>
 
-        <Accordion type="single" collapsible className="mt-4">
+        <Text variant="mono" className="text-muted-foreground mt-2.5">
+          I am the developer for AuslanSpell, having lead and developed all
+          aspects of the app, including the design, features, UI/UX, 3D scene,
+          animation rendering and blending, scene controls, and data
+          persistence.
+        </Text>
+
+        <div className="mt-4 flex items-center gap-4">
+          <div className="size-9 rounded-sm border-2 bg-white" />
+          <div className="flex items-center gap-2">
+            <Text
+              variant="sub2"
+              className="cursor-pointer hover:underline hover:underline-offset-2"
+            >
+              ZeroDual
+            </Text>
+            <ChevronDown className="size-4 stroke-3" />
+          </div>
+        </div>
+
+        <div className="mt-4 border-l-2 pl-4">
+          <Text variant="mono" className="text-muted-foreground">
+            A platform that enables law firms to identify and resolve dual
+            representation issues in mass tort and multidistrict litigation
+            (MDL) cases.
+          </Text>
+
+          <div className="mt-4 flex flex-wrap items-center gap-2.5">
+            <div className="bg-accent px-2 py-1">
+              <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
+                TypeScript
+              </Text>
+            </div>
+            <div className="bg-accent px-2 py-1">
+              <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
+                React
+              </Text>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 flex items-center gap-4">
+          <div className="size-9 rounded-sm border-2 bg-white" />
+          <div className="flex items-center gap-2">
+            <Text
+              variant="sub2"
+              className="cursor-pointer hover:underline hover:underline-offset-2"
+            >
+              Access
+            </Text>
+            <ChevronDown className="size-4 stroke-3" />
+          </div>
+        </div>
+
+        <div className="mt-4 border-l-2 pl-4">
+          <Text variant="mono" className="text-muted-foreground">
+            A platform used by affiliates to manage and process
+            advertiser-provided suppression lists, comply with opt-out
+            requirements, and access analytics for their email campaigns.
+          </Text>
+        </div>
+
+        {/* <Accordion type="single" collapsible className="mt-4">
           <AccordionItem value="content">
             <AccordionTrigger>Description</AccordionTrigger>
             <AccordionContent>TODO:</AccordionContent>
@@ -61,7 +124,7 @@ export function CareerPage() {
             <AccordionTrigger>Projects</AccordionTrigger>
             <AccordionContent>TODO:</AccordionContent>
           </AccordionItem>
-        </Accordion>
+        </Accordion> */}
 
         <Separator className="mt-7" />
       </div>
@@ -72,6 +135,22 @@ export function CareerPage() {
         <Text variant="sub1" className="mt-2">
           Optizmo Technologies, Jun 2024 – Aug 2025
         </Text>
+
+        {/* <Text variant="mono" className="text-muted-foreground mt-2.5">I am the developer for AuslanSpell, having lead and developed all
+              aspects of the app, including the design, features, UI/UX, 3D
+              scene, animation rendering and blending, scene controls, and data
+              persistence.</Text> */}
+
+        {/* <Text variant="md" className="mt-2.5 text-muted-foreground">
+          I am the developer for AuslanSpell, having lead and developed all
+          aspects of the app, including the design, features, UI/UX, 3D scene,
+          animation rendering and blending, scene controls, and data
+          persistence.
+        </Text>
+
+        <Text variant="md" className="mt-2.5">
+          Projects
+        </Text> */}
 
         <Accordion type="single" collapsible className="mt-4">
           <AccordionItem value="content">
@@ -88,7 +167,31 @@ export function CareerPage() {
         <Accordion type="single" collapsible className="mt-3">
           <AccordionItem value="content">
             <AccordionTrigger>Projects</AccordionTrigger>
-            <AccordionContent>TODO:</AccordionContent>
+            <AccordionContent>
+              <div className="flex items-center gap-3">
+                <div className="size-7 rounded-sm bg-red-500" /> ZeroDual
+              </div>
+              <div className="mt-2">
+                A platform that enables law firms to identify and resolve dual
+                representation issues in mass tort and multidistrict litigation
+                (MDL) cases.
+              </div>
+              <div className="mt-2">
+                TypeScript / React / Redux / Material UI / Storybook
+              </div>
+
+              <div className="mt-2 flex items-center gap-3">
+                <div className="size-7 rounded-sm bg-red-500" /> Access
+              </div>
+              <div className="mt-2">
+                A platform used by affiliates to manage and process
+                advertiser-provided suppression lists, comply with opt-out
+                requirements, and access analytics for their email campaigns.
+              </div>
+              <div className="mt-2">
+                TypeScript / React / Redux / Material UI / Storybook
+              </div>
+            </AccordionContent>
           </AccordionItem>
         </Accordion>
 

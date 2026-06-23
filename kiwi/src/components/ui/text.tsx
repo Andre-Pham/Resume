@@ -15,10 +15,10 @@ export const typographyStyles = {
   sub2: "font-inter text-[16px] font-medium leading-5",
   sub3: "font-inter text-[14px] font-medium leading-4.5",
   lg: "font-cal-sans-text tracking-tight text-[18px] font-medium leading-6",
-  md: "font-cal-sans-text tracking-tight text-[16px] font-normal leading-5",
+  md: "font-cal-sans-text text-[16px] font-normal leading-5",
   sm: "font-cal-sans-text text-[14px] font-normal leading-4.5",
   xs: "font-cal-sans-text text-[12px] font-normal leading-4",
-  mono: "font-gitlab-mono text-[15px] font-normal",
+  mono: "font-gitlab-mono text-[15px] font-normal leading-5.5",
   inherit: "",
 } as const
 
