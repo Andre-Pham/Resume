@@ -6,7 +6,6 @@ import {
 } from "@/components/ui/accordion"
 import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
-import { ChevronDown } from "lucide-react"
 
 export function CareerPage() {
   return (
@@ -57,18 +56,67 @@ export function CareerPage() {
           persistence.
         </Text>
 
-        <div className="mt-4 flex items-center gap-4">
-          <div className="size-9 rounded-sm border-2 bg-white" />
-          <div className="flex items-center gap-2">
-            <Text
-              variant="sub2"
-              className="cursor-pointer hover:underline hover:underline-offset-2"
-            >
-              ZeroDual
-            </Text>
-            <ChevronDown className="size-4 stroke-3" />
-          </div>
-        </div>
+        <Accordion type="single" collapsible className="mt-4">
+          <AccordionItem value="content">
+            <AccordionTrigger>
+              <div className="flex items-center gap-4">
+                <div className="size-9 rounded-sm border-2 bg-white" />
+                ZeroDual
+              </div>
+            </AccordionTrigger>
+            <AccordionContent>
+              <Text variant="mono" className="text-muted-foreground">
+                A platform that enables law firms to identify and resolve dual
+                representation issues in mass tort and multidistrict litigation
+                (MDL) cases.
+              </Text>
+
+              <div className="mt-4 flex flex-wrap items-center gap-2.5">
+                <div className="bg-accent px-2 py-1">
+                  <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
+                    TypeScript
+                  </Text>
+                </div>
+                <div className="bg-accent px-2 py-1">
+                  <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
+                    React
+                  </Text>
+                </div>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+
+        <Accordion type="single" collapsible className="mt-4">
+          <AccordionItem value="content">
+            <AccordionTrigger>
+              <div className="flex items-center gap-4">
+                <div className="size-9 rounded-sm border-2 bg-white" />
+                Access
+              </div>
+            </AccordionTrigger>
+            <AccordionContent>
+              <Text variant="mono" className="text-muted-foreground">
+                A platform used by affiliates to manage and process
+                advertiser-provided suppression lists, comply with opt-out
+                requirements, and access analytics for their email campaigns.
+              </Text>
+
+              <div className="mt-4 flex flex-wrap items-center gap-2.5">
+                <div className="bg-accent px-2 py-1">
+                  <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
+                    TypeScript
+                  </Text>
+                </div>
+                <div className="bg-accent px-2 py-1">
+                  <Text className="text-muted-foreground font-gitlab-mono text-[13px] font-normal">
+                    React
+                  </Text>
+                </div>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
 
         <div className="mt-4 border-l-2 pl-4">
           <Text variant="mono" className="text-muted-foreground">
@@ -90,41 +138,6 @@ export function CareerPage() {
             </div>
           </div>
         </div>
-
-        <div className="mt-4 flex items-center gap-4">
-          <div className="size-9 rounded-sm border-2 bg-white" />
-          <div className="flex items-center gap-2">
-            <Text
-              variant="sub2"
-              className="cursor-pointer hover:underline hover:underline-offset-2"
-            >
-              Access
-            </Text>
-            <ChevronDown className="size-4 stroke-3" />
-          </div>
-        </div>
-
-        <div className="mt-4 border-l-2 pl-4">
-          <Text variant="mono" className="text-muted-foreground">
-            A platform used by affiliates to manage and process
-            advertiser-provided suppression lists, comply with opt-out
-            requirements, and access analytics for their email campaigns.
-          </Text>
-        </div>
-
-        {/* <Accordion type="single" collapsible className="mt-4">
-          <AccordionItem value="content">
-            <AccordionTrigger>Description</AccordionTrigger>
-            <AccordionContent>TODO:</AccordionContent>
-          </AccordionItem>
-        </Accordion>
-
-        <Accordion type="single" collapsible className="mt-3">
-          <AccordionItem value="content">
-            <AccordionTrigger>Projects</AccordionTrigger>
-            <AccordionContent>TODO:</AccordionContent>
-          </AccordionItem>
-        </Accordion> */}
 
         <Separator className="mt-7" />
       </div>

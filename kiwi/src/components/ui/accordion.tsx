@@ -1,6 +1,6 @@
 import { Text } from "@/components/ui/text"
 import { cn } from "@/lib/utils"
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
+import { ChevronDown, ChevronUp } from "lucide-react"
 import { Accordion as AccordionPrimitive } from "radix-ui"
 import * as React from "react"
 
@@ -33,14 +33,14 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "group/trigger focus-visible:border-ring focus-visible:ring-ring/50 flex cursor-pointer items-center gap-1.5 text-left outline-none hover:underline hover:underline-offset-2 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50",
+          "group/trigger focus-visible:border-ring focus-visible:ring-ring/50 flex cursor-pointer items-center gap-2 text-left outline-none hover:underline hover:underline-offset-2 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50",
           className,
         )}
         {...props}
       >
-        <Text variant="mono">{children}</Text>
-        <ChevronDownIcon className="pointer-events-none size-4 shrink-0 -translate-y-px group-data-[state=open]/trigger:hidden" />
-        <ChevronUpIcon className="pointer-events-none size-4 shrink-0 -translate-y-px group-data-[state=closed]/trigger:hidden" />
+        <Text variant="sub2">{children}</Text>
+        <ChevronDown className="pointer-events-none size-4 shrink-0 stroke-3 group-data-[state=open]/trigger:hidden" />
+        <ChevronUp className="pointer-events-none size-4 shrink-0 stroke-3 group-data-[state=closed]/trigger:hidden" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )
@@ -54,7 +54,7 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="mt-2 overflow-hidden border-l-[2px] pl-4"
+      className="mt-4 overflow-hidden border-l-[2px] pl-4"
       {...props}
     >
       <Text variant="mono" className={cn("text-muted-foreground", className)}>
