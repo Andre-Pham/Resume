@@ -27,12 +27,6 @@ export function CareerPage() {
             {employment.company}
             {", "}
             {employment.duration}
-            {employment.department ? (
-              <>
-                <br />
-                {employment.department}
-              </>
-            ) : null}
           </Text>
 
           <Text variant="mono" className="text-muted-foreground mt-2.5">
