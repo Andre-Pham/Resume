@@ -20,7 +20,7 @@ export interface EmploymentProject {
    * Links associated with the project.
    */
   links: {
-    label: string
+    label: string | undefined
     shownUrl: string
     url: string
   }[]

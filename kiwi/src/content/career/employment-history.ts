@@ -143,7 +143,7 @@ export const EmploymentHistory: Employment[] = [
           "An iPad app for architects that bridges traditional sketching and advanced BIM workflows (i.e. you design buildings in 2D and 3D). Includes 2D sketching, 2D vector editing, 3D modelling and visualisation, building design, space planning, site planning, sun studies, compliance checks, exporting to other platforms, and more.",
         links: [
           {
-            label: "",
+            label: undefined,
             shownUrl: "Codesign unfortunately closed down in 2024.",
             url: "https://www.linkedin.com/posts/codesign-3d_following-an-extensive-internal-review-including-activity-7213547981864632320-On6R/",
           },

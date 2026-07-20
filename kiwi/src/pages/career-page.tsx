@@ -55,7 +55,7 @@ export function CareerPage() {
                   <Text variant="inherit">{project.description}</Text>
                   {project.links.map((link) => (
                     <Text variant="inherit" className="mt-2.5">
-                      {link.label}:{" "}
+                      {link.label ? `${link.label}: ` : null}
                       <a
                         href={link.url}
                         target="_blank"
