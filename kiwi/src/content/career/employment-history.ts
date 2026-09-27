@@ -2,7 +2,7 @@ import type { Employment } from "./employment"
 
 export const EmploymentHistory: Employment[] = [
   {
-    title: "Senior Software Engineer",
+    title: "Senior Fullstack Developer",
     company: "Contour",
     duration: "Aug 2025 – Present",
     description: "",
