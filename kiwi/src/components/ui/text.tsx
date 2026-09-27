@@ -18,7 +18,8 @@ export const typographyStyles = {
   md: "font-cal-sans-text text-[16px] font-normal leading-5",
   sm: "font-cal-sans-text text-[14px] font-normal leading-4.5",
   xs: "font-cal-sans-text text-[12px] font-normal leading-4",
-  mono: "font-gitlab-mono text-[15px] font-normal leading-5.5",
+  mono1: "font-gitlab-mono text-[15px] font-normal leading-5.5",
+  mono2: "font-gitlab-mono text-[13px] font-normal leading-5.5",
   inherit: "",
 } as const
 

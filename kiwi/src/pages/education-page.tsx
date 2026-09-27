@@ -15,7 +15,7 @@ export function EducationPage() {
       <div className="mt-16 w-full max-w-xl">
         <Text variant="h3">Bachelor of Software Engineering (Honours)</Text>
 
-        <Text variant="mono" className="text-muted-foreground mt-2">
+        <Text variant="mono1" className="text-muted-foreground mt-2">
           Monash University, Mar 2020 – Nov 2023
         </Text>
 
@@ -25,17 +25,17 @@ export function EducationPage() {
       <div className="mt-6 w-full max-w-xl">
         <Text variant="h3">First Class Honours</Text>
 
-        <Text variant="mono" className="text-muted-foreground mt-2">
+        <Text variant="mono1" className="text-muted-foreground mt-2">
           WAM: 88.255
           <br />
           GPA: 3.938
         </Text>
 
-        <Text variant="mono" className="mt-2" underline>
+        <Text variant="mono1" className="mt-2" underline>
           Reading WAM
         </Text>
 
-        <Text variant="mono" className="mt-2" underline>
+        <Text variant="mono1" className="mt-2" underline>
           Reading GPA
         </Text>
 
@@ -45,7 +45,7 @@ export function EducationPage() {
       <div className="mt-6 w-full max-w-xl">
         <Text variant="h3">Achievements</Text>
 
-        <Text variant="mono" className="text-muted-foreground mt-2">
+        <Text variant="mono1" className="text-muted-foreground mt-2">
           I was the Software Engineering Dux, was included in the Faculty of
           Engineering Dean’s Honour List every year of my degree, and have
           received multiple letters of commendation for my high academic
@@ -72,11 +72,11 @@ export function EducationPage() {
       <div className="mt-6 w-full max-w-xl">
         <Text variant="h3">Academic Transcript</Text>
 
-        <Text variant="mono" className="mt-2" underline>
+        <Text variant="mono1" className="mt-2" underline>
           Online academic transcript
         </Text>
 
-        <Text variant="mono" className="mt-2" underline>
+        <Text variant="mono1" className="mt-2" underline>
           What’s an academic transcript?
         </Text>
 

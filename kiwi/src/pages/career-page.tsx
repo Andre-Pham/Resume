@@ -9,8 +9,14 @@ import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
 import { EmploymentHistory } from "@/content/career/employment-history"
 import { cn } from "@/lib/utils"
+import { Server } from "lucide-react"
 
 export function CareerPage() {
+  const formatter = new Intl.ListFormat("en-US", {
+    style: "long",
+    type: "conjunction",
+  })
+
   return (
     <div className="w-full max-w-xl">
       <div className="mt-12">
@@ -29,7 +35,7 @@ export function CareerPage() {
             {employment.duration}
           </Text>
 
-          <Text variant="mono" className="text-muted-foreground mt-2.5">
+          <Text variant="mono1" className="text-muted-foreground mt-2.5">
             {employment.description.split("\n").map((paragraph, index) => (
               <>
                 {index > 0 ? <div className="mt-2.5" /> : null}
@@ -74,6 +80,16 @@ export function CareerPage() {
                       ))}
                     </BadgeGroup>
                   ) : null}
+                  {project.awsServices.length > 0 ? (
+                    <div className="mt-4 flex gap-2.5">
+                      <Server className="size-4 shrink-0 translate-y-0.5" />
+                      <Text variant="mono2">
+                        {"AWS services include "}
+                        {formatter.format(project.awsServices)}
+                        {", among others."}
+                      </Text>
+                    </div>
+                  ) : null}
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -90,7 +106,7 @@ export function CareerPage() {
           Contour, Aug 2025 – Present
         </Text>
 
-        <Text variant="mono" className="text-muted-foreground mt-2.5">
+        <Text variant="mono1" className="text-muted-foreground mt-2.5">
           TODO: Description
         </Text>
 
@@ -124,7 +140,7 @@ export function CareerPage() {
           Department of Human Centred Computing
         </Text>
 
-        <Text variant="mono" className="text-muted-foreground mt-2.5">
+        <Text variant="mono1" className="text-muted-foreground mt-2.5">
           I am the developer for AuslanSpell, having lead and developed all
           aspects of the app, including the design, features, UI/UX, 3D scene,
           animation rendering and blending, scene controls, and data
@@ -185,7 +201,7 @@ export function CareerPage() {
           Optizmo Technologies, Jun 2024 – Aug 2025
         </Text>
 
-        <Text variant="mono" className="text-muted-foreground mt-2.5">
+        <Text variant="mono1" className="text-muted-foreground mt-2.5">
           TODO: Description
         </Text>
 
@@ -217,7 +233,7 @@ export function CareerPage() {
           Cerulean Labs, Jun 2021 – Nov 2023
         </Text>
 
-        <Text variant="mono" className="text-muted-foreground mt-2.5">
+        <Text variant="mono1" className="text-muted-foreground mt-2.5">
           TODO: Description
         </Text>
 
@@ -251,7 +267,7 @@ export function CareerPage() {
           Department of Human Centred Computing
         </Text>
 
-        <Text variant="mono" className="text-muted-foreground mt-2.5">
+        <Text variant="mono1" className="text-muted-foreground mt-2.5">
           TODO: Description
         </Text>
 

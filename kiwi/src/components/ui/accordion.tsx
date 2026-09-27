@@ -57,7 +57,7 @@ function AccordionContent({
       data-slot="accordion-content"
       className={cn(
         "text-muted-foreground mt-4 overflow-hidden border-l-[2px] pl-4",
-        typographyStyles.mono,
+        typographyStyles.mono1,
         className,
       )}
       {...props}
