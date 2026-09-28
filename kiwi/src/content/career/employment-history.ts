@@ -7,8 +7,53 @@ export const EmploymentHistory: Employment[] = [
     duration: "Aug 2025 – Present",
     description:
       "As the senior developer for the software engineering team at Contour, I lead the development of the Contour Learning Portal. I am responsible for or involved in every aspect of its development, including technical direction and architecture, implementation, infrastructure, security, design, features, QA, deployment and reliability, stakeholder management, engineering team leadership, and more.",
-    projects: [],
+    projects: [
+      {
+        image: "TODO:",
+        title: "Contour Learning Portal",
+        description:
+          "A student learning portal which provides access to the Contour Ecosystem including learning resources, class recordings, consultations, trial bookings, enrolments, class schedules, and more. The platform also provides role-specific portals and functionality for administrators, tutors, guardians, finance, and operations staff.",
+        links: [
+          {
+            label: "Website",
+            shownUrl: "contour.com.au/learning-portal",
+            url: "https://www.contour.com.au/learning-portal",
+          },
+        ],
+        tags: [
+          "TypeScript",
+          "Go",
+          "Next.js",
+          "React",
+          "Shadcn/UI",
+          "Tailwind CSS",
+          "TanStack Query",
+          "Turborepo",
+          "Node.js",
+          "Supabase",
+          "Prisma",
+          "ProstgreSQL",
+          "AWS Services", // TODO: Go API - see if it's just one service, then consider replacing this (e.g. with "AWS Fargate")
+          "GCP Services",
+          "Vitest",
+
+          // TODO: Do these belong?
+          "Twilio",
+          "Mux",
+          "Stripe",
+          "SendGrid",
+          "SST",
+          "Vercel",
+
+          // TODO: Add Go to PostLever
+          // TODO: Consider adding Terraform to others
+          // TODO: Consider adding Sentry (+ logging for others)
+        ],
+        awsServices: [],
+      },
+    ],
   },
+  // TODO: Add missing links below for the papers for auslanspell and beesly
   {
     title: "iOS Developer",
     company: "Monash University",
