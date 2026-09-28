@@ -5,7 +5,8 @@ export const EmploymentHistory: Employment[] = [
     title: "Senior Fullstack Developer",
     company: "Contour",
     duration: "Aug 2025 – Present",
-    description: "",
+    description:
+      "As the senior developer for the software engineering team at Contour, I lead the development of the Contour Learning Portal. I am responsible for or involved in every aspect of its development, including technical direction and architecture, implementation, infrastructure, security, design, features, QA, deployment and reliability, stakeholder management, engineering team leadership, and more.",
     projects: [],
   },
   {
