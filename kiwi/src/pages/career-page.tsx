@@ -1,3 +1,4 @@
+import { AwsServicesLine } from "@/components/aws-services-line"
 import {
   Accordion,
   AccordionContent,
@@ -9,14 +10,8 @@ import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
 import { EmploymentHistory } from "@/content/career/employment-history"
 import { cn } from "@/lib/utils"
-import { Server } from "lucide-react"
 
 export function CareerPage() {
-  const formatter = new Intl.ListFormat("en-US", {
-    style: "long",
-    type: "conjunction",
-  })
-
   return (
     <div className="w-full max-w-xl">
       <div className="mt-12">
@@ -80,16 +75,7 @@ export function CareerPage() {
                       ))}
                     </BadgeGroup>
                   ) : null}
-                  {project.awsServices.length > 0 ? (
-                    <div className="mt-4 flex gap-2.5">
-                      <Server className="size-4 shrink-0 translate-y-0.5" />
-                      <Text variant="mono2">
-                        {"AWS services include "}
-                        {formatter.format(project.awsServices)}
-                        {", among others."}
-                      </Text>
-                    </div>
-                  ) : null}
+                  <AwsServicesLine services={project.awsServices} />
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

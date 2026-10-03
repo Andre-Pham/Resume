@@ -49,7 +49,7 @@ export const EmploymentHistory: Employment[] = [
           // TODO: Consider adding Terraform to others
           // TODO: Consider adding Sentry (+ logging for others)
         ],
-        awsServices: [],
+        awsServices: ["ECS", "Fargate"],
       },
     ],
   },
@@ -118,7 +118,7 @@ export const EmploymentHistory: Employment[] = [
           "Jest",
           "Vitest",
         ],
-        // TODO: Revisit this because we don't mention fargate, and because EC2 is underneath ECS
+        // TODO: Revisit this because we don't mention fargate
         awsServices: [
           "ECR",
           "ECS",
@@ -130,6 +130,7 @@ export const EmploymentHistory: Employment[] = [
           "KMS",
           "CloudWatch",
           "RDS",
+          "others",
         ],
       },
       {
@@ -173,6 +174,7 @@ export const EmploymentHistory: Employment[] = [
           "SNS",
           "CloudWatch",
           "RDS",
+          "others",
         ],
       },
       {
@@ -216,6 +218,7 @@ export const EmploymentHistory: Employment[] = [
           "SNS",
           "CloudWatch",
           "RDS",
+          "others",
         ],
       },
     ],
