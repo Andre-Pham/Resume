@@ -9,7 +9,7 @@ export const EmploymentHistory: Employment[] = [
       "As the senior developer for the software engineering team at Contour, I lead the development of the Contour Learning Portal. I am responsible for or involved in every aspect of its development, including technical direction and architecture, implementation, infrastructure, security, design, features, QA, deployment and reliability, stakeholder management, engineering team leadership, and more.",
     projects: [
       {
-        image: "TODO:",
+        image: "contour-icon.png",
         title: "Contour Learning Portal",
         description:
           "A student learning portal which provides access to the Contour Ecosystem including learning resources, class recordings, consultations, trial bookings, enrolments, class schedules, and more. The platform also provides role-specific portals and functionality for administrators, tutors, guardians, finance, and operations staff.",
