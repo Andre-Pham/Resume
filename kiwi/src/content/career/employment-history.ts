@@ -118,6 +118,7 @@ export const EmploymentHistory: Employment[] = [
           "Jest",
           "Vitest",
         ],
+        // TODO: Revisit this because we don't mention fargate, and because EC2 is underneath ECS
         awsServices: [
           "ECR",
           "ECS",
