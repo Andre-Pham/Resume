@@ -112,8 +112,3 @@ export function HomePage() {
     </div>
   )
 }
-
-// - Showcase (projects to show off - everbound, auslanspell, swiftlocal, zilliax)
-// - Career (same content as andrepham.com)
-// - Socials (email, linkedin, github, etc.)
-// - Education (same content as andrepham.com)

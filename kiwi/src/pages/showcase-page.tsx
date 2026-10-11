@@ -1,6 +1,7 @@
 import { Text } from "@/components/ui/text"
 
 export function ShowcasePage() {
+  // TODO: projects to show off - everbound, auslanspell, swiftlocal, zilliax, this website
   return (
     <div>
       <div className="space-y-8 p-8">
