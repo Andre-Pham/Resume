@@ -56,7 +56,6 @@ export const EmploymentHistory: Employment[] = [
       },
     ],
   },
-  // TODO: Add missing links below for the papers for auslanspell and beesly
   {
     title: "iOS Developer",
     company: "Monash University",
@@ -75,6 +74,11 @@ export const EmploymentHistory: Employment[] = [
             label: "GitHub",
             shownUrl: "github.com/monash-assistive-tech/auslan-spell-ios",
             url: "https://github.com/monash-assistive-tech/auslan-spell-ios",
+          },
+          {
+            label: "Paper",
+            shownUrl: "dl.acm.org/doi/10.1145/3772318.3791563",
+            url: "https://dl.acm.org/doi/10.1145/3772318.3791563",
           },
         ],
         tags: [
@@ -329,6 +333,11 @@ export const EmploymentHistory: Employment[] = [
             label: "GitHub",
             shownUrl: "github.com/andre-pham/lemonapp",
             url: "https://github.com/andre-pham/lemonapp",
+          },
+          {
+            label: "Paper",
+            shownUrl: "dl.acm.org/doi/10.1145/3706598.3713706",
+            url: "https://dl.acm.org/doi/10.1145/3706598.3713706",
           },
         ],
         tags: [
