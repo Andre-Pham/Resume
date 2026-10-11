@@ -130,11 +130,11 @@ export const EmploymentHistory: Employment[] = [
           - Vitest
           */
         ],
-        // TODO: Revisit this because we don't mention fargate
         awsServices: [
           "ECR",
           "ECS",
           "EC2",
+          "Fargate",
           "S3",
           "Cognito",
           "SQS",
