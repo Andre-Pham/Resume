@@ -15,6 +15,10 @@ import { Link } from "react-router-dom"
 export function HomePage() {
   const { theme, toggleTheme } = useTheme()
 
+  // TODO:
+  // Favicon (copy the way we do it at Contour)
+  // Do full lighthouse and accessibility check
+
   return (
     <div className="bg-background">
       <div className="flex min-h-[80svh] flex-1 flex-col items-center p-8">
