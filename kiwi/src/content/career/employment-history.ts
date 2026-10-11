@@ -77,7 +77,17 @@ export const EmploymentHistory: Employment[] = [
             url: "https://github.com/monash-assistive-tech/auslan-spell-ios",
           },
         ],
-        tags: ["Swift", "UIKit", "SceneKit", "SwiftLocal", "Zilliax", "XCTest"],
+        tags: [
+          "Swift",
+          "UIKit",
+          "SceneKit",
+          "SwiftLocal",
+          "Zilliax",
+          /*
+          Honourable mentions:
+          - XCTest
+          */
+        ],
         awsServices: [],
         gcpServices: [],
       },
@@ -291,7 +301,10 @@ export const EmploymentHistory: Employment[] = [
           "StoreKit",
           "AWS Amplify",
           "Realm",
-          "XCTest",
+          /*
+          Honourable mentions:
+          - XCTest
+          */
         ],
         awsServices: [],
         gcpServices: [],
