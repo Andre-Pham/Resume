@@ -1,4 +1,5 @@
 import { Text } from "@/components/ui/text"
+import { ArrowUpRight } from "lucide-react"
 
 export function SocialsPage() {
   return (
@@ -25,58 +26,39 @@ export function SocialsPage() {
             href="https://www.linkedin.com/in/andrekypham"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 flex items-center gap-2.5"
+            className="mt-4 flex items-center gap-1"
           >
-            <div className="flex size-9 items-center justify-center rounded-full bg-[#0A66C2]">
-              <img
-                src="/assets/linkedin.svg"
-                alt="LinkedIn"
-                className="size-5"
-              />
-            </div>
-
-            <Text variant="mono" underline>
+            <Text variant="mono1" underline>
               LinkedIn
             </Text>
+
+            <ArrowUpRight className="size-4" />
           </a>
 
           <a
             href="https://github.com/andre-pham"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2.5 flex items-center gap-2.5"
+            className="mt-2.5 flex items-center gap-1"
           >
-            <div className="flex size-9 items-center justify-center rounded-full bg-[#181717] dark:bg-white">
-              <img
-                src="/assets/github-light.svg"
-                alt="GitHub"
-                className="size-6 dark:hidden"
-              />
-              <img
-                src="/assets/github-dark.svg"
-                alt="GitHub"
-                className="hidden size-6 dark:block"
-              />
-            </div>
-
-            <Text variant="mono" underline>
+            <Text variant="mono1" underline>
               GitHub
             </Text>
+
+            <ArrowUpRight className="size-4" />
           </a>
 
           <a
             href="https://behance.net/andrepham"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2.5 flex items-center gap-2.5"
+            className="mt-2.5 flex items-center gap-1"
           >
-            <div className="flex size-9 items-center justify-center rounded-full bg-[#115efa]">
-              <img src="/assets/behance.svg" alt="Behance" className="size-6" />
-            </div>
-
-            <Text variant="mono" underline>
+            <Text variant="mono1" underline>
               Behance
             </Text>
+
+            <ArrowUpRight className="size-4" />
           </a>
         </div>
       </div>
