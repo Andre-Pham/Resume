@@ -334,7 +334,6 @@ export const EmploymentHistory: Employment[] = [
         tags: [
           "Swift",
           "UIKit",
-          "MVC",
           "Create ML",
           "Vision",
           "AVFoundation",
