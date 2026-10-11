@@ -5,6 +5,9 @@ import { Text } from "@/components/ui/text"
 import { Download } from "lucide-react"
 
 export function EducationPage() {
+  // TODO: Make buttons functional (download content)
+  // TODO: Remove address from downloadable content
+
   return (
     <div>
       <div className="mt-12">
