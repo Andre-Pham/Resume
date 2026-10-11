@@ -125,9 +125,9 @@ export const EmploymentHistory: Employment[] = [
           /*
           Honourable mentions:
           - GitLab CI/CD Pipelines
+          - Jest
           - Sentry
           - Vitest
-          - Jest
           */
         ],
         // TODO: Revisit this because we don't mention fargate
@@ -177,11 +177,11 @@ export const EmploymentHistory: Employment[] = [
           "Terraform",
           /*
           Honourable mentions:
-          - Storybook
           - GitLab CI/CD Pipelines
-          - Sentry
-          - Vitest
           - Jest
+          - Sentry
+          - Storybook
+          - Vitest
           - Zendesk
           */
         ],
@@ -230,11 +230,11 @@ export const EmploymentHistory: Employment[] = [
           "Terraform",
           /*
           Honourable mentions:
-          - Storybook
           - GitLab CI/CD Pipelines
-          - Sentry
-          - Vitest
           - Jest
+          - Sentry
+          - Storybook
+          - Vitest
           */
         ],
         awsServices: [
