@@ -8,6 +8,7 @@ export function SocialsPage() {
         <Text variant="display" className="text-center">
           Socials
         </Text>
+
         <div className="mt-16 w-full max-w-xl">
           <img
             src="/assets/andre-pham.jpeg"
