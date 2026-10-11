@@ -10,6 +10,7 @@ import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
 import { EmploymentHistory } from "@/content/career/employment-history"
 import { cn } from "@/lib/utils"
+import { Fragment } from "react"
 
 export function CareerPage() {
   return (
@@ -21,7 +22,10 @@ export function CareerPage() {
       </div>
 
       {EmploymentHistory.map((employment, index) => (
-        <div className={cn("w-full max-w-xl", index === 0 ? "mt-16" : "mt-6")}>
+        <div
+          key={employment.company + employment.duration}
+          className={cn("w-full max-w-xl", index === 0 ? "mt-16" : "mt-6")}
+        >
           <Text variant="h3">{employment.title}</Text>
 
           <Text variant="sub1" className="mt-2">
@@ -32,15 +36,20 @@ export function CareerPage() {
 
           <Text variant="mono1" className="text-muted-foreground mt-2.5">
             {employment.description.split("\n").map((paragraph, index) => (
-              <>
+              <Fragment key={index}>
                 {index > 0 ? <div className="mt-2.5" /> : null}
                 {paragraph}
-              </>
+              </Fragment>
             ))}
           </Text>
 
           {employment.projects.map((project) => (
-            <Accordion type="single" collapsible className="mt-4">
+            <Accordion
+              key={project.title}
+              type="single"
+              collapsible
+              className="mt-4"
+            >
               <AccordionItem value="content">
                 <AccordionTrigger>
                   <div className="flex items-center gap-3">
@@ -55,7 +64,7 @@ export function CareerPage() {
                 <AccordionContent>
                   <Text variant="inherit">{project.description}</Text>
                   {project.links.map((link) => (
-                    <Text variant="inherit" className="mt-2.5">
+                    <Text key={link.url} variant="inherit" className="mt-2.5">
                       {link.label ? `${link.label}: ` : null}
                       <a
                         href={link.url}
@@ -71,7 +80,7 @@ export function CareerPage() {
                   {project.tags.length > 0 ? (
                     <BadgeGroup className="mt-4">
                       {project.tags.map((tag) => (
-                        <Badge>{tag}</Badge>
+                        <Badge key={tag}>{tag}</Badge>
                       ))}
                     </BadgeGroup>
                   ) : null}
