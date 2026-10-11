@@ -1,5 +1,5 @@
+import { Link } from "@/components/ui/link"
 import { Text } from "@/components/ui/text"
-import { ArrowUpRight } from "lucide-react"
 
 export function SocialsPage() {
   return (
@@ -22,44 +22,17 @@ export function SocialsPage() {
             </a>
           </Text>
 
-          <a
-            href="https://www.linkedin.com/in/andrekypham"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 flex items-center gap-1"
-          >
-            <Text variant="mono1" underline>
-              LinkedIn
-            </Text>
+          <Link className="mt-4" href="https://www.linkedin.com/in/andrekypham">
+            LinkedIn
+          </Link>
 
-            <ArrowUpRight className="size-4" />
-          </a>
+          <Link className="mt-2.5" href="https://github.com/andre-pham">
+            GitHub
+          </Link>
 
-          <a
-            href="https://github.com/andre-pham"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2.5 flex items-center gap-1"
-          >
-            <Text variant="mono1" underline>
-              GitHub
-            </Text>
-
-            <ArrowUpRight className="size-4" />
-          </a>
-
-          <a
-            href="https://behance.net/andrepham"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2.5 flex items-center gap-1"
-          >
-            <Text variant="mono1" underline>
-              Behance
-            </Text>
-
-            <ArrowUpRight className="size-4" />
-          </a>
+          <Link className="mt-2.5" href="https://behance.net/andrepham">
+            Behance
+          </Link>
         </div>
       </div>
     </div>

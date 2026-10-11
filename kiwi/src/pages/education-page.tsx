@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { Link } from "@/components/ui/link"
 import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
 import { Download } from "lucide-react"
@@ -31,13 +32,19 @@ export function EducationPage() {
           GPA: 3.938
         </Text>
 
-        <Text variant="mono1" className="mt-2" underline>
+        <Link
+          className="mt-2"
+          href="https://www.monash.edu/students/admin/assessments/results/wam"
+        >
           Reading WAM
-        </Text>
+        </Link>
 
-        <Text variant="mono1" className="mt-2" underline>
+        <Link
+          className="mt-2"
+          href="https://www.monash.edu/students/admin/assessments/results/gpa"
+        >
           Reading GPA
-        </Text>
+        </Link>
 
         <Separator className="mt-7" />
       </div>
@@ -72,13 +79,19 @@ export function EducationPage() {
       <div className="mt-6 w-full max-w-xl">
         <Text variant="h3">Academic Transcript</Text>
 
-        <Text variant="mono1" className="mt-2" underline>
+        <Link
+          className="mt-2"
+          href="https://www.myequals.net/sharelink/0780a40a-9e70-420d-a905-31117d1a9388/0d22dbc1-5b1b-4d2a-99d8-8fda0d5e1b03"
+        >
           Online academic transcript
-        </Text>
+        </Link>
 
-        <Text variant="mono1" className="mt-2" underline>
+        <Link
+          className="mt-2"
+          href="https://www.monash.edu/students/support/connect/official-documents/academic-transcripts"
+        >
           What’s an academic transcript?
-        </Text>
+        </Link>
 
         <div className="mt-4 flex flex-col items-start gap-3">
           <Button className="h-7 rounded-lg" variant="secondary" size="sm">
