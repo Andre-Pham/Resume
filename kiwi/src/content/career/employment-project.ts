@@ -1,4 +1,5 @@
-import type { AwsServices } from "./aws-services"
+import type { AwsService } from "./aws-service"
+import type { GcpService } from "./gcp-service"
 
 export interface EmploymentProject {
   /**
@@ -28,23 +29,60 @@ export interface EmploymentProject {
   /**
    * Tags associated with the project.
    *
-   * Rules for determining tags
    * --------------------------
-   * Every tag must be a technology I can link to (e.g. React, Swift, PostgreSQL)
-   * Each tag must also be fundamental to building the project.
-   * While react-dropzone may have been used in the project to allow files to
-   * be dragged in, this does NOT quality as a fundamental nor core technology to
-   * building the application and hence should not be included. Same goes with
-   * patterns like dependency injection or the delegate pattern - they are useful
-   * patterns but not fundamental to the application. Technologies like
-   * Nx and Storybook that are not functionally part of the application but determine
-   * how the application is built/approached/arranged (e.g. Nx sets up the monorepo
-   * architecture) should be included. Technologies that support the business or
-   * support side (like Zendesk, Sentry, etc.) should not be included - they are
-   * there for monitoring, but not core to actually building the application itself.
-   * Same goes for services and pipelines for deploying or testing the application,
-   * like TestFlight, GitLab CI/CD pipelines, or GitHub Actions - they're not core to
-   * actually building the application itself.
+   *
+   * Rules for determining tags:
+   * Every tag must be a technology I can link to (e.g. React, Swift, PostgreSQL).
+   * Every tag must satisfy the following 3 rules:
+   *
+   * RULE 1
+   * The technology must be intentionally used by the project. Don't include
+   * technologies that come bundled with other services or are installed
+   * automatically.
+   *
+   * RULE 2
+   * The technology must do at least one of the following:
+   *
+   * - Builds the application:
+   *   Provides a main programming language, framework, or system used to
+   *   implement the application. E.g. TypeScript, React, Next.js, Prisma.
+   *
+   * - Organises the codebase:
+   *   Defines how the project's packages, dependencies, or builds are managed.
+   *   E.g. Nx, Turborepo, pnpm workspaces.
+   *
+   * - Runs or stores the application:
+   *   Hosts the production application, executes its code, or stores its data.
+   *   E.g. Node.js, PostgreSQL, Supabase, Vercel.
+   *
+   * - Defines the infrastructure:
+   *   Describes and manages the cloud resources and infra the application runs
+   *   on. E.g. Terraform, SST.
+   *
+   * - Provides a product feature:
+   *   It directly enables or delivers a distinct functional offering that the
+   *   application provides to its target users. E.g. Stripe, Mux, Twilio.
+   *
+   * RULE 3
+   * The technology must be responsible for a recognisable part of the
+   * application, rather than help implement a smaller detail. It has to define
+   * a foundation of the application, control part of its structure or infra,
+   * or serve as the main provider of a distinct product offering/feature.
+   *
+   * This means dependencies such as small helper libraries and individual UI
+   * utilities should not be included.
+   *
+   * --------------------------
+   *
+   * EXCLUDE:
+   * - Testing tools, e.g. Vitest
+   * - Developer and documentation tools, e.g. Storybook
+   * - CI/CD automation, e.g. GitHub Actions
+   * - Monitoring tools, e.g. Sentry
+   * - Internal analytics, e.g. Mixpanel
+   * - Business and support tools, e.g. Zendesk
+   *
+   * --------------------------
    */
   tags: string[]
 
@@ -52,5 +90,11 @@ export interface EmploymentProject {
    * Notable AWS services used (not exhaustive).
    * Services: https://aws.amazon.com/products/?aws-products-all
    */
-  awsServices: AwsServices[]
+  awsServices: AwsService[]
+
+  /**
+   * Notable GCP services used (not exhaustive).
+   * Services: https://docs.cloud.google.com/docs/product-list
+   */
+  gcpServices: GcpService[]
 }

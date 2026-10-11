@@ -29,27 +29,30 @@ export const EmploymentHistory: Employment[] = [
           "Tailwind CSS",
           "TanStack Query",
           "Turborepo",
+          "PNPM Workspaces",
           "Node.js",
           "Supabase",
           "Prisma",
-          "ProstgreSQL",
-          "AWS Services", // TODO: Go API - see if it's just one service, then consider replacing this (e.g. with "AWS Fargate")
-          "GCP Services",
-          "Vitest",
-
-          // TODO: Do these belong?
+          "PostgreSQL",
+          "AWS",
+          "GCP",
+          "Google APIs",
           "Twilio",
           "Mux",
           "Stripe",
           "SendGrid",
           "SST",
           "Vercel",
-
-          // TODO: Add Go to PostLever
-          // TODO: Consider adding Terraform to others
-          // TODO: Consider adding Sentry (+ logging for others)
+          /*
+          Honourable mentions:
+          - GitHub Actions
+          - Mixpanel
+          - Sentry
+          - Vitest
+          */
         ],
         awsServices: ["ECS", "Fargate"],
+        gcpServices: ["Pub/Sub"],
       },
     ],
   },
@@ -76,6 +79,7 @@ export const EmploymentHistory: Employment[] = [
         ],
         tags: ["Swift", "UIKit", "SceneKit", "SwiftLocal", "Zilliax", "XCTest"],
         awsServices: [],
+        gcpServices: [],
       },
     ],
   },
@@ -100,12 +104,14 @@ export const EmploymentHistory: Employment[] = [
         ],
         tags: [
           "TypeScript",
+          "Go",
           "React",
           "Redux",
           "Shadcn/UI",
           "Tailwind CSS",
           "Vite",
           "Nx",
+          "PNPM Workspaces",
           "Node.js",
           "Koa",
           "Routing Controllers",
@@ -114,9 +120,15 @@ export const EmploymentHistory: Employment[] = [
           "PostgreSQL",
           "Redis",
           "ClickHouse",
-          "AWS Services",
-          "Jest",
-          "Vitest",
+          "AWS",
+          "Terraform",
+          /*
+          Honourable mentions:
+          - GitLab CI/CD Pipelines
+          - Sentry
+          - Vitest
+          - Jest
+          */
         ],
         // TODO: Revisit this because we don't mention fargate
         awsServices: [
@@ -132,6 +144,7 @@ export const EmploymentHistory: Employment[] = [
           "RDS",
           "others",
         ],
+        gcpServices: [],
       },
       {
         image: "access-icon.png",
@@ -150,9 +163,9 @@ export const EmploymentHistory: Employment[] = [
           "React",
           "Redux",
           "Material UI",
-          "Storybook",
           "Vite",
           "Nx",
+          "PNPM Workspaces",
           "Node.js",
           "Koa",
           "Routing Controllers",
@@ -160,9 +173,17 @@ export const EmploymentHistory: Employment[] = [
           "TypeORM",
           "PostgreSQL",
           "Redis",
-          "AWS Services",
-          "Jest",
-          "Vitest",
+          "AWS",
+          "Terraform",
+          /*
+          Honourable mentions:
+          - Storybook
+          - GitLab CI/CD Pipelines
+          - Sentry
+          - Vitest
+          - Jest
+          - Zendesk
+          */
         ],
         awsServices: [
           "ECR",
@@ -176,6 +197,7 @@ export const EmploymentHistory: Employment[] = [
           "RDS",
           "others",
         ],
+        gcpServices: [],
       },
       {
         image: "zerodual-icon.png",
@@ -194,9 +216,9 @@ export const EmploymentHistory: Employment[] = [
           "React",
           "Redux",
           "Material UI",
-          "Storybook",
           "Vite",
           "Nx",
+          "PNPM Workspaces",
           "Node.js",
           "Koa",
           "Routing Controllers",
@@ -204,9 +226,16 @@ export const EmploymentHistory: Employment[] = [
           "TypeORM",
           "PostgreSQL",
           "Redis",
-          "AWS Services",
-          "Jest",
-          "Vitest",
+          "AWS",
+          "Terraform",
+          /*
+          Honourable mentions:
+          - Storybook
+          - GitLab CI/CD Pipelines
+          - Sentry
+          - Vitest
+          - Jest
+          */
         ],
         awsServices: [
           "ECR",
@@ -220,6 +249,7 @@ export const EmploymentHistory: Employment[] = [
           "RDS",
           "others",
         ],
+        gcpServices: [],
       },
     ],
   },
@@ -264,6 +294,7 @@ export const EmploymentHistory: Employment[] = [
           "XCTest",
         ],
         awsServices: [],
+        gcpServices: [],
       },
     ],
   },
@@ -297,6 +328,7 @@ export const EmploymentHistory: Employment[] = [
           "Speech",
         ],
         awsServices: [],
+        gcpServices: [],
       },
     ],
   },

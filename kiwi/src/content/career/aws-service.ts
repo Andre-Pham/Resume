@@ -4,7 +4,7 @@
  *
  * https://aws.amazon.com/products/?aws-products-all
  */
-export type AwsServices =
+export type AwsService =
   | "RDS" // Relational Database Service
   | "ECR" // Elastic Container Registry
   | "ECS" // Elastic Container Service

@@ -1,4 +1,4 @@
-import { AwsServicesLine } from "@/components/aws-services-line"
+import { ServicesLine } from "@/components/services-line"
 import {
   Accordion,
   AccordionContent,
@@ -75,7 +75,16 @@ export function CareerPage() {
                       ))}
                     </BadgeGroup>
                   ) : null}
-                  <AwsServicesLine services={project.awsServices} />
+                  <ServicesLine
+                    service="AWS"
+                    services={project.awsServices}
+                    className="mt-4"
+                  />
+                  <ServicesLine
+                    service="GCP"
+                    services={project.gcpServices}
+                    className="mt-1"
+                  />
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

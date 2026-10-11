@@ -1,8 +1,18 @@
 import { Text } from "@/components/ui/text"
-import { type AwsServices } from "@/content/career/aws-services"
+import { cn } from "@/lib/utils"
 import { Server } from "lucide-react"
 
-export function AwsServicesLine({ services }: { services: AwsServices[] }) {
+interface ServicesLineProps extends React.HTMLAttributes<HTMLDivElement> {
+  service: string
+  services: string[]
+}
+
+export function ServicesLine({
+  service,
+  services,
+  className,
+  ...props
+}: ServicesLineProps) {
   const formatter = new Intl.ListFormat("en-US", {
     style: "long",
     type: "conjunction",
@@ -16,10 +26,11 @@ export function AwsServicesLine({ services }: { services: AwsServices[] }) {
   const formatted = `${formatter.format(named)}${suffix}`
 
   return (
-    <div className="mt-4 flex gap-2.5">
+    <div className={cn("flex gap-2.5", className)} {...props}>
       <Server className="size-4 shrink-0 translate-y-0.5" />
       <Text variant="mono2">
-        {"AWS services include "}
+        {service}
+        {" services include "}
         {formatted}
       </Text>
     </div>
