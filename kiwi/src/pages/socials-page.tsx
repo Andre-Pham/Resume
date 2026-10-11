@@ -10,7 +10,7 @@ export function SocialsPage() {
         </Text>
         <div className="mt-16 w-full max-w-xl">
           <img
-            src="/assets/andre-pham.png"
+            src="/assets/andre-pham.jpeg"
             alt="Portrait photo"
             className="bg-muted h-64 w-full max-w-full rounded-xl object-cover"
           />
