@@ -10,7 +10,7 @@ import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
 import { EmploymentHistory } from "@/content/career/employment-history"
 import { cn } from "@/lib/utils"
-import { Fragment } from "react"
+import { TextAlignStart } from "lucide-react"
 
 export function CareerPage() {
   return (
@@ -34,14 +34,29 @@ export function CareerPage() {
             {employment.duration}
           </Text>
 
-          <Text variant="mono1" className="text-muted-foreground mt-2.5">
-            {employment.description.split("\n").map((paragraph, index) => (
-              <Fragment key={index}>
-                {index > 0 ? <div className="mt-2.5" /> : null}
-                {paragraph}
-              </Fragment>
-            ))}
-          </Text>
+          <Accordion type="single" collapsible className="mt-4">
+            <AccordionItem value="role">
+              <AccordionTrigger>
+                <span className="flex items-center gap-3">
+                  <span className="bg-muted flex size-8 items-center justify-center rounded-sm border-2">
+                    <TextAlignStart aria-hidden="true" className="size-4" />
+                  </span>
+                  About the Role
+                </span>
+              </AccordionTrigger>
+              <AccordionContent>
+                {employment.description.split("\n").map((paragraph, index) => (
+                  <Text
+                    key={index}
+                    variant="inherit"
+                    className={index > 0 ? "mt-2.5" : undefined}
+                  >
+                    {paragraph}
+                  </Text>
+                ))}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
 
           {employment.projects.map((project) => (
             <Accordion
@@ -56,7 +71,7 @@ export function CareerPage() {
                     <img
                       src={`/assets/${project.image}`}
                       alt={project.image}
-                      className="bg-muted size-9 rounded-sm border-2 object-cover"
+                      className="bg-muted size-8 rounded-sm border-2 object-cover"
                     />
                     <Text variant="inherit">{project.title}</Text>
                   </div>
