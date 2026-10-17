@@ -67,7 +67,12 @@ export function ShowcasePage() {
 
           <Text variant="mono1" className="text-muted-foreground mt-4">
             A Swift package for locally serialising, persisting, and restoring
-            Swift objects.
+            Swift objects. Features lazy migrations, transactions, and thread
+            safety.
+          </Text>
+
+          <Text variant="mono1" className="text-muted-foreground mt-4">
+            Powers many of my apps, including Everbound (see above).
           </Text>
 
           <Link
