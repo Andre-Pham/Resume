@@ -42,6 +42,8 @@ export function EducationPage() {
           Reading WAM
         </Link>
 
+        {/* TODO: Unionise and make consistent all the spacing in the app, e.g. is spacing between links mt-2 or mt-2.5 ... space between paragraphs too */}
+
         <Link
           className="mt-2"
           href="https://www.monash.edu/students/admin/assessments/results/gpa"

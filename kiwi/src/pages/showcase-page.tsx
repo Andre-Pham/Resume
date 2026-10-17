@@ -21,13 +21,24 @@ export function ShowcasePage() {
             potions to collect.
           </Text>
 
-          <Text variant="mono1" className="text-muted-foreground mt-4">
+          <Text variant="mono1" className="text-muted-foreground mt-2">
             Everbound has received over 30,000 downloads and a global rating of
             4.6/5 on the App Store.
           </Text>
 
-          <Link className="mt-4" href="https://github.com/Andre-Pham/Zilliax">
-            GitHub
+          <Link className="mt-4" href="https://www.everbound.net/">
+            Website
+          </Link>
+
+          <Link
+            className="mt-2"
+            href="https://www.youtube.com/watch?v=Zl3jHVbDxws"
+          >
+            Trailer
+          </Link>
+
+          <Link className="mt-2" href="https://apps.apple.com/app/id6499560058">
+            Download
           </Link>
 
           <img
@@ -71,8 +82,8 @@ export function ShowcasePage() {
             safety.
           </Text>
 
-          <Text variant="mono1" className="text-muted-foreground mt-4">
-            Powers many of my apps, including Everbound (see above).
+          <Text variant="mono1" className="text-muted-foreground mt-2">
+            SwiftLocal powers many of my apps, including Everbound (see above).
           </Text>
 
           <Link
@@ -84,6 +95,7 @@ export function ShowcasePage() {
 
           <img
             // TODO: Replace with jpg
+            // TODO: Make `swift-local-showcase-2.png` text bigger and horizontally centered
             src="/assets/swift-local-showcase-2.png"
             alt="Zilliax showcase"
             className="bg-muted mt-6 w-full rounded-xl border-2 object-cover"

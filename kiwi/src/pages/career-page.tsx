@@ -80,6 +80,7 @@ export function CareerPage() {
                   <Text variant="inherit">{project.description}</Text>
                   {project.links.map((link) => (
                     <Text key={link.url} variant="inherit" className="mt-2.5">
+                      {/* TODO: Use `Link` instead of this custom style */}
                       {link.label ? `${link.label}: ` : null}
                       <a
                         href={link.url}
