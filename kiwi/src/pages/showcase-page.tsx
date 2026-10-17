@@ -61,6 +61,31 @@ export function ShowcasePage() {
 
           <Separator className="mt-7" />
         </div>
+
+        <div className="mt-6 w-full max-w-2xl">
+          <Text variant="h3">SwiftLocal</Text>
+
+          <Text variant="mono1" className="text-muted-foreground mt-4">
+            A Swift package for locally serialising, persisting, and restoring
+            Swift objects.
+          </Text>
+
+          <Link
+            className="mt-4"
+            href="https://github.com/Andre-Pham/SwiftLocal"
+          >
+            GitHub
+          </Link>
+
+          <img
+            // TODO: Replace with jpg
+            src="/assets/swift-local-showcase-2.png"
+            alt="Zilliax showcase"
+            className="bg-muted mt-6 w-full rounded-xl border-2 object-cover"
+          />
+
+          <Separator className="mt-7" />
+        </div>
       </div>
     </div>
   )
