@@ -51,14 +51,16 @@ export function ShowcasePage() {
           <Link className="mt-4" href="https://github.com/Andre-Pham/Zilliax">
             GitHub
           </Link>
-        </div>
 
-        <img
-          // TODO: Replace with jpg
-          src="/assets/zilliax-showcase-3.png"
-          alt="Zilliax showcase"
-          className="bg-muted mt-6 w-full rounded-xl border-2 object-cover"
-        />
+          <img
+            // TODO: Replace with jpg
+            src="/assets/zilliax-showcase-3.png"
+            alt="Zilliax showcase"
+            className="bg-muted mt-6 w-full rounded-xl border-2 object-cover"
+          />
+
+          <Separator className="mt-7" />
+        </div>
       </div>
     </div>
   )
