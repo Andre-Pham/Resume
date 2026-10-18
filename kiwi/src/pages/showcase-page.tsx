@@ -5,6 +5,7 @@ import { Text } from "@/components/ui/text"
 export function ShowcasePage() {
   // TODO: projects to show off - everbound, auslanspell, swiftlocal, zilliax, this website
   // TODO: Have mobile variants of the images, e.g. the fireplace everbound logo icon or something, or just the phone screen
+  // TODO: Consider if I should even include AuslanSpell, given that it's not even released and no source code
   return (
     <div className="w-full max-w-2xl">
       <div className="mt-12">
