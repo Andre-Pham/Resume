@@ -105,6 +105,21 @@ export function ShowcasePage() {
         </div>
 
         <div className="mt-6 w-full max-w-2xl">
+          <Text variant="h3">SwiftMath</Text>
+
+          <Text variant="mono1" className="text-muted-foreground mt-4">
+            A Swift math package with a focus on 2D geometry and being
+            ergonomic.
+          </Text>
+
+          <Link className="mt-4" href="https://github.com/Andre-Pham/SwiftMath">
+            GitHub
+          </Link>
+
+          <Separator className="mt-7" />
+        </div>
+
+        <div className="mt-6 w-full max-w-2xl">
           <Text variant="h3">andrepham.com</Text>
 
           <Text variant="mono1" className="text-muted-foreground mt-4">
