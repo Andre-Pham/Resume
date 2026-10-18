@@ -103,6 +103,20 @@ export function ShowcasePage() {
 
           <Separator className="mt-7" />
         </div>
+
+        <div className="mt-6 w-full max-w-2xl">
+          <Text variant="h3">andrepham.com</Text>
+
+          <Text variant="mono1" className="text-muted-foreground mt-4">
+            View this website’s source code using the link below.
+          </Text>
+
+          <Link className="mt-4" href="https://github.com/Andre-Pham/Kiwi">
+            GitHub
+          </Link>
+
+          <Separator className="mt-7" />
+        </div>
       </div>
     </div>
   )
