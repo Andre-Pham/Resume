@@ -1,19 +1,12 @@
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
 import { useTheme } from "@/hooks"
-import { Ellipsis, Moon, Sun } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
 import { Link } from "react-router-dom"
 
 export function HomePage() {
-  const { theme, toggleTheme } = useTheme()
+  const { toggleTheme } = useTheme()
 
   // TODO:
   // Favicon (copy the way we do it at Contour) (use my frog pic)
@@ -84,28 +77,15 @@ export function HomePage() {
               <Link to="/education">Education</Link>
             </Button>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  className="font-gitlab-mono font-semibold"
-                  variant="secondary"
-                  size="sm"
-                >
-                  <Ellipsis />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="start"
-                onCloseAutoFocus={(event) => event.preventDefault()}
-              >
-                <DropdownMenuGroup>
-                  <DropdownMenuItem onClick={toggleTheme}>
-                    {theme === "dark" ? <Moon /> : <Sun />}
-                    Toggle Theme
-                  </DropdownMenuItem>
-                </DropdownMenuGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={toggleTheme}
+              aria-label="Toggle light/dark mode"
+            >
+              <Sun className="dark:hidden" aria-hidden="true" />
+              <Moon className="hidden dark:block" aria-hidden="true" />
+            </Button>
           </div>
         </div>
 
