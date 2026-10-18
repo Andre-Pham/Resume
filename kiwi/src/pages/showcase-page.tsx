@@ -65,7 +65,7 @@ export function ShowcasePage() {
 
           <img
             // TODO: Replace with jpg
-            src="/assets/zilliax-showcase-3.png"
+            src="/assets/zilliax-showcase-8-alt.png"
             alt="Zilliax showcase"
             className="bg-muted mt-6 w-full rounded-xl border-2 object-cover"
           />
@@ -95,8 +95,7 @@ export function ShowcasePage() {
 
           <img
             // TODO: Replace with jpg
-            // TODO: Make `swift-local-showcase-2.png` text bigger and horizontally centered
-            src="/assets/swift-local-showcase-2.png"
+            src="/assets/swift-local-showcase-3.png"
             alt="Zilliax showcase"
             className="bg-muted mt-6 w-full rounded-xl border-2 object-cover"
           />
