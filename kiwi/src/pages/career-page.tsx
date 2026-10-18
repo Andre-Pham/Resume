@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Badge, BadgeGroup } from "@/components/ui/badge"
+import { Link } from "@/components/ui/link"
 import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
 import { EmploymentHistory } from "@/content/career/employment-history"
@@ -79,19 +80,9 @@ export function CareerPage() {
                 <AccordionContent>
                   <Text variant="inherit">{project.description}</Text>
                   {project.links.map((link) => (
-                    <Text key={link.url} variant="inherit" className="mt-2.5">
-                      {/* TODO: Use `Link` instead of this custom style */}
-                      {link.label ? `${link.label}: ` : null}
-                      <a
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Text variant="inherit" underline inline>
-                          {link.shownUrl}
-                        </Text>
-                      </a>
-                    </Text>
+                    <Link key={link.url} className="mt-2.5" href={link.url}>
+                      {link.label ?? link.shownUrl}
+                    </Link>
                   ))}
                   {project.tags.length > 0 ? (
                     <BadgeGroup className="mt-4">
