@@ -9,7 +9,6 @@ export function HomePage() {
   const { toggleTheme } = useTheme()
 
   // TODO:
-  // Favicon (copy the way we do it at Contour) (use my frog pic)
   // Do full lighthouse and accessibility check
 
   return (
