@@ -2,11 +2,37 @@ import { Button } from "@/components/ui/button"
 import { Link } from "@/components/ui/link"
 import { Separator } from "@/components/ui/separator"
 import { Text } from "@/components/ui/text"
+import { downloadFile } from "@/utils"
 import { Download } from "lucide-react"
 
 export function EducationPage() {
-  // TODO: Make buttons functional (download content)
-  // TODO: Remove address from downloadable content
+  function downloadDuxAward() {
+    downloadFile({
+      fileName: "dux_award.zip",
+      downloadName: "dux_award_andrepham.zip",
+    })
+  }
+
+  function downloadAcademicTranscript() {
+    downloadFile({
+      fileName: "academic_transcript_official.pdf",
+      downloadName: "academic_transcript_andrepham.pdf",
+    })
+  }
+
+  function downloadHonoursListInclusions() {
+    downloadFile({
+      fileName: "honour_list_inclusions.zip",
+      downloadName: "honour_list_inclusions_andrepham.zip",
+    })
+  }
+
+  function downloadLettersOfCommendation() {
+    downloadFile({
+      fileName: "letters_of_commendation.zip",
+      downloadName: "letters_of_commendation_andrepham.zip",
+    })
+  }
 
   return (
     <div>
@@ -63,15 +89,30 @@ export function EducationPage() {
         </Text>
 
         <div className="mt-4.5 flex flex-col items-start gap-3">
-          <Button className="h-7 rounded-lg" variant="secondary" size="sm">
+          <Button
+            onClick={downloadDuxAward}
+            className="h-7 rounded-lg"
+            variant="secondary"
+            size="sm"
+          >
             <Download /> Dux Award
           </Button>
 
-          <Button className="h-7 rounded-lg" variant="secondary" size="sm">
+          <Button
+            onClick={downloadHonoursListInclusions}
+            className="h-7 rounded-lg"
+            variant="secondary"
+            size="sm"
+          >
             <Download /> Honour List Inclusions
           </Button>
 
-          <Button className="h-7 rounded-lg" variant="secondary" size="sm">
+          <Button
+            onClick={downloadLettersOfCommendation}
+            className="h-7 rounded-lg"
+            variant="secondary"
+            size="sm"
+          >
             <Download /> Letters of Commendation
           </Button>
         </div>
@@ -97,7 +138,12 @@ export function EducationPage() {
         </Link>
 
         <div className="mt-4.5 flex flex-col items-start gap-3">
-          <Button className="h-7 rounded-lg" variant="secondary" size="sm">
+          <Button
+            onClick={downloadAcademicTranscript}
+            className="h-7 rounded-lg"
+            variant="secondary"
+            size="sm"
+          >
             <Download /> Transcript
           </Button>
         </div>
