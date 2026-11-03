@@ -43,15 +43,13 @@ export function ShowcasePage() {
           </Link>
 
           <img
-            // TODO: Replace with jpg
-            src="/assets/everbound-showcase-2.png"
+            src="/assets/everbound-showcase.jpg"
             alt="Everbound showcase"
             className="bg-muted mt-6 hidden w-full rounded-xl border-2 object-cover sm:block"
           />
 
           <img
-            // TODO: Replace with jpg
-            src="/assets/everbound-showcase-mobile.png"
+            src="/assets/everbound-showcase-mobile.jpg"
             alt="Everbound showcase"
             className="bg-muted mt-6 w-full rounded-xl border-2 object-cover sm:hidden"
           />
@@ -72,15 +70,13 @@ export function ShowcasePage() {
           </Link>
 
           <img
-            // TODO: Replace with jpg
-            src="/assets/zilliax-showcase-8-alt.png"
+            src="/assets/zilliax-showcase.jpg"
             alt="Zilliax showcase"
             className="bg-muted mt-6 hidden w-full rounded-xl border-2 object-cover sm:block"
           />
 
           <img
-            // TODO: Replace with jpg
-            src="/assets/zilliax-showcase-mobile.png"
+            src="/assets/zilliax-showcase-mobile.jpg"
             alt="Zilliax showcase"
             className="bg-muted mt-6 w-full rounded-xl border-2 object-cover sm:hidden"
           />
@@ -109,15 +105,13 @@ export function ShowcasePage() {
           </Link>
 
           <img
-            // TODO: Replace with jpg
-            src="/assets/swift-local-showcase-3.png"
+            src="/assets/swift-local-showcase.jpg"
             alt="Zilliax showcase"
             className="bg-muted mt-6 hidden w-full rounded-xl border-2 object-cover sm:block"
           />
 
           <img
-            // TODO: Replace with jpg
-            src="/assets/swift-local-showcase-mobile.png"
+            src="/assets/swift-local-showcase-mobile.jpg"
             alt="Zilliax showcase"
             className="bg-muted mt-6 w-full rounded-xl border-2 object-cover sm:hidden"
           />
