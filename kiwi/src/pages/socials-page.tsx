@@ -27,6 +27,7 @@ export function SocialsPage() {
             LinkedIn
           </Link>
 
+          {/* TODO: Create the kiwi repo, then rearrange my github featured repos */}
           <Link className="mt-2.5" href="https://github.com/andre-pham">
             GitHub
           </Link>
