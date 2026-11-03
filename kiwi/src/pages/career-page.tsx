@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils"
 import { TextAlignStart } from "lucide-react"
 
 export function CareerPage() {
+  // TODO: Add AWS services to contour learning portal used for replica
   return (
     <div className="w-full max-w-xl">
       <div className="mt-12">
