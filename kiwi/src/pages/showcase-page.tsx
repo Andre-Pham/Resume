@@ -46,7 +46,14 @@ export function ShowcasePage() {
             // TODO: Replace with jpg
             src="/assets/everbound-showcase-2.png"
             alt="Everbound showcase"
-            className="bg-muted mt-6 w-full rounded-xl border-2 object-cover"
+            className="bg-muted mt-6 hidden w-full rounded-xl border-2 object-cover sm:block"
+          />
+
+          <img
+            // TODO: Replace with jpg
+            src="/assets/everbound-showcase-mobile.png"
+            alt="Everbound showcase"
+            className="bg-muted mt-6 w-full rounded-xl border-2 object-cover sm:hidden"
           />
 
           <Separator className="mt-7" />
@@ -68,7 +75,14 @@ export function ShowcasePage() {
             // TODO: Replace with jpg
             src="/assets/zilliax-showcase-8-alt.png"
             alt="Zilliax showcase"
-            className="bg-muted mt-6 w-full rounded-xl border-2 object-cover"
+            className="bg-muted mt-6 hidden w-full rounded-xl border-2 object-cover sm:block"
+          />
+
+          <img
+            // TODO: Replace with jpg
+            src="/assets/zilliax-showcase-mobile.png"
+            alt="Zilliax showcase"
+            className="bg-muted mt-6 w-full rounded-xl border-2 object-cover sm:hidden"
           />
 
           <Separator className="mt-7" />
@@ -98,7 +112,14 @@ export function ShowcasePage() {
             // TODO: Replace with jpg
             src="/assets/swift-local-showcase-3.png"
             alt="Zilliax showcase"
-            className="bg-muted mt-6 w-full rounded-xl border-2 object-cover"
+            className="bg-muted mt-6 hidden w-full rounded-xl border-2 object-cover sm:block"
+          />
+
+          <img
+            // TODO: Replace with jpg
+            src="/assets/swift-local-showcase-mobile.png"
+            alt="Zilliax showcase"
+            className="bg-muted mt-6 w-full rounded-xl border-2 object-cover sm:hidden"
           />
 
           <Separator className="mt-7" />
